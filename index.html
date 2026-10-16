@@ -353,6 +353,50 @@
       padding: 0.7rem 1rem; max-width: 92vw; font-size: 0.9rem; box-shadow: 0 6px 24px rgba(0,0,0,0.5);
     }
     #toast.error { border-color: var(--danger); color: var(--danger); }
+    /* Tier 2 celebration: slides down under the header, tap to close */
+    #toast.celebrate {
+      bottom: auto; display: flex; align-items: center; gap: 0.65rem; cursor: pointer; width: max-content; max-width: min(92vw, 440px);
+      border: 2px solid var(--gold); font-weight: 700; animation: toastDown 0.3s ease;
+    }
+    #toast.celebrate .ic { width: 34px; height: 34px; }
+    @keyframes toastDown { from { transform: translate(-50%, -18px); opacity: 0; } }
+
+    /* ── Tier 1 celebration overlay ───────────────────── */
+    #celebrate {
+      position: fixed; inset: 0; z-index: 700; display: none;
+      align-items: center; justify-content: center; padding: 1rem;
+      background: rgba(4, 10, 6, 0.82);
+    }
+    #celebrate.open { display: flex; }
+    #confetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    #confetti i {
+      position: absolute; top: -14px; width: 8px; height: 13px; border-radius: 2px;
+      animation: fall linear forwards;
+    }
+    @keyframes fall { to { transform: translate(var(--dx), 110vh) rotate(var(--r)); } }
+    .cel-card {
+      position: relative; width: min(92vw, 380px); text-align: center;
+      background: var(--surface); border: 2px solid var(--gold); border-radius: 18px;
+      padding: 1.4rem 1.2rem 1.2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .cel-tri { width: 96px; height: 84px; display: block; margin: 0 auto 0.6rem; overflow: visible; }
+    .cel-icon { width: 84px; height: 84px; margin: 0 auto 0.7rem; }
+    .cel-icon .ic { width: 84px; height: 84px; }
+    .cel-title { font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: var(--gold); line-height: 1.2; }
+    .cel-sub { color: var(--text); margin-top: 0.4rem; font-size: 0.98rem; }
+    .cel-sub:empty { display: none; }
+    .cel-card .act-btn { margin-top: 1.1rem; min-width: 9rem; min-height: 48px; }
+    #celebrate.play .cel-tri path { animation: triFly 0.9s cubic-bezier(.2,.8,.3,1) both; }
+    #celebrate.play .cel-tri path:nth-child(2) { --from: translate(-90px, 60px) rotate(-200deg); }
+    #celebrate.play .cel-tri path:nth-child(3) { --from: translate(90px, 60px) rotate(200deg); }
+    @keyframes triFly { from { transform: var(--from, translate(0, -110px) rotate(180deg)); opacity: 0; } }
+    .cel-tri path { transform-box: fill-box; transform-origin: center; }
+    #celebrate.play .cel-card { animation: celPop 0.45s ease 0.15s both; }
+    @keyframes celPop { from { transform: scale(0.85); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      #confetti { display: none; }
+      #celebrate.play .cel-tri path, #celebrate.play .cel-card, #toast.celebrate { animation: none; }
+    }
   </style>
 </head>
 <body>
@@ -413,6 +457,19 @@
 </div>
 
 <div id="toast" hidden></div>
+
+<div id="celebrate" role="dialog" aria-modal="true" aria-labelledby="celTitle">
+  <div id="confetti"></div>
+  <div class="cel-card">
+    <svg class="cel-tri" viewBox="0 0 64 56" aria-hidden="true">
+      <path fill="#d9b44a" d="M32 0 48 28H16z"/><path fill="#d9b44a" d="M16 28 32 56H0z"/><path fill="#d9b44a" d="M48 28 64 56H32z"/>
+    </svg>
+    <div class="cel-icon" id="celIcon"></div>
+    <div class="cel-title" id="celTitle"></div>
+    <div class="cel-sub" id="celSub"></div>
+    <button class="act-btn primary" id="celContinue">Continue</button>
+  </div>
+</div>
 
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
@@ -682,6 +739,7 @@ let profiles = {};        // /profiles
 let pid = null;           // selected profile id (per device)
 let progress = {};        // /progress/{pid}
 let scarecrow = [];       // /scarecrow/{pid}: note ids, in order
+let celebrated = null;    // /celebrated/{pid}: key → {at, by}; null until loaded
 let unsubs = [];          // listeners for the selected profile
 let currentTab = TABS.some((t) => t.id === lsGet('oot.tab')) ? lsGet('oot.tab') : 'progress';
 
@@ -827,7 +885,12 @@ function reqLabel(req) {
 }
 
 function toggle(id, on) {
+  const e = BY_ID[id], before = progress;   // the write below updates `progress` right away
   set(ref(_db, `progress/${pid}/${id}`), on ? { at: Date.now(), by: me } : null).catch(fail('save that'));
+  // Only a check made on this phone can celebrate, and only when it crosses a threshold.
+  // Items, songs (no category) and 🚧 read-only entries never do.
+  if (on && celebrated && e?.category && !e.readOnly)
+    celebrate(celebrationKeysMet(before), celebrationKeysMet({ ...before, [id]: true }));
 }
 
 function renderProgressBars() {
@@ -1192,6 +1255,125 @@ $('detailBody').addEventListener('change', (e) => {
 });
 
 // ============================================================================
+// Celebrations — once per profile: /celebrated/{pid}/{key} is written before one shows,
+// so it never replays (reload, uncheck/recheck, or the other phone).
+// Tier 1 = full-screen overlay + long buzz; Tier 2 = toast + short buzz.
+// ============================================================================
+const counted = (cat) => entriesIn([cat]).filter((e) => !e.readOnly);
+const CAT_DONE = {   // Tier 2 unless listed in TIER1
+  mask:     { icon: 'mask-truth', text: (n) => `All ${n} masks!` },
+  upgrade:  { icon: 'upgrade',    text: (n) => `All ${n} upgrades!` },
+  fairy:    { icon: 'fairy',      text: (n) => `All ${n} Great Fairies!` },
+  soil:     { icon: 'soil',       text: (n) => `All ${n} soft soil spots!` },
+  bottle:   { icon: 'bottle',     text: (n) => `All ${n} bottles!` },
+  bigpoe:   { icon: 'bigpoe',     text: (n) => `All ${n} Big Poes!` },
+  biggoron: { icon: 'biggoron',   text: () => "Biggoron's Sword!" },
+};
+const TIER1 = new Set(['hp-all', 'gs-all', 'cat-biggoron', 'cat-bigpoe', 'total-100']);
+const isTier1 = (k) => k.startsWith('ms-') || TIER1.has(k);
+
+// Every celebration key whose condition holds for a progress map.
+function celebrationKeysMet(p) {
+  const keys = new Set();
+  const got = (cat) => counted(cat).filter((e) => p[e.id]).length;
+  for (const e of counted('milestone')) if (p[e.id]) keys.add(e.id);   // milestone ids are already ms-<id>
+  const hp = got('heart'), gs = got('skulltula');
+  for (let n = 4; n <= 32; n += 4) if (hp >= n) keys.add(`hp-${n}`);
+  for (let n = 10; n <= 90; n += 10) if (gs >= n) keys.add(`gs-${n}`);
+  if (hp === counted('heart').length) keys.add('hp-all');
+  if (gs === counted('skulltula').length) keys.add('gs-all');
+  for (const c in CAT_DONE) if (got(c) === counted(c).length) keys.add('cat-' + c);
+  if (DATA.entries.every((e) => e.readOnly || p[e.id])) keys.add('total-100');
+  return keys;
+}
+
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+function celInfo(k) {
+  const n = Number(k.split('-')[1]);
+  const reward = (t) => DATA.skulltulaRewards.find((r) => r.tokens === t);
+  if (k.startsWith('ms-')) {
+    const ms = counted('milestone');
+    return { icon: k, title: BY_ID[k].name, sub: `Story ${ms.filter((e) => progress[e.id]).length} of ${ms.length}` };
+  }
+  if (k === 'hp-all') return { icon: 'heart', title: `All ${counted('heart').length} Pieces of Heart!`, sub: '20 hearts' };
+  if (k === 'gs-all') return { icon: 'skulltula', title: `All ${counted('skulltula').length} Gold Skulltulas!`, sub: `Reward: ${reward(100).reward}` };
+  if (k === 'total-100') {
+    const p = profiles[pid], days = p?.startDate ? Math.round((new Date(today() + 'T00:00') - new Date(p.startDate + 'T00:00')) / 864e5) : null;
+    return { icon: 'milestone', title: 'Hero of Time: 100%', sub: `${p?.name || 'This profile'} finished${days == null ? '!' : ` in ${plural(days, 'day')}`}` };
+  }
+  if (k.startsWith('hp-')) return { icon: 'heart', title: `New Heart Container! (${n / 4} of ${counted('heart').length / 4})` };
+  if (k.startsWith('gs-')) {
+    const r = reward(n);
+    const what = !r ? `Next reward at 100`
+      : `Reward: ${r.switch2 === 'changed-unknown' ? "changed in the remake, not known yet" : r.reward}`;
+    return { icon: 'skulltula', title: `${n} Gold Skulltulas! ${what}` };
+  }
+  const c = k.slice(4);
+  return { icon: CAT_DONE[c].icon, title: CAT_DONE[c].text(counted(c).length) };
+}
+
+const buzz = (pattern) => { if (navigator.vibrate) navigator.vibrate(pattern); };
+const celQueue = [];   // Tier 1 keys waiting to show, one after another
+
+function celebrate(before, after) {
+  const fresh = [...after].filter((k) => !before.has(k) && !celebrated[k]);
+  if (!fresh.length) return;
+  const rec = { at: Date.now(), by: me };
+  for (const k of fresh) celebrated[k] = rec;
+  update(ref(_db, `celebrated/${pid}`), Object.fromEntries(fresh.map((k) => [k, rec]))).catch(fail('save the celebration'));
+  // A tick that earns both tiers shows only the overlay(s); the Tier 2 key is written quietly. 100% goes last.
+  const big = fresh.filter(isTier1).sort((a, b) => (a === 'total-100') - (b === 'total-100'));
+  if (big.length) {
+    celQueue.push(...big);
+    if (!sheetStack.includes($('celebrate'))) showNextCelebration();
+  } else {
+    const c = celInfo(fresh[0]);
+    buzz([60]);
+    toast(c.title, false, c.icon);
+  }
+}
+
+let celOpenedAt = 0;
+function showNextCelebration() {
+  const k = celQueue.shift();
+  if (!k) return;
+  const c = celInfo(k), el = $('celebrate');
+  $('celIcon').innerHTML = svg(c.icon);
+  $('celIcon').hidden = k === 'total-100';   // the Triforce that flies together is its icon
+  $('celTitle').textContent = c.title;
+  $('celSub').textContent = c.sub || '';
+  el.dataset.key = k;
+  el.classList.remove('play'); void el.offsetWidth; el.classList.add('play');   // restart the animation
+  confetti(k === 'total-100');
+  $('toast').hidden = true;
+  celOpenedAt = Date.now();
+  openSheet(el);
+  buzz([220, 120, 220]);
+  $('celContinue').focus({ preventScroll: true });
+}
+
+// Gold/green/red/blue confetti, about 3s (about 6s for 100%).
+function confetti(long) {
+  const colors = ['#d9b44a', '#2fae4a', '#e0475a', '#3b6fd8'];
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  $('confetti').innerHTML = Array.from({ length: long ? 170 : 90 }, (_, i) =>
+    `<i style="left:${rnd(0, 100).toFixed(1)}%;background:${colors[i % 4]};--dx:${rnd(-50, 50).toFixed(0)}px;--r:${rnd(-540, 540).toFixed(0)}deg;`
+    + `animation-duration:${rnd(1.9, 2.6).toFixed(2)}s;animation-delay:${rnd(0, long ? 3.6 : 0.6).toFixed(2)}s"></i>`).join('');
+}
+
+// Tap anywhere (after a moment, so the tap that ticked the box can't close it), Continue, Back or Escape.
+$('celebrate').addEventListener('click', () => { if (Date.now() - celOpenedAt > 400) closeSheet(); });
+
+// Reset: keep the keys whose condition still holds, drop the rest so they can fire again.
+function resetCelebrations() {
+  const now = celebrationKeysMet(progress), had = celebrated || {};
+  const keep = Object.fromEntries(Object.entries(had).filter(([k]) => now.has(k)));
+  const n = Object.keys(had).length - Object.keys(keep).length;
+  set(ref(_db, `celebrated/${pid}`), Object.keys(keep).length ? keep : null)
+    .then(() => toast(`Re-armed ${plural(n, 'celebration')}.`)).catch(fail('reset celebrations'));
+}
+
+// ============================================================================
 // Profiles — shared between both accounts; the selection is per device
 // ============================================================================
 const activeProfiles = () => Object.entries(profiles).filter(([, p]) => !p.deletedAt)
@@ -1212,6 +1394,8 @@ function selectProfile(id) {
   pid = id;
   progress = {};
   scarecrow = [];
+  celebrated = null;
+  celQueue.length = 0;
   if (id) {
     lsSet('oot.profile', id);
     const lost = (err) => toast('Lost access to this profile: ' + err.message, true);
@@ -1221,6 +1405,7 @@ function selectProfile(id) {
       if (pendingScroll) { window.scrollTo(0, pendingScroll); pendingScroll = 0; }
     }, lost));
     unsubs.push(onValue(ref(_db, `scarecrow/${id}`), (snap) => { scarecrow = snap.val() || []; render(); }, lost));
+    unsubs.push(onValue(ref(_db, `celebrated/${id}`), (snap) => { celebrated = snap.val() || {}; }, lost));
   }
   renderProfileBtn();
   renderProfileSheet();
@@ -1241,6 +1426,7 @@ let creating = false;
 let showTrash = false;
 let confirmPurge = null;     // pid armed for permanent delete
 let confirmTimer = null;
+let confirmReset = false, resetTimer = null;   // "Reset celebrations" armed
 
 function profileForm(kind, p = {}) {
   return `<div class="prof-form" data-form="${kind}">
@@ -1269,6 +1455,11 @@ function renderProfileSheet() {
   h += '</div>';
   h += creating ? `<div style="margin-top:0.6rem">${profileForm('new')}</div>`
                 : '<button class="act-btn new-btn" data-act="new">＋ New profile</button>';
+  if (usable(pid)) {
+    h += `<div class="sheet-label">This profile: ${esc(profiles[pid].name)}</div>
+      <button class="act-btn${confirmReset ? ' primary' : ''}" data-act="reset-cel">${confirmReset ? 'Tap to confirm' : 'Reset celebrations'}</button>
+      <div class="d-note">Re-arms every celebration whose goal is no longer met, so it can play again. Check-offs aren't touched.</div>`;
+  }
   if (trash.length) {
     h += `<button class="trash-toggle" data-act="toggle-trash">${showTrash ? '▾' : '▸'} Trash (${trash.length})</button>`;
     if (showTrash) {
@@ -1305,6 +1496,16 @@ $('profileBody').addEventListener('click', (e) => {
       .then(() => toast(`"${profiles[id]?.name}" moved to Trash.`)).catch(fail('move it to Trash'));
   }
   if (act === 'toggle-trash') showTrash = !showTrash;
+  if (act === 'reset-cel') {
+    clearTimeout(resetTimer);
+    if (!confirmReset) {
+      confirmReset = true;
+      resetTimer = setTimeout(() => { confirmReset = false; renderProfileSheet(); }, 4000);
+    } else {
+      confirmReset = false;
+      resetCelebrations();
+    }
+  }
   if (act === 'restore') update(ref(_db, `profiles/${id}`), { deletedAt: null }).catch(fail('restore it'));
   if (act === 'purge') {
     if (confirmPurge !== id) {
@@ -1346,22 +1547,24 @@ function submitProfileForm(act) {
 // ============================================================================
 // Sheet open/close — phone Back closes it
 // ============================================================================
-let openSheetEl = null;
+// A stack, so a celebration can open on top of the detail panel; Back closes the top one.
+const sheetStack = [];
 function openSheet(el) {
-  openSheetEl = el;
+  sheetStack.push(el);
   el.classList.add('open');
   $('backdrop').classList.add('open');
   history.pushState({ sheet: el.id }, '');
 }
 function hideSheet() {
-  if (!openSheetEl) return;
-  openSheetEl.classList.remove('open');
-  $('backdrop').classList.remove('open');
-  openSheetEl = null;
-  editing = null; creating = false; confirmPurge = null;
-  detailId = null;
+  const el = sheetStack.pop();
+  if (!el) return;
+  el.classList.remove('open');
+  if (!sheetStack.length) $('backdrop').classList.remove('open');
+  if (el.id === 'profileSheet') { editing = null; creating = false; confirmPurge = null; confirmReset = false; }
+  if (el.id === 'detailSheet') detailId = null;
+  if (el.id === 'celebrate' && celQueue.length) setTimeout(showNextCelebration, 250);
 }
-function closeSheet() { if (openSheetEl) history.back(); }
+function closeSheet() { if (sheetStack.length) history.back(); }
 window.addEventListener('popstate', hideSheet);
 $('backdrop').addEventListener('click', closeSheet);
 document.addEventListener('click', (e) => { if (e.target.closest('[data-close]')) closeSheet(); });
@@ -1376,14 +1579,24 @@ $('profileBtn').addEventListener('click', () => {
 // Toast
 // ============================================================================
 let toastTimer = null;
-function toast(msg, isError = false) {
+// With an icon it's a Tier 2 celebration: under the header, about 5s, tap to close.
+function toast(msg, isError = false, icon = null) {
   const t = $('toast');
-  t.textContent = msg;
+  t.innerHTML = (icon ? svg(icon) : '') + `<span>${esc(msg)}</span>`;
   t.classList.toggle('error', isError);
+  t.classList.toggle('celebrate', !!icon);
   t.hidden = false;
+  placeToast();
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { t.hidden = true; }, isError ? 6000 : 2800);
+  toastTimer = setTimeout(() => { t.hidden = true; }, isError ? 6000 : icon ? 5000 : 2800);
 }
+// Keep a celebration toast just under the header as the header collapses and expands.
+function placeToast() {
+  const t = $('toast');
+  t.style.top = t.classList.contains('celebrate') ? `${Math.round($('header').getBoundingClientRect().bottom) + 8}px` : '';
+}
+new ResizeObserver(placeToast).observe($('header'));
+$('toast').addEventListener('click', () => { if ($('toast').classList.contains('celebrate')) $('toast').hidden = true; });
 
 // Collapse secondary header rows when scrolling down, expand when scrolling up
 (function () {
