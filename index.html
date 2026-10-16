@@ -252,6 +252,40 @@
       transition: opacity 0.2s, transform 0.2s;
     }
     .sheet.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+    .sheet { overscroll-behavior: contain; }
+
+    /* Detail panel */
+    .item-card { cursor: pointer; }
+    .group-header .chip { margin-left: auto; min-height: 34px; }
+    .detail-close { position: absolute; top: 0.9rem; right: 0.9rem; }
+    .d-head { display: flex; gap: 0.8rem; align-items: flex-start; padding-right: 2.8rem; margin-bottom: 0.9rem; }
+    .d-icon { width: 64px; height: 64px; font-size: 2rem; }
+    .d-name { font-family: Georgia, "Times New Roman", serif; font-size: 1.25rem; font-weight: 700; line-height: 1.2; }
+    .d-status { display: inline-block; margin-top: 0.45rem; font-size: 0.82rem; font-weight: 700; }
+    .d-status.done { color: var(--done); }
+    .d-status.ok { color: var(--gold); }
+    .d-status.lock, .d-status.wip { color: var(--text-muted); }
+    .d-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-muted); margin: 1rem 0 0.4rem;
+    }
+    .d-text { font-size: 0.95rem; line-height: 1.5; }
+    .d-needs, .d-needs ul { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+    .d-needs ul { margin-top: 0.3rem; padding-left: 0.2rem; }
+    .d-needs li { display: flex; gap: 0.5rem; font-size: 0.92rem; line-height: 1.35; }
+    .d-needs .mark { flex-shrink: 0; width: 1.1rem; font-weight: 800; }
+    .d-needs li.ok > .mark { color: var(--done); }
+    .d-needs li.no > .mark { color: var(--danger); }
+    .d-map { display: block; width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+    .d-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.4; }
+    .d-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .link-btn {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 0.9rem; border-radius: var(--radius-sm);
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--text); font-weight: 600; text-decoration: none;
+    }
+    .link-btn:hover { border-color: var(--gold); }
+    .d-check { margin-top: 1.1rem; min-height: 56px; font-size: 1rem; }
+    .d-check input { width: 24px; height: 24px; }
     .sheet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
     .sheet-title { font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; color: var(--gold); }
     .close-btn {
@@ -354,6 +388,11 @@
     <span id="sheetWho"></span>
     <button class="act-btn" id="sheetSignOut">Sign out</button>
   </div>
+</div>
+
+<div class="sheet detail" id="detailSheet" role="dialog" aria-modal="true" aria-labelledby="detailName">
+  <button class="close-btn detail-close" data-close aria-label="Close">✕</button>
+  <div id="detailBody"></div>
 </div>
 
 <div id="toast" hidden></div>
@@ -531,6 +570,11 @@ function buildTabs() {
 }
 
 const tabScroll = {};   // each tab returns to where you left it
+// If the phone discards the page while you're away, come back to the same spot.
+let pendingScroll = (() => { try { return Number(sessionStorage.getItem('oot.scroll')) || 0; } catch { return 0; } })();
+const saveScroll = () => { try { sessionStorage.setItem('oot.scroll', String(Math.round(window.scrollY))); } catch {} };
+document.addEventListener('visibilitychange', () => { if (document.hidden) saveScroll(); });
+window.addEventListener('pagehide', saveScroll);
 function switchTab(id) {
   tabScroll[currentTab] = window.scrollY;
   currentTab = id;
@@ -562,7 +606,7 @@ function met(req) {
   return isDone(req);
 }
 function reqLabel(req) {
-  if (Array.isArray(req)) return req.map(reqLabel).join(' + ');
+  if (Array.isArray(req)) return req.map((r) => (r.any ? `(${reqLabel(r)})` : reqLabel(r))).join(' + ');
   if (typeof req === 'object') return req.any.map(reqLabel).join(' or ');
   if (req.startsWith('gs:')) return `${req.slice(3)} Gold Skulltulas`;
   if (req === 'bottle') return 'a bottle';
@@ -597,6 +641,7 @@ const view = {
   gettable: lsGet('oot.f.gettable') === '1',
   hideDone: lsGet('oot.f.hideDone') === '1',
   time: ['day', 'night'].includes(lsGet('oot.f.time')) ? lsGet('oot.f.time') : 'any',
+  hideAuto: lsGet('oot.f.hideAuto') === '1',   // Items & Equipment: hide the auto-checked rows
 };
 const search = {};   // tab id → text
 const sortBy = {};   // tab id → SORTS key
@@ -677,6 +722,7 @@ $('headerControls').addEventListener('click', (e) => {
 function render() {
   if (!DATA) return;
   renderProgressBars();
+  if (detailId) renderDetail();
   const t = TABS.find((x) => x.id === currentTab);
   if (t.stub) return;
   $('tab-' + t.id).innerHTML = pid
@@ -693,7 +739,7 @@ function renderTab(t) {
     return list.length ? group(title, all, list) : '';
   };
   const quick = (title, all) => {
-    const list = all.filter((i) => !(view.hideDone && isDone(i.id)) && matches(i, t));
+    const list = all.filter((i) => !(view.hideDone && isDone(i.id)) && !(view.hideAuto && i.derivedFrom) && matches(i, t));
     shown += list.length;
     return list.length ? quickList(title, all, list) : '';
   };
@@ -747,7 +793,7 @@ function card(e) {
   const num = e.category === 'milestone' ? '' : `<span class="card-num">#${e.num}</span>`;
   const check = e.readOnly ? ''
     : `<label class="check-pill card-check${done ? ' is-checked' : ''}" aria-label="${e.category === 'milestone' ? 'Done' : 'Got it'}"><input type="checkbox" data-check="${e.id}"${done ? ' checked' : ''}></label>`;
-  return `<div class="item-card${done ? ' is-done' : ''}${locked ? ' locked' : ''}${e.readOnly ? ' readonly' : ''}" data-id="${e.id}">
+  return `<div class="item-card${done ? ' is-done' : ''}${locked ? ' locked' : ''}${e.readOnly ? ' readonly' : ''}" data-id="${e.id}" tabindex="0">
     <div class="card-top">
       <div class="card-icon">${e.readOnly ? '🚧' : CATS[e.category].icon}</div>
       <div class="card-info">
@@ -762,6 +808,12 @@ function card(e) {
   </div>`;
 }
 
+// Hides the auto-checked (derivedFrom) rows; only shown on a list that has them.
+function autoToggle(all) {
+  const n = all.filter((i) => i.derivedFrom).length;
+  return n ? `<button class="chip${view.hideAuto ? ' active' : ''}" data-hide-auto aria-pressed="${view.hideAuto}">${view.hideAuto ? `Show auto (${n})` : `Hide auto (${n})`}</button>` : '';
+}
+
 // Items & Songs: filter inputs only (they feed "Gettable now"), never counted toward progress.
 function quickList(title, all, list) {
   const rows = [...list].sort((a, b) => a.order - b.order).map((i) => {
@@ -772,7 +824,7 @@ function quickList(title, all, list) {
       : `<label class="check-pill quick-row${d ? ' is-checked' : ''}">${name}</span><input type="checkbox" data-check="${i.id}"${d ? ' checked' : ''}></label>`;
   });
   return `<div class="group">
-    <div class="group-header"><span class="group-name">${title}</span>${badge(all.filter((i) => isDone(i.id)).length, all.length)}</div>
+    <div class="group-header"><span class="group-name">${title}</span>${autoToggle(all)}${badge(all.filter((i) => isDone(i.id)).length, all.length)}</div>
     <div class="group-note">Check these off as you get them. The filters use them; they don't count toward completion.</div>
     <div class="quick-grid">${rows.join('')}</div>
   </div>`;
@@ -841,6 +893,88 @@ $('main').addEventListener('click', (e) => {
     }
   }
 });
+$('main').addEventListener('click', (e) => {
+  if (e.target.closest('[data-hide-auto]')) {
+    view.hideAuto = !view.hideAuto;
+    lsSet('oot.f.hideAuto', view.hideAuto ? '1' : null);
+    render();
+    return;
+  }
+  if (e.target.closest('.check-pill')) return;   // the check box toggles; the rest of the card opens it
+  const c = e.target.closest('.item-card');
+  if (c) openDetail(c.dataset.id);
+});
+$('main').addEventListener('keydown', (e) => {
+  const c = e.target.closest('.item-card');
+  if (c && e.target === c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openDetail(c.dataset.id); }
+});
+
+// ============================================================================
+// Detail panel — the how-to, needs, map and links stay here (off the cards) to limit spoilers
+// ============================================================================
+let detailId = null;
+function openDetail(id) {
+  detailId = id;
+  renderDetail();
+  $('detailSheet').scrollTop = 0;
+  openSheet($('detailSheet'));
+}
+
+// One line per requirement; {any} becomes "One of:" with its alternatives nested.
+function reqRow(req) {
+  const ok = met(req);
+  const body = req.any
+    ? `<span>One of:<ul>${req.any.map(reqRow).join('')}</ul></span>`
+    : `<span>${esc(reqLabel(req))}</span>`;
+  return `<li class="${ok ? 'ok' : 'no'}"><span class="mark">${ok ? '✓' : '✗'}</span>${body}</li>`;
+}
+
+function renderDetail() {
+  const e = BY_ID[detailId];
+  if (!e) return;
+  const done = isDone(e.id), rec = progress[e.id];
+  const doneWord = e.category === 'milestone' ? 'Done' : 'Got it';
+  const status = e.readOnly ? '<span class="d-status wip">🚧 Under construction</span>'
+    : done ? `<span class="d-status done">✓ ${doneWord}${rec?.by ? ` · ${esc(rec.by)}, ${new Date(rec.at).toLocaleDateString()}` : ''}</span>`
+    : met(e.needs) ? '<span class="d-status ok">✨ Gettable now</span>'
+    : '<span class="d-status lock">🔒 Not gettable yet</span>';
+  const tags = [AGE[e.age], TIME[e.time]].filter(Boolean).map((x) => `<span class="tag">${x}</span>`).join('');
+  const num = e.category === 'milestone' ? '' : `<span class="card-num">#${e.num}</span>`;
+  let h = `<div class="d-head">
+      <div class="card-icon d-icon">${e.readOnly ? '🚧' : CATS[e.category].icon}</div>
+      <div>
+        <div class="d-name" id="detailName">${num}${esc(e.name)}</div>
+        ${e.area ? `<div class="card-meta">📍 ${esc(e.area)}</div>` : ''}
+        ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+        ${status}
+      </div>
+    </div>`;
+  if (e.howTo) h += `<div class="d-label">How to get it</div><div class="d-text">${esc(e.howTo)}</div>`;
+  if (!e.readOnly && e.category !== 'milestone') {
+    h += '<div class="d-label">Needs</div>' + (e.needs.length
+      ? `<ul class="d-needs">${e.needs.map(reqRow).join('')}</ul>`
+      : '<div class="d-text">Nothing: Young Link can get this any time.</div>');
+  }
+  if (e.map) {
+    h += `<div class="d-label">Map</div>
+      <a href="${esc(e.map.image)}" target="_blank" rel="noopener"><img class="d-map" src="${esc(e.map.image)}" alt="Fan-made map of the 10 Big Poes in Hyrule Field" loading="lazy"></a>
+      <div class="d-note">This is #${e.map.n} on the fan-made map.${e.map.mapMatch === 'clear' ? '' : ' ⚠️ Best match to the map; check it in-game.'} Tap the map to open it full size.</div>`;
+  }
+  if (e.links?.length) {
+    h += `<div class="d-label">More info</div><div class="d-links">${e.links.map((l) =>
+      `<a class="link-btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div>`;
+  }
+  if (e.switch2 === 'unverified') h += '<div class="d-note" style="margin-top:0.9rem">Checked against N64 guides; not yet confirmed in the Switch 2 remake.</div>';
+  if (!e.readOnly) {
+    h += `<label class="check-pill d-check${done ? ' is-checked' : ''}"><input type="checkbox" data-check="${e.id}"${done ? ' checked' : ''}> ${doneWord}</label>`;
+  }
+  $('detailBody').innerHTML = h;
+}
+
+$('detailBody').addEventListener('change', (e) => {
+  const id = e.target.dataset.check;
+  if (id && pid) toggle(id, e.target.checked);
+});
 
 // ============================================================================
 // Profiles — shared between both accounts; the selection is per device
@@ -866,7 +1000,11 @@ function selectProfile(id) {
   if (id) {
     lsSet('oot.profile', id);
     const lost = (err) => toast('Lost access to this profile: ' + err.message, true);
-    unsubs.push(onValue(ref(_db, `progress/${id}`), (snap) => { progress = snap.val() || {}; render(); }, lost));
+    unsubs.push(onValue(ref(_db, `progress/${id}`), (snap) => {
+      progress = snap.val() || {};
+      render();
+      if (pendingScroll) { window.scrollTo(0, pendingScroll); pendingScroll = 0; }
+    }, lost));
     unsubs.push(onValue(ref(_db, `scarecrow/${id}`), (snap) => { scarecrow = snap.val() || []; render(); }, lost));
   }
   renderProfileBtn();
@@ -1006,6 +1144,7 @@ function hideSheet() {
   $('backdrop').classList.remove('open');
   openSheetEl = null;
   editing = null; creating = false; confirmPurge = null;
+  detailId = null;
 }
 function closeSheet() { if (openSheetEl) history.back(); }
 window.addEventListener('popstate', hideSheet);
