@@ -249,6 +249,22 @@
     .reward.earned { border-color: var(--gold); background: #3a3115; color: var(--text); }
     .reward.earned b { color: var(--gold); }
 
+    /* Hall: boss times + statues */
+    .boss-card { cursor: default; }
+    .boss-best { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; min-height: 44px; font-size: 0.88rem; color: var(--text-muted); }
+    .boss-best b { color: var(--gold); font-size: 1.05rem; }
+    .boss-form { display: flex; gap: 0.5rem; }
+    .boss-form .field { flex: 1; min-width: 0; }
+    .item-card.static { cursor: default; }
+    .group-toggle {
+      background: none; border: none; padding: 0; min-height: 44px; text-align: left; color: var(--text);
+      font-family: var(--display); font-size: 1.05rem; font-weight: 700;
+    }
+
+    /* Notes */
+    .field.notes-text { display: block; width: 100%; min-height: 55vh; resize: vertical; font: inherit; line-height: 1.5; }
+    .notes-status { font-size: 0.8rem; font-weight: 700; color: var(--done); }
+
     /* ── Sheet (modal) ────────────────────────────────── */
     #backdrop {
       position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 200;
@@ -734,8 +750,8 @@ const TABS = [
   { id: 'skulltulas', icon: 'skulltula', label: 'Skulltulas', bar: 'Skulltulas', cats: ['skulltula'] },
   { id: 'gear',       icon: 'shield',    label: 'Gear',       bar: 'Gear',       cats: ['mask', 'upgrade', 'fairy', 'bottle', 'biggoron'] },
   { id: 'world',      icon: 'map',       label: 'World',      bar: 'World',      cats: ['soil', 'bigpoe'] },
-  { id: 'hall',       icon: 'hall',      label: 'Hall',       stub: 'Boss best times and the 🚧 enemy statues arrive in Stage 3.' },
-  { id: 'notes',      icon: 'notes',     label: 'Notes',      stub: 'Per-profile notes arrive in Stage 3.' },
+  { id: 'hall',       icon: 'hall',      label: 'Hall' },
+  { id: 'notes',      icon: 'notes',     label: 'Notes' },
 ];
 const catTitle = (c, prefix = '') => `${svg(CATS[c].icon, 'ic ic-inline')} ${prefix}${CATS[c].label}`;
 
@@ -747,6 +763,8 @@ let pid = null;           // selected profile id (per device)
 let progress = {};        // /progress/{pid}
 let scarecrow = [];       // /scarecrow/{pid}: note ids, in order
 let celebrated = null;    // /celebrated/{pid}: key → {at, by}; null until loaded
+let bossTimes = {};       // /bossTimes/{pid}: bossId → {ms, at}
+let notes = '';           // /notes/{pid}: plain text
 let unsubs = [];          // listeners for the selected profile
 let currentTab = TABS.some((t) => t.id === lsGet('oot.tab')) ? lsGet('oot.tab') : 'progress';
 
@@ -837,7 +855,7 @@ function buildTabs() {
   $('tabBar').innerHTML = TABS.map((t) =>
     `<button class="tab-btn" data-tab="${t.id}">${svg(t.icon, 'ic tab-icon')}${t.label}</button>`).join('');
   $('main').innerHTML = TABS.map((t) =>
-    `<section class="tab-section" id="tab-${t.id}">${t.stub ? `<div class="placeholder">${t.stub}</div>` : ''}</section>`).join('');
+    `<section class="tab-section" id="tab-${t.id}"></section>`).join('');
   $('tabBar').addEventListener('click', (e) => {
     const b = e.target.closest('.tab-btn');
     if (b) switchTab(b.dataset.tab);
@@ -968,7 +986,7 @@ function visible(e, t) {
 // Rebuilt on tab/profile switch and chip taps only, so typing in search keeps focus.
 function renderControls() {
   const t = TABS.find((x) => x.id === currentTab);
-  if (t.stub || !pid) { $('headerFilters').innerHTML = ''; $('headerControls').innerHTML = ''; return; }
+  if (!t.cats || !pid) { $('headerFilters').innerHTML = ''; $('headerControls').innerHTML = ''; return; }
   const chip = (key, label, on) => `<button class="chip${on ? ' active' : ''}" data-chip="${key}" aria-pressed="${on}">${label}</button>`;
   $('headerFilters').innerHTML =
     (t.id !== 'progress' ? chip('gettable', '✨ Gettable now', view.gettable) : '')
@@ -1009,10 +1027,14 @@ function render() {
   renderProgressBars();
   if (detailId) renderDetail();
   const t = TABS.find((x) => x.id === currentTab);
-  if (t.stub) return;
-  $('tab-' + t.id).innerHTML = pid
-    ? renderTab(t)
-    : `<div class="placeholder">No profile yet. <strong>Create one</strong> from the 👤 button to start tracking.</div>`;
+  if (!pid) {
+    $('tab-' + t.id).innerHTML = `<div class="placeholder">No profile yet. <strong>Create one</strong> from the 👤 button to start tracking.</div>`;
+    return;
+  }
+  if (t.id === 'notes') return renderNotes();
+  // Don't wipe a boss time someone is typing when synced progress re-renders the tab.
+  if (t.id === 'hall' && document.activeElement?.closest?.('#tab-hall input')) return;
+  $('tab-' + t.id).innerHTML = t.id === 'hall' ? renderHall() : renderTab(t);
 }
 
 // One renderer for every catalog tab: sections of cards, grouped by area or by category.
@@ -1194,14 +1216,140 @@ $('main').addEventListener('click', (e) => {
     render();
     return;
   }
+  if (e.target.closest('[data-statues]')) {
+    statuesOpen = !statuesOpen;
+    lsSet('oot.hall.statues', statuesOpen ? '1' : null);
+    render();
+    return;
+  }
+  // Clearing a boss time (e.g. a typo, since only faster times replace it) takes two taps.
+  const clr = e.target.closest('[data-clear-time]');
+  if (clr) {
+    const id = clr.closest('[data-boss]').dataset.boss;
+    clearTimeout(clearTimeTimer);
+    if (confirmClearTime !== id) {
+      confirmClearTime = id;
+      clearTimeTimer = setTimeout(() => { confirmClearTime = null; render(); }, 4000);
+      render();
+    } else {
+      confirmClearTime = null;
+      set(ref(_db, `bossTimes/${pid}/${id}`), null).catch(fail('clear the time'));
+    }
+    return;
+  }
   if (e.target.closest('.check-pill')) return;   // the check box toggles; the rest of the card opens it
   const c = e.target.closest('.item-card');
-  if (c) openDetail(c.dataset.id);
+  if (c && BY_ID[c.dataset.id]) openDetail(c.dataset.id);   // Hall cards have no detail panel
 });
 $('main').addEventListener('keydown', (e) => {
   const c = e.target.closest('.item-card');
   if (c && e.target === c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openDetail(c.dataset.id); }
 });
+
+// ============================================================================
+// Hall of Fallen Foes — boss best times per profile, plus the 🚧 enemy statues (read-only until launch)
+// ============================================================================
+// "m:ss" or "m:ss.cs" → ms; null if it doesn't parse.
+function parseTime(s) {
+  const m = s.trim().match(/^(\d{1,3}):([0-5]\d)(?:[.,](\d{1,2}))?$/);
+  return m ? (Number(m[1]) * 60 + Number(m[2])) * 1000 + Number((m[3] || '0').padEnd(2, '0')) * 10 : null;
+}
+const fmtTime = (ms) => `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, '0')}.${String(Math.floor(ms / 10) % 100).padStart(2, '0')}`;
+const areaName = (id) => DATA.areas.find((a) => a.id === id)?.name || '';
+let statuesOpen = lsGet('oot.hall.statues') === '1';   // collapsed by default, remembered per device
+let confirmClearTime = null, clearTimeTimer = null;    // boss id armed to clear its time
+
+function renderHall() {
+  const timed = DATA.bosses.filter((b) => bossTimes[b.id]).length;
+  const bosses = DATA.bosses.map((b) => {
+    const best = bossTimes[b.id], armed = confirmClearTime === b.id;
+    return `<div class="item-card boss-card" data-boss="${b.id}">
+      <div class="card-top">
+        <div class="card-icon">${svg('hall')}</div>
+        <div class="card-info">
+          <div class="card-name">${esc(b.name)}</div>
+          ${b.area ? `<div class="card-meta">📍 ${esc(areaName(b.area))}</div>` : ''}
+          <div class="card-tags"><span class="tag">${b.rematchConfirmed ? '✓ Rematch confirmed' : 'Rematch not confirmed yet'}</span></div>
+        </div>
+      </div>
+      <div class="boss-best">${best ? `<span>Best <b>${fmtTime(best.ms)}</b> · ${new Date(best.at).toLocaleDateString()}</span>
+        <button class="icon-btn ${armed ? 'confirm' : 'danger'}" data-clear-time>${armed ? 'Tap to confirm' : 'Clear'}</button>` : '<span>No time yet</span>'}</div>
+      <form class="boss-form" data-boss-form="${b.id}">
+        <input class="field" name="t" placeholder="m:ss.cs" autocomplete="off" aria-label="New time for ${esc(b.name)}">
+        <button class="act-btn primary">Save</button>
+      </form>
+    </div>`;
+  }).join('');
+  const statues = DATA.statues.map((f) => `<div class="item-card readonly static">
+      <div class="card-top"><div class="card-icon">${svg('wip')}</div>
+        <div class="card-info"><div class="card-name">${esc(f.name)}</div>
+          ${f.variants.length ? `<div class="card-tags">${f.variants.map((v) => `<span class="tag">${esc(v)}</span>`).join('')}</div>` : ''}</div></div>
+    </div>`).join('');
+  return `<div class="group">
+      <div class="group-header"><span class="group-name">${svg('hall', 'ic ic-inline')} Boss best times</span>${badge(timed, DATA.bosses.length)}</div>
+      <div class="group-note">Your fastest Hall of Fallen Foes rematch for each boss. Type m:ss or m:ss.cs; a time only replaces your best when it's faster.</div>
+      <div class="card-grid">${bosses}</div>
+    </div>
+    <div class="group">
+      <div class="group-header"><button class="group-toggle" data-statues aria-expanded="${statuesOpen}">${statuesOpen ? '▾' : '▸'} ${svg('wip', 'ic ic-inline')} Enemy statues</button><span class="group-badge">${DATA.statues.length}</span></div>
+      <div class="group-note">🚧 Under construction: built from the N64 enemy list and unconfirmed until the remake launches, so they can't be checked off yet.</div>
+      ${statuesOpen ? `<div class="card-grid">${statues}</div>` : ''}
+    </div>`;
+}
+
+$('main').addEventListener('submit', (e) => {
+  const id = e.target.dataset.bossForm;
+  if (!id) return;
+  e.preventDefault();
+  const input = e.target.elements.t, ms = parseTime(input.value), best = bossTimes[id];
+  if (!ms) { toast('Type the time as m:ss or m:ss.cs, e.g. 1:23.45', true); input.focus(); return; }
+  input.value = '';
+  input.blur();   // so the re-render after saving isn't held back for typing
+  if (best && ms >= best.ms) { toast(`${fmtTime(ms)} isn't faster than your best (${fmtTime(best.ms)}), so it wasn't saved.`); return; }
+  set(ref(_db, `bossTimes/${pid}/${id}`), { ms, at: Date.now() })
+    .then(() => toast(best ? `New best: ${fmtTime(ms)}!` : `Saved ${fmtTime(ms)}.`)).catch(fail('save the time'));
+});
+
+// ============================================================================
+// Notes — per profile, autosaved after a pause; synced text never replaces what you're typing
+// ============================================================================
+let notesTimer = null, notesPending = null;   // {pid, text} waiting to save
+function renderNotes() {
+  let ta = $('notesText');
+  if (!ta || ta.dataset.pid !== pid) {
+    $('tab-notes').innerHTML = `<div class="group-header"><span class="group-name">${svg('notes', 'ic ic-inline')} Notes</span><span class="notes-status" id="notesStatus"></span></div>
+      <div class="group-note">Anything about this playthrough. It saves as you type, and both phones see it.</div>
+      <textarea class="field notes-text" id="notesText" data-pid="${pid}" placeholder="e.g. Skipped the Zora's Domain Heart Piece: come back with the Iron Boots."></textarea>`;
+    ta = $('notesText');
+    ta.value = notes;
+  } else if (document.activeElement !== ta && !notesPending) {
+    ta.value = notes;
+  }
+}
+function flushNotes() {
+  clearTimeout(notesTimer);
+  const p = notesPending;
+  if (!p) return;
+  notesPending = null;
+  set(ref(_db, `notes/${p.pid}`), p.text.trim() ? p.text : null)
+    .then(() => { if (p.pid === pid && !notesPending && $('notesStatus')) $('notesStatus').textContent = 'Saved ✓'; })
+    .catch(fail('save the notes'));
+}
+$('main').addEventListener('input', (e) => {
+  if (e.target.id !== 'notesText' || !pid) return;
+  notesPending = { pid, text: e.target.value };
+  $('notesStatus').textContent = 'Saving…';
+  clearTimeout(notesTimer);
+  notesTimer = setTimeout(flushNotes, 800);
+});
+// Leaving the box saves now and then shows the latest text (it may have changed on the other phone).
+$('main').addEventListener('focusout', (e) => {
+  if (e.target.id !== 'notesText') return;
+  flushNotes();
+  e.target.value = notes;
+});
+document.addEventListener('visibilitychange', () => { if (document.hidden) flushNotes(); });
+window.addEventListener('pagehide', flushNotes);
 
 // ============================================================================
 // Detail panel — the how-to, needs, map and links stay here (off the cards) to limit spoilers
@@ -1412,6 +1560,9 @@ function selectProfile(id) {
   scarecrow = [];
   celebrated = null;
   celQueue.length = 0;
+  flushNotes();             // a pending note save goes to the profile it was typed in
+  bossTimes = {};
+  notes = '';
   if (id) {
     lsSet('oot.profile', id);
     const lost = (err) => toast('Lost access to this profile: ' + err.message, true);
@@ -1422,6 +1573,8 @@ function selectProfile(id) {
     }, lost));
     unsubs.push(onValue(ref(_db, `scarecrow/${id}`), (snap) => { scarecrow = snap.val() || []; render(); }, lost));
     unsubs.push(onValue(ref(_db, `celebrated/${id}`), (snap) => { celebrated = snap.val() || {}; }, lost));
+    unsubs.push(onValue(ref(_db, `bossTimes/${id}`), (snap) => { bossTimes = snap.val() || {}; if (currentTab === 'hall') render(); }, lost));
+    unsubs.push(onValue(ref(_db, `notes/${id}`), (snap) => { notes = snap.val() || ''; if (currentTab === 'notes') render(); }, lost));
   }
   renderProfileBtn();
   renderProfileSheet();
