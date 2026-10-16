@@ -91,6 +91,31 @@
     .progress-fill.complete { background: var(--done); }
     .progress-count { font-size: 0.7rem; font-weight: 700; color: var(--text); white-space: nowrap; }
 
+    /* Filter chips + search/sort/view controls */
+    .header-filters, .header-controls {
+      display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;
+      padding: 0.4rem 1rem; border-top: 1px solid var(--border);
+    }
+    .header-filters:empty, .header-controls:empty { display: none; }
+    .chip {
+      min-height: 36px; padding: 0 0.7rem; border-radius: 20px; white-space: nowrap;
+      background: var(--surface); border: 1.5px solid var(--border);
+      font-size: 0.78rem; font-weight: 700; color: var(--text-muted);
+    }
+    .chip.active { background: var(--gold); border-color: var(--gold); color: #1a1408; }
+    .search-input {
+      flex: 1; min-width: 90px; min-height: 38px; padding: 0 0.7rem; outline: none;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text);
+    }
+    .search-input:focus { border-color: var(--gold); }
+    .sort-select {
+      min-height: 38px; padding: 0 0.5rem; border-radius: 8px; outline: none; color-scheme: dark;
+      background: var(--surface); border: 1px solid var(--border); color: var(--text); font: inherit; font-size: 0.85rem;
+    }
+    .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .seg button { min-height: 38px; padding: 0 0.55rem; border: none; background: var(--surface); color: var(--text-muted); font-size: 0.82rem; font-weight: 700; }
+    .seg button.active { background: var(--surface-2); color: var(--gold); }
+
     /* Collapsible secondary rows */
     .collapsible {
       max-height: 12rem; overflow: hidden; opacity: 1;
@@ -159,6 +184,8 @@
     .card-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
     .tag { font-size: 0.72rem; font-weight: 600; padding: 0.12rem 0.5rem; border-radius: 20px; background: var(--surface-2); color: var(--text); }
     .wip-note { font-size: 0.82rem; color: var(--gold); }
+    .item-card.locked { opacity: 0.6; border-style: dashed; }
+    .card-lock { font-size: 0.8rem; color: var(--text); margin-top: 0.35rem; }
 
     /* Check pill */
     .check-pill {
@@ -309,6 +336,8 @@
     <button class="profile-btn" id="profileBtn" aria-label="Profiles">👤 <span id="profileName">No profile</span> ▾</button>
   </div>
   <div class="header-progress collapsible" id="headerProgress"></div>
+  <div class="header-filters collapsible" id="headerFilters"></div>
+  <div class="header-controls collapsible" id="headerControls"></div>
   <nav class="tab-bar" id="tabBar"></nav>
 </header>
 
@@ -501,12 +530,16 @@ function buildTabs() {
   switchTab(currentTab);
 }
 
+const tabScroll = {};   // each tab returns to where you left it
 function switchTab(id) {
+  tabScroll[currentTab] = window.scrollY;
   currentTab = id;
   lsSet('oot.tab', id);
   document.querySelectorAll('.tab-btn').forEach((b) => b.classList.toggle('active', b.dataset.tab === id));
   document.querySelectorAll('.tab-section').forEach((s) => s.classList.toggle('active', s.id === 'tab-' + id));
+  renderControls();
   render();
+  window.scrollTo(0, tabScroll[id] || 0);
 }
 
 // ============================================================================
@@ -533,6 +566,8 @@ function reqLabel(req) {
   if (typeof req === 'object') return req.any.map(reqLabel).join(' or ');
   if (req.startsWith('gs:')) return `${req.slice(3)} Gold Skulltulas`;
   if (req === 'bottle') return 'a bottle';
+  // Soft-soil entries are named by their area alone.
+  if (BY_ID[req]?.category === 'soil') return `bean plant (${BY_ID[req].name})`;
   return BY_ID[req]?.name || req;
 }
 
@@ -554,6 +589,91 @@ function renderProgressBars() {
     </div>`).join('');
 }
 
+// ============================================================================
+// Filters, search, sort, view. Chips are shared by all tabs; search and sort are per tab.
+// Chips and the view toggle are remembered per device.
+// ============================================================================
+const view = {
+  gettable: lsGet('oot.f.gettable') === '1',
+  hideDone: lsGet('oot.f.hideDone') === '1',
+  time: ['day', 'night'].includes(lsGet('oot.f.time')) ? lsGet('oot.f.time') : 'any',
+};
+const search = {};   // tab id → text
+const sortBy = {};   // tab id → SORTS key
+const SORTS = {
+  num:  { label: 'Number',      fn: (a, b) => a.num - b.num },
+  name: { label: 'Name',        fn: (a, b) => a.name.localeCompare(b.name) },
+  todo: { label: 'To do first', fn: (a, b) => isDone(a.id) - isDone(b.id) || gettable(b) - gettable(a) || a.num - b.num },
+};
+const TIME_NEXT = { any: 'day', day: 'night', night: 'any' };
+const TIME_CHIP = { any: '🌗 Day & night', day: '☀️ Daytime now', night: '🌙 Nighttime now' };
+const groupedTab = (t) => t.id === 'hearts' || t.id === 'skulltulas';
+const viewMode = (t) => (lsGet('oot.view.' + t.id) === 'num' ? 'num' : 'area');
+
+const gettable = (e) => !e.readOnly && met(e.needs);
+// The unmet parts of a requirement, following the closest alternative of each {any}.
+function unmet(req) {
+  if (Array.isArray(req)) return [...new Set(req.flatMap(unmet))];
+  if (met(req)) return [];
+  if (typeof req === 'object') {
+    if (req.any.every((x) => BY_ID[x]?.category === 'bottle')) return ['a bottle'];
+    return req.any.map(unmet).reduce((a, b) => (b.length < a.length ? b : a));
+  }
+  return [reqLabel(req)];
+}
+function matches(x, t) {
+  const q = (search[t.id] || '').trim().toLowerCase();
+  if (!q) return true;
+  const hay = `${x.name} ${x.area || ''} #${x.num ?? ''}`.toLowerCase();
+  return q.split(/\s+/).every((w) => hay.includes(w));
+}
+function visible(e, t) {
+  if (view.hideDone && isDone(e.id)) return false;
+  // Done items pass "Gettable now" (you already got them); "Hide done" is the chip that hides them.
+  if (view.gettable && t.id !== 'progress' && !isDone(e.id) && !gettable(e)) return false;
+  if (t.id === 'skulltulas' && view.time !== 'any' && e.time !== 'any' && e.time !== view.time) return false;
+  return matches(e, t);
+}
+
+// Rebuilt on tab/profile switch and chip taps only, so typing in search keeps focus.
+function renderControls() {
+  const t = TABS.find((x) => x.id === currentTab);
+  if (t.stub || !pid) { $('headerFilters').innerHTML = ''; $('headerControls').innerHTML = ''; return; }
+  const chip = (key, label, on) => `<button class="chip${on ? ' active' : ''}" data-chip="${key}" aria-pressed="${on}">${label}</button>`;
+  $('headerFilters').innerHTML =
+    (t.id !== 'progress' ? chip('gettable', '✨ Gettable now', view.gettable) : '')
+    + chip('hideDone', '✓ Hide done', view.hideDone)
+    + (t.id === 'skulltulas' ? chip('time', TIME_CHIP[view.time], view.time !== 'any') : '');
+  const sort = sortBy[t.id] || 'num';
+  $('headerControls').innerHTML =
+    `<input class="search-input" type="search" id="searchInput" placeholder="Search ${t.label}…" value="${esc(search[t.id] || '')}" autocomplete="off">`
+    + (t.id === 'progress' ? '' : `<select class="sort-select" id="sortSelect" aria-label="Sort">${Object.entries(SORTS).map(([k, s]) =>
+        `<option value="${k}"${sort === k ? ' selected' : ''}>${s.label}</option>`).join('')}</select>`)
+    + (groupedTab(t) ? `<div class="seg" role="group" aria-label="View">${[['area', 'By area'], ['num', '# List']].map(([k, l]) =>
+        `<button data-view="${k}" class="${viewMode(t) === k ? 'active' : ''}" aria-pressed="${viewMode(t) === k}">${l}</button>`).join('')}</div>` : '');
+}
+
+$('headerFilters').addEventListener('click', (e) => {
+  const k = e.target.closest('[data-chip]')?.dataset.chip;
+  if (!k) return;
+  if (k === 'time') view.time = TIME_NEXT[view.time]; else view[k] = !view[k];
+  lsSet('oot.f.gettable', view.gettable ? '1' : null);
+  lsSet('oot.f.hideDone', view.hideDone ? '1' : null);
+  lsSet('oot.f.time', view.time === 'any' ? null : view.time);
+  renderControls();
+  render();
+});
+$('headerControls').addEventListener('input', (e) => {
+  if (e.target.id === 'searchInput') { search[currentTab] = e.target.value; render(); }
+});
+$('headerControls').addEventListener('change', (e) => {
+  if (e.target.id === 'sortSelect') { sortBy[currentTab] = e.target.value; render(); }
+});
+$('headerControls').addEventListener('click', (e) => {
+  const v = e.target.closest('[data-view]')?.dataset.view;
+  if (v) { lsSet('oot.view.' + currentTab, v); renderControls(); render(); }
+});
+
 function render() {
   if (!DATA) return;
   renderProgressBars();
@@ -566,21 +686,36 @@ function render() {
 
 // One renderer for every catalog tab: sections of cards, grouped by area or by category.
 function renderTab(t) {
+  let shown = 0;
+  const grp = (title, all) => {
+    const list = all.filter((e) => visible(e, t)).sort(SORTS[sortBy[t.id] || 'num'].fn);
+    shown += list.length;
+    return list.length ? group(title, all, list) : '';
+  };
+  const quick = (title, all) => {
+    const list = all.filter((i) => !(view.hideDone && isDone(i.id)) && matches(i, t));
+    shown += list.length;
+    return list.length ? quickList(title, all, list) : '';
+  };
+  let h = '';
   if (t.id === 'progress') {
-    return group('📜 Story', entriesIn(['milestone']))
-      + quickList('Items & Equipment', DATA.items)
-      + quickList('Songs', DATA.songs)
-      + scarecrowHTML();
-  }
-  let h = t.id === 'skulltulas' ? rewardsHTML() : '';
-  if (t.id === 'hearts' || t.id === 'skulltulas') {
-    for (const a of DATA.areas) {
-      const list = entriesIn(t.cats).filter((e) => e.areaId === a.id);
-      if (list.length) h += group(esc(a.name), list);
-    }
+    h = grp('📜 Story', entriesIn(['milestone'])) + quick('Items & Equipment', DATA.items) + quick('Songs', DATA.songs);
+    if (!(search.progress || '').trim()) h += scarecrowHTML();
   } else {
-    for (const c of t.cats) h += group(`${CATS[c].icon} ${CATS[c].label}`, entriesIn([c]));
+    if (t.id === 'skulltulas') h += rewardsHTML();
+    if (groupedTab(t) && viewMode(t) === 'num') {
+      const c = t.cats[0];
+      h += grp(`${CATS[c].icon} All ${CATS[c].label}`, entriesIn(t.cats));
+    } else if (groupedTab(t)) {
+      for (const a of DATA.areas) {
+        const list = entriesIn(t.cats).filter((e) => e.areaId === a.id);
+        if (list.length) h += grp(esc(a.name), list);
+      }
+    } else {
+      for (const c of t.cats) h += grp(`${CATS[c].icon} ${CATS[c].label}`, entriesIn([c]));
+    }
   }
+  if (!shown) h += '<div class="placeholder">Nothing matches the current filters or search.</div>';
   return h;
 }
 
@@ -588,29 +723,38 @@ function badge(done, total) {
   return `<span class="group-badge${total && done === total ? ' complete' : ''}">${done}/${total}</span>`;
 }
 
-function group(title, list) {
-  const counted = list.filter((e) => !e.readOnly);
+// The badge counts the whole section (all); the grid shows what passes the filters (list).
+function group(title, all, list) {
+  const counted = all.filter((e) => !e.readOnly);
   return `<div class="group">
     <div class="group-header"><span class="group-name">${title}</span>${badge(counted.filter((e) => isDone(e.id)).length, counted.length)}</div>
     <div class="card-grid">${list.map(card).join('')}</div>
   </div>`;
 }
 
+// The card shows the first few missing requirements; the detail panel lists them all.
+function lockText(e) {
+  const miss = unmet(e.needs);
+  return esc(miss.slice(0, 3).join(', ')) + (miss.length > 3 ? ` +${miss.length - 3} more` : '');
+}
+
 const AGE  = { young: 'Young Link', adult: 'Adult Link' };
 const TIME = { night: '🌙 Night', day: '☀️ Day' };
 function card(e) {
   const done = isDone(e.id);
+  const locked = !done && !e.readOnly && !met(e.needs);
   const tags = [AGE[e.age], TIME[e.time]].filter(Boolean).map((x) => `<span class="tag">${x}</span>`).join('');
   const num = e.category === 'milestone' ? '' : `<span class="card-num">#${e.num}</span>`;
   const check = e.readOnly ? ''
     : `<label class="check-pill card-check${done ? ' is-checked' : ''}" aria-label="${e.category === 'milestone' ? 'Done' : 'Got it'}"><input type="checkbox" data-check="${e.id}"${done ? ' checked' : ''}></label>`;
-  return `<div class="item-card${done ? ' is-done' : ''}${e.readOnly ? ' readonly' : ''}" data-id="${e.id}">
+  return `<div class="item-card${done ? ' is-done' : ''}${locked ? ' locked' : ''}${e.readOnly ? ' readonly' : ''}" data-id="${e.id}">
     <div class="card-top">
       <div class="card-icon">${e.readOnly ? '🚧' : CATS[e.category].icon}</div>
       <div class="card-info">
         <div class="card-name">${num}${esc(e.name)}</div>
         ${e.area ? `<div class="card-meta">📍 ${esc(e.area)}</div>` : ''}
         ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+        ${locked ? `<div class="card-lock">🔒 needs ${lockText(e)}</div>` : ''}
       </div>
       ${check}
     </div>
@@ -619,7 +763,7 @@ function card(e) {
 }
 
 // Items & Songs: filter inputs only (they feed "Gettable now"), never counted toward progress.
-function quickList(title, list) {
+function quickList(title, all, list) {
   const rows = [...list].sort((a, b) => a.order - b.order).map((i) => {
     const d = isDone(i.id);
     const name = `<span class="q-order">${i.order}</span><span class="q-name">${esc(i.name)}`;
@@ -628,7 +772,7 @@ function quickList(title, list) {
       : `<label class="check-pill quick-row${d ? ' is-checked' : ''}">${name}</span><input type="checkbox" data-check="${i.id}"${d ? ' checked' : ''}></label>`;
   });
   return `<div class="group">
-    <div class="group-header"><span class="group-name">${title}</span>${badge(list.filter((i) => isDone(i.id)).length, list.length)}</div>
+    <div class="group-header"><span class="group-name">${title}</span>${badge(all.filter((i) => isDone(i.id)).length, all.length)}</div>
     <div class="group-note">Check these off as you get them. The filters use them; they don't count toward completion.</div>
     <div class="quick-grid">${rows.join('')}</div>
   </div>`;
@@ -727,6 +871,7 @@ function selectProfile(id) {
   }
   renderProfileBtn();
   renderProfileSheet();
+  renderControls();
   render();
 }
 
@@ -837,6 +982,7 @@ function submitProfileForm(act) {
     set(r, { name, startDate, createdBy: me, createdAt: Date.now() })
       .then(() => { selectProfile(r.key); }).catch(fail('create the profile'));
     creating = false;
+    closeSheet();
   } else {
     update(ref(_db, `profiles/${editing}`), { name, startDate }).catch(fail('save the profile'));
     editing = null;
