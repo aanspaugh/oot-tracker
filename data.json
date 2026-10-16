@@ -1595,7 +1595,9 @@
    "age": "young",
    "time": "any",
    "howTo": "Take the first right in the Lost Woods and drop down to the stump. Two Skull Kids play a tune on their flutes; repeat it back correctly three times in a row (each round adds a note).",
-   "needs": [],
+   "needs": [
+    "fairy-ocarina"
+   ],
    "links": [
     {
      "label": "Jegged",
@@ -1734,7 +1736,8 @@
    "howTo": "At night, play the Treasure Chest Game in the Market. Use the Lens of Truth to see which chest holds each room's key; the chest in the last room holds the Piece of Heart.",
    "needs": [
     "ms-deku-tree",
-    "lens-of-truth"
+    "lens-of-truth",
+    "gf-magic"
    ],
    "links": [
     {
@@ -3004,7 +3007,22 @@
    "howTo": "As young Link (Requiem of Spirit), plant a Magic Bean in the soil in front of the Spirit Temple. As adult, ride the plant and jump onto the stone arch when it passes over.",
    "needs": [
     "ms-master-sword",
-    "requiem-of-spirit",
+    {
+     "any": [
+      "requiem-of-spirit",
+      [
+       "gerudo-card",
+       "lens-of-truth",
+       "gf-magic",
+       {
+        "any": [
+         "hover-boots",
+         "longshot"
+        ]
+       }
+      ]
+     ]
+    },
     "soil-colossus"
    ],
    "links": [
@@ -4562,7 +4580,8 @@
    "time": "any",
    "howTo": "Roll into the tree on the small island in the southeast corner of the fountain.",
    "needs": [
-    "ms-jabu-jabu"
+    "ms-deku-tree",
+    "bottle-ruto-letter"
    ],
    "links": [
     {
@@ -4598,7 +4617,8 @@
    "time": "night",
    "howTo": "At night, climb onto the big log sticking out of the water and look at the rock wall across from it. Get it with the Boomerang.",
    "needs": [
-    "ms-jabu-jabu",
+    "ms-deku-tree",
+    "bottle-ruto-letter",
     "boomerang"
    ],
    "links": [
@@ -5077,7 +5097,7 @@
    "areaId": "gerudo-fortress",
    "age": "adult",
    "time": "night",
-   "howTo": "At night, from the rooftops above the jail cell, it's on a wall on the south side of the top floor. Longshot it.",
+   "howTo": "At night, it's on a wall on the south side of the fortress's top floor. GameWith gets it with the Hookshot; from the rooftop above the jail cell you were thrown in, Jegged uses the Longshot.",
    "needs": [
     "ms-master-sword",
     {
@@ -5086,7 +5106,7 @@
       "longshot"
      ]
     },
-    "longshot"
+    "hookshot"
    ],
    "links": [
     {
@@ -5211,7 +5231,22 @@
    "howTo": "At night, it's in a palm tree by the dry oasis pit. Hookshot reaches; the Longshot makes it easier.",
    "needs": [
     "ms-master-sword",
-    "requiem-of-spirit",
+    {
+     "any": [
+      "requiem-of-spirit",
+      [
+       "gerudo-card",
+       "lens-of-truth",
+       "gf-magic",
+       {
+        "any": [
+         "hover-boots",
+         "longshot"
+        ]
+       }
+      ]
+     ]
+    },
     "hookshot"
    ],
    "links": [
@@ -5249,7 +5284,22 @@
    "howTo": "Plant a Magic Bean in front of the Spirit Temple as young Link. At night as adult, ride the plant and hop off on top of the rock it passes (or Longshot up).",
    "needs": [
     "ms-master-sword",
-    "requiem-of-spirit",
+    {
+     "any": [
+      "requiem-of-spirit",
+      [
+       "gerudo-card",
+       "lens-of-truth",
+       "gf-magic",
+       {
+        "any": [
+         "hover-boots",
+         "longshot"
+        ]
+       }
+      ]
+     ]
+    },
     {
      "any": [
       "soil-colossus",
@@ -5290,7 +5340,10 @@
    "age": "young",
    "time": "any",
    "howTo": "In the 2nd-floor Compass room, raise the platforms with the switch and cross to the alcove in the south wall.",
-   "needs": [],
+   "needs": [
+    "kokiri-sword",
+    "deku-shield"
+   ],
    "links": [
     {
      "label": "Jegged",
@@ -5324,7 +5377,10 @@
    "age": "young",
    "time": "any",
    "howTo": "In the basement water room, it's on the bars across the room. Shoot it, then take a running jump from the platform to grab the token.",
-   "needs": [],
+   "needs": [
+    "kokiri-sword",
+    "deku-shield"
+   ],
    "links": [
     {
      "label": "Jegged",
@@ -5359,6 +5415,8 @@
    "time": "any",
    "howTo": "Right after you drop through the web into the basement, it's on the vine wall. Shoot it with the Slingshot and climb up for the token.",
    "needs": [
+    "kokiri-sword",
+    "deku-shield",
     {
      "any": [
       "slingshot",
@@ -5400,6 +5458,8 @@
    "time": "any",
    "howTo": "In the basement room where Gohma Larvae drop (upper left on the map), bomb the cracked wall in the northwest corner. Get the Gold Skulltula on the south wall with the Boomerang.",
    "needs": [
+    "kokiri-sword",
+    "deku-shield",
     "slingshot",
     "bombs",
     "boomerang"
@@ -5668,16 +5728,7 @@
    "howTo": "In the room with the water ditch and the switch in the middle, it's on the vines. Step on the switch to raise the water, then climb up.",
    "needs": [
     "ms-deku-tree",
-    "zeldas-lullaby",
-    "silver-scale",
-    {
-     "any": [
-      "bottle-talon-cuccos",
-      "bottle-anju-cuccos",
-      "bottle-ruto-letter",
-      "bottle-big-poes"
-     ]
-    }
+    "bottle-ruto-letter"
    ],
    "links": [
     {
@@ -5714,16 +5765,7 @@
    "howTo": "After destroying the tentacle that blocks a hole in the first room with holes, drop through that hole. Two Gold Skulltulas are below; this is one. Use the Boomerang.",
    "needs": [
     "ms-deku-tree",
-    "zeldas-lullaby",
-    "silver-scale",
-    {
-     "any": [
-      "bottle-talon-cuccos",
-      "bottle-anju-cuccos",
-      "bottle-ruto-letter",
-      "bottle-big-poes"
-     ]
-    },
+    "bottle-ruto-letter",
     "boomerang"
    ],
    "links": [
@@ -5761,16 +5803,7 @@
    "howTo": "Same room as the previous one (drop through the hole the tentacle was blocking); this is the second Gold Skulltula. Use the Boomerang.",
    "needs": [
     "ms-deku-tree",
-    "zeldas-lullaby",
-    "silver-scale",
-    {
-     "any": [
-      "bottle-talon-cuccos",
-      "bottle-anju-cuccos",
-      "bottle-ruto-letter",
-      "bottle-big-poes"
-     ]
-    },
+    "bottle-ruto-letter",
     "boomerang"
    ],
    "links": [
@@ -5808,16 +5841,7 @@
    "howTo": "In the last room before the boss (where you hit a ceiling switch with the Boomerang), it's on the far vine wall.",
    "needs": [
     "ms-deku-tree",
-    "zeldas-lullaby",
-    "silver-scale",
-    {
-     "any": [
-      "bottle-talon-cuccos",
-      "bottle-anju-cuccos",
-      "bottle-ruto-letter",
-      "bottle-big-poes"
-     ]
-    },
+    "bottle-ruto-letter",
     "boomerang"
    ],
    "links": [
@@ -5938,7 +5962,7 @@
    "areaId": "forest-temple",
    "age": "adult",
    "time": "any",
-   "howTo": "In the northeast courtyard (with the big Deku Babas), Hookshot to the back of the chest on the island, then Hookshot the Gold Skulltula on the far wall.",
+   "howTo": "In the northeast courtyard (with the big Deku Babas), Hookshot to the back of the chest on the island, then Hookshot the Gold Skulltula on the far wall. The usual way in needs the Bow; with the Golden Scale you can instead dive through the well from the northwest courtyard.",
    "needs": [
     "ms-master-sword",
     "hookshot",
@@ -5948,7 +5972,12 @@
       "minuet-of-forest"
      ]
     },
-    "bow"
+    {
+     "any": [
+      "bow",
+      "gold-scale"
+     ]
+    }
    ],
    "links": [
     {
@@ -6045,7 +6074,8 @@
       "minuet-of-forest"
      ]
     },
-    "bow"
+    "bow",
+    "goron-bracelet"
    ],
    "links": [
     {
@@ -6082,8 +6112,14 @@
    "howTo": "Climb the stairs and take the right door. Play the Song of Time to move the blue block, climb into the next room, and find it on the wall.",
    "needs": [
     "ms-master-sword",
-    "bolero-of-fire",
     "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
     "song-of-time"
    ],
    "links": [
@@ -6121,8 +6157,14 @@
    "howTo": "In the room with rolling boulders, head to the north side and bomb the wall where you hear the Skulltula.",
    "needs": [
     "ms-master-sword",
-    "bolero-of-fire",
     "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
     "bombs",
     "goron-bracelet"
    ],
@@ -6161,11 +6203,18 @@
    "howTo": "On the upper level of the boulder room, play the Scarecrow's Song, Hookshot to Pierre and then to the rising platform. Go through the door; it's at the top of the chain-link fence.",
    "needs": [
     "ms-master-sword",
-    "bolero-of-fire",
     "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
     "bombs",
     "goron-bracelet",
-    "scarecrows-song"
+    "scarecrows-song",
+    "hookshot"
    ],
    "links": [
     {
@@ -6202,8 +6251,14 @@
    "howTo": "In the entrance room, smash the statue blocking the east door with the Megaton Hammer and go on through. It's in the rooms beyond (behind a Like Like).",
    "needs": [
     "ms-master-sword",
-    "bolero-of-fire",
     "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
     "megaton-hammer"
    ],
    "links": [
@@ -6241,11 +6296,18 @@
    "howTo": "Continue up past the chain-link fence Gold Skulltula into the huge round room; it's just to the left on the wall.",
    "needs": [
     "ms-master-sword",
-    "bolero-of-fire",
     "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
     "bombs",
     "goron-bracelet",
-    "scarecrows-song"
+    "scarecrows-song",
+    "hookshot"
    ],
    "links": [
     {
@@ -6621,6 +6683,7 @@
     "ms-deku-tree",
     "song-of-storms",
     "lens-of-truth",
+    "gf-magic",
     "boomerang"
    ],
    "links": [
@@ -6660,6 +6723,7 @@
     "ms-deku-tree",
     "song-of-storms",
     "lens-of-truth",
+    "gf-magic",
     "boomerang"
    ],
    "links": [
@@ -6699,6 +6763,7 @@
     "ms-deku-tree",
     "song-of-storms",
     "lens-of-truth",
+    "gf-magic",
     "boomerang"
    ],
    "links": [
@@ -7760,9 +7825,22 @@
    "time": "any",
    "howTo": "In Zora's Fountain, swim to the small island in the southeast corner and bomb the boulder there. Play Zelda's Lullaby on the Triforce.",
    "needs": [
-    "ms-jabu-jabu",
-    "bombs",
-    "zeldas-lullaby"
+    {
+     "any": [
+      [
+       "ms-deku-tree",
+       "bottle-ruto-letter",
+       "bombs",
+       "zeldas-lullaby"
+      ],
+      [
+       "ms-master-sword",
+       "ms-jabu-jabu",
+       "zeldas-lullaby",
+       "bombs"
+      ]
+     ]
+    }
    ],
    "links": [
     {
@@ -7841,9 +7919,36 @@
    "time": "any",
    "howTo": "In the Desert Colossus, bomb the cracked rock wall north of where you enter (northeast on the mini-map). Play Zelda's Lullaby on the Triforce.",
    "needs": [
-    "requiem-of-spirit",
-    "bombs",
-    "zeldas-lullaby"
+    {
+     "any": [
+      [
+       "requiem-of-spirit",
+       "bombs",
+       "zeldas-lullaby"
+      ],
+      [
+       "ms-master-sword",
+       {
+        "any": [
+         "requiem-of-spirit",
+         [
+          "gerudo-card",
+          "lens-of-truth",
+          "gf-magic",
+          {
+           "any": [
+            "hover-boots",
+            "longshot"
+           ]
+          }
+         ]
+        ]
+       },
+       "bombs",
+       "zeldas-lullaby"
+      ]
+     ]
+    }
    ],
    "links": [
     {
