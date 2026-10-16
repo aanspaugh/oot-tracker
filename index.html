@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Zelda: Ocarina of Time (Switch 2) Tracker</title>
   <meta name="theme-color" content="#0f1a14">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Zelda: OoT Tracker">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap">
@@ -346,6 +351,7 @@
     }
     .icon-btn.danger { color: var(--danger); }
     .icon-btn.confirm { background: var(--danger); color: #1a0d0a; font-weight: 700; border-color: var(--danger); }
+    .prof-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .prof-form { display: flex; flex-direction: column; gap: 0.55rem; background: var(--surface-2); border-radius: var(--radius-sm); padding: 0.75rem; }
     .prof-form label { font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.25rem; }
     .field {
@@ -1626,8 +1632,11 @@ function renderProfileSheet() {
                 : '<button class="act-btn new-btn" data-act="new">＋ New profile</button>';
   if (usable(pid)) {
     h += `<div class="sheet-label">This profile: ${esc(profiles[pid].name)}</div>
-      <button class="act-btn${confirmReset ? ' primary' : ''}" data-act="reset-cel">${confirmReset ? 'Tap to confirm' : 'Reset celebrations'}</button>
-      <div class="d-note">Re-arms every celebration whose goal is no longer met, so it can play again. Check-offs aren't touched.</div>`;
+      <div class="prof-actions">
+        <button class="act-btn" data-act="backup">⬇ Download backup</button>
+        <button class="act-btn${confirmReset ? ' primary' : ''}" data-act="reset-cel">${confirmReset ? 'Tap to confirm' : 'Reset celebrations'}</button>
+      </div>
+      <div class="d-note">Backup saves this profile's check-offs, notes, boss times and Scarecrow's Song as a JSON file. Reset re-arms every celebration whose goal is no longer met, so it can play again; check-offs aren't touched.</div>`;
   }
   if (trash.length) {
     h += `<button class="trash-toggle" data-act="toggle-trash">${showTrash ? '▾' : '▸'} Trash (${trash.length})</button>`;
@@ -1648,6 +1657,24 @@ function renderProfileSheet() {
   if (nameField && !nameField.dataset.focused) { nameField.dataset.focused = '1'; nameField.focus(); }
 }
 
+// Everything saved for the selected profile, as one JSON download.
+function backup() {
+  const id = pid, p = profiles[id];
+  const parts = ['progress', 'scarecrow', 'notes', 'bossTimes', 'celebrated'];
+  Promise.all(parts.map((r) => get(ref(_db, `${r}/${id}`)).then((snap) => [r, snap.val()])))
+    .then((vals) => {
+      const out = { app: 'oot-tracker', schema: 1, exportedAt: new Date().toISOString(), exportedBy: me, profileId: id, profile: p, ...Object.fromEntries(vals) };
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' }));
+      a.download = `oot-tracker-${p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'profile'}-${today()}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+      toast('Backup downloaded.');
+    }).catch(fail('make the backup'));
+}
+
 const fail = (what) => (err) => { console.error(what, err); toast(`Couldn't ${what}: ${err.message}`, true); };
 
 $('profileBody').addEventListener('click', (e) => {
@@ -1665,6 +1692,7 @@ $('profileBody').addEventListener('click', (e) => {
       .then(() => toast(`"${profiles[id]?.name}" moved to Trash.`)).catch(fail('move it to Trash'));
   }
   if (act === 'toggle-trash') showTrash = !showTrash;
+  if (act === 'backup') backup();
   if (act === 'reset-cel') {
     clearTimeout(resetTimer);
     if (!confirmReset) {
