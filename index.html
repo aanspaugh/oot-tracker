@@ -82,6 +82,7 @@
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.3rem 0.8rem;
       padding: 0.35rem 1rem 0.45rem; border-top: 1px solid var(--border);
     }
+    @media (max-width: 559px) { .header-progress { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 860px) { .header-progress { grid-template-columns: repeat(6, 1fr); } }
     .progress-item { display: flex; align-items: center; gap: 0.4rem; min-width: 0; }
     .progress-label { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); white-space: nowrap; }
@@ -117,6 +118,97 @@
       padding: 1.5rem 1rem; text-align: center; color: var(--text-muted); line-height: 1.5;
     }
     .placeholder strong { color: var(--text); }
+
+    /* Sections + card grid */
+    .group { margin-bottom: 1.5rem; }
+    .group-header {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+      padding: 0.3rem 0.1rem 0.5rem; border-bottom: 2px solid var(--border); margin-bottom: 0.7rem;
+    }
+    .group-name { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; font-weight: 700; }
+    .group-badge {
+      font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 20px;
+      background: var(--surface-2); color: var(--text-muted); white-space: nowrap;
+    }
+    .group-badge.complete { background: #1d4a2a; color: var(--done); }
+    .group-note { font-size: 0.8rem; color: var(--text-muted); margin: -0.3rem 0 0.7rem; }
+    .card-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+    @media (min-width: 560px)  { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 860px)  { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1160px) { .card-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    /* Item card */
+    .item-card {
+      background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius);
+      padding: 0.85rem; display: flex; flex-direction: column; gap: 0.65rem;
+      transition: border-color 0.2s, opacity 0.2s;
+    }
+    .item-card.is-done { border-color: #3f7a4c; opacity: 0.7; }
+    .item-card.readonly { border-style: dashed; }
+    .card-top { display: flex; gap: 0.7rem; align-items: center; }
+    .card-check { flex-shrink: 0; width: 52px; height: 52px; padding: 0; }
+    .card-check input { width: 24px; height: 24px; }
+    .card-icon {
+      width: 48px; height: 48px; flex-shrink: 0; border-radius: var(--radius-sm); background: var(--surface-2);
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    }
+    .card-info { flex: 1; min-width: 0; }
+    .card-name { font-weight: 700; font-size: 1rem; line-height: 1.25; }
+    .card-num { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-right: 0.3em; }
+    .card-meta { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
+    .tag { font-size: 0.72rem; font-weight: 600; padding: 0.12rem 0.5rem; border-radius: 20px; background: var(--surface-2); color: var(--text); }
+    .wip-note { font-size: 0.82rem; color: var(--gold); }
+
+    /* Check pill */
+    .check-pill {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      min-height: 48px; padding: 0.5rem; border-radius: var(--radius-sm);
+      border: 2px solid var(--border); background: var(--surface-2);
+      font-size: 0.9rem; font-weight: 700; color: var(--text-muted);
+      cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent;
+    }
+    .check-pill input { width: 20px; height: 20px; accent-color: var(--done); cursor: pointer; margin: 0; }
+    .check-pill.is-checked { border-color: var(--done); background: #1d4a2a; color: var(--done); }
+
+    /* Items & Songs quick lists */
+    .quick-grid { display: grid; grid-template-columns: 1fr; gap: 0.45rem; }
+    @media (min-width: 560px)  { .quick-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 860px)  { .quick-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1160px) { .quick-grid { grid-template-columns: repeat(4, 1fr); } }
+    .quick-row { justify-content: flex-start; min-height: 46px; padding: 0.45rem 0.7rem; font-weight: 600; color: var(--text); }
+    .quick-row .q-order { font-size: 0.72rem; color: var(--text-muted); min-width: 1.4rem; }
+    .quick-row .q-name { flex: 1; }
+    .quick-row.derived { cursor: default; border-style: dashed; }
+    .quick-row.derived .q-auto { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; }
+
+    /* Scarecrow recorder */
+    .scarecrow { margin-top: 0.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem; }
+    .scarecrow-title { font-weight: 700; margin-bottom: 0.2rem; }
+    .scarecrow-sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.7rem; }
+    .sc-slots { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.3rem; margin-bottom: 0.75rem; max-width: 420px; }
+    .sc-slot { aspect-ratio: 1; border-radius: 50%; border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center; }
+    .sc-pad { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center; }
+    .n64 {
+      width: 44px; height: 44px; border-radius: 50%; border: none; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; line-height: 1;
+    }
+    .n64.a { background: #3b6fd8; color: #fff; }
+    .n64.c { background: #e8c234; color: #2a2205; }
+    .sc-slot .n64 { width: 100%; height: 100%; font-size: 0.85rem; }
+    .sc-pad .act-btn { min-height: 44px; }
+
+    /* Skulltula reward badges */
+    .rewards { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.3rem; }
+    .reward {
+      display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600;
+      padding: 0.35rem 0.7rem; border-radius: 20px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text-muted);
+    }
+    .reward b { color: var(--text); }
+    .reward.earned { border-color: var(--gold); background: #3a3115; color: var(--text); }
+    .reward.earned b { color: var(--gold); }
 
     /* ── Sheet (modal) ────────────────────────────────── */
     #backdrop {
@@ -305,11 +397,13 @@ const TABS = [
 ];
 
 let DATA = null;          // data.json
+let BY_ID = {};           // id → entry, item or song
 let me = null;            // signed-in user's friendly name
 let profiles = {};        // /profiles
 let pid = null;           // selected profile id (per device)
 let progress = {};        // /progress/{pid}
-let unsubProgress = null;
+let scarecrow = [];       // /scarecrow/{pid}: note ids, in order
+let unsubs = [];          // listeners for the selected profile
 let currentTab = TABS.some((t) => t.id === lsGet('oot.tab')) ? lsGet('oot.tab') : 'progress';
 
 // ============================================================================
@@ -385,6 +479,7 @@ function startApp() {
   $('header').hidden = false;
   $('main').hidden = false;
   $('sheetWho').innerHTML = `Signed in as <strong>${esc(me)}</strong>`;
+  for (const x of [...DATA.entries, ...DATA.items, ...DATA.songs]) BY_ID[x.id] = x;
   buildTabs();
   onValue(ref(_db, 'profiles'), (snap) => {
     profiles = snap.val() || {};
@@ -418,7 +513,32 @@ function switchTab(id) {
 // Progress state
 // ============================================================================
 const entriesIn = (cats) => DATA.entries.filter((e) => cats.includes(e.category));
-const isDone = (id) => !!progress[id];
+const gsCount = () => entriesIn(['skulltula']).filter((e) => progress[e.id]).length;
+// Items with derivedFrom (Master Sword, fairy spells, wallets…) mirror another check and can't be set by hand.
+function isDone(id) {
+  const it = BY_ID[id];
+  return it?.derivedFrom ? met(it.derivedFrom) : !!progress[id];
+}
+// A requirement is an id, "gs:N" (N Skulltulas), "bottle" (any checked bottle),
+// {any: [alt…]}, or a list that must all be met (an alt may itself be a list).
+function met(req) {
+  if (Array.isArray(req)) return req.every(met);
+  if (typeof req === 'object') return req.any.some(met);
+  if (req.startsWith('gs:')) return gsCount() >= Number(req.slice(3));
+  if (req === 'bottle') return entriesIn(['bottle']).some((e) => progress[e.id]);
+  return isDone(req);
+}
+function reqLabel(req) {
+  if (Array.isArray(req)) return req.map(reqLabel).join(' + ');
+  if (typeof req === 'object') return req.any.map(reqLabel).join(' or ');
+  if (req.startsWith('gs:')) return `${req.slice(3)} Gold Skulltulas`;
+  if (req === 'bottle') return 'a bottle';
+  return BY_ID[req]?.name || req;
+}
+
+function toggle(id, on) {
+  set(ref(_db, `progress/${pid}/${id}`), on ? { at: Date.now(), by: me } : null).catch(fail('save that'));
+}
 
 function renderProgressBars() {
   const rows = TABS.filter((t) => t.cats).map((t) => {
@@ -438,12 +558,145 @@ function render() {
   if (!DATA) return;
   renderProgressBars();
   const t = TABS.find((x) => x.id === currentTab);
-  const sec = $('tab-' + t.id);
   if (t.stub) return;
-  sec.innerHTML = pid
-    ? `<div class="placeholder"><strong>${t.label}</strong><br>${t.cats.map((c) => `${CATS[c].icon} ${CATS[c].label}`).join(' · ')}<br>Cards arrive in Stage 2b.</div>`
+  $('tab-' + t.id).innerHTML = pid
+    ? renderTab(t)
     : `<div class="placeholder">No profile yet. <strong>Create one</strong> from the 👤 button to start tracking.</div>`;
 }
+
+// One renderer for every catalog tab: sections of cards, grouped by area or by category.
+function renderTab(t) {
+  if (t.id === 'progress') {
+    return group('📜 Story', entriesIn(['milestone']))
+      + quickList('Items & Equipment', DATA.items)
+      + quickList('Songs', DATA.songs)
+      + scarecrowHTML();
+  }
+  let h = t.id === 'skulltulas' ? rewardsHTML() : '';
+  if (t.id === 'hearts' || t.id === 'skulltulas') {
+    for (const a of DATA.areas) {
+      const list = entriesIn(t.cats).filter((e) => e.areaId === a.id);
+      if (list.length) h += group(esc(a.name), list);
+    }
+  } else {
+    for (const c of t.cats) h += group(`${CATS[c].icon} ${CATS[c].label}`, entriesIn([c]));
+  }
+  return h;
+}
+
+function badge(done, total) {
+  return `<span class="group-badge${total && done === total ? ' complete' : ''}">${done}/${total}</span>`;
+}
+
+function group(title, list) {
+  const counted = list.filter((e) => !e.readOnly);
+  return `<div class="group">
+    <div class="group-header"><span class="group-name">${title}</span>${badge(counted.filter((e) => isDone(e.id)).length, counted.length)}</div>
+    <div class="card-grid">${list.map(card).join('')}</div>
+  </div>`;
+}
+
+const AGE  = { young: 'Young Link', adult: 'Adult Link' };
+const TIME = { night: '🌙 Night', day: '☀️ Day' };
+function card(e) {
+  const done = isDone(e.id);
+  const tags = [AGE[e.age], TIME[e.time]].filter(Boolean).map((x) => `<span class="tag">${x}</span>`).join('');
+  const num = e.category === 'milestone' ? '' : `<span class="card-num">#${e.num}</span>`;
+  const check = e.readOnly ? ''
+    : `<label class="check-pill card-check${done ? ' is-checked' : ''}" aria-label="${e.category === 'milestone' ? 'Done' : 'Got it'}"><input type="checkbox" data-check="${e.id}"${done ? ' checked' : ''}></label>`;
+  return `<div class="item-card${done ? ' is-done' : ''}${e.readOnly ? ' readonly' : ''}" data-id="${e.id}">
+    <div class="card-top">
+      <div class="card-icon">${e.readOnly ? '🚧' : CATS[e.category].icon}</div>
+      <div class="card-info">
+        <div class="card-name">${num}${esc(e.name)}</div>
+        ${e.area ? `<div class="card-meta">📍 ${esc(e.area)}</div>` : ''}
+        ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+      </div>
+      ${check}
+    </div>
+    ${e.readOnly ? '<div class="wip-note">🚧 Under construction: how to get it is unknown until the remake launches.</div>' : ''}
+  </div>`;
+}
+
+// Items & Songs: filter inputs only (they feed "Gettable now"), never counted toward progress.
+function quickList(title, list) {
+  const rows = [...list].sort((a, b) => a.order - b.order).map((i) => {
+    const d = isDone(i.id);
+    const name = `<span class="q-order">${i.order}</span><span class="q-name">${esc(i.name)}`;
+    return i.derivedFrom
+      ? `<div class="check-pill quick-row derived${d ? ' is-checked' : ''}">${name}<br><span class="q-auto">${d ? '✓ ' : ''}auto, from ${esc(reqLabel(i.derivedFrom))}</span></span></div>`
+      : `<label class="check-pill quick-row${d ? ' is-checked' : ''}">${name}</span><input type="checkbox" data-check="${i.id}"${d ? ' checked' : ''}></label>`;
+  });
+  return `<div class="group">
+    <div class="group-header"><span class="group-name">${title}</span>${badge(list.filter((i) => isDone(i.id)).length, list.length)}</div>
+    <div class="group-note">Check these off as you get them. The filters use them; they don't count toward completion.</div>
+    <div class="quick-grid">${rows.join('')}</div>
+  </div>`;
+}
+
+// Scarecrow's Song: 8 notes per profile, stored by ocarina note, shown as N64 buttons.
+const NOTES = {
+  D4: { btn: 'A', cls: 'a', name: 'A' },
+  F4: { btn: '▼', cls: 'c', name: 'C-Down' },
+  A4: { btn: '▶', cls: 'c', name: 'C-Right' },
+  B4: { btn: '◀', cls: 'c', name: 'C-Left' },
+  D5: { btn: '▲', cls: 'c', name: 'C-Up' },
+};
+let confirmClear = false, clearTimer = null;
+function scarecrowHTML() {
+  const max = DATA.songs.find((s) => s.recordNotes)?.recordNotes || 8;
+  const notes = scarecrow.slice(0, max);
+  const slots = Array.from({ length: max }, (_, i) => notes[i]
+    ? `<div class="sc-slot"><span class="n64 ${NOTES[notes[i]].cls}" title="${NOTES[notes[i]].name}">${NOTES[notes[i]].btn}</span></div>`
+    : '<div class="sc-slot"></div>').join('');
+  const full = notes.length >= max;
+  const pad = Object.entries(NOTES).map(([k, n]) =>
+    `<button class="n64 ${n.cls}" data-note="${k}" aria-label="${n.name}"${full ? ' disabled style="opacity:.35"' : ''}>${n.btn}</button>`).join('');
+  return `<div class="scarecrow">
+    <div class="scarecrow-title">🎃 Scarecrow's Song: your ${max} notes</div>
+    <div class="scarecrow-sub">Record the song you taught Pierre as young Link, so you can play it back as an adult. N64 buttons until the remake's controls are known.</div>
+    <div class="sc-slots" id="scSlots">${slots}</div>
+    <div class="sc-pad">${pad}
+      <button class="act-btn" data-sc="back"${notes.length ? '' : ' disabled'} aria-label="Delete last note">⌫</button>
+      <button class="act-btn${confirmClear ? ' primary' : ''}" data-sc="clear"${notes.length ? '' : ' disabled'}>${confirmClear ? 'Tap to clear' : 'Clear'}</button>
+    </div>
+  </div>`;
+}
+function saveScarecrow(notes) {
+  set(ref(_db, `scarecrow/${pid}`), notes.length ? notes : null).catch(fail('save the notes'));
+}
+
+function rewardsHTML() {
+  const n = gsCount();
+  const notes = DATA.skulltulaRewards.filter((r) => r.switch2Note).map((r) => `⚠️ ${r.tokens}: ${esc(r.switch2Note)}`);
+  return `<div class="group-header"><span class="group-name">🏆 Skulltula rewards</span>${badge(n, 100)}</div>
+    <div class="rewards">${DATA.skulltulaRewards.map((r) => `<span class="reward${n >= r.tokens ? ' earned' : ''}">
+      <b>${n >= r.tokens ? '✓ ' : ''}${r.tokens}</b> ${esc(r.reward)}${r.switch2Note ? ' ⚠️' : ''}</span>`).join('')}</div>
+    ${notes.length ? `<div class="group-note">${notes.join('<br>')}</div>` : ''}`;
+}
+
+$('main').addEventListener('change', (e) => {
+  const id = e.target.dataset.check;
+  if (id && pid) toggle(id, e.target.checked);
+});
+$('main').addEventListener('click', (e) => {
+  const note = e.target.closest('[data-note]')?.dataset.note;
+  const sc = e.target.closest('[data-sc]')?.dataset.sc;
+  if (!pid || (!note && !sc)) return;
+  if (note) saveScarecrow([...scarecrow, note]);
+  if (sc === 'back') saveScarecrow(scarecrow.slice(0, -1));
+  if (sc === 'clear') {
+    if (!confirmClear) {
+      confirmClear = true;
+      clearTimeout(clearTimer);
+      clearTimer = setTimeout(() => { confirmClear = false; render(); }, 4000);
+      render();
+    } else {
+      confirmClear = false;
+      saveScarecrow([]);
+    }
+  }
+});
 
 // ============================================================================
 // Profiles — shared between both accounts; the selection is per device
@@ -461,13 +714,16 @@ function ensureSelection() {
 }
 
 function selectProfile(id) {
-  if (unsubProgress) { unsubProgress(); unsubProgress = null; }
+  unsubs.forEach((u) => u());
+  unsubs = [];
   pid = id;
   progress = {};
+  scarecrow = [];
   if (id) {
     lsSet('oot.profile', id);
-    unsubProgress = onValue(ref(_db, `progress/${id}`), (snap) => { progress = snap.val() || {}; render(); },
-      (err) => toast('Lost access to progress: ' + err.message, true));
+    const lost = (err) => toast('Lost access to this profile: ' + err.message, true);
+    unsubs.push(onValue(ref(_db, `progress/${id}`), (snap) => { progress = snap.val() || {}; render(); }, lost));
+    unsubs.push(onValue(ref(_db, `scarecrow/${id}`), (snap) => { scarecrow = snap.val() || []; render(); }, lost));
   }
   renderProfileBtn();
   renderProfileSheet();
@@ -634,15 +890,22 @@ function toast(msg, isError = false) {
   const header = $('header');
   const THRESHOLD = 15;
   let lastToggleY = window.scrollY;
+  // The collapse changes the page height and scroll anchoring then shifts scrollY by that much,
+  // which would read as a scroll the other way. Ignore scrolls until the transition settles.
+  let settling = false;
+  const toggle = (compact) => {
+    header.classList.toggle('compact', compact);
+    settling = true;
+    setTimeout(() => { settling = false; lastToggleY = window.scrollY; }, 350);
+  };
   window.addEventListener('scroll', () => {
+    if (settling) return;
     const y = window.scrollY;
-    if (y > lastToggleY + THRESHOLD && y > 40) {
-      header.classList.add('compact');
-      lastToggleY = y;
-    } else if (y < lastToggleY - THRESHOLD) {
-      header.classList.remove('compact');
-      lastToggleY = y;
-    }
+    const compact = header.classList.contains('compact');
+    if (!compact && y > lastToggleY + THRESHOLD && y > 40) toggle(true);
+    else if (compact && y < lastToggleY - THRESHOLD) toggle(false);
+    // Keep following the furthest point in the current direction (as the old re-toggle did).
+    else if (compact ? y > lastToggleY : y < lastToggleY) lastToggleY = y;
   }, { passive: true });
 })();
 </script>
