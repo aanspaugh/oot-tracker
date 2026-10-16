@@ -1,0 +1,41 @@
+{
+  "rules": {
+    ".read": "auth != null && auth.token.email_verified == true && (auth.token.email == 'aanspaugh@gmail.com' || auth.token.email == 'janspaugh90@gmail.com')",
+
+    "profiles": {
+      "$pid": {
+        ".write": "auth != null && auth.token.email_verified == true && (auth.token.email == 'aanspaugh@gmail.com' || auth.token.email == 'janspaugh90@gmail.com') && (newData.exists() || data.child('deletedAt').exists())"
+      }
+    },
+
+    "progress": {
+      "$pid": {
+        ".write": "auth != null && auth.token.email_verified == true && (auth.token.email == 'aanspaugh@gmail.com' || auth.token.email == 'janspaugh90@gmail.com')"
+      }
+    },
+
+    "bossTimes": {
+      "$pid": {
+        ".write": "auth != null && auth.token.email_verified == true && (auth.token.email == 'aanspaugh@gmail.com' || auth.token.email == 'janspaugh90@gmail.com')"
+      }
+    },
+
+    "celebrated": {
+      "$pid": {
+        ".write": "auth != null && auth.token.email_verified == true && (auth.token.email == 'aanspaugh@gmail.com' || auth.token.email == 'janspaugh90@gmail.com')"
+      }
+    },
+
+    "notes": {
+      "$pid": {
+        ".write": "auth != null && auth.token.email_verified == true && (auth.token.email == 'aanspaugh@gmail.com' || auth.token.email == 'janspaugh90@gmail.com')"
+      }
+    },
+
+    "scarecrow": {
+      "$pid": {
+        ".write": "auth != null && auth.token.email_verified == true && (auth.token.email == 'aanspaugh@gmail.com' || auth.token.email == 'janspaugh90@gmail.com')"
+      }
+    }
+  }
+}
