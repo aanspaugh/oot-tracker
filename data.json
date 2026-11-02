@@ -172,7 +172,8 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": []
   },
   {
    "id": "deku-shield",
@@ -189,7 +190,8 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": []
   },
   {
    "id": "slingshot",
@@ -206,7 +208,11 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "kokiri-sword",
+    "deku-shield"
+   ]
   },
   {
    "id": "fairy-ocarina",
@@ -223,7 +229,10 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree"
+   ]
   },
   {
    "id": "hylian-shield",
@@ -240,7 +249,10 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree"
+   ]
   },
   {
    "id": "adults-wallet",
@@ -276,7 +288,13 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "ms-meet-zelda",
+    "zeldas-lullaby",
+    "sarias-song"
+   ]
   },
   {
    "id": "bombs",
@@ -293,7 +311,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "ms-meet-zelda",
+    "goron-bracelet"
+   ]
   },
   {
    "id": "stone-of-agony",
@@ -367,7 +390,11 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "bombs"
+   ]
   },
   {
    "id": "silver-scale",
@@ -384,7 +411,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "bombs",
+    "zeldas-lullaby"
+   ]
   },
   {
    "id": "farores-wind",
@@ -420,7 +452,11 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "bottle-ruto-letter"
+   ]
   },
   {
    "id": "giants-wallet",
@@ -456,7 +492,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "ms-dodongos-cavern",
+    "ms-jabu-jabu"
+   ]
   },
   {
    "id": "master-sword",
@@ -492,7 +533,10 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword"
+   ]
   },
   {
    "id": "epona",
@@ -509,7 +553,11 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "eponas-song"
+   ]
   },
   {
    "id": "gold-scale",
@@ -526,7 +574,10 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword"
+   ]
   },
   {
    "id": "bow",
@@ -543,7 +594,18 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "hookshot",
+    {
+     "any": [
+      "sarias-song",
+      "minuet-of-forest"
+     ]
+    },
+    "goron-bracelet"
+   ]
   },
   {
    "id": "goron-tunic",
@@ -560,7 +622,17 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    {
+     "any": [
+      "goron-bracelet",
+      "bombs",
+      "bow"
+     ]
+    }
+   ]
   },
   {
    "id": "giants-knife",
@@ -577,7 +649,10 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword"
+   ]
   },
   {
    "id": "lens-of-truth",
@@ -594,7 +669,13 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "song-of-storms",
+    "zeldas-lullaby",
+    "kokiri-sword"
+   ]
   },
   {
    "id": "megaton-hammer",
@@ -611,7 +692,20 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
+    "bombs",
+    "goron-bracelet"
+   ]
   },
   {
    "id": "enhanced-magic",
@@ -647,7 +741,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "ms-jabu-jabu",
+    "zeldas-lullaby"
+   ]
   },
   {
    "id": "zora-tunic",
@@ -664,7 +763,19 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "zeldas-lullaby",
+    {
+     "any": [
+      "bottle-talon-cuccos",
+      "bottle-anju-cuccos",
+      "bottle-ruto-letter",
+      "bottle-big-poes"
+     ]
+    }
+   ]
   },
   {
    "id": "biggorons-sword",
@@ -700,7 +811,13 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "iron-boots",
+    "hookshot",
+    "zora-tunic"
+   ]
   },
   {
    "id": "fire-arrows",
@@ -717,7 +834,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "ms-water-temple",
+    "bow"
+   ]
   },
   {
    "id": "hover-boots",
@@ -734,7 +856,14 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "nocturne-of-shadow",
+    "gf-dins-fire",
+    "gf-magic",
+    "lens-of-truth"
+   ]
   },
   {
    "id": "gerudo-card",
@@ -751,7 +880,16 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    {
+     "any": [
+      "epona",
+      "longshot"
+     ]
+    }
+   ]
   },
   {
    "id": "ice-arrows",
@@ -768,7 +906,17 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    {
+     "any": [
+      "epona",
+      "longshot"
+     ]
+    },
+    "gerudo-card"
+   ]
   },
   {
    "id": "nayrus-love",
@@ -804,7 +952,10 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "requiem-of-spirit"
+   ]
   },
   {
    "id": "mirror-shield",
@@ -821,7 +972,13 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "requiem-of-spirit",
+    "silver-gauntlets",
+    "bombs"
+   ]
   },
   {
    "id": "light-arrows",
@@ -838,7 +995,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "ms-shadow-temple",
+    "ms-spirit-temple"
+   ]
   },
   {
    "id": "golden-gauntlets",
@@ -855,7 +1017,13 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "ms-shadow-temple",
+    "ms-spirit-temple",
+    "light-arrows"
+   ]
   },
   {
    "id": "enhanced-defense",
@@ -893,7 +1061,10 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree"
+   ]
   },
   {
    "id": "eponas-song",
@@ -910,7 +1081,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "ms-meet-zelda",
+    "fairy-ocarina"
+   ]
   },
   {
    "id": "sarias-song",
@@ -927,7 +1103,10 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-meet-zelda"
+   ]
   },
   {
    "id": "suns-song",
@@ -944,7 +1123,11 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "zeldas-lullaby"
+   ]
   },
   {
    "id": "song-of-time",
@@ -961,7 +1144,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-deku-tree",
+    "ms-dodongos-cavern",
+    "ms-jabu-jabu"
+   ]
   },
   {
    "id": "song-of-storms",
@@ -978,7 +1166,11 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "fairy-ocarina"
+   ]
   },
   {
    "id": "scarecrows-song",
@@ -996,6 +1188,10 @@
     "ootr"
    ],
    "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "fairy-ocarina"
+   ],
    "recordNotes": 8
   },
   {
@@ -1013,7 +1209,11 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "sarias-song"
+   ]
   },
   {
    "id": "prelude-of-light",
@@ -1030,7 +1230,11 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "ms-forest-temple"
+   ]
   },
   {
    "id": "bolero-of-fire",
@@ -1047,7 +1251,16 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    {
+     "any": [
+      "hookshot",
+      "hover-boots"
+     ]
+    }
+   ]
   },
   {
    "id": "serenade-of-water",
@@ -1064,7 +1277,12 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "ms-jabu-jabu",
+    "zeldas-lullaby"
+   ]
   },
   {
    "id": "nocturne-of-shadow",
@@ -1081,7 +1299,13 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "ms-forest-temple",
+    "ms-fire-temple",
+    "ms-water-temple"
+   ]
   },
   {
    "id": "requiem-of-spirit",
@@ -1098,7 +1322,19 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "unverified"
+   "switch2": "unverified",
+   "reach": [
+    "ms-master-sword",
+    "gerudo-card",
+    {
+     "any": [
+      "hover-boots",
+      "longshot"
+     ]
+    },
+    "lens-of-truth",
+    "gf-magic"
+   ]
   }
  ],
  "entries": [
@@ -1132,7 +1368,11 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "kokiri-sword",
+    "deku-shield"
+   ]
   },
   {
    "id": "ms-meet-zelda",
@@ -1164,7 +1404,10 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-deku-tree"
+   ]
   },
   {
    "id": "ms-dodongos-cavern",
@@ -1196,7 +1439,17 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-deku-tree",
+    "ms-meet-zelda",
+    {
+     "any": [
+      "bombs",
+      "goron-bracelet"
+     ]
+    }
+   ]
   },
   {
    "id": "ms-jabu-jabu",
@@ -1228,7 +1481,11 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-deku-tree",
+    "bottle-ruto-letter"
+   ]
   },
   {
    "id": "ms-master-sword",
@@ -1260,7 +1517,14 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-deku-tree",
+    "ms-dodongos-cavern",
+    "ms-jabu-jabu",
+    "ocarina-of-time",
+    "song-of-time"
+   ]
   },
   {
    "id": "ms-forest-temple",
@@ -1292,7 +1556,17 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-master-sword",
+    "hookshot",
+    {
+     "any": [
+      "sarias-song",
+      "minuet-of-forest"
+     ]
+    }
+   ]
   },
   {
    "id": "ms-fire-temple",
@@ -1324,7 +1598,18 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-master-sword",
+    "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    }
+   ]
   },
   {
    "id": "ms-ice-cavern",
@@ -1356,7 +1641,12 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-master-sword",
+    "ms-jabu-jabu",
+    "zeldas-lullaby"
+   ]
   },
   {
    "id": "ms-water-temple",
@@ -1388,7 +1678,13 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-master-sword",
+    "iron-boots",
+    "hookshot",
+    "zora-tunic"
+   ]
   },
   {
    "id": "ms-bottom-of-the-well",
@@ -1420,7 +1716,11 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-deku-tree",
+    "song-of-storms"
+   ]
   },
   {
    "id": "ms-shadow-temple",
@@ -1452,7 +1752,13 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-master-sword",
+    "nocturne-of-shadow",
+    "gf-dins-fire",
+    "gf-magic"
+   ]
   },
   {
    "id": "ms-spirit-temple",
@@ -1484,7 +1790,35 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    {
+     "any": [
+      [
+       "requiem-of-spirit"
+      ],
+      [
+       "ms-master-sword",
+       {
+        "any": [
+         "requiem-of-spirit",
+         [
+          "gerudo-card",
+          "lens-of-truth",
+          "gf-magic",
+          {
+           "any": [
+            "hover-boots",
+            "longshot"
+           ]
+          }
+         ]
+        ]
+       }
+      ]
+     ]
+    }
+   ]
   },
   {
    "id": "ms-gerudo-training-ground",
@@ -1516,7 +1850,17 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-master-sword",
+    {
+     "any": [
+      "epona",
+      "longshot"
+     ]
+    },
+    "gerudo-card"
+   ]
   },
   {
    "id": "ms-ganon",
@@ -1548,7 +1892,13 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "milestone",
-   "map": null
+   "map": null,
+   "reach": [
+    "ms-master-sword",
+    "ms-shadow-temple",
+    "ms-spirit-temple",
+    "light-arrows"
+   ]
   },
   {
    "id": "hp-lw-skull-kid",
@@ -9490,7 +9840,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-deku-tree"
+   ]
   },
   {
    "id": "boss-king-dodongo",
@@ -9502,7 +9855,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true
+   "rematchConfirmed": true,
+   "reach": [
+    "ms-dodongos-cavern"
+   ]
   },
   {
    "id": "boss-barinade",
@@ -9514,7 +9870,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-jabu-jabu"
+   ]
   },
   {
    "id": "boss-phantom-ganon",
@@ -9526,7 +9885,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-forest-temple"
+   ]
   },
   {
    "id": "boss-volvagia",
@@ -9538,7 +9900,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-fire-temple"
+   ]
   },
   {
    "id": "boss-dark-link",
@@ -9550,7 +9915,10 @@
     "kotaku"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true
+   "rematchConfirmed": true,
+   "reach": [
+    "ms-water-temple"
+   ]
   },
   {
    "id": "boss-morpha",
@@ -9562,7 +9930,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-water-temple"
+   ]
   },
   {
    "id": "boss-bongo-bongo",
@@ -9574,7 +9945,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-shadow-temple"
+   ]
   },
   {
    "id": "boss-twinrova",
@@ -9586,7 +9960,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-spirit-temple"
+   ]
   },
   {
    "id": "boss-ganondorf",
@@ -9598,7 +9975,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-ganon"
+   ]
   },
   {
    "id": "boss-ganon",
@@ -9610,7 +9990,10 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false
+   "rematchConfirmed": false,
+   "reach": [
+    "ms-ganon"
+   ]
   }
  ],
  "statues": [

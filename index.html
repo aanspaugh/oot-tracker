@@ -943,6 +943,24 @@ function renderProgressBars() {
 }
 
 // ============================================================================
+// Spoiler Shield, per profile (profiles/{pid}/spoilerShield; a missing field = on).
+// Shown = checked off, or gettable now: `needs`, or `reach` for milestones, items, songs and Hall
+// bosses. Everything else is shielded. A peek reveals one until the app reloads (memory only).
+// ============================================================================
+const peeked = new Set();
+const shieldOn = () => !!pid && profiles[pid]?.spoilerShield !== false;
+function isShown(x) {
+  if (!shieldOn() || peeked.has(x.id)) return true;
+  // Auto-checked items follow their source entry; token-count ones show once earned.
+  if (x.derivedFrom) return x.derivedFrom.startsWith('gs:') ? met(x.derivedFrom) : isShown(BY_ID[x.derivedFrom]);
+  if (x.readOnly) return false;   // 🚧 the 5th bottle and the Hall statues
+  return isDone(x.id) || !!bossTimes[x.id] || met(x.reach || x.needs);
+}
+// Skulltula reward badges show once earned.
+const rewardShown = (r) => !shieldOn() || peeked.has('reward-' + r.tokens) || gsCount() >= r.tokens;
+window.OOT_SHIELD = { isShown, rewardShown };   // for the test
+
+// ============================================================================
 // Filters, search, sort, view. Chips are shared by all tabs; search and sort are per tab.
 // Chips and the view toggle are remembered per device.
 // ============================================================================
