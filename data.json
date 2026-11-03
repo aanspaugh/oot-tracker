@@ -3167,7 +3167,11 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "ZR Frogs Ocarina Game"
+   "ootrLocation": "ZR Frogs Ocarina Game",
+   "howToIn": {
+    "3ds": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (3DS buttons): L, X, Y, R, X, Y, R, L, R, L, R, Y, X, L.",
+    "mq3ds": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (3DS buttons): L, X, Y, R, X, Y, R, L, R, L, R, Y, X, L."
+   }
   },
   {
    "id": "hp-zr-pillar",
