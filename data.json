@@ -27,6 +27,22 @@
    "kotaku": {
     "name": "Kotaku, \"5 things we just learned about the Ocarina of Time remake\" (2026-10-14, citing IGN)",
     "url": "https://kotaku.com/5-things-we-just-learned-about-the-legend-of-zelda-ocarina-of-time-remake-2000745965"
+   },
+   "zw-shard": {
+    "name": "Zelda Wiki - Shard of Agony (OoT3D)",
+    "url": "https://zeldawiki.wiki/wiki/Shard_of_Agony"
+   },
+   "zd-shard": {
+    "name": "Zelda Dungeon, \"New Item in Ocarina of Time 3D: Shard of Agony\"",
+    "url": "https://www.zeldadungeon.net/?p=10434"
+   },
+   "zw-boss-challenge": {
+    "name": "Zelda Wiki - Boss Challenge (OoT3D)",
+    "url": "https://zeldawiki.wiki/wiki/Boss_Challenge"
+   },
+   "zd-boss-gauntlet": {
+    "name": "Zelda Dungeon, \"Ocarina of Time 3D Boss Gauntlet: How it Works\"",
+    "url": "https://www.zeldadungeon.net/?p=12143"
    }
   }
  },
@@ -335,7 +351,11 @@
    ],
    "switch2": "unverified",
    "derivedFrom": "gs:20",
-   "readOnly": true
+   "readOnly": true,
+   "nameIn": {
+    "3ds": "Shard of Agony",
+    "mq3ds": "Shard of Agony"
+   }
   },
   {
    "id": "magic-meter",
@@ -9762,7 +9782,10 @@
    "switch2": "new-unconfirmed",
    "readOnly": true,
    "icon": "bottle",
-   "map": null
+   "map": null,
+   "versions": [
+    "switch2"
+   ]
   }
  ],
  "skulltulaRewards": [
@@ -9780,6 +9803,10 @@
   {
    "tokens": 20,
    "reward": "Stone of Agony",
+   "rewardIn": {
+    "3ds": "Shard of Agony",
+    "mq3ds": "Shard of Agony"
+   },
    "switch2": "unverified",
    "sources": [
     "jegged",
@@ -9916,6 +9943,9 @@
    ],
    "switch2": "unverified",
    "rematchConfirmed": true,
+   "versions": [
+    "switch2"
+   ],
    "reach": [
     "ms-water-temple"
    ]
@@ -9976,6 +10006,9 @@
    ],
    "switch2": "unverified",
    "rematchConfirmed": false,
+   "versions": [
+    "switch2"
+   ],
    "reach": [
     "ms-ganon"
    ]
@@ -9991,8 +10024,35 @@
    ],
    "switch2": "unverified",
    "rematchConfirmed": false,
+   "versions": [
+    "switch2"
+   ],
    "reach": [
     "ms-ganon"
+   ]
+  },
+  {
+   "id": "boss-gauntlet",
+   "name": "Boss Gauntlet (all 8 in a row)",
+   "area": null,
+   "sources": [
+    "zw-boss-challenge",
+    "zd-boss-gauntlet"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "3ds",
+    "mq3ds"
+   ],
+   "reach": [
+    "ms-deku-tree",
+    "ms-dodongos-cavern",
+    "ms-jabu-jabu",
+    "ms-forest-temple",
+    "ms-fire-temple",
+    "ms-water-temple",
+    "ms-shadow-temple",
+    "ms-spirit-temple"
    ]
   }
  ],

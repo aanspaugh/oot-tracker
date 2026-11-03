@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Zelda: Ocarina of Time (Switch 2) Tracker</title>
+  <title>Zelda: Ocarina of Time Tracker</title>
   <meta name="theme-color" content="#0f1a14">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -241,6 +241,9 @@
     .n64.a { background: #3b6fd8; color: #fff; }
     .n64.c { background: #e8c234; color: #2a2205; }
     .sc-slot .n64 { width: 100%; height: 100%; font-size: 0.85rem; }
+    .n64.ds { background: #d6d9dc; color: #23272b; }                 /* 3DS face buttons */
+    .n64.ds.sh { border-radius: 10px; background: #8b939b; color: #fff; }   /* 3DS L / R shoulders */
+    .sc-pad .n64.ds.sh { width: 52px; }
     .sc-pad .act-btn { min-height: 44px; }
 
     /* Skulltula reward badges */
@@ -279,7 +282,7 @@
     .boss-best { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; min-height: 44px; font-size: 0.88rem; color: var(--text-muted); }
     .boss-best b { color: var(--gold); font-size: 1.05rem; }
     .boss-form { display: flex; gap: 0.5rem; }
-    .boss-form .field { flex: 1; min-width: 0; }
+    .boss-form .field { flex: 1; min-width: 0; width: 0; }   /* no built-in input width, so 4 boss cards fit a 1280px row */
     .item-card.static { cursor: default; }
     .group-toggle {
       background: none; border: none; padding: 0; min-height: 44px; text-align: left; color: var(--text);
@@ -372,6 +375,19 @@
     .icon-btn.danger { color: var(--danger); }
     .icon-btn.confirm { background: var(--danger); color: #1a0d0a; font-weight: 700; border-color: var(--danger); }
     .prof-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .ver-opts { display: flex; flex-direction: column; gap: 0.35rem; }
+    .ver-label { font-size: 0.8rem; color: var(--text-muted); }
+    .ver-label span { display: block; font-size: 0.75rem; }
+    .prof-form .ver-opt {
+      flex-direction: row; align-items: flex-start; gap: 0.6rem; cursor: pointer;
+      padding: 0.5rem 0.65rem; border-radius: var(--radius-sm); background: var(--bg); border: 2px solid var(--border);
+      color: var(--text); font-size: 0.92rem; line-height: 1.3;
+    }
+    .prof-form .ver-opt:has(input:checked) { border-color: var(--gold); }
+    .ver-opt input { width: 18px; height: 18px; margin: 0.1rem 0 0; accent-color: var(--gold); flex-shrink: 0; }
+    .ver-opt b { display: block; }
+    .ver-opt small { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
+    .prof-form .ver-opt.soon { opacity: 0.55; cursor: not-allowed; }
     .shield-opts { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
     .so-label { font-size: 0.85rem; font-weight: 700; }
     .shield-opt {
@@ -461,7 +477,7 @@
   <svg class="logo" viewBox="0 0 64 56" aria-hidden="true">
     <path fill="#d9b44a" d="M32 0 48 28H16zM16 28 32 56H0zM48 28 64 56H32z"/>
   </svg>
-  <h1>Zelda: Ocarina of Time (Switch 2) Tracker</h1>
+  <h1>Zelda: Ocarina of Time Tracker</h1>
   <div id="overlayMsg">Connecting…</div>
   <div id="whoami"></div>
   <button class="btn" id="signInBtn">
@@ -482,7 +498,7 @@
         <path fill="#d9b44a" opacity=".3" d="M32 0 48 28H16zM16 28 32 56H0zM48 28 64 56H32z"/>
         <path fill="#d9b44a" clip-path="url(#triClip)" d="M32 0 48 28H16zM16 28 32 56H0zM48 28 64 56H32z"/>
       </svg>
-      <div class="header-title">Zelda: Ocarina of Time (Switch 2) Tracker</div>
+      <div class="header-title">Zelda: Ocarina of Time Tracker</div>
     </div>
     <button class="profile-btn" id="profileBtn" aria-label="Profiles"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="11" r="5.4" fill="currentColor"/><path d="M5.5 28c.6-6 5-9.6 10.5-9.6S25.9 22 26.5 28Z" fill="currentColor"/></svg> <span id="profileName">No profile</span> ▾</button>
   </div>
@@ -938,7 +954,7 @@ function switchTab(id) {
 // ============================================================================
 // Progress state
 // ============================================================================
-const entriesIn = (cats) => DATA.entries.filter((e) => cats.includes(e.category));
+const entriesIn = (cats) => DATA.entries.filter((e) => cats.includes(e.category) && inVersion(e));
 const gsCount = () => entriesIn(['skulltula']).filter((e) => progress[e.id]).length;
 // Items with derivedFrom (Master Sword, fairy spells, wallets…) mirror another check and can't be set by hand.
 function isDone(id) {
@@ -991,6 +1007,38 @@ function renderProgressBars() {
       <div class="progress-track"><div class="progress-fill${r.done === r.total ? ' complete' : ''}" style="width:${r.total ? (100 * r.done / r.total) : 0}%"></div></div>
       <span class="progress-count">${r.done}/${r.total}</span>
     </div>`).join('');
+}
+
+// ============================================================================
+// Game version, per profile: profiles/{pid}/version, picked when the profile is created and locked
+// (missing = Switch 2). An entry or boss with `versions` exists only in those. The Hall is the remake's;
+// the 3DS versions get the Boss Challenge instead; N64 and Master Quest have neither.
+// ============================================================================
+const VERSIONS = {
+  n64:     { label: 'Ocarina of Time (N64)', short: 'N64', desc: "Also the GameCube Collector's Edition, Wii and Wii U Virtual Console, and Nintendo Switch Online." },
+  mq:      { label: 'Master Quest (GameCube)', short: 'Master Quest', soon: true },
+  '3ds':   { label: 'Ocarina of Time 3D (3DS)', short: '3DS', bosses: 'challenge' },
+  mq3ds:   { label: 'Master Quest 3D (3DS)', short: 'Master Quest 3D', desc: 'Mirrored.', soon: true, bosses: 'challenge' },
+  switch2: { label: 'Ocarina of Time (Switch 2)', short: 'Switch 2', bosses: 'hall' },
+};
+const versionOf = (id) => (VERSIONS[profiles[id]?.version] ? profiles[id].version : 'switch2');
+const gameVer = () => versionOf(pid);
+const inVersion = (x) => !x.versions || x.versions.includes(gameVer());
+const isRemake = () => gameVer() === 'switch2';
+// Names that differ by version (the 3DS "Shard of Agony"), applied before each render.
+function applyVersionNames() {
+  const v = gameVer();
+  for (const x of DATA.items) if (x.nameIn) { x.name0 ??= x.name; x.name = x.nameIn[v] || x.name0; }
+  for (const r of DATA.skulltulaRewards) if (r.rewardIn) { r.reward0 ??= r.reward; r.reward = r.rewardIn[v] || r.reward0; }
+}
+// Hall (Switch 2) or Bosses (3DS Boss Challenge) or no boss tab at all (N64, Master Quest).
+function syncTabs() {
+  const kind = VERSIONS[gameVer()].bosses;
+  const b = document.querySelector('.tab-btn[data-tab="hall"]');
+  if (!b) return;
+  b.hidden = !kind;
+  b.lastChild.textContent = kind === 'challenge' ? 'Bosses' : 'Hall';
+  if (!kind && currentTab === 'hall') switchTab('progress');
 }
 
 // ============================================================================
@@ -1188,6 +1236,7 @@ $('headerControls').addEventListener('click', (e) => {
 
 function render() {
   if (!DATA) return;
+  applyVersionNames();
   renderProgressBars();
   if (detailId) renderDetail();
   const t = TABS.find((x) => x.id === currentTab);
@@ -1326,19 +1375,29 @@ const NOTES = {
   B4: { btn: '◀', cls: 'c', name: 'C-Left' },
   D5: { btn: '▲', cls: 'c', name: 'C-Up' },
 };
+// The 3DS plays the same notes on L, R, Y, X and A (Wikibooks "Ocarina Songs" lists every song both ways).
+const NOTES_3DS = {
+  D4: { btn: 'L', cls: 'ds sh', name: 'L' },
+  F4: { btn: 'R', cls: 'ds sh', name: 'R' },
+  A4: { btn: 'Y', cls: 'ds', name: 'Y' },
+  B4: { btn: 'X', cls: 'ds', name: 'X' },
+  D5: { btn: 'A', cls: 'ds', name: 'A' },
+};
+const is3DS = () => gameVer() === '3ds' || gameVer() === 'mq3ds';
 let confirmClear = false, clearTimer = null;
 function scarecrowHTML() {
+  const btns = is3DS() ? NOTES_3DS : NOTES;
   const max = DATA.songs.find((s) => s.recordNotes)?.recordNotes || 8;
   const notes = scarecrow.slice(0, max);
   const slots = Array.from({ length: max }, (_, i) => notes[i]
-    ? `<div class="sc-slot"><span class="n64 ${NOTES[notes[i]].cls}" title="${NOTES[notes[i]].name}">${NOTES[notes[i]].btn}</span></div>`
+    ? `<div class="sc-slot"><span class="n64 ${btns[notes[i]].cls}" title="${btns[notes[i]].name}">${btns[notes[i]].btn}</span></div>`
     : '<div class="sc-slot"></div>').join('');
   const full = notes.length >= max;
-  const pad = Object.entries(NOTES).map(([k, n]) =>
+  const pad = Object.entries(btns).map(([k, n]) =>
     `<button class="n64 ${n.cls}" data-note="${k}" aria-label="${n.name}"${full ? ' disabled style="opacity:.35"' : ''}>${n.btn}</button>`).join('');
   return `<div class="scarecrow">
     <div class="scarecrow-title">${svg('scarecrow', 'ic ic-inline')} Scarecrow's Song: your ${max} notes</div>
-    <div class="scarecrow-sub">Record the song you taught Pierre as young Link, so you can play it back as an adult. N64 buttons until the remake's controls are known.</div>
+    <div class="scarecrow-sub">Record the song you taught Pierre as young Link, so you can play it back as an adult. ${isRemake() ? "N64 buttons until the remake's controls are known." : is3DS() ? 'Shown as 3DS buttons.' : 'Shown as N64 buttons.'}</div>
     <div class="sc-slots" id="scSlots">${slots}</div>
     <div class="sc-pad">${pad}
       <button class="act-btn" data-sc="back"${notes.length ? '' : ' disabled'} aria-label="Delete last note">⌫</button>
@@ -1358,12 +1417,13 @@ function saveScarecrow(notes) {
 
 function rewardsHTML() {
   const n = gsCount();
-  const notes = DATA.skulltulaRewards.filter((r) => r.switch2Note && rewardShown(r)).map((r) => `⚠️ ${r.tokens}: ${esc(r.switch2Note)}`);
+  const note = (r) => isRemake() && r.switch2Note;   // remake-only notes
+  const notes = DATA.skulltulaRewards.filter((r) => note(r) && rewardShown(r)).map((r) => `⚠️ ${r.tokens}: ${esc(r.switch2Note)}`);
   return `<div class="group-header"><span class="group-name">${svg('skulltula', 'ic ic-inline')} Skulltula rewards</span>${badge(n, 100)}</div>
     <div class="rewards">${DATA.skulltulaRewards.map((r) => !rewardShown(r)
       ? `<span class="reward shielded" data-sid="${SID.get('reward-' + r.tokens)}" tabindex="0" aria-label="Hidden reward: tap to show"><b>${r.tokens}</b> ${veilText('reward-' + r.tokens, r.reward.length)}</span>`
       : `<span class="reward${n >= r.tokens ? ' earned' : ''}">
-      <b>${n >= r.tokens ? '✓ ' : ''}${r.tokens}</b> ${esc(r.reward)}${r.switch2Note ? ' ⚠️' : ''}</span>`).join('')}</div>
+      <b>${n >= r.tokens ? '✓ ' : ''}${r.tokens}</b> ${esc(r.reward)}${note(r) ? ' ⚠️' : ''}</span>`).join('')}</div>
     ${notes.length ? `<div class="group-note">${notes.join('<br>')}</div>` : ''}`;
 }
 
@@ -1447,8 +1507,9 @@ let statuesOpen = lsGet('oot.hall.statues') === '1';   // collapsed by default, 
 let confirmClearTime = null, clearTimeTimer = null;    // boss id armed to clear its time
 
 function renderHall() {
-  const timed = DATA.bosses.filter((b) => bossTimes[b.id]).length;
-  const bosses = DATA.bosses.map((b) => {
+  const list = DATA.bosses.filter(inVersion), hall = VERSIONS[gameVer()].bosses === 'hall';
+  const timed = list.filter((b) => bossTimes[b.id]).length;
+  const bosses = list.map((b) => {
     if (!isShown(b)) return shieldedCard(b, svg('hall'));
     const best = bossTimes[b.id], armed = confirmClearTime === b.id;
     return `<div class="item-card boss-card" data-boss="${b.id}">
@@ -1457,7 +1518,7 @@ function renderHall() {
         <div class="card-info">
           <div class="card-name">${esc(b.name)}</div>
           ${b.area ? `<div class="card-meta">📍 ${esc(areaName(b.area))}</div>` : ''}
-          <div class="card-tags"><span class="tag">${b.rematchConfirmed ? '✓ Rematch confirmed' : 'Rematch not confirmed yet'}</span></div>
+          ${hall ? `<div class="card-tags"><span class="tag">${b.rematchConfirmed ? '✓ Rematch confirmed' : 'Rematch not confirmed yet'}</span></div>` : ''}
         </div>
       </div>
       <div class="boss-best">${best ? `<span>Best <b>${fmtTime(best.ms)}</b> · ${new Date(best.at).toLocaleDateString()}</span>
@@ -1473,11 +1534,14 @@ function renderHall() {
         <div class="card-info"><div class="card-name">${esc(f.name)}</div>
           ${f.variants.length ? `<div class="card-tags">${f.variants.map((v) => `<span class="tag">${esc(v)}</span>`).join('')}</div>` : ''}</div></div>
     </div>`).join('');
-  return `<div class="group">
-      <div class="group-header"><span class="group-name">${svg('hall', 'ic ic-inline')} Boss best times</span>${badge(timed, DATA.bosses.length)}</div>
-      <div class="group-note">Your fastest Hall of Fallen Foes rematch for each boss. Type m:ss or m:ss.cs; a time only replaces your best when it's faster.</div>
+  const head = `<div class="group">
+      <div class="group-header"><span class="group-name">${svg('hall', 'ic ic-inline')} ${hall ? 'Boss best times' : 'Boss Challenge best times'}</span>${badge(timed, list.length)}</div>
+      <div class="group-note">${hall ? 'Your fastest Hall of Fallen Foes rematch for each boss.'
+        : "Your record time for each boss in the 3DS Boss Challenge (examine Link's bed), and for the Boss Gauntlet."} Type m:ss or m:ss.cs; a time only replaces your best when it's faster.</div>
       <div class="card-grid">${bosses}</div>
-    </div>
+    </div>`;
+  if (!hall) return head;   // the 3DS has no statues
+  return head + `
     <div class="group">
       <div class="group-header"><button class="group-toggle" data-statues aria-expanded="${statuesOpen}">${statuesOpen ? '▾' : '▸'} ${svg('wip', 'ic ic-inline')} Enemy statues</button><span class="group-badge">${DATA.statues.length}</span></div>
       <div class="group-note">🚧 Under construction: built from the N64 enemy list and unconfirmed until the remake launches, so they can't be checked off yet.</div>
@@ -1594,7 +1658,7 @@ function renderDetail() {
     h += `<div class="d-label">More info</div><div class="d-links">${e.links.map((l) =>
       `<a class="link-btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div>`;
   }
-  if (e.switch2 === 'unverified') h += '<div class="d-note" style="margin-top:0.9rem">Checked against N64 guides; not yet confirmed in the Switch 2 remake.</div>';
+  if (e.switch2 === 'unverified' && isRemake()) h += '<div class="d-note" style="margin-top:0.9rem">Checked against N64 guides; not yet confirmed in the Switch 2 remake.</div>';
   if (!e.readOnly) {
     h += `<label class="check-pill d-check${done ? ' is-checked' : ''}"><input type="checkbox" data-check="${e.id}"${done ? ' checked' : ''}> ${doneWord}</label>`;
   }
@@ -1635,7 +1699,7 @@ function celebrationKeysMet(p) {
   if (hp === counted('heart').length) keys.add('hp-all');
   if (gs === counted('skulltula').length) keys.add('gs-all');
   for (const c in CAT_DONE) if (got(c) === counted(c).length) keys.add('cat-' + c);
-  if (DATA.entries.every((e) => e.readOnly || p[e.id])) keys.add('total-100');
+  if (DATA.entries.every((e) => e.readOnly || !inVersion(e) || p[e.id])) keys.add('total-100');
   return keys;
 }
 
@@ -1657,7 +1721,7 @@ function celInfo(k) {
   if (k.startsWith('gs-')) {
     const r = reward(n);
     const what = !r ? `Next reward at 100`
-      : `Reward: ${r.switch2 === 'changed-unknown' ? "changed in the remake, not known yet" : r.reward}`;
+      : `Reward: ${r.switch2 === 'changed-unknown' && isRemake() ? "changed in the remake, not known yet" : r.reward}`;
     return { icon: 'skulltula', title: `${n} Gold Skulltulas! ${what}` };
   }
   const c = k.slice(4);
@@ -1764,6 +1828,7 @@ function selectProfile(id) {
     unsubs.push(onValue(ref(_db, `bossTimes/${id}`), (snap) => { bossTimes = snap.val() || {}; if (currentTab === 'hall') render(); }, lost));
     unsubs.push(onValue(ref(_db, `notes/${id}`), (snap) => { notes = snap.val() || ''; if (currentTab === 'notes') render(); }, lost));
   }
+  syncTabs();   // (may switch away from a boss tab this version doesn't have)
   renderProfileBtn();
   renderProfileSheet();
   renderControls();
@@ -1789,6 +1854,11 @@ function profileForm(kind, p = {}) {
   return `<div class="prof-form" data-form="${kind}">
     <label>Name<input class="field" id="pf-name" maxlength="60" value="${esc(p.name || '')}" placeholder="e.g. Aaron's first run"></label>
     <label>Playthrough start date<input class="field" id="pf-date" type="date" value="${esc(p.startDate || today())}"></label>
+    ${kind === 'new' ? `<div class="ver-opts" role="radiogroup" aria-labelledby="pfVerLabel">
+      <div class="ver-label" id="pfVerLabel">Which game is this playthrough? <span>It can't be changed later.</span></div>
+      ${Object.entries(VERSIONS).map(([k, v]) => `<label class="ver-opt${v.soon ? ' soon' : ''}"><input type="radio" name="pf-version" value="${k}"${k === 'switch2' ? ' checked' : ''}${v.soon ? ' disabled' : ''}>
+        <span><b>${v.label}</b>${v.soon ? '<small>Coming soon: the Master Quest dungeon data isn\'t in yet.</small>' : v.desc ? `<small>${v.desc}</small>` : ''}</span></label>`).join('')}
+    </div>` : ''}
     <div class="form-actions">
       <button class="act-btn" data-act="cancel">Cancel</button>
       <button class="act-btn primary" data-act="${kind === 'new' ? 'create' : 'save'}">${kind === 'new' ? 'Create' : 'Save'}</button>
@@ -1804,7 +1874,7 @@ function renderProfileSheet() {
   for (const p of act) {
     if (editing === p.id) { h += profileForm('edit', p); continue; }
     h += `<div class="prof-row${p.id === pid ? ' current' : ''}" data-pid="${p.id}">
-      <button class="prof-pick" data-act="pick"><div class="prof-name">${esc(p.name)}</div><div class="prof-sub">Started ${fmtDate(p.startDate)}</div></button>
+      <button class="prof-pick" data-act="pick"><div class="prof-name">${esc(p.name)}</div><div class="prof-sub">${VERSIONS[versionOf(p.id)].short} · Started ${fmtDate(p.startDate)}</div></button>
       <button class="icon-btn" data-act="edit" aria-label="Rename">✏️</button>
       <button class="icon-btn danger" data-act="trash" aria-label="Move to trash">🗑</button>
     </div>`;
@@ -1919,7 +1989,8 @@ function submitProfileForm(act) {
   if (!name) { $('pf-name').focus(); toast('Give the profile a name.', true); return; }
   if (act === 'create') {
     const r = push(ref(_db, 'profiles'));
-    set(r, { name, startDate, createdBy: me, createdAt: Date.now() })
+    const version = document.querySelector('input[name="pf-version"]:checked')?.value || 'switch2';   // locked from here on
+    set(r, { name, startDate, version, createdBy: me, createdAt: Date.now() })
       .then(() => { selectProfile(r.key); }).catch(fail('create the profile'));
     creating = false;
     closeSheet();
