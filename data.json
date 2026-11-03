@@ -2,7 +2,7 @@
  "meta": {
   "title": "Ocarina of Time (Switch 2) tracker data",
   "schema": 1,
-  "note": "N64-verified (Stage 0). switch2 flags are set in the post-launch pass. Master Quest excluded.",
+  "note": "N64-verified (Stage 0); Master Quest dungeons added in V2 (versions mq/mq3ds). switch2 flags are set in the post-launch pass.",
   "sources": {
    "jegged": {
     "name": "Jegged.com - Ocarina of Time guide (side quests + walkthrough)",
@@ -43,6 +43,14 @@
    "zd-boss-gauntlet": {
     "name": "Zelda Dungeon, \"Ocarina of Time 3D Boss Gauntlet: How it Works\"",
     "url": "https://www.zeldadungeon.net/?p=12143"
+   },
+   "wikibooks-mq": {
+    "name": "Wikibooks - The Legend of Zelda: Ocarina of Time Master Quest (Gold Skulltulas + dungeon walkthrough)",
+    "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest"
+   },
+   "nf-mq": {
+    "name": "Nintendo Forever - Zelda: Ocarina of Time Master Quest guide (N64/GameCube layout; Skulltulas in dungeons + walkthrough)",
+    "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_Index.php?lang=en"
    }
   }
  },
@@ -332,7 +340,21 @@
     "ms-deku-tree",
     "ms-meet-zelda",
     "goron-bracelet"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-deku-tree",
+     "ms-meet-zelda",
+     "goron-bracelet",
+     "slingshot"
+    ],
+    "mq3ds": [
+     "ms-deku-tree",
+     "ms-meet-zelda",
+     "goron-bracelet",
+     "slingshot"
+    ]
+   }
   },
   {
    "id": "stone-of-agony",
@@ -476,7 +498,19 @@
    "reach": [
     "ms-deku-tree",
     "bottle-ruto-letter"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-deku-tree",
+     "bottle-ruto-letter",
+     "slingshot"
+    ],
+    "mq3ds": [
+     "ms-deku-tree",
+     "bottle-ruto-letter",
+     "slingshot"
+    ]
+   }
   },
   {
    "id": "giants-wallet",
@@ -695,7 +729,21 @@
     "song-of-storms",
     "zeldas-lullaby",
     "kokiri-sword"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-deku-tree",
+     "song-of-storms",
+     "zeldas-lullaby",
+     "bombs"
+    ],
+    "mq3ds": [
+     "ms-deku-tree",
+     "song-of-storms",
+     "zeldas-lullaby",
+     "bombs"
+    ]
+   }
   },
   {
    "id": "megaton-hammer",
@@ -725,7 +773,43 @@
     },
     "bombs",
     "goron-bracelet"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-master-sword",
+     "goron-tunic",
+     {
+      "any": [
+       "bolero-of-fire",
+       "hookshot",
+       "hover-boots"
+      ]
+     },
+     {
+      "any": [
+       "bombs",
+       "hookshot"
+      ]
+     }
+    ],
+    "mq3ds": [
+     "ms-master-sword",
+     "goron-tunic",
+     {
+      "any": [
+       "bolero-of-fire",
+       "hookshot",
+       "hover-boots"
+      ]
+     },
+     {
+      "any": [
+       "bombs",
+       "hookshot"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "enhanced-magic",
@@ -766,7 +850,35 @@
     "ms-master-sword",
     "ms-jabu-jabu",
     "zeldas-lullaby"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-master-sword",
+     "ms-jabu-jabu",
+     "zeldas-lullaby",
+     {
+      "any": [
+       "bottle-talon-cuccos",
+       "bottle-anju-cuccos",
+       "bottle-ruto-letter",
+       "bottle-big-poes"
+      ]
+     }
+    ],
+    "mq3ds": [
+     "ms-master-sword",
+     "ms-jabu-jabu",
+     "zeldas-lullaby",
+     {
+      "any": [
+       "bottle-talon-cuccos",
+       "bottle-anju-cuccos",
+       "bottle-ruto-letter",
+       "bottle-big-poes"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "zora-tunic",
@@ -837,7 +949,23 @@
     "iron-boots",
     "hookshot",
     "zora-tunic"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-master-sword",
+     "iron-boots",
+     "hookshot",
+     "zora-tunic",
+     "zeldas-lullaby"
+    ],
+    "mq3ds": [
+     "ms-master-sword",
+     "iron-boots",
+     "hookshot",
+     "zora-tunic",
+     "zeldas-lullaby"
+    ]
+   }
   },
   {
    "id": "fire-arrows",
@@ -883,7 +1011,31 @@
     "gf-dins-fire",
     "gf-magic",
     "lens-of-truth"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-dins-fire",
+     "gf-magic",
+     "lens-of-truth",
+     "hookshot",
+     "bombs",
+     "song-of-time",
+     "bow"
+    ],
+    "mq3ds": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-dins-fire",
+     "gf-magic",
+     "lens-of-truth",
+     "hookshot",
+     "bombs",
+     "song-of-time",
+     "bow"
+    ]
+   }
   },
   {
    "id": "gerudo-card",
@@ -936,7 +1088,85 @@
      ]
     },
     "gerudo-card"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-master-sword",
+     {
+      "any": [
+       "epona",
+       "longshot"
+      ]
+     },
+     "gerudo-card",
+     "gf-magic",
+     {
+      "any": [
+       "gf-dins-fire",
+       [
+        "fire-arrows",
+        "bow"
+       ]
+      ]
+     },
+     "lens-of-truth",
+     {
+      "any": [
+       "bottle-talon-cuccos",
+       "bottle-anju-cuccos",
+       "bottle-ruto-letter",
+       "bottle-big-poes"
+      ]
+     },
+     "song-of-time",
+     "megaton-hammer",
+     {
+      "any": [
+       "hookshot",
+       "bow",
+       "bombs"
+      ]
+     }
+    ],
+    "mq3ds": [
+     "ms-master-sword",
+     {
+      "any": [
+       "epona",
+       "longshot"
+      ]
+     },
+     "gerudo-card",
+     "gf-magic",
+     {
+      "any": [
+       "gf-dins-fire",
+       [
+        "fire-arrows",
+        "bow"
+       ]
+      ]
+     },
+     "lens-of-truth",
+     {
+      "any": [
+       "bottle-talon-cuccos",
+       "bottle-anju-cuccos",
+       "bottle-ruto-letter",
+       "bottle-big-poes"
+      ]
+     },
+     "song-of-time",
+     "megaton-hammer",
+     {
+      "any": [
+       "hookshot",
+       "bow",
+       "bombs"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "nayrus-love",
@@ -975,7 +1205,21 @@
    "switch2": "unverified",
    "reach": [
     "requiem-of-spirit"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "requiem-of-spirit",
+     "bombs",
+     "bombchus",
+     "song-of-time"
+    ],
+    "mq3ds": [
+     "requiem-of-spirit",
+     "bombs",
+     "bombchus",
+     "song-of-time"
+    ]
+   }
   },
   {
    "id": "mirror-shield",
@@ -998,7 +1242,31 @@
     "requiem-of-spirit",
     "silver-gauntlets",
     "bombs"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-master-sword",
+     "requiem-of-spirit",
+     "longshot",
+     "silver-gauntlets",
+     "bombs",
+     "bombchus",
+     "song-of-time",
+     "lens-of-truth",
+     "gf-magic"
+    ],
+    "mq3ds": [
+     "ms-master-sword",
+     "requiem-of-spirit",
+     "longshot",
+     "silver-gauntlets",
+     "bombs",
+     "bombchus",
+     "song-of-time",
+     "lens-of-truth",
+     "gf-magic"
+    ]
+   }
   },
   {
    "id": "light-arrows",
@@ -1043,7 +1311,35 @@
     "ms-shadow-temple",
     "ms-spirit-temple",
     "light-arrows"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-master-sword",
+     "ms-shadow-temple",
+     "ms-spirit-temple",
+     "light-arrows",
+     "megaton-hammer",
+     "bow",
+     "bombs",
+     "bombchus",
+     "fire-arrows",
+     "gf-magic",
+     "mirror-shield"
+    ],
+    "mq3ds": [
+     "ms-master-sword",
+     "ms-shadow-temple",
+     "ms-spirit-temple",
+     "light-arrows",
+     "megaton-hammer",
+     "bow",
+     "bombs",
+     "bombchus",
+     "fire-arrows",
+     "gf-magic",
+     "mirror-shield"
+    ]
+   }
   },
   {
    "id": "enhanced-defense",
@@ -1302,7 +1598,35 @@
     "ms-master-sword",
     "ms-jabu-jabu",
     "zeldas-lullaby"
-   ]
+   ],
+   "reachIn": {
+    "mq": [
+     "ms-master-sword",
+     "ms-jabu-jabu",
+     "zeldas-lullaby",
+     {
+      "any": [
+       "bottle-talon-cuccos",
+       "bottle-anju-cuccos",
+       "bottle-ruto-letter",
+       "bottle-big-poes"
+      ]
+     }
+    ],
+    "mq3ds": [
+     "ms-master-sword",
+     "ms-jabu-jabu",
+     "zeldas-lullaby",
+     {
+      "any": [
+       "bottle-talon-cuccos",
+       "bottle-anju-cuccos",
+       "bottle-ruto-letter",
+       "bottle-big-poes"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "nocturne-of-shadow",
@@ -3055,7 +3379,62 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Ice Cavern Freestanding PoH"
+   "ootrLocation": "Ice Cavern Freestanding PoH",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
+  },
+  {
+   "id": "hp-mq-ice-cavern",
+   "category": "heart",
+   "num": 28,
+   "name": "Ice Cavern hidden switch",
+   "area": "Ice Cavern",
+   "areaId": "ice-cavern",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the room with the Compass (behind a red ice wall: melt it with Blue Fire), look for a tiny crystal switch poking out of the ice beside the rising ice path. Set a Bomb next to it; a Piece of Heart appears on a pillar. Climb the path and jump across for it.",
+   "needs": [
+    "ms-master-sword",
+    "ms-jabu-jabu",
+    "zeldas-lullaby",
+    {
+     "any": [
+      "bottle-talon-cuccos",
+      "bottle-anju-cuccos",
+      "bottle-ruto-letter",
+      "bottle-big-poes"
+     ]
+    },
+    "bombs"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Ice_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/ZeldaOOT_Soluce/MasterQuest_ZeldaOOT_14_S6_CavernePolaire.php?lang=en#cavernePolaire"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": false,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "heart",
+   "map": null,
+   "ootrLocation": "Ice Cavern MQ Freestanding PoH",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
   },
   {
    "id": "hp-lh-lab-roof",
@@ -5735,7 +6114,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Deku Tree GS Compass Room"
+   "ootrLocation": "Deku Tree GS Compass Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-deku-basement-gate",
@@ -5772,7 +6156,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Deku Tree GS Basement Gate"
+   "ootrLocation": "Deku Tree GS Basement Gate",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-deku-basement-vines",
@@ -5815,7 +6204,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Deku Tree GS Basement Vines"
+   "ootrLocation": "Deku Tree GS Basement Vines",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-deku-basement-back-room",
@@ -5855,7 +6249,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Deku Tree GS Basement Back Room"
+   "ootrLocation": "Deku Tree GS Basement Back Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-dc-side-room",
@@ -5898,7 +6297,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Dodongos Cavern GS Side Room Near Lower Lizalfos"
+   "ootrLocation": "Dodongos Cavern GS Side Room Near Lower Lizalfos",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-dc-vines-above-stairs",
@@ -5941,7 +6345,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Dodongos Cavern GS Vines Above Stairs"
+   "ootrLocation": "Dodongos Cavern GS Vines Above Stairs",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-dc-back-room",
@@ -5985,7 +6394,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Dodongos Cavern GS Back Room"
+   "ootrLocation": "Dodongos Cavern GS Back Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-dc-alcove-above-stairs",
@@ -6039,7 +6453,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Dodongos Cavern GS Alcove Above Stairs"
+   "ootrLocation": "Dodongos Cavern GS Alcove Above Stairs",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-dc-scarecrow",
@@ -6084,7 +6503,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Dodongos Cavern GS Scarecrow"
+   "ootrLocation": "Dodongos Cavern GS Scarecrow",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-jabu-water-switch-room",
@@ -6121,7 +6545,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Jabu Jabus Belly GS Water Switch Room"
+   "ootrLocation": "Jabu Jabus Belly GS Water Switch Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-jabu-lobby-basement-lower",
@@ -6159,7 +6588,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Jabu Jabus Belly GS Lobby Basement Lower"
+   "ootrLocation": "Jabu Jabus Belly GS Lobby Basement Lower",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-jabu-lobby-basement-upper",
@@ -6197,7 +6631,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Jabu Jabus Belly GS Lobby Basement Upper"
+   "ootrLocation": "Jabu Jabus Belly GS Lobby Basement Upper",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-jabu-near-boss",
@@ -6235,7 +6674,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Jabu Jabus Belly GS Near Boss"
+   "ootrLocation": "Jabu Jabus Belly GS Near Boss",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-forest-first-room",
@@ -6278,7 +6722,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Forest Temple GS First Room"
+   "ootrLocation": "Forest Temple GS First Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-forest-lobby",
@@ -6321,7 +6770,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Forest Temple GS Lobby"
+   "ootrLocation": "Forest Temple GS Lobby",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-forest-raised-island",
@@ -6370,7 +6824,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Forest Temple GS Raised Island Courtyard"
+   "ootrLocation": "Forest Temple GS Raised Island Courtyard",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-forest-level-island",
@@ -6423,7 +6882,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Forest Temple GS Level Island Courtyard"
+   "ootrLocation": "Forest Temple GS Level Island Courtyard",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-forest-basement",
@@ -6468,7 +6932,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Forest Temple GS Basement"
+   "ootrLocation": "Forest Temple GS Basement",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-fire-song-of-time-room",
@@ -6513,7 +6982,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Fire Temple GS Song of Time Room"
+   "ootrLocation": "Fire Temple GS Song of Time Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-fire-boulder-maze",
@@ -6559,7 +7033,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Fire Temple GS Boulder Maze"
+   "ootrLocation": "Fire Temple GS Boulder Maze",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-fire-scarecrow-climb",
@@ -6607,7 +7086,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Fire Temple GS Scarecrow Climb"
+   "ootrLocation": "Fire Temple GS Scarecrow Climb",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-fire-boss-key-loop",
@@ -6652,7 +7136,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Fire Temple GS Boss Key Loop"
+   "ootrLocation": "Fire Temple GS Boss Key Loop",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-fire-scarecrow-top",
@@ -6700,7 +7189,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Fire Temple GS Scarecrow Top"
+   "ootrLocation": "Fire Temple GS Scarecrow Top",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-ice-heart-piece-room",
@@ -6747,7 +7241,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Ice Cavern GS Heart Piece Room"
+   "ootrLocation": "Ice Cavern GS Heart Piece Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-ice-spinning-scythe",
@@ -6786,7 +7285,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Ice Cavern GS Spinning Scythe Room"
+   "ootrLocation": "Ice Cavern GS Spinning Scythe Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-ice-push-block",
@@ -6833,7 +7337,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Ice Cavern GS Push Block Room"
+   "ootrLocation": "Ice Cavern GS Push Block Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-water-behind-gate",
@@ -6874,7 +7383,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Water Temple GS Behind Gate"
+   "ootrLocation": "Water Temple GS Behind Gate",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-water-river",
@@ -6915,7 +7429,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Water Temple GS River"
+   "ootrLocation": "Water Temple GS River",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-water-central-pillar",
@@ -6956,7 +7475,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Water Temple GS Central Pillar"
+   "ootrLocation": "Water Temple GS Central Pillar",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-water-falling-platform",
@@ -6996,7 +7520,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Water Temple GS Falling Platform Room"
+   "ootrLocation": "Water Temple GS Falling Platform Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-water-near-boss-key",
@@ -7037,7 +7566,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Water Temple GS Near Boss Key Chest"
+   "ootrLocation": "Water Temple GS Near Boss Key Chest",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-botw-like-like-cage",
@@ -7077,7 +7611,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Bottom of the Well GS Like Like Cage"
+   "ootrLocation": "Bottom of the Well GS Like Like Cage",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-botw-west-inner",
@@ -7117,7 +7656,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Bottom of the Well GS West Inner Room"
+   "ootrLocation": "Bottom of the Well GS West Inner Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-botw-east-inner",
@@ -7157,7 +7701,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Bottom of the Well GS East Inner Room"
+   "ootrLocation": "Bottom of the Well GS East Inner Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-shadow-invisible-blades",
@@ -7200,7 +7749,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Shadow Temple GS Invisible Blades Room"
+   "ootrLocation": "Shadow Temple GS Invisible Blades Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-shadow-falling-spikes",
@@ -7243,7 +7797,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Shadow Temple GS Falling Spikes Room"
+   "ootrLocation": "Shadow Temple GS Falling Spikes Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-shadow-single-giant-pot",
@@ -7286,7 +7845,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Shadow Temple GS Single Giant Pot"
+   "ootrLocation": "Shadow Temple GS Single Giant Pot",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-shadow-near-ship",
@@ -7330,7 +7894,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Shadow Temple GS Near Ship"
+   "ootrLocation": "Shadow Temple GS Near Ship",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-shadow-triple-giant-pot",
@@ -7374,7 +7943,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Shadow Temple GS Triple Giant Pot"
+   "ootrLocation": "Shadow Temple GS Triple Giant Pot",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-spirit-metal-fence",
@@ -7411,7 +7985,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Spirit Temple GS Metal Fence"
+   "ootrLocation": "Spirit Temple GS Metal Fence",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-spirit-sun-on-floor",
@@ -7448,7 +8027,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Spirit Temple GS Sun on Floor Room"
+   "ootrLocation": "Spirit Temple GS Sun on Floor Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-spirit-hall-after-sun-block",
@@ -7486,7 +8070,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Spirit Temple GS Hall After Sun Block Room"
+   "ootrLocation": "Spirit Temple GS Hall After Sun Block Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-spirit-boulder-room",
@@ -7531,7 +8120,12 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Spirit Temple GS Boulder Room"
+   "ootrLocation": "Spirit Temple GS Boulder Room",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
   },
   {
    "id": "gs-spirit-lobby",
@@ -7571,7 +8165,2199 @@
    "icon": "skulltula",
    "map": null,
    "group": "dungeon",
-   "ootrLocation": "Spirit Temple GS Lobby"
+   "ootrLocation": "Spirit Temple GS Lobby",
+   "versions": [
+    "n64",
+    "3ds",
+    "switch2"
+   ]
+  },
+  {
+   "id": "gs-mq-deku-lobby",
+   "category": "skulltula",
+   "num": 57,
+   "name": "Crate by the Map chest",
+   "area": "Inside the Deku Tree",
+   "areaId": "deku-tree",
+   "age": "young",
+   "time": "any",
+   "howTo": "On the 2nd floor of the main room, break the crate next to the chest with the Dungeon Map (roll into it).",
+   "needs": [
+    "kokiri-sword",
+    "deku-shield"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Inside_the_Great_Deku_Tree"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Deku Tree MQ GS Lobby",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-deku-compass-room",
+   "category": "skulltula",
+   "num": 58,
+   "name": "Compass room, behind the boulders",
+   "area": "Inside the Deku Tree",
+   "areaId": "deku-tree",
+   "age": "young",
+   "time": "any",
+   "howTo": "In the 2nd-floor Compass room, blow up the boulders above the vines next to the Compass chest with a Bombchu (or with a Bomb, using the Song of Time). Climb the vines and get the token with the Boomerang.",
+   "needs": [
+    "kokiri-sword",
+    "deku-shield",
+    "slingshot",
+    "boomerang",
+    "bombs",
+    {
+     "any": [
+      "bombchus",
+      "song-of-time"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Inside_the_Great_Deku_Tree"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Deku Tree MQ GS Compass Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-deku-basement-graves",
+   "category": "skulltula",
+   "num": 59,
+   "name": "Basement torch room (Song of Time)",
+   "area": "Inside the Deku Tree",
+   "areaId": "deku-tree",
+   "age": "young",
+   "time": "any",
+   "howTo": "In the basement room with four torches, play the Song of Time to make a staircase of blocks and climb it, play it again to bridge the gap, then get the Gold Skulltula off the ceiling with the Boomerang.",
+   "needs": [
+    "kokiri-sword",
+    "deku-shield",
+    "slingshot",
+    "song-of-time",
+    "boomerang"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Inside_the_Great_Deku_Tree"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Deku Tree MQ GS Basement Graves Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-deku-basement-back-room",
+   "category": "skulltula",
+   "num": 60,
+   "name": "Basement back room (behind the web)",
+   "area": "Inside the Deku Tree",
+   "areaId": "deku-tree",
+   "age": "young",
+   "time": "any",
+   "howTo": "From the four-torch room, burn the web over a door with a lit Deku Stick and go through. Defeat the enemies; the Gold Skulltula is on the back wall, behind the big Deku Baba. Get it with the Boomerang.",
+   "needs": [
+    "kokiri-sword",
+    "deku-shield",
+    "slingshot",
+    "boomerang"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Inside_the_Great_Deku_Tree"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Deku Tree MQ GS Basement Back Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-dc-larvae-room",
+   "category": "skulltula",
+   "num": 61,
+   "name": "Crates behind the three torches",
+   "area": "Dodongo's Cavern",
+   "areaId": "dodongos-cavern",
+   "age": "young",
+   "time": "any",
+   "howTo": "In the room with three wall torches, climb the blocks and light all three (a Deku Stick, Din's Fire or Fire Arrows) to open the barred door. In the Gohma Larva room behind it, break the crates along the wall to find the Gold Skulltula.",
+   "needs": [
+    "ms-deku-tree",
+    "ms-meet-zelda",
+    {
+     "any": [
+      "bombs",
+      "goron-bracelet"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Dodongo's_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Dodongos Cavern MQ GS Larvae Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-dc-back-area",
+   "category": "skulltula",
+   "num": 62,
+   "name": "Inside the skull, by the Armos",
+   "area": "Dodongo's Cavern",
+   "areaId": "dodongos-cavern",
+   "age": "young",
+   "time": "any",
+   "howTo": "Inside the giant Dodongo skull, take the corridor on the right. The Gold Skulltula sits on top of the wall near the fire. Get it with the Boomerang, or jump to its ledge from a nearby block (adult Link can Hookshot it).",
+   "needs": [
+    "ms-deku-tree",
+    "ms-meet-zelda",
+    {
+     "any": [
+      "bombs",
+      "goron-bracelet"
+     ]
+    },
+    "bombs"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Dodongo's_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Dodongos Cavern MQ GS Back Area",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-dc-lizalfos-room",
+   "category": "skulltula",
+   "num": 63,
+   "name": "Behind the boulders in the Lizalfos room",
+   "area": "Dodongo's Cavern",
+   "areaId": "dodongos-cavern",
+   "age": "young",
+   "time": "any",
+   "howTo": "On the 2nd floor, in the big lava room where you first fight the Lizalfos, bomb the line of boulders at the back and follow the path to the Gold Skulltula.",
+   "needs": [
+    "ms-deku-tree",
+    "ms-meet-zelda",
+    {
+     "any": [
+      "bombs",
+      "goron-bracelet"
+     ]
+    },
+    "bombs"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Dodongo's_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Dodongos Cavern MQ GS Lizalfos Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-dc-scrub-room",
+   "category": "skulltula",
+   "num": 64,
+   "name": "Room off the Poe room",
+   "area": "Dodongo's Cavern",
+   "areaId": "dodongos-cavern",
+   "age": "either",
+   "time": "any",
+   "howTo": "In the room with the Poes and Bomb Flowers, open the door to the right of the entrance by bombing the bomb chain on the pillar in front of it. Defeat the enemies inside; the Gold Skulltula is high in a corner. Get it with the Boomerang (adult: Hookshot).",
+   "needs": [
+    {
+     "any": [
+      [
+       "ms-deku-tree",
+       "ms-meet-zelda",
+       {
+        "any": [
+         "bombs",
+         "goron-bracelet"
+        ]
+       },
+       "slingshot",
+       "boomerang"
+      ],
+      [
+       "ms-master-sword",
+       "hookshot"
+      ]
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Dodongo's_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Dodongos Cavern MQ GS Scrub Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-dc-sot-blocks",
+   "category": "skulltula",
+   "num": 65,
+   "name": "Song of Time block room",
+   "area": "Dodongo's Cavern",
+   "areaId": "dodongos-cavern",
+   "age": "young",
+   "time": "any",
+   "howTo": "From the big staircase room, take the door at the bottom of the stairs. Keep playing the Song of Time on the left side of the room to clear the blocks; the Gold Skulltula is under the back-most block, in the corner.",
+   "needs": [
+    "ms-deku-tree",
+    "ms-meet-zelda",
+    {
+     "any": [
+      "bombs",
+      "goron-bracelet"
+     ]
+    },
+    "song-of-time"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Dodongo's_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Dodongos Cavern MQ GS Song of Time Block Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-jabu-near-boss",
+   "category": "skulltula",
+   "num": 66,
+   "name": "Room before Barinade",
+   "area": "Inside Jabu-Jabu's Belly",
+   "areaId": "jabu-jabus-belly",
+   "age": "young",
+   "time": "any",
+   "howTo": "In the room before the boss, climb the vines in the middle. The Gold Skulltula is behind a small web: stand in the center of the platform and throw the Boomerang around it (Din's Fire burns the web).",
+   "needs": [
+    "ms-deku-tree",
+    "bottle-ruto-letter",
+    "slingshot",
+    "bombs",
+    "boomerang"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Inside_Jabu-Jabu's_Belly"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Jabu Jabus Belly MQ GS Near Boss",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-jabu-tailpasaran",
+   "category": "skulltula",
+   "num": 67,
+   "name": "Water-switch room, behind a boulder",
+   "area": "Inside Jabu-Jabu's Belly",
+   "areaId": "jabu-jabus-belly",
+   "age": "young",
+   "time": "any",
+   "howTo": "In the room with the electric Tailpasarans, step on the switch in the middle so the water lifts you, then blow up the boulder (a well-timed Bomb or a Bombchu) to uncover the Gold Skulltula. Get the token with the Boomerang.",
+   "needs": [
+    "ms-deku-tree",
+    "bottle-ruto-letter",
+    "slingshot",
+    "bombs",
+    "boomerang"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Inside_Jabu-Jabu's_Belly"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Jabu Jabus Belly MQ GS Tailpasaran Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-jabu-boomerang-room",
+   "category": "skulltula",
+   "num": 68,
+   "name": "Under the Song of Time block",
+   "area": "Inside Jabu-Jabu's Belly",
+   "areaId": "jabu-jabus-belly",
+   "age": "young",
+   "time": "any",
+   "howTo": "In the room where you find the Boomerang, play the Song of Time to remove the blue block. The Gold Skulltula is underneath.",
+   "needs": [
+    "ms-deku-tree",
+    "bottle-ruto-letter",
+    "slingshot",
+    "song-of-time"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Inside_Jabu-Jabu's_Belly"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Jabu Jabus Belly MQ GS Boomerang Chest Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-jabu-invisible-enemies",
+   "category": "skulltula",
+   "num": 69,
+   "name": "Invisible Keese room",
+   "area": "Inside Jabu-Jabu's Belly",
+   "areaId": "jabu-jabus-belly",
+   "age": "young",
+   "time": "any",
+   "howTo": "In the room Ruto drops into, take the door guarded by the blue tentacle. Use the Lens of Truth to see the three invisible Keese and shoot them down; a platform rises so you can cross the water. Get the token around the web with the Boomerang (Din's Fire burns the web). Without the Lens you can still find the Keese with Z-targeting, but that's harder.",
+   "needs": [
+    "ms-deku-tree",
+    "bottle-ruto-letter",
+    "slingshot",
+    "bombs",
+    "boomerang",
+    "lens-of-truth",
+    "gf-magic"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Inside_Jabu-Jabu's_Belly"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Jabu Jabus Belly MQ GS Invisible Enemies Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-forest-first-hallway",
+   "category": "skulltula",
+   "num": 70,
+   "name": "First hallway, above the door",
+   "area": "Forest Temple",
+   "areaId": "forest-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the corridor right after the first room, it's hidden in the vines above the locked door into the main hall. Hookshot it.",
+   "needs": [
+    "ms-master-sword",
+    "hookshot",
+    {
+     "any": [
+      "sarias-song",
+      "minuet-of-forest"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Forest_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Forest Temple MQ GS First Hallway",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-forest-block-push",
+   "category": "skulltula",
+   "num": 71,
+   "name": "West corridor nook",
+   "area": "Forest Temple",
+   "areaId": "forest-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "From the main hall, take the west door and cross the corridor. The Gold Skulltula is on the ground in a nook just to the left. Use your sword.",
+   "needs": [
+    "ms-master-sword",
+    "hookshot",
+    {
+     "any": [
+      "sarias-song",
+      "minuet-of-forest"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Forest_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Forest Temple MQ GS Block Push Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-forest-raised-island",
+   "category": "skulltula",
+   "num": 72,
+   "name": "Northeast courtyard, above the door",
+   "area": "Forest Temple",
+   "areaId": "forest-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "Go into the northeast courtyard (the main hall's door, opened by shooting the eye with the Bow). Walk forward and turn around: it's above the door, in front of the Hookshot target. Hookshot it.",
+   "needs": [
+    "ms-master-sword",
+    "hookshot",
+    {
+     "any": [
+      "sarias-song",
+      "minuet-of-forest"
+     ]
+    },
+    {
+     "any": [
+      "bow",
+      [
+       "goron-bracelet",
+       {
+        "any": [
+         "gold-scale",
+         "iron-boots",
+         "longshot",
+         [
+          "gf-dins-fire",
+          "gf-magic"
+         ]
+        ]
+       }
+      ]
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Forest_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Forest Temple MQ GS Raised Island Courtyard",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-forest-well",
+   "category": "skulltula",
+   "num": 73,
+   "name": "Inside the well",
+   "area": "Forest Temple",
+   "areaId": "forest-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "Drop into the well below the northwest courtyard vines and go all the way through; the Gold Skulltula is on the grate at the end. Hookshot it. If the well still has water, sink with the Iron Boots.",
+   "needs": [
+    "ms-master-sword",
+    "hookshot",
+    {
+     "any": [
+      "sarias-song",
+      "minuet-of-forest"
+     ]
+    },
+    {
+     "any": [
+      "bow",
+      [
+       "goron-bracelet",
+       "iron-boots"
+      ]
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Forest_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Forest Temple MQ GS Well",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-forest-level-island",
+   "category": "skulltula",
+   "num": 74,
+   "name": "Northwest courtyard vines",
+   "area": "Forest Temple",
+   "areaId": "forest-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "Go into the northwest courtyard and climb the vines above the well, in the back corner of the garden. The Gold Skulltula is at the top. Use your sword.",
+   "needs": [
+    "ms-master-sword",
+    "hookshot",
+    {
+     "any": [
+      "sarias-song",
+      "minuet-of-forest"
+     ]
+    },
+    {
+     "any": [
+      "bow",
+      "goron-bracelet"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Forest_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Forest Temple MQ GS Level Island Courtyard",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-fire-big-lava-room",
+   "category": "skulltula",
+   "num": 75,
+   "name": "Goron cell in the big lava room",
+   "area": "Fire Temple",
+   "areaId": "fire-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "From the entrance hall, take the door guarded by a statue (the way in needs the Megaton Hammer) into the big lava room with the bridge. Open the Goron's cell at the far left as you enter; the Gold Skulltula is behind him.",
+   "needs": [
+    "ms-master-sword",
+    "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
+    "megaton-hammer"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Fire_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Fire Temple MQ GS Big Lava Room Open Door",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-fire-flame-maze-side",
+   "category": "skulltula",
+   "num": 76,
+   "name": "Fire-wall maze side room",
+   "area": "Fire Temple",
+   "areaId": "fire-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the fire-wall maze, play the Song of Time by the door to make a block appear. Climb it, jump over the fire walls and go through the northeast door. Defeat the Lizalfos; the Gold Skulltula is on the back wall.",
+   "needs": [
+    "ms-master-sword",
+    "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
+    "megaton-hammer",
+    "gf-magic",
+    {
+     "any": [
+      "gf-dins-fire",
+      "fire-arrows"
+     ]
+    },
+    "bow",
+    "bombs",
+    "hookshot",
+    {
+     "any": [
+      "song-of-time",
+      "hover-boots"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Fire_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Fire Temple MQ GS Flame Maze Side Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-fire-flame-maze-center",
+   "category": "skulltula",
+   "num": 77,
+   "name": "Fire-wall maze, hidden wall in the middle",
+   "area": "Fire Temple",
+   "areaId": "fire-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the fire-wall maze, go into the room in the central column: Hookshot across the fire, smash the rusted switch with the Megaton Hammer, climb the target beside it and jump over the fire wall to the lower corridor. Bomb the fake wall there.",
+   "needs": [
+    "ms-master-sword",
+    "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
+    "megaton-hammer",
+    "gf-magic",
+    {
+     "any": [
+      "gf-dins-fire",
+      "fire-arrows"
+     ]
+    },
+    "bow",
+    "bombs",
+    "hookshot"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Fire_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Fire Temple MQ GS Flame Maze Center",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-fire-skull-on-fire",
+   "category": "skulltula",
+   "num": 78,
+   "name": "Block in the flames (upper floor)",
+   "area": "Fire Temple",
+   "areaId": "fire-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the big Lizalfos room, find the switch behind a fake wall to bring out Hookshot targets. Climb to the cracked platform, play the Song of Time, and Hookshot to the elevator up. In the room with a rusted switch, smash it with the Megaton Hammer, step on the switch that puts out the flames and quickly Hookshot the block out of them. The Gold Skulltula is where the block was.",
+   "needs": [
+    "ms-master-sword",
+    "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
+    "megaton-hammer",
+    "gf-magic",
+    {
+     "any": [
+      "gf-dins-fire",
+      [
+       "fire-arrows",
+       "bow"
+      ]
+     ]
+    },
+    "bombs",
+    "hookshot",
+    {
+     "any": [
+      "song-of-time",
+      "longshot"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Fire_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Fire Temple MQ GS Skull On Fire",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-fire-above-flame-maze",
+   "category": "skulltula",
+   "num": 79,
+   "name": "Small room above the fire-wall maze",
+   "area": "Fire Temple",
+   "areaId": "fire-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "Work through the fire-wall maze to the switch that briefly lowers the flames at the east door and run through. Keep going through the rooms beyond; you end up in a small room directly above the maze, with the Gold Skulltula on the wall.",
+   "needs": [
+    "ms-master-sword",
+    "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    },
+    "megaton-hammer",
+    "gf-magic",
+    {
+     "any": [
+      "gf-dins-fire",
+      "fire-arrows"
+     ]
+    },
+    "bow",
+    "bombs",
+    "hookshot"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Fire_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Fire Temple MQ GS Above Flame Maze",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-ice-red-ice",
+   "category": "skulltula",
+   "num": 80,
+   "name": "Red ice on a pillar",
+   "area": "Ice Cavern",
+   "areaId": "ice-cavern",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the room with the Compass, the Blue Fire and the Piece of Heart, a Gold Skulltula is frozen in red ice on top of a pillar. Fill a bottle with Blue Fire, play the Song of Time twice by the pillar to make two blocks, climb up and melt the ice.",
+   "needs": [
+    "ms-master-sword",
+    "ms-jabu-jabu",
+    "zeldas-lullaby",
+    {
+     "any": [
+      "bottle-talon-cuccos",
+      "bottle-anju-cuccos",
+      "bottle-ruto-letter",
+      "bottle-big-poes"
+     ]
+    },
+    "song-of-time"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Ice_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Ice Cavern MQ GS Red Ice",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-ice-ice-block",
+   "category": "skulltula",
+   "num": 81,
+   "name": "Under the ice platforms",
+   "area": "Ice Cavern",
+   "areaId": "ice-cavern",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the big square room (Ice Keese and White Wolfos), hit the crystal switch on the ceiling above the doorway you came in through. The ice platforms on the south side vanish, uncovering the Gold Skulltula.",
+   "needs": [
+    "ms-master-sword",
+    "ms-jabu-jabu",
+    "zeldas-lullaby",
+    {
+     "any": [
+      "bottle-talon-cuccos",
+      "bottle-anju-cuccos",
+      "bottle-ruto-letter",
+      "bottle-big-poes"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Ice_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Ice Cavern MQ GS Ice Block",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-ice-scarecrow",
+   "category": "skulltula",
+   "num": 82,
+   "name": "Scarecrow alcove",
+   "area": "Ice Cavern",
+   "areaId": "ice-cavern",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the same room, stand by the north opening where Navi turns green, play the Scarecrow's Song and Hookshot to Pierre. The Gold Skulltula is at the back of the alcove.",
+   "needs": [
+    "ms-master-sword",
+    "ms-jabu-jabu",
+    "zeldas-lullaby",
+    {
+     "any": [
+      "bottle-talon-cuccos",
+      "bottle-anju-cuccos",
+      "bottle-ruto-letter",
+      "bottle-big-poes"
+     ]
+    },
+    {
+     "any": [
+      [
+       "hookshot",
+       "scarecrows-song"
+      ],
+      [
+       "hover-boots",
+       "longshot"
+      ]
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Ice_Cavern"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Ice Cavern MQ GS Scarecrow",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-water-freestanding-key",
+   "category": "skulltula",
+   "num": 83,
+   "name": "Crate past the Dodongo room",
+   "area": "Water Temple",
+   "areaId": "water-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the bottom-floor room with the whirlpool pool, play the Scarecrow's Song and Longshot to Pierre. Sink with the Iron Boots into the hole by the waterfall to a small room with crates; one has a Small Key for the chained door. In that room, hit the switch, ride the water pillars and cast Din's Fire to light the torches. Defeat all the Dodongos, Longshot up to the door that opens, and break the crates back in the pool room: one holds the Gold Skulltula. Leave a crate to Longshot out.",
+   "needs": [
+    "ms-master-sword",
+    "iron-boots",
+    "hookshot",
+    "zora-tunic",
+    "longshot",
+    "gf-dins-fire",
+    "gf-magic",
+    {
+     "any": [
+      "scarecrows-song",
+      "hover-boots"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Water_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Water Temple MQ GS Freestanding Key Area",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-water-triple-wall-torch",
+   "category": "skulltula",
+   "num": 84,
+   "name": "Three wall torches, on the ceiling",
+   "area": "Water Temple",
+   "areaId": "water-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "With the Fire Arrows, take the bottom-floor south corridor. At the end, light the three torches high on the wall to open the barred alcove, then play the Scarecrow's Song and Longshot to Pierre. The Gold Skulltula is on the alcove's ceiling. Two Stalfos are waiting.",
+   "needs": [
+    "ms-master-sword",
+    "iron-boots",
+    "hookshot",
+    "zora-tunic",
+    "longshot",
+    "gf-dins-fire",
+    "gf-magic",
+    "fire-arrows",
+    "bow",
+    {
+     "any": [
+      "scarecrows-song",
+      "hover-boots"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Water_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Water Temple MQ GS Triple Wall Torch",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-water-river",
+   "category": "skulltula",
+   "num": 85,
+   "name": "Underground river",
+   "area": "Water Temple",
+   "areaId": "water-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "Past the big room on the top floor, drop through the grate into the underground river. Longshot from pillar to pillar across the whirlpools; the Gold Skulltula is on the wall by the third Hookshot target. Aim up.",
+   "needs": [
+    "ms-master-sword",
+    "iron-boots",
+    "hookshot",
+    "zora-tunic",
+    "longshot"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Water_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Water Temple MQ GS River",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-water-lizalfos-hallway",
+   "category": "skulltula",
+   "num": 86,
+   "name": "South corridor (Din's Fire)",
+   "area": "Water Temple",
+   "areaId": "water-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "On the 2nd floor, open the gate to the south corridor with the switch and go past the crates to another gate. Cast Din's Fire to light the torch behind it. The Gold Skulltula is behind the two wooden crates.",
+   "needs": [
+    "ms-master-sword",
+    "iron-boots",
+    "hookshot",
+    "zora-tunic",
+    "zeldas-lullaby",
+    "gf-dins-fire",
+    "gf-magic"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Water_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Water Temple MQ GS Lizalfos Hallway",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-water-before-upper-switch",
+   "category": "skulltula",
+   "num": 87,
+   "name": "Crate before the top water switch",
+   "area": "Water Temple",
+   "areaId": "water-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "With the water at mid-level, take the east door and follow the rooms up, using the Longshot. Just before the highest water-level switch, the Gold Skulltula is in a crate.",
+   "needs": [
+    "ms-master-sword",
+    "iron-boots",
+    "hookshot",
+    "zora-tunic",
+    "zeldas-lullaby",
+    "longshot"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Water_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Water Temple MQ GS Before Upper Water Switch",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-botw-basement",
+   "category": "skulltula",
+   "num": 88,
+   "name": "End of the basement passage",
+   "area": "Bottom of the Well",
+   "areaId": "bottom-of-the-well",
+   "age": "young",
+   "time": "any",
+   "howTo": "In the basement, follow the north passage past the invisible Skulltulas hanging from the ceiling (the Lens of Truth shows them). The Gold Skulltula is at the end.",
+   "needs": [
+    "ms-deku-tree",
+    "song-of-storms"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Bottom_of_the_Well"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Bottom of the Well MQ GS Basement",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-botw-coffin-room",
+   "category": "skulltula",
+   "num": 89,
+   "name": "Under the grave (northwest room)",
+   "area": "Bottom of the Well",
+   "areaId": "bottom-of-the-well",
+   "age": "young",
+   "time": "any",
+   "howTo": "From the central room, go through the northwest door into a room full of invisible enemies (the Lens of Truth shows them). Pull the grave; the Gold Skulltula is underneath.",
+   "needs": [
+    "ms-deku-tree",
+    "song-of-storms"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Bottom_of_the_Well"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Bottom of the Well MQ GS Coffin Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-botw-west-inner",
+   "category": "skulltula",
+   "num": 90,
+   "name": "Behind the bird statue",
+   "area": "Bottom of the Well",
+   "areaId": "bottom-of-the-well",
+   "age": "young",
+   "time": "any",
+   "howTo": "Inside the central area (Zelda's Lullaby opens its gates), take the west passage: go under the small grate and through the locked door. At the far end of the room, the Gold Skulltula is behind the right-hand bird statue.",
+   "needs": [
+    "ms-deku-tree",
+    "song-of-storms",
+    "zeldas-lullaby",
+    "bombs"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Bottom_of_the_Well"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Bottom of the Well MQ GS West Inner Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-shadow-falling-spikes",
+   "category": "skulltula",
+   "num": 91,
+   "name": "Falling-spikes room, south cell",
+   "area": "Shadow Temple",
+   "areaId": "shadow-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "At the bottom of the huge pit room, in the room where spiked blocks drop from the ceiling, the Gold Skulltula is behind the grate of the south cell. Hookshot it.",
+   "needs": [
+    "ms-master-sword",
+    "nocturne-of-shadow",
+    "gf-dins-fire",
+    "gf-magic",
+    "lens-of-truth",
+    "hookshot",
+    "bombs",
+    {
+     "any": [
+      [
+       "fire-arrows",
+       "bow"
+      ],
+      "hover-boots"
+     ]
+    }
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Shadow_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Shadow Temple MQ GS Falling Spikes Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-shadow-after-wind",
+   "category": "skulltula",
+   "num": 92,
+   "name": "Under the rubble (two-Gibdo room)",
+   "area": "Shadow Temple",
+   "areaId": "shadow-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "Just before the boat, in the room with two Gibdos, bomb the rubble in the northwest corner. The Gold Skulltula is underneath.",
+   "needs": [
+    "ms-master-sword",
+    "nocturne-of-shadow",
+    "gf-dins-fire",
+    "gf-magic",
+    "lens-of-truth",
+    "hookshot",
+    "bombs",
+    "hover-boots"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Shadow_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Shadow Temple MQ GS After Wind",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-shadow-near-boss",
+   "category": "skulltula",
+   "num": 93,
+   "name": "Invisible ledge by the boss door",
+   "area": "Shadow Temple",
+   "areaId": "shadow-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "Just before the boss door, go right along a narrow invisible platform; the Gold Skulltula hangs from it. Hookshot it.",
+   "needs": [
+    "ms-master-sword",
+    "nocturne-of-shadow",
+    "gf-dins-fire",
+    "gf-magic",
+    "lens-of-truth",
+    "hookshot",
+    "bombs",
+    "hover-boots",
+    "zeldas-lullaby",
+    "bow"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Shadow_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Shadow Temple MQ GS Near Boss",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-shadow-after-ship",
+   "category": "skulltula",
+   "num": 94,
+   "name": "In the pit past the boat",
+   "area": "Shadow Temple",
+   "areaId": "shadow-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "After the boat ride, it's in the pit you cross on the bird statue: halfway across, turn around and look down. Hookshot it.",
+   "needs": [
+    "ms-master-sword",
+    "nocturne-of-shadow",
+    "gf-dins-fire",
+    "gf-magic",
+    "lens-of-truth",
+    "hookshot",
+    "bombs",
+    "hover-boots",
+    "zeldas-lullaby"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Shadow_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Shadow Temple MQ GS After Ship",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-shadow-wind-hint",
+   "category": "skulltula",
+   "num": 95,
+   "name": "ReDead room past the fans",
+   "area": "Shadow Temple",
+   "areaId": "shadow-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "At the end of the corridor where fans blow you sideways, the room with the ReDeads (and a chest) has a Gold Skulltula crawling on the wall. Hookshot it; you can grab it from the entrance.",
+   "needs": [
+    "ms-master-sword",
+    "nocturne-of-shadow",
+    "gf-dins-fire",
+    "gf-magic",
+    "lens-of-truth",
+    "hookshot",
+    "bombs",
+    "hover-boots"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Shadow_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Shadow Temple MQ GS Wind Hint Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-spirit-nine-thrones-west",
+   "category": "skulltula",
+   "num": 96,
+   "name": "Iron Knuckle room, west throne",
+   "area": "Spirit Temple",
+   "areaId": "spirit-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the room with a lone Iron Knuckle and the stone thrones, wake it and stand against the west throne so its axe smashes it. The Gold Skulltula is behind. Don't defeat the Iron Knuckle yet: the next one needs it too.",
+   "needs": [
+    "ms-master-sword",
+    "requiem-of-spirit",
+    "longshot",
+    "silver-gauntlets",
+    "bombs",
+    "bombchus"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Spirit_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Spirit Temple MQ GS Nine Thrones Room West",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-spirit-nine-thrones-north",
+   "category": "skulltula",
+   "num": 97,
+   "name": "Iron Knuckle room, north throne",
+   "area": "Spirit Temple",
+   "areaId": "spirit-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "Same room: lure the Iron Knuckle into the north throne on the back wall to uncover the second Gold Skulltula. Now you can defeat it.",
+   "needs": [
+    "ms-master-sword",
+    "requiem-of-spirit",
+    "longshot",
+    "silver-gauntlets",
+    "bombs",
+    "bombchus"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Spirit_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Spirit Temple MQ GS Nine Thrones Room North",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-spirit-symphony",
+   "category": "skulltula",
+   "num": 98,
+   "name": "Symphony room",
+   "area": "Spirit Temple",
+   "areaId": "spirit-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "From the room next to the entrance hall (the one with the Silver Rupees), take the northeast door. Hit the floor switch with the Megaton Hammer, then open the alcoves by playing the song shown above each (Song of Time, Epona's Song, Sun's Song, Song of Storms) and the door with Zelda's Lullaby. The room behind it is full of Skulltulas; the gold one is on the east wall.",
+   "needs": [
+    "ms-master-sword",
+    "requiem-of-spirit",
+    "longshot",
+    "silver-gauntlets",
+    "bombs",
+    "bombchus",
+    "mirror-shield",
+    "fire-arrows",
+    "bow",
+    "gf-magic",
+    "megaton-hammer",
+    "song-of-time",
+    "eponas-song",
+    "suns-song",
+    "song-of-storms",
+    "zeldas-lullaby"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Spirit_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Spirit Temple MQ GS Symphony Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-spirit-leever-room",
+   "category": "skulltula",
+   "num": 99,
+   "name": "Sand-pit room ceiling",
+   "area": "Spirit Temple",
+   "areaId": "spirit-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "From the same Silver Rupee room, take the northwest door into the sand-pit room. The Gold Skulltula is on the ceiling; Hookshot it. Play Zelda's Lullaby on the Triforce mark to get out.",
+   "needs": [
+    "ms-master-sword",
+    "requiem-of-spirit",
+    "longshot",
+    "silver-gauntlets",
+    "bombs",
+    "bombchus",
+    "mirror-shield",
+    "fire-arrows",
+    "bow",
+    "gf-magic"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Spirit_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Spirit Temple MQ GS Leever Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
+  },
+  {
+   "id": "gs-mq-spirit-sun-block",
+   "category": "skulltula",
+   "num": 100,
+   "name": "Sun-block room platforms",
+   "area": "Spirit Temple",
+   "areaId": "spirit-temple",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the room with the sun-face blocks, push the grey sun block into the sunlight (turn off the flame jets with the switches as you go). Glass platforms appear: Hookshot to the nearest one. The Gold Skulltula is on a matching platform at the other end of the room.",
+   "needs": [
+    "ms-master-sword",
+    "requiem-of-spirit",
+    "longshot",
+    "silver-gauntlets",
+    "bombs",
+    "bombchus"
+   ],
+   "links": [
+    {
+     "label": "Wikibooks",
+     "url": "https://en.wikibooks.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time_Master_Quest/Gold_Skulltulas#Spirit_Temple"
+    },
+    {
+     "label": "Nintendo Forever",
+     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_SkulltulasDonjons.php?lang=en"
+    }
+   ],
+   "sources": [
+    "wikibooks-mq",
+    "nf-mq",
+    "ootr"
+   ],
+   "fromSheet": true,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "dungeon",
+   "ootrLocation": "Spirit Temple MQ GS Sun Block Room",
+   "versions": [
+    "mq",
+    "mq3ds"
+   ]
   },
   {
    "id": "mask-keaton",

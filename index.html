@@ -1016,7 +1016,7 @@ function renderProgressBars() {
 // ============================================================================
 const VERSIONS = {
   n64:     { label: 'Ocarina of Time (N64)', short: 'N64', desc: "Also the GameCube Collector's Edition, Wii and Wii U Virtual Console, and Nintendo Switch Online." },
-  mq:      { label: 'Master Quest (GameCube)', short: 'Master Quest', soon: true },
+  mq:      { label: 'Master Quest (GameCube)', short: 'Master Quest', desc: 'The GameCube disc with the remixed Master Quest dungeons.' },
   '3ds':   { label: 'Ocarina of Time 3D (3DS)', short: '3DS', bosses: 'challenge' },
   mq3ds:   { label: 'Master Quest 3D (3DS)', short: 'Master Quest 3D', desc: 'Mirrored.', soon: true, bosses: 'challenge' },
   switch2: { label: 'Ocarina of Time (Switch 2)', short: 'Switch 2', bosses: 'hall' },
@@ -1066,7 +1066,8 @@ function isShown(x) {
   if (x.derivedFrom) return x.derivedFrom.startsWith('gs:') ? met(x.derivedFrom) : isShown(BY_ID[x.derivedFrom]);
   if (x.readOnly) return false;   // 🚧 the 5th bottle and the Hall statues
   // A Hall boss's `reach` is its dungeon checked off, so it applies in Discovery too.
-  const rule = mode === 'guided' || DATA.bosses.some((b) => b.id === x.id) ? (x.reach || x.needs) : null;
+  // `reachIn` (V2): an item found inside a dungeon has a different reach in Master Quest.
+  const rule = mode === 'guided' || DATA.bosses.some((b) => b.id === x.id) ? (x.reachIn?.[gameVer()] || x.reach || x.needs) : null;
   return isDone(x.id) || !!bossTimes[x.id] || (!!rule && met(rule));
 }
 // Skulltula reward badges show once earned.
@@ -1857,7 +1858,7 @@ function profileForm(kind, p = {}) {
     ${kind === 'new' ? `<div class="ver-opts" role="radiogroup" aria-labelledby="pfVerLabel">
       <div class="ver-label" id="pfVerLabel">Which game is this playthrough? <span>It can't be changed later.</span></div>
       ${Object.entries(VERSIONS).map(([k, v]) => `<label class="ver-opt${v.soon ? ' soon' : ''}"><input type="radio" name="pf-version" value="${k}"${k === 'switch2' ? ' checked' : ''}${v.soon ? ' disabled' : ''}>
-        <span><b>${v.label}</b>${v.soon ? '<small>Coming soon: the Master Quest dungeon data isn\'t in yet.</small>' : v.desc ? `<small>${v.desc}</small>` : ''}</span></label>`).join('')}
+        <span><b>${v.label}</b>${v.soon ? '<small>Coming soon: the mirrored 3DS layout isn\'t in yet.</small>' : v.desc ? `<small>${v.desc}</small>` : ''}</span></label>`).join('')}
     </div>` : ''}
     <div class="form-actions">
       <button class="act-btn" data-act="cancel">Cancel</button>
