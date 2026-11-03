@@ -2277,7 +2277,10 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "LW Skull Kid"
+   "ootrLocation": "LW Skull Kid",
+   "howToIn": {
+    "mq3ds": "Take the first right in the Lost Woods. Stand on the stump across from the Skull Kid and play Saria's Song."
+   }
   },
   {
    "id": "hp-lw-memory-game",
@@ -2312,7 +2315,10 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "LW Ocarina Memory Game"
+   "ootrLocation": "LW Ocarina Memory Game",
+   "howToIn": {
+    "mq3ds": "Take the first left in the Lost Woods and drop down to the stump. Two Skull Kids play a tune on their flutes; repeat it back correctly three times in a row (each round adds a note)."
+   }
   },
   {
    "id": "hp-hf-scrub-grotto",
@@ -2358,7 +2364,10 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "HF Deku Scrub Grotto"
+   "ootrLocation": "HF Deku Scrub Grotto",
+   "howToIn": {
+    "mq3ds": "In the fenced-in square by the Lake Hylia entrance (southeast Hyrule Field), set a Bomb in the middle to open a grotto. Buy the Piece of Heart from the Business Scrub inside for 10 Rupees."
+   }
   },
   {
    "id": "hp-hf-tektite-grotto",
@@ -2416,7 +2425,10 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "HF Tektite Grotto Freestanding PoH"
+   "ootrLocation": "HF Tektite Grotto Freestanding PoH",
+   "howToIn": {
+    "mq3ds": "Bomb the ground beside the lone tree northeast of Lon Lon Ranch to open a grotto with a deep pool. Dive to the bottom with the Golden Scale, or sink with the Iron Boots."
+   }
   },
   {
    "id": "hp-market-treasure-game",
@@ -2889,7 +2901,10 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Graveyard Heart Piece Grave Chest"
+   "ootrLocation": "Graveyard Heart Piece Grave Chest",
+   "howToIn": {
+    "mq3ds": "Pull back the movable gravestone (second from the right, just below the Royal Family's Tomb; young Link can only do this at night) and drop in. Freeze or defeat the ReDead, then play the Sun's Song where it stood to make a chest appear."
+   }
   },
   {
    "id": "hp-dmt-above-dc",
@@ -3024,7 +3039,10 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "DMC Wall Freestanding PoH"
+   "ootrLocation": "DMC Wall Freestanding PoH",
+   "howToIn": {
+    "mq3ds": "Enter the crater from the top of Death Mountain (right of the owl). Walk off the north ledge so Link grabs the wall, and climb down to a small alcove with the Piece of Heart. Young Link can't stay in the heat long."
+   }
   },
   {
    "id": "hp-gc-spinning-pot",
@@ -3915,7 +3933,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "KF GS House of Twins"
+   "ootrLocation": "KF GS House of Twins",
+   "howToIn": {
+    "mq3ds": "At night, it's on the roof of the twins' house (two stumps on top) in the southeast of the village. Hookshot it."
+   }
   },
   {
    "id": "gs-lw-bean-bridge",
@@ -3958,7 +3979,13 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LW GS Bean Patch Near Bridge"
+   "ootrLocation": "LW GS Bean Patch Near Bridge",
+   "nameIn": {
+    "mq3ds": "Soft soil (right, right)"
+   },
+   "howToIn": {
+    "mq3ds": "Turn right at the Lost Woods entrance, then right again. Release bugs onto the soft soil there."
+   }
   },
   {
    "id": "gs-lw-bean-theater",
@@ -4087,7 +4114,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "SFM GS"
+   "ootrLocation": "SFM GS",
+   "howToIn": {
+    "mq3ds": "At night, it's on the west wall of the meadow's maze. Hookshot it."
+   }
   },
   {
    "id": "gs-hf-near-kak-grotto",
@@ -4197,7 +4227,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "HF GS Cow Grotto"
+   "ootrLocation": "HF GS Cow Grotto",
+   "howToIn": {
+    "mq3ds": "Just northwest of the Gerudo Valley entrance, open the grotto in the middle of the circle of rocks (young: Bomb; adult: Megaton Hammer). Burn the webs with Din's Fire (or Fire Arrows); it's on the back wall behind the cow. Grab it with the Boomerang or Hookshot."
+   }
   },
   {
    "id": "gs-llr-tree",
@@ -4343,7 +4376,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LLR GS Back Wall"
+   "ootrLocation": "LLR GS Back Wall",
+   "howToIn": {
+    "mq3ds": "At night, it's high on the wall to the left of the silo. Get it with the Boomerang."
+   }
   },
   {
    "id": "gs-market-guard-house",
@@ -4745,7 +4781,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Graveyard GS Wall"
+   "ootrLocation": "Graveyard GS Wall",
+   "howToIn": {
+    "mq3ds": "At night, it's on top of the stone wall on the left as you enter the Graveyard. Get it with the Boomerang."
+   }
   },
   {
    "id": "gs-graveyard-bean-patch",
@@ -4789,7 +4828,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Graveyard GS Bean Patch"
+   "ootrLocation": "Graveyard GS Bean Patch",
+   "howToIn": {
+    "mq3ds": "Release bugs onto the soft soil on the right side of the Graveyard."
+   }
   },
   {
    "id": "gs-dmt-bean-patch",
@@ -4898,7 +4940,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "DMT GS Near Kak"
+   "ootrLocation": "DMT GS Near Kak",
+   "howToIn": {
+    "mq3ds": "Low on the trail, blow open the cracked wall on the left. The Gold Skulltula is on the wall behind it; the wall is climbable to reach the token."
+   }
   },
   {
    "id": "gs-dmt-above-dc",
@@ -5167,7 +5212,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "ZR GS Tree"
+   "ootrLocation": "ZR GS Tree",
+   "howToIn": {
+    "mq3ds": "Roll into the tree at the entrance to Zora's River, right of the blocked path."
+   }
   },
   {
    "id": "gs-zr-ladder",
@@ -5316,7 +5364,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "ZD GS Frozen Waterfall"
+   "ootrLocation": "ZD GS Frozen Waterfall",
+   "howToIn": {
+    "mq3ds": "At night, go to the top of the pool where the diving game used to be and look around the right corner. Hookshot it."
+   }
   },
   {
    "id": "gs-zf-tree",
@@ -5353,7 +5404,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "ZF GS Tree"
+   "ootrLocation": "ZF GS Tree",
+   "howToIn": {
+    "mq3ds": "Roll into the tree on the small island in the southwest corner of the fountain."
+   }
   },
   {
    "id": "gs-zf-above-log",
@@ -5432,7 +5486,10 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "ZF GS Hidden Cave"
+   "ootrLocation": "ZF GS Hidden Cave",
+   "howToIn": {
+    "mq3ds": "At night, on the southwest island lift the grey boulder with the Silver Gauntlets, bomb open the hole beneath, and drop in. Follow the passage up the ladder and Hookshot the Gold Skulltula."
+   }
   },
   {
    "id": "gs-lh-small-island",
@@ -8443,7 +8500,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "Inside the giant Dodongo skull, take the corridor on the left. The Gold Skulltula sits on top of the wall near the fire. Get it with the Boomerang, or jump to its ledge from a nearby block (adult Link can Hookshot it)."
+   }
   },
   {
    "id": "gs-mq-dc-lizalfos-room",
@@ -8550,7 +8610,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "In the room with the Poes and Bomb Flowers, open the door to the left of the entrance by bombing the bomb chain on the pillar in front of it. Defeat the enemies inside; the Gold Skulltula is high in a corner. Get it with the Boomerang (adult: Hookshot)."
+   }
   },
   {
    "id": "gs-mq-dc-sot-blocks",
@@ -8598,7 +8661,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "From the big staircase room, take the door at the bottom of the stairs. Keep playing the Song of Time on the right side of the room to clear the blocks; the Gold Skulltula is under the back-most block, in the corner."
+   }
   },
   {
    "id": "gs-mq-jabu-near-boss",
@@ -8869,7 +8935,13 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "nameIn": {
+    "mq3ds": "East corridor nook"
+   },
+   "howToIn": {
+    "mq3ds": "From the main hall, take the east door and cross the corridor. The Gold Skulltula is on the ground in a nook just to the right. Use your sword."
+   }
   },
   {
    "id": "gs-mq-forest-raised-island",
@@ -8935,7 +9007,13 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "nameIn": {
+    "mq3ds": "Northwest courtyard, above the door"
+   },
+   "howToIn": {
+    "mq3ds": "Go into the northwest courtyard (the main hall's door, opened by shooting the eye with the Bow). Walk forward and turn around: it's above the door, in front of the Hookshot target. Hookshot it."
+   }
   },
   {
    "id": "gs-mq-forest-well",
@@ -8991,7 +9069,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "Drop into the well below the northeast courtyard vines and go all the way through; the Gold Skulltula is on the grate at the end. Hookshot it. If the well still has water, sink with the Iron Boots."
+   }
   },
   {
    "id": "gs-mq-forest-level-island",
@@ -9044,7 +9125,13 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "nameIn": {
+    "mq3ds": "Northeast courtyard vines"
+   },
+   "howToIn": {
+    "mq3ds": "Go into the northeast courtyard and climb the vines above the well, in the back corner of the garden. The Gold Skulltula is at the top. Use your sword."
+   }
   },
   {
    "id": "gs-mq-fire-big-lava-room",
@@ -9093,7 +9180,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "From the entrance hall, take the door guarded by a statue (the way in needs the Megaton Hammer) into the big lava room with the bridge. Open the Goron's cell at the far right as you enter; the Gold Skulltula is behind him."
+   }
   },
   {
    "id": "gs-mq-fire-flame-maze-side",
@@ -9158,7 +9248,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "In the fire-wall maze, play the Song of Time by the door to make a block appear. Climb it, jump over the fire walls and go through the northwest door. Defeat the Lizalfos; the Gold Skulltula is on the back wall."
+   }
   },
   {
    "id": "gs-mq-fire-flame-maze-center",
@@ -9343,7 +9436,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "Work through the fire-wall maze to the switch that briefly lowers the flames at the west door and run through. Keep going through the rooms beyond; you end up in a small room directly above the maze, with the Gold Skulltula on the wall."
+   }
   },
   {
    "id": "gs-mq-ice-red-ice",
@@ -9747,7 +9843,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "With the water at mid-level, take the west door and follow the rooms up, using the Longshot. Just before the highest water-level switch, the Gold Skulltula is in a crate."
+   }
   },
   {
    "id": "gs-mq-botw-basement",
@@ -9829,7 +9928,13 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "nameIn": {
+    "mq3ds": "Under the grave (northeast room)"
+   },
+   "howToIn": {
+    "mq3ds": "From the central room, go through the northeast door into a room full of invisible enemies (the Lens of Truth shows them). Pull the grave; the Gold Skulltula is underneath."
+   }
   },
   {
    "id": "gs-mq-botw-west-inner",
@@ -9872,7 +9977,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "Inside the central area (Zelda's Lullaby opens its gates), take the east passage: go under the small grate and through the locked door. At the far end of the room, the Gold Skulltula is behind the left-hand bird statue."
+   }
   },
   {
    "id": "gs-mq-shadow-falling-spikes",
@@ -9974,7 +10082,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "Just before the boat, in the room with two Gibdos, bomb the rubble in the northeast corner. The Gold Skulltula is underneath."
+   }
   },
   {
    "id": "gs-mq-shadow-near-boss",
@@ -10023,7 +10134,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "Just before the boss door, go left along a narrow invisible platform; the Gold Skulltula hangs from it. Hookshot it."
+   }
   },
   {
    "id": "gs-mq-shadow-after-ship",
@@ -10163,7 +10277,13 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "nameIn": {
+    "mq3ds": "Iron Knuckle room, east throne"
+   },
+   "howToIn": {
+    "mq3ds": "In the room with a lone Iron Knuckle and the stone thrones, wake it and stand against the east throne so its axe smashes it. The Gold Skulltula is behind. Don't defeat the Iron Knuckle yet: the next one needs it too."
+   }
   },
   {
    "id": "gs-mq-spirit-nine-thrones-north",
@@ -10263,7 +10383,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "From the room next to the entrance hall (the one with the Silver Rupees), take the northwest door. Hit the floor switch with the Megaton Hammer, then open the alcoves by playing the song shown above each (Song of Time, Epona's Song, Sun's Song, Song of Storms) and the door with Zelda's Lullaby. The room behind it is full of Skulltulas; the gold one is on the west wall."
+   }
   },
   {
    "id": "gs-mq-spirit-leever-room",
@@ -10312,7 +10435,10 @@
    "versions": [
     "mq",
     "mq3ds"
-   ]
+   ],
+   "howToIn": {
+    "mq3ds": "From the same Silver Rupee room, take the northeast door into the sand-pit room. The Gold Skulltula is on the ceiling; Hookshot it. Play Zelda's Lullaby on the Triforce mark to get out."
+   }
   },
   {
    "id": "gs-mq-spirit-sun-block",
@@ -10430,7 +10556,10 @@
    "readOnly": false,
    "icon": "mask-skull",
    "map": null,
-   "ootrLocation": "Market Mask Shop Item 5"
+   "ootrLocation": "Market Mask Shop Item 5",
+   "howToIn": {
+    "mq3ds": "Borrow the Skull Mask (20 Rupees). Wear it to the Skull Kid by the stump at the first right in the Lost Woods (play Saria's Song for him first if you haven't). He only pays 10, so you'll need 10 more to pay the shop back."
+   }
   },
   {
    "id": "mask-spooky",
@@ -10678,7 +10807,10 @@
    "readOnly": false,
    "icon": "upgrade",
    "map": null,
-   "ootrLocation": "Deku Theater Mask of Truth"
+   "ootrLocation": "Deku Theater Mask of Truth",
+   "howToIn": {
+    "mq3ds": "In the Lost Woods go left, right, left, right, right, then drop into the hidden hole near the butterflies. Wear the Mask of Truth on the Forest Stage."
+   }
   },
   {
    "id": "upg-seeds-lw-target",
@@ -10713,7 +10845,10 @@
    "readOnly": false,
    "icon": "upgrade",
    "map": null,
-   "ootrLocation": "LW Target in Woods"
+   "ootrLocation": "LW Target in Woods",
+   "howToIn": {
+    "mq3ds": "Take the first left in the Lost Woods and hit the target's bullseye with the Slingshot three times in a row."
+   }
   },
   {
    "id": "upg-seeds-market-gallery",
@@ -10779,7 +10914,10 @@
    "readOnly": false,
    "icon": "upgrade",
    "map": null,
-   "ootrLocation": "LW Deku Scrub Near Bridge"
+   "ootrLocation": "LW Deku Scrub Near Bridge",
+   "howToIn": {
+    "mq3ds": "Turn right, then right again in the Lost Woods and buy the bigger Deku Stick bag from the Business Scrub for 40 Rupees."
+   }
   },
   {
    "id": "upg-sticks-theater",
@@ -10814,7 +10952,10 @@
    "readOnly": false,
    "icon": "upgrade",
    "map": null,
-   "ootrLocation": "Deku Theater Skull Mask"
+   "ootrLocation": "Deku Theater Skull Mask",
+   "howToIn": {
+    "mq3ds": "In the Lost Woods go left, right, left, right, right, then drop into the hidden hole near the butterflies. Wear the Skull Mask on the Forest Stage."
+   }
   },
   {
    "id": "upg-quiver-kak-gallery",
@@ -10931,7 +11072,10 @@
    "readOnly": false,
    "icon": "gf-magic",
    "map": null,
-   "ootrLocation": "DMT Great Fairy Reward"
+   "ootrLocation": "DMT Great Fairy Reward",
+   "howToIn": {
+    "mq3ds": "At the top of Death Mountain Trail, bomb the wall right of the crater entrance (by the owl). Stand on the Triforce and play Zelda's Lullaby."
+   }
   },
   {
    "id": "gf-dins-fire",
@@ -10968,7 +11112,10 @@
    "readOnly": false,
    "icon": "gf-dins-fire",
    "map": null,
-   "ootrLocation": "HC Great Fairy Reward"
+   "ootrLocation": "HC Great Fairy Reward",
+   "howToIn": {
+    "mq3ds": "On the way up to Hyrule Castle, climb the vines past the gate and head to the boulder on the far west side. Bomb it, crawl in, and play Zelda's Lullaby on the Triforce."
+   }
   },
   {
    "id": "gf-farores-wind",
@@ -11018,7 +11165,10 @@
    "readOnly": false,
    "icon": "gf-farores-wind",
    "map": null,
-   "ootrLocation": "ZF Great Fairy Reward"
+   "ootrLocation": "ZF Great Fairy Reward",
+   "howToIn": {
+    "mq3ds": "In Zora's Fountain, swim to the small island in the southwest corner and bomb the boulder there. Play Zelda's Lullaby on the Triforce."
+   }
   },
   {
    "id": "gf-double-magic",
@@ -11126,7 +11276,10 @@
    "readOnly": false,
    "icon": "gf-nayrus-love",
    "map": null,
-   "ootrLocation": "Colossus Great Fairy Reward"
+   "ootrLocation": "Colossus Great Fairy Reward",
+   "howToIn": {
+    "mq3ds": "In the Desert Colossus, bomb the cracked rock wall north of where you enter (northwest on the mini-map). Play Zelda's Lullaby on the Triforce."
+   }
   },
   {
    "id": "gf-double-defense",
@@ -11163,7 +11316,10 @@
    "readOnly": false,
    "icon": "gf-double-defense",
    "map": null,
-   "ootrLocation": "OGC Great Fairy Reward"
+   "ootrLocation": "OGC Great Fairy Reward",
+   "howToIn": {
+    "mq3ds": "With the Golden Gauntlets (from Ganon's Castle), lift the giant pillar/boulder at the dead end west of Ganon's Castle. Play Zelda's Lullaby on the Triforce."
+   }
   },
   {
    "id": "big-pocket-egg",
@@ -11267,7 +11423,10 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "big-odd-mushroom",
-   "map": null
+   "map": null,
+   "howToIn": {
+    "mq3ds": "Take the first right in the Lost Woods; use Cojiro near the man slumped by the stump to wake him. He hands you the Odd Mushroom, and a timer starts."
+   }
   },
   {
    "id": "big-odd-potion",
@@ -11414,7 +11573,10 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "big-prescription",
-   "map": null
+   "map": null,
+   "howToIn": {
+    "mq3ds": "Take the broken sword to Biggoron at the top of Death Mountain Trail (approach the hollow left of the crater entrance)."
+   }
   },
   {
    "id": "big-eyeball-frog",
@@ -11668,7 +11830,10 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "soil",
-   "map": null
+   "map": null,
+   "howToIn": {
+    "mq3ds": "Turn right, then right again at the Lost Woods entrance. Plant a Magic Bean as young Link (beans come from the seller in Zora's River, 10 Rupees more each time). As adult, ride the plant."
+   }
   },
   {
    "id": "soil-lw-theater",
@@ -11772,7 +11937,10 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "soil",
-   "map": null
+   "map": null,
+   "howToIn": {
+    "mq3ds": "Right side of the Graveyard, below the high ledge. Plant a Magic Bean as young Link (beans come from the seller in Zora's River, 10 Rupees more each time). As adult, ride the plant."
+   }
   },
   {
    "id": "soil-dmt",
@@ -11966,6 +12134,9 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 1,
     "mapMatch": "clear"
    }
@@ -12013,6 +12184,9 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 2,
     "mapMatch": "clear"
    }
@@ -12060,8 +12234,14 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 3,
     "mapMatch": "clear"
+   },
+   "howToIn": {
+    "mq3ds": "Under the fenced cliff in northwest Hyrule Field, by the river near the Kakariko Village entrance. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
    }
   },
   {
@@ -12107,6 +12287,9 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 4,
     "mapMatch": "best match"
    }
@@ -12154,8 +12337,14 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 5,
     "mapMatch": "clear"
+   },
+   "howToIn": {
+    "mq3ds": "Ride close alongside the stone wall west of Lon Lon Ranch. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
    }
   },
   {
@@ -12201,6 +12390,9 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 6,
     "mapMatch": "best match"
    }
@@ -12248,6 +12440,9 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 7,
     "mapMatch": "best match"
    }
@@ -12295,8 +12490,14 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 8,
     "mapMatch": "best match"
+   },
+   "howToIn": {
+    "mq3ds": "At the fork in the road in southeast Hyrule Field (the north–south trail by the Gerudo Valley entrance). Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
    }
   },
   {
@@ -12342,8 +12543,14 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 9,
     "mapMatch": "best match"
+   },
+   "howToIn": {
+    "mq3ds": "Ride past the lone tree on the eastern edge of the field, near the Gerudo Valley entrance. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
    }
   },
   {
@@ -12389,8 +12596,14 @@
    "icon": "bigpoe",
    "map": {
     "image": "img/big-poe-map.png",
+    "imageIn": {
+     "mq3ds": "img/big-poe-map-mq3d.png"
+    },
     "n": 10,
     "mapMatch": "clear"
+   },
+   "howToIn": {
+    "mq3ds": "In the tall grass by the water's edge in northeast Hyrule Field (the river east of the castle). Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
    }
   },
   {

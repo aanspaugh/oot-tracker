@@ -1018,7 +1018,7 @@ const VERSIONS = {
   n64:     { label: 'Ocarina of Time (N64)', short: 'N64', desc: "Also the GameCube Collector's Edition, Wii and Wii U Virtual Console, and Nintendo Switch Online." },
   mq:      { label: 'Master Quest (GameCube)', short: 'Master Quest', desc: 'The GameCube disc with the remixed Master Quest dungeons.' },
   '3ds':   { label: 'Ocarina of Time 3D (3DS)', short: '3DS', bosses: 'challenge' },
-  mq3ds:   { label: 'Master Quest 3D (3DS)', short: 'Master Quest 3D', desc: 'Mirrored.', soon: true, bosses: 'challenge' },
+  mq3ds:   { label: 'Master Quest 3D (3DS)', short: 'Master Quest 3D', desc: 'Mirrored.', bosses: 'challenge' },
   switch2: { label: 'Ocarina of Time (Switch 2)', short: 'Switch 2', bosses: 'hall' },
 };
 const versionOf = (id) => (VERSIONS[profiles[id]?.version] ? profiles[id].version : 'switch2');
@@ -1026,9 +1026,15 @@ const gameVer = () => versionOf(pid);
 const inVersion = (x) => !x.versions || x.versions.includes(gameVer());
 const isRemake = () => gameVer() === 'switch2';
 // Names that differ by version (the 3DS "Shard of Agony"), applied before each render.
+// V3: Master Quest 3D is mirrored, so entries carry flipped names/how-to and the mirrored Big Poe map.
 function applyVersionNames() {
   const v = gameVer();
   for (const x of DATA.items) if (x.nameIn) { x.name0 ??= x.name; x.name = x.nameIn[v] || x.name0; }
+  for (const x of DATA.entries) {
+    if (x.nameIn) { x.name0 ??= x.name; x.name = x.nameIn[v] || x.name0; }
+    if (x.howToIn) { x.howTo0 ??= x.howTo; x.howTo = x.howToIn[v] || x.howTo0; }
+    if (x.map?.imageIn) { x.map.image0 ??= x.map.image; x.map.image = x.map.imageIn[v] || x.map.image0; }
+  }
   for (const r of DATA.skulltulaRewards) if (r.rewardIn) { r.reward0 ??= r.reward; r.reward = r.rewardIn[v] || r.reward0; }
 }
 // Hall (Switch 2) or Bosses (3DS Boss Challenge) or no boss tab at all (N64, Master Quest).
@@ -1658,6 +1664,7 @@ function renderDetail() {
   if (e.links?.length) {
     h += `<div class="d-label">More info</div><div class="d-links">${e.links.map((l) =>
       `<a class="link-btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div>`;
+    if (gameVer() === 'mq3ds') h += '<div class="d-note">🪞 These guides describe the original layout. Master Quest 3D is mirrored, and the directions above are already flipped.</div>';
   }
   if (e.switch2 === 'unverified' && isRemake()) h += '<div class="d-note" style="margin-top:0.9rem">Checked against N64 guides; not yet confirmed in the Switch 2 remake.</div>';
   if (!e.readOnly) {
