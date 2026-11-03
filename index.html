@@ -270,6 +270,9 @@
     .quick-row .q-shield { font-size: 0.85rem; }
     .quick-row .q-check { display: flex; align-items: center; padding: 0.5rem; margin: -0.5rem -0.3rem -0.5rem 0; cursor: pointer; }
     .scarecrow.shielded .veil { min-height: 5.5rem; }
+    .veil-area { cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; }
+    .veil-hint { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); }
+    .shield-chip { color: var(--text); }
 
     /* Hall: boss times + statues */
     .boss-card { cursor: default; }
@@ -369,6 +372,18 @@
     .icon-btn.danger { color: var(--danger); }
     .icon-btn.confirm { background: var(--danger); color: #1a0d0a; font-weight: 700; border-color: var(--danger); }
     .prof-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .shield-opts { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem; }
+    .so-label { font-size: 0.85rem; font-weight: 700; }
+    .shield-opt {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 0.15rem; text-align: left;
+      min-height: 48px; padding: 0.55rem 0.75rem; border-radius: var(--radius-sm);
+      background: var(--surface-2); border: 2px solid transparent;
+    }
+    .shield-opt.on { border-color: var(--gold); }
+    .so-name { font-weight: 700; }
+    .so-name::before { content: "○ "; color: var(--text-muted); }
+    .shield-opt.on .so-name::before { content: "● "; color: var(--gold); }
+    .so-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.35; }
     .prof-form { display: flex; flex-direction: column; gap: 0.55rem; background: var(--surface-2); border-radius: var(--radius-sm); padding: 0.75rem; }
     .prof-form label { font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.25rem; }
     .field {
@@ -502,7 +517,7 @@
     <div class="sheet-title" id="peekTitle">🛡️ Show this spoiler?</div>
     <button class="close-btn" data-close aria-label="Close">✕</button>
   </div>
-  <div class="d-note">It stays shown until you reload the app.</div>
+  <div class="d-note" id="peekNote">It stays shown until you reload the app.</div>
   <div class="form-actions" style="margin-top:0.9rem">
     <button class="act-btn" data-close>Keep it hidden</button>
     <button class="act-btn primary" id="peekYes">Show it</button>
@@ -990,6 +1005,12 @@ const shieldMode = () => {
   const m = pid && profiles[pid]?.spoilerShield;
   return !pid || m === 'off' ? 'off' : m === 'discovery' ? 'discovery' : 'guided';
 };
+const SHIELD_LABEL = { off: 'Off', guided: 'Guided', discovery: 'Discovery' };
+const SHIELD_DESC = {
+  off: '',
+  guided: 'Shows what you can get next. The rest of the game stays hidden.',
+  discovery: "Shows only what you've found. Everything else stays hidden until you check it off.",
+};
 function isShown(x) {
   const mode = shieldMode();
   if (mode === 'off' || peeked.has(x.id)) return true;
@@ -1038,16 +1059,30 @@ function shieldedCard(x, icon, num = '', checkable = false) {
   </div>`;
 }
 
-let peekKey = null;
-function askPeek(key) {
-  peekKey = key;
+// A peek shows one card, row or badge, or (area peek) every card under a covered area header.
+let peekKeys = [];
+function askPeek(keys, title = '🛡️ Show this spoiler?', note = 'It stays shown until you reload the app.') {
+  peekKeys = keys;
+  $('peekTitle').textContent = title;
+  $('peekNote').textContent = note;
   openSheet($('peekSheet'));
 }
+const askAreaPeek = (i) => askPeek(areaCards(DATA.areas[i]).map((e) => e.id), '🛡️ Show this area?',
+  'Every card in this area stays shown until you reload the app.');
+const areaCards = (a) => entriesIn(TABS.find((x) => x.id === currentTab).cats).filter((e) => e.areaId === a.id);
 $('peekYes').addEventListener('click', () => {
-  if (peekKey) peeked.add(peekKey);
+  for (const k of peekKeys) peeked.add(k);
   closeSheet();
   render();
 });
+
+// Discovery: typing a card's whole name (ignoring case and punctuation) uncovers it, like a peek.
+const plainName = (s) => s.toLowerCase().normalize('NFD').replace(/[^a-z0-9]/g, '');
+function peekByName(t, q) {
+  if (shieldMode() !== 'discovery' || !plainName(q)) return;
+  const list = t.id === 'progress' ? [...entriesIn(t.cats), ...DATA.items, ...DATA.songs] : entriesIn(t.cats);
+  for (const x of list) if (!isShown(x) && plainName(x.name) === plainName(q)) peeked.add(x.id);
+}
 
 // ============================================================================
 // Filters, search, sort, view. Chips are shared by all tabs; search and sort are per tab.
@@ -1088,6 +1123,7 @@ function matches(x, t) {
   const q = (search[t.id] || '').trim().toLowerCase();
   if (!q) return true;
   if (!isShown(x)) return false;   // search only matches what's shown
+  if (plainName(q) === plainName(x.name)) return true;   // a whole name typed without its punctuation
   const hay = `${x.name} ${x.area || ''} #${x.num ?? ''}`.toLowerCase();
   return q.split(/\s+/).every((w) => hay.includes(w));
 }
@@ -1104,12 +1140,17 @@ function visible(e, t) {
 // Rebuilt on tab/profile switch and chip taps only, so typing in search keeps focus.
 function renderControls() {
   const t = TABS.find((x) => x.id === currentTab);
-  if (!t.cats || !pid) { $('headerFilters').innerHTML = ''; $('headerControls').innerHTML = ''; return; }
+  $('headerFilters').innerHTML = $('headerControls').innerHTML = '';
+  if (!pid || t.id === 'notes') return;
+  // The shield chip shows the mode and opens the profile sheet to change it (no one-tap reveal).
+  const shieldChip = `<button class="chip shield-chip" data-chip="shield" aria-label="Spoiler Shield: ${SHIELD_LABEL[shieldMode()]}. Change it in the profile sheet">🛡️ ${SHIELD_LABEL[shieldMode()]}</button>`;
+  if (!t.cats) { $('headerFilters').innerHTML = shieldChip; return; }   // Hall
   const chip = (key, label, on) => `<button class="chip${on ? ' active' : ''}" data-chip="${key}" aria-pressed="${on}">${label}</button>`;
   $('headerFilters').innerHTML =
     (t.id !== 'progress' && shieldMode() !== 'discovery' ? chip('gettable', '✨ Gettable now', view.gettable) : '')
     + chip('hideDone', '✓ Hide done', view.hideDone)
-    + (t.id === 'skulltulas' ? chip('time', TIME_CHIP[view.time], view.time !== 'any') : '');
+    + (t.id === 'skulltulas' ? chip('time', TIME_CHIP[view.time], view.time !== 'any') : '')
+    + shieldChip;
   const sort = sortBy[t.id] || 'num';
   $('headerControls').innerHTML =
     `<input class="search-input" type="search" id="searchInput" placeholder="Search ${t.label}…" value="${esc(search[t.id] || '')}" autocomplete="off">`
@@ -1122,6 +1163,7 @@ function renderControls() {
 $('headerFilters').addEventListener('click', (e) => {
   const k = e.target.closest('[data-chip]')?.dataset.chip;
   if (!k) return;
+  if (k === 'shield') { openProfileSheet(); $('shieldOpts')?.scrollIntoView({ block: 'nearest' }); return; }
   if (k === 'time') view.time = TIME_NEXT[view.time]; else view[k] = !view[k];
   lsSet('oot.f.gettable', view.gettable ? '1' : null);
   lsSet('oot.f.hideDone', view.hideDone ? '1' : null);
@@ -1130,7 +1172,11 @@ $('headerFilters').addEventListener('click', (e) => {
   render();
 });
 $('headerControls').addEventListener('input', (e) => {
-  if (e.target.id === 'searchInput') { search[currentTab] = e.target.value; render(); }
+  if (e.target.id === 'searchInput') {
+    search[currentTab] = e.target.value;
+    peekByName(TABS.find((x) => x.id === currentTab), e.target.value);
+    render();
+  }
 });
 $('headerControls').addEventListener('change', (e) => {
   if (e.target.id === 'sortSelect') { sortBy[currentTab] = e.target.value; render(); }
@@ -1178,11 +1224,12 @@ function renderTab(t) {
       const c = t.cats[0];
       h += grp(catTitle(c, 'All '), entriesIn(t.cats));
     } else if (groupedTab(t)) {
-      for (const a of DATA.areas) {
+      DATA.areas.forEach((a, i) => {
         const list = entriesIn(t.cats).filter((e) => e.areaId === a.id);
-        // An area's name stays hidden until one of its cards is shown.
-        if (list.length) h += grp(list.some(isShown) ? esc(a.name) : veilText(a.id, a.name.length), list);
-      }
+        // An area's name stays hidden until one of its cards is shown; tapping it offers an area peek.
+        if (list.length) h += grp(list.some(isShown) ? esc(a.name) : `<span class="veil-area" data-sarea="${i}" tabindex="0" role="button" aria-label="Hidden area: tap to show">${
+          veilText(a.id, a.name.length)}<span class="veil-hint">🛡️ Tap to peek</span></span>`, list);
+      });
     } else {
       for (const c of t.cats) h += grp(catTitle(c), entriesIn([c]));
     }
@@ -1371,14 +1418,17 @@ $('main').addEventListener('click', (e) => {
     return;
   }
   // A shielded card, row, badge or recorder asks before it shows; its check box just checks.
+  const ar = e.target.closest('[data-sarea]');
+  if (ar) { askAreaPeek(Number(ar.dataset.sarea)); return; }
   const sh = e.target.closest('[data-sid]');
-  if (sh) { if (!e.target.closest('label')) askPeek(SKEYS[sh.dataset.sid]); return; }
+  if (sh) { if (!e.target.closest('label')) askPeek([SKEYS[sh.dataset.sid]]); return; }
   if (e.target.closest('.check-pill')) return;   // the check box toggles; the rest of the card opens it
   const c = e.target.closest('.item-card');
   if (c && BY_ID[c.dataset.id]) openDetail(c.dataset.id);   // Hall cards have no detail panel
 });
 $('main').addEventListener('keydown', (e) => {
-  if (e.target.dataset?.sid && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); askPeek(SKEYS[e.target.dataset.sid]); return; }
+  if (e.target.dataset?.sid && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); askPeek([SKEYS[e.target.dataset.sid]]); return; }
+  if (e.target.dataset?.sarea && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); askAreaPeek(Number(e.target.dataset.sarea)); return; }
   const c = e.target.closest('.item-card');
   if (c && e.target === c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openDetail(c.dataset.id); }
 });
@@ -1763,7 +1813,13 @@ function renderProfileSheet() {
   h += creating ? `<div style="margin-top:0.6rem">${profileForm('new')}</div>`
                 : '<button class="act-btn new-btn" data-act="new">＋ New profile</button>';
   if (usable(pid)) {
+    const mode = shieldMode();
     h += `<div class="sheet-label">This profile: ${esc(profiles[pid].name)}</div>
+      <div class="shield-opts" id="shieldOpts" role="radiogroup" aria-labelledby="shieldOptsLabel">
+        <div class="so-label" id="shieldOptsLabel">🛡️ Spoiler Shield</div>
+        ${Object.entries(SHIELD_LABEL).map(([k, l]) => `<button class="shield-opt${mode === k ? ' on' : ''}" role="radio" aria-checked="${mode === k}" data-act="shield" data-mode="${k}">
+          <span class="so-name">${l}</span>${SHIELD_DESC[k] ? `<span class="so-desc">${SHIELD_DESC[k]}</span>` : ''}</button>`).join('')}
+      </div>
       <div class="prof-actions">
         <button class="act-btn" data-act="backup">⬇ Download backup</button>
         <button class="act-btn${confirmReset ? ' primary' : ''}" data-act="reset-cel">${confirmReset ? 'Tap to confirm' : 'Reset celebrations'}</button>
@@ -1823,6 +1879,7 @@ $('profileBody').addEventListener('click', (e) => {
     update(ref(_db, `profiles/${id}`), { deletedAt: Date.now() })
       .then(() => toast(`"${profiles[id]?.name}" moved to Trash.`)).catch(fail('move it to Trash'));
   }
+  if (act === 'shield') update(ref(_db, `profiles/${pid}`), { spoilerShield: b.dataset.mode }).catch(fail('change the Spoiler Shield'));
   if (act === 'toggle-trash') showTrash = !showTrash;
   if (act === 'backup') backup();
   if (act === 'reset-cel') {
@@ -1898,11 +1955,12 @@ window.addEventListener('popstate', hideSheet);
 $('backdrop').addEventListener('click', closeSheet);
 document.addEventListener('click', (e) => { if (e.target.closest('[data-close]')) closeSheet(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheet(); });
-$('profileBtn').addEventListener('click', () => {
+function openProfileSheet() {
   creating = !activeProfiles().length;
   renderProfileSheet();
   openSheet($('profileSheet'));
-});
+}
+$('profileBtn').addEventListener('click', openProfileSheet);
 
 // ============================================================================
 // Toast
