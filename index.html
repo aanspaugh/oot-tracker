@@ -254,6 +254,23 @@
     .reward.earned { border-color: var(--gold); background: #3a3115; color: var(--text); }
     .reward.earned b { color: var(--gold); }
 
+    /* Spoiler Shield: filler text (never the real text) under a heavy frosted blur */
+    .veil { position: relative; flex: 1; min-width: 0; border-radius: var(--radius-sm); overflow: hidden; user-select: none; }
+    .veil-in { display: flex; gap: 0.7rem; align-items: flex-start; filter: blur(7px) saturate(0.4); opacity: 0.8; }
+    .veil::after {
+      content: '🛡️ Tap to peek'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; color: var(--text);
+      background: linear-gradient(115deg, rgba(236,230,211,0.13), rgba(236,230,211,0.04) 45%, rgba(236,230,211,0.11));
+      border: 1px solid rgba(236,230,211,0.10); border-radius: inherit;
+    }
+    .veil-num { position: absolute; top: 0.2rem; left: 0.4rem; z-index: 1; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); }
+    .veil-t { display: inline-block; filter: blur(6.5px) saturate(0.4); opacity: 0.75; user-select: none; }
+    .item-card.shielded, .scarecrow.shielded, .reward.shielded { cursor: pointer; }
+    .quick-row.shielded { cursor: pointer; border-style: solid; }
+    .quick-row .q-shield { font-size: 0.85rem; }
+    .quick-row .q-check { display: flex; align-items: center; padding: 0.5rem; margin: -0.5rem -0.3rem -0.5rem 0; cursor: pointer; }
+    .scarecrow.shielded .veil { min-height: 5.5rem; }
+
     /* Hall: boss times + statues */
     .boss-card { cursor: default; }
     .boss-best { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; min-height: 44px; font-size: 0.88rem; color: var(--text-muted); }
@@ -478,6 +495,18 @@
 <div class="sheet detail" id="detailSheet" role="dialog" aria-modal="true" aria-labelledby="detailName">
   <button class="close-btn detail-close" data-close aria-label="Close">✕</button>
   <div id="detailBody"></div>
+</div>
+
+<div class="sheet" id="peekSheet" role="dialog" aria-modal="true" aria-labelledby="peekTitle">
+  <div class="sheet-head">
+    <div class="sheet-title" id="peekTitle">🛡️ Show this spoiler?</div>
+    <button class="close-btn" data-close aria-label="Close">✕</button>
+  </div>
+  <div class="d-note">It stays shown until you reload the app.</div>
+  <div class="form-actions" style="margin-top:0.9rem">
+    <button class="act-btn" data-close>Keep it hidden</button>
+    <button class="act-btn primary" id="peekYes">Show it</button>
+  </div>
 </div>
 
 <div id="toast" hidden></div>
@@ -848,12 +877,17 @@ function startApp() {
   $('main').hidden = false;
   $('sheetWho').innerHTML = `Signed in as <strong>${esc(me)}</strong>`;
   for (const x of [...DATA.entries, ...DATA.items, ...DATA.songs]) BY_ID[x.id] = x;
+  SKEYS = [...DATA.entries, ...DATA.items, ...DATA.songs, ...DATA.bosses, ...DATA.statues].map((x) => x.id)
+    .concat(DATA.skulltulaRewards.map((r) => 'reward-' + r.tokens));
+  SKEYS.forEach((k, i) => SID.set(k, i));
   buildTabs();
   onValue(ref(_db, 'profiles'), (snap) => {
+    const mode = shieldMode();
     profiles = snap.val() || {};
     ensureSelection();
     renderProfileSheet();
     renderProfileBtn();
+    if (shieldMode() !== mode) { renderControls(); render(); }
   }, (err) => toast('Lost access to profiles: ' + err.message, true));
 }
 
@@ -910,6 +944,7 @@ function reqLabel(req) {
   if (typeof req === 'object') return req.any.map(reqLabel).join(' or ');
   if (req.startsWith('gs:')) return `${req.slice(3)} Gold Skulltulas`;
   if (req === 'bottle') return 'a bottle';
+  if (BY_ID[req] && !isShown(BY_ID[req])) return 'a hidden spoiler';
   // Soft-soil entries are named by their area alone.
   if (BY_ID[req]?.category === 'soil') return `bean plant (${BY_ID[req].name})`;
   return BY_ID[req]?.name || req;
@@ -917,6 +952,7 @@ function reqLabel(req) {
 
 function toggle(id, on) {
   const e = BY_ID[id], before = progress;   // the write below updates `progress` right away
+  peeked.add(id);   // anything checked or unchecked here stays shown
   set(ref(_db, `progress/${pid}/${id}`), on ? { at: Date.now(), by: me } : null).catch(fail('save that'));
   // Only a check made on this phone can celebrate, and only when it crosses a threshold.
   // Items, songs (no category) and 🚧 read-only entries never do.
@@ -943,22 +979,75 @@ function renderProgressBars() {
 }
 
 // ============================================================================
-// Spoiler Shield, per profile (profiles/{pid}/spoilerShield; a missing field = on).
-// Shown = checked off, or gettable now: `needs`, or `reach` for milestones, items, songs and Hall
-// bosses. Everything else is shielded. A peek reveals one until the app reloads (memory only).
+// Spoiler Shield, per profile: profiles/{pid}/spoilerShield = 'off' | 'guided' | 'discovery'
+// (missing = guided). Guided shows what's checked off or gettable now (`needs`, or `reach` for
+// milestones, items, songs and Hall bosses); Discovery shows only what's checked off. Everything
+// else is shielded. A peek reveals one until the app reloads (memory only).
 // ============================================================================
-const peeked = new Set();
-const shieldOn = () => !!pid && profiles[pid]?.spoilerShield !== false;
+const peeked = new Set();   // ids (and 'reward-N') shown by a peek or a check made on this device
+let SKEYS = [], SID = new Map();   // shielded markup carries an index, never the id
+const shieldMode = () => {
+  const m = pid && profiles[pid]?.spoilerShield;
+  return !pid || m === 'off' ? 'off' : m === 'discovery' ? 'discovery' : 'guided';
+};
 function isShown(x) {
-  if (!shieldOn() || peeked.has(x.id)) return true;
+  const mode = shieldMode();
+  if (mode === 'off' || peeked.has(x.id)) return true;
   // Auto-checked items follow their source entry; token-count ones show once earned.
   if (x.derivedFrom) return x.derivedFrom.startsWith('gs:') ? met(x.derivedFrom) : isShown(BY_ID[x.derivedFrom]);
   if (x.readOnly) return false;   // 🚧 the 5th bottle and the Hall statues
-  return isDone(x.id) || !!bossTimes[x.id] || met(x.reach || x.needs);
+  // A Hall boss's `reach` is its dungeon checked off, so it applies in Discovery too.
+  const rule = mode === 'guided' || DATA.bosses.some((b) => b.id === x.id) ? (x.reach || x.needs) : null;
+  return isDone(x.id) || !!bossTimes[x.id] || (!!rule && met(rule));
 }
 // Skulltula reward badges show once earned.
-const rewardShown = (r) => !shieldOn() || peeked.has('reward-' + r.tokens) || gsCount() >= r.tokens;
+const rewardShown = (r) => shieldMode() === 'off' || peeked.has('reward-' + r.tokens) || gsCount() >= r.tokens;
 window.OOT_SHIELD = { isShown, rewardShown };   // for the test
+
+// Same-length made-up words, fixed per key, so the blur hides nothing worth un-blurring.
+function filler(key, len) {
+  let h = 2166136261;
+  for (const c of key) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
+  const rnd = () => {   // mulberry32
+    h = (h + 0x6D2B79F5) | 0;
+    let t = Math.imul(h ^ (h >>> 15), 1 | h);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  let s = '';
+  while (s.length < len) {
+    let w = '';
+    for (let i = 2 + Math.floor(rnd() * 7); i > 0; i--) w += 'etaoinshrdlucmfwypbgk'[Math.floor(rnd() * 21)];
+    s += (s ? ' ' : '') + w[0].toUpperCase() + w.slice(1);
+  }
+  return s.slice(0, len);
+}
+const veilText = (key, len) => `<span class="veil-t" aria-hidden="true">${filler(key, len)}</span>`;
+// A shielded card: a category icon (never the unique one), filler name + filler line, the number
+// left readable, and a check box that still works.
+function shieldedCard(x, icon, num = '', checkable = false) {
+  const k = SID.get(x.id);
+  return `<div class="item-card shielded" data-sid="${k}" tabindex="0" aria-label="Hidden spoiler: tap to show">
+    <div class="card-top">
+      <div class="veil">${num ? `<span class="veil-num">${num}</span>` : ''}<div class="veil-in" aria-hidden="true">
+        <div class="card-icon">${icon}</div>
+        <div class="card-info"><div class="card-name">${filler(x.id, x.name.length)}</div><div class="card-meta">${filler(x.id + '/', 10 + k % 9)}</div></div>
+      </div></div>
+      ${checkable ? `<label class="check-pill card-check" aria-label="Got it"><input type="checkbox" data-scheck="${k}"></label>` : ''}
+    </div>
+  </div>`;
+}
+
+let peekKey = null;
+function askPeek(key) {
+  peekKey = key;
+  openSheet($('peekSheet'));
+}
+$('peekYes').addEventListener('click', () => {
+  if (peekKey) peeked.add(peekKey);
+  closeSheet();
+  render();
+});
 
 // ============================================================================
 // Filters, search, sort, view. Chips are shared by all tabs; search and sort are per tab.
@@ -974,8 +1063,9 @@ const search = {};   // tab id → text
 const sortBy = {};   // tab id → SORTS key
 const SORTS = {
   num:  { label: 'Number',      fn: (a, b) => a.num - b.num },
-  name: { label: 'Name',        fn: (a, b) => a.name.localeCompare(b.name) },
-  todo: { label: 'To do first', fn: (a, b) => isDone(a.id) - isDone(b.id) || gettable(b) - gettable(a) || a.num - b.num },
+  // Shielded cards go last, by number (their names are hidden).
+  name: { label: 'Name',        fn: (a, b) => isShown(b) - isShown(a) || (isShown(a) ? a.name.localeCompare(b.name) : a.num - b.num) },
+  todo: { label: 'To do first', fn: (a, b) => isDone(a.id) - isDone(b.id) || shownGettable(b) - shownGettable(a) || a.num - b.num },
 };
 const TIME_NEXT = { any: 'day', day: 'night', night: 'any' };
 const TIME_CHIP = { any: '🌗 Day & night', day: '☀️ Daytime now', night: '🌙 Nighttime now' };
@@ -983,6 +1073,7 @@ const groupedTab = (t) => t.id === 'hearts' || t.id === 'skulltulas';
 const viewMode = (t) => (lsGet('oot.view.' + t.id) === 'num' ? 'num' : 'area');
 
 const gettable = (e) => !e.readOnly && met(e.needs);
+const shownGettable = (e) => isShown(e) && gettable(e);
 // The unmet parts of a requirement, following the closest alternative of each {any}.
 function unmet(req) {
   if (Array.isArray(req)) return [...new Set(req.flatMap(unmet))];
@@ -996,14 +1087,17 @@ function unmet(req) {
 function matches(x, t) {
   const q = (search[t.id] || '').trim().toLowerCase();
   if (!q) return true;
+  if (!isShown(x)) return false;   // search only matches what's shown
   const hay = `${x.name} ${x.area || ''} #${x.num ?? ''}`.toLowerCase();
   return q.split(/\s+/).every((w) => hay.includes(w));
 }
 function visible(e, t) {
   if (view.hideDone && isDone(e.id)) return false;
   // Done items pass "Gettable now" (you already got them); "Hide done" is the chip that hides them.
-  if (view.gettable && t.id !== 'progress' && !isDone(e.id) && !gettable(e)) return false;
-  if (t.id === 'skulltulas' && view.time !== 'any' && e.time !== 'any' && e.time !== view.time) return false;
+  // Discovery hides the chip: which cards are gettable is itself a hint.
+  if (view.gettable && shieldMode() !== 'discovery' && t.id !== 'progress' && !isDone(e.id) && !gettable(e)) return false;
+  // A shielded card ignores the time chip, so it can't give away its time of day.
+  if (t.id === 'skulltulas' && view.time !== 'any' && e.time !== 'any' && e.time !== view.time && isShown(e)) return false;
   return matches(e, t);
 }
 
@@ -1013,7 +1107,7 @@ function renderControls() {
   if (!t.cats || !pid) { $('headerFilters').innerHTML = ''; $('headerControls').innerHTML = ''; return; }
   const chip = (key, label, on) => `<button class="chip${on ? ' active' : ''}" data-chip="${key}" aria-pressed="${on}">${label}</button>`;
   $('headerFilters').innerHTML =
-    (t.id !== 'progress' ? chip('gettable', '✨ Gettable now', view.gettable) : '')
+    (t.id !== 'progress' && shieldMode() !== 'discovery' ? chip('gettable', '✨ Gettable now', view.gettable) : '')
     + chip('hideDone', '✓ Hide done', view.hideDone)
     + (t.id === 'skulltulas' ? chip('time', TIME_CHIP[view.time], view.time !== 'any') : '');
   const sort = sortBy[t.id] || 'num';
@@ -1077,7 +1171,7 @@ function renderTab(t) {
   let h = '';
   if (t.id === 'progress') {
     h = grp(catTitle('milestone'), entriesIn(['milestone'])) + quick('Items & Equipment', DATA.items) + quick('Songs', DATA.songs);
-    if (!(search.progress || '').trim()) h += scarecrowHTML();
+    if (!(search.progress || '').trim()) h += isShown(BY_ID['scarecrows-song']) ? scarecrowHTML() : shieldedScarecrow();
   } else {
     if (t.id === 'skulltulas') h += rewardsHTML();
     if (groupedTab(t) && viewMode(t) === 'num') {
@@ -1086,7 +1180,8 @@ function renderTab(t) {
     } else if (groupedTab(t)) {
       for (const a of DATA.areas) {
         const list = entriesIn(t.cats).filter((e) => e.areaId === a.id);
-        if (list.length) h += grp(esc(a.name), list);
+        // An area's name stays hidden until one of its cards is shown.
+        if (list.length) h += grp(list.some(isShown) ? esc(a.name) : veilText(a.id, a.name.length), list);
       }
     } else {
       for (const c of t.cats) h += grp(catTitle(c), entriesIn([c]));
@@ -1127,6 +1222,7 @@ const bugBadge = (e) => progress[SOIL_BUG_GS[e.id]]
 const AGE  = { young: 'Young Link', adult: 'Adult Link' };
 const TIME = { night: '🌙 Night', day: '☀️ Day' };
 function card(e) {
+  if (!isShown(e)) return shieldedCard(e, svg(e.category), e.category === 'milestone' ? '' : `#${e.num}`, !e.readOnly);
   const done = isDone(e.id);
   const locked = !done && !e.readOnly && !met(e.needs);
   const tags = [AGE[e.age], TIME[e.time]].filter(Boolean).map((x) => `<span class="tag">${x}</span>`).join('');
@@ -1157,6 +1253,11 @@ function autoToggle(all) {
 // Items & Songs: filter inputs only (they feed "Gettable now"), never counted toward progress.
 function quickList(title, all, list) {
   const rows = [...list].sort((a, b) => a.order - b.order).map((i) => {
+    if (!isShown(i)) {
+      const k = SID.get(i.id);
+      return `<div class="check-pill quick-row shielded" data-sid="${k}" tabindex="0" aria-label="Hidden spoiler: tap to show"><span class="q-order">${i.order}</span><span class="q-name">${veilText(i.id, i.name.length)}</span><span class="q-shield" aria-hidden="true">🛡️</span>${
+        i.derivedFrom ? '' : `<label class="q-check" aria-label="Got it"><input type="checkbox" data-scheck="${k}"></label>`}</div>`;
+    }
     const d = isDone(i.id);
     const name = `<span class="q-order">${i.order}</span><span class="q-name">${esc(i.name)}`;
     return i.derivedFrom
@@ -1198,21 +1299,29 @@ function scarecrowHTML() {
     </div>
   </div>`;
 }
+// Shown with the Scarecrow's Song: the recorder's text names Pierre and when you play it.
+const shieldedScarecrow = () => `<div class="scarecrow shielded" data-sid="${SID.get('scarecrows-song')}" tabindex="0" aria-label="Hidden spoiler: tap to show">
+    <div class="veil"><div class="veil-in" aria-hidden="true"><div>
+      <div class="scarecrow-title">${filler('sc-title', 30)}</div><div class="scarecrow-sub">${filler('sc-sub', 140)}</div>
+    </div></div></div>
+  </div>`;
 function saveScarecrow(notes) {
   set(ref(_db, `scarecrow/${pid}`), notes.length ? notes : null).catch(fail('save the notes'));
 }
 
 function rewardsHTML() {
   const n = gsCount();
-  const notes = DATA.skulltulaRewards.filter((r) => r.switch2Note).map((r) => `⚠️ ${r.tokens}: ${esc(r.switch2Note)}`);
+  const notes = DATA.skulltulaRewards.filter((r) => r.switch2Note && rewardShown(r)).map((r) => `⚠️ ${r.tokens}: ${esc(r.switch2Note)}`);
   return `<div class="group-header"><span class="group-name">${svg('skulltula', 'ic ic-inline')} Skulltula rewards</span>${badge(n, 100)}</div>
-    <div class="rewards">${DATA.skulltulaRewards.map((r) => `<span class="reward${n >= r.tokens ? ' earned' : ''}">
+    <div class="rewards">${DATA.skulltulaRewards.map((r) => !rewardShown(r)
+      ? `<span class="reward shielded" data-sid="${SID.get('reward-' + r.tokens)}" tabindex="0" aria-label="Hidden reward: tap to show"><b>${r.tokens}</b> ${veilText('reward-' + r.tokens, r.reward.length)}</span>`
+      : `<span class="reward${n >= r.tokens ? ' earned' : ''}">
       <b>${n >= r.tokens ? '✓ ' : ''}${r.tokens}</b> ${esc(r.reward)}${r.switch2Note ? ' ⚠️' : ''}</span>`).join('')}</div>
     ${notes.length ? `<div class="group-note">${notes.join('<br>')}</div>` : ''}`;
 }
 
 $('main').addEventListener('change', (e) => {
-  const id = e.target.dataset.check;
+  const id = e.target.dataset.check || SKEYS[e.target.dataset.scheck];   // a shielded card's box reveals it
   if (id && pid) toggle(id, e.target.checked);
 });
 $('main').addEventListener('click', (e) => {
@@ -1261,11 +1370,15 @@ $('main').addEventListener('click', (e) => {
     }
     return;
   }
+  // A shielded card, row, badge or recorder asks before it shows; its check box just checks.
+  const sh = e.target.closest('[data-sid]');
+  if (sh) { if (!e.target.closest('label')) askPeek(SKEYS[sh.dataset.sid]); return; }
   if (e.target.closest('.check-pill')) return;   // the check box toggles; the rest of the card opens it
   const c = e.target.closest('.item-card');
   if (c && BY_ID[c.dataset.id]) openDetail(c.dataset.id);   // Hall cards have no detail panel
 });
 $('main').addEventListener('keydown', (e) => {
+  if (e.target.dataset?.sid && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); askPeek(SKEYS[e.target.dataset.sid]); return; }
   const c = e.target.closest('.item-card');
   if (c && e.target === c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openDetail(c.dataset.id); }
 });
@@ -1286,6 +1399,7 @@ let confirmClearTime = null, clearTimeTimer = null;    // boss id armed to clear
 function renderHall() {
   const timed = DATA.bosses.filter((b) => bossTimes[b.id]).length;
   const bosses = DATA.bosses.map((b) => {
+    if (!isShown(b)) return shieldedCard(b, svg('hall'));
     const best = bossTimes[b.id], armed = confirmClearTime === b.id;
     return `<div class="item-card boss-card" data-boss="${b.id}">
       <div class="card-top">
@@ -1304,7 +1418,7 @@ function renderHall() {
       </form>
     </div>`;
   }).join('');
-  const statues = DATA.statues.map((f) => `<div class="item-card readonly static">
+  const statues = DATA.statues.map((f) => !isShown(f) ? shieldedCard(f, svg('wip')) : `<div class="item-card readonly static">
       <div class="card-top"><div class="card-icon">${svg('wip')}</div>
         <div class="card-info"><div class="card-name">${esc(f.name)}</div>
           ${f.variants.length ? `<div class="card-tags">${f.variants.map((v) => `<span class="tag">${esc(v)}</span>`).join('')}</div>` : ''}</div></div>
