@@ -51,6 +51,30 @@
    "nf-mq": {
     "name": "Nintendo Forever - Zelda: Ocarina of Time Master Quest guide (N64/GameCube layout; Skulltulas in dungeons + walkthrough)",
     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_Index.php?lang=en"
+   },
+   "user-play": {
+    "name": "The user's own Switch 2 playthrough (first-hand, 2026-11-05)",
+    "url": ""
+   },
+   "nl-s2-gs": {
+    "name": "Nintendo Life, \"All Gold Skulltula Locations In Zelda: Ocarina of Time (Switch 2)\"",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+   },
+   "nl-s2-hp": {
+    "name": "Nintendo Life, \"Heart Piece locations in Zelda: Ocarina of Time (Switch 2)\"",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+   },
+   "thegamer-s2-hp": {
+    "name": "TheGamer, \"Let's Find All The Pieces Of Heart In The Legend Of Zelda: Ocarina Of Time Remake\" (2026-11-05)",
+    "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+   },
+   "nintenduo-s2-bottles": {
+    "name": "Nintenduo, \"All Bottles in Ocarina of Time (Switch 2)\"",
+    "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/bottles/"
+   },
+   "respec-s2": {
+    "name": "Respec, \"Ocarina of Time Remake Walkthrough - 100% completion guide with all Switch 2 changes\"",
+    "url": "https://www.respec.net/guide/276-the-legend-zelda-ocarina-time-remake-walkthrough-100-completion-guide-with-all-switch-2-changes"
    }
   }
  },
@@ -861,7 +885,8 @@
        "bottle-talon-cuccos",
        "bottle-anju-cuccos",
        "bottle-ruto-letter",
-       "bottle-big-poes"
+       "bottle-big-poes",
+       "bottle-5-remake"
       ]
      }
     ],
@@ -874,7 +899,8 @@
        "bottle-talon-cuccos",
        "bottle-anju-cuccos",
        "bottle-ruto-letter",
-       "bottle-big-poes"
+       "bottle-big-poes",
+       "bottle-5-remake"
       ]
      }
     ]
@@ -904,7 +930,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ]
@@ -1115,7 +1142,8 @@
        "bottle-talon-cuccos",
        "bottle-anju-cuccos",
        "bottle-ruto-letter",
-       "bottle-big-poes"
+       "bottle-big-poes",
+       "bottle-5-remake"
       ]
      },
      "song-of-time",
@@ -1153,7 +1181,8 @@
        "bottle-talon-cuccos",
        "bottle-anju-cuccos",
        "bottle-ruto-letter",
-       "bottle-big-poes"
+       "bottle-big-poes",
+       "bottle-5-remake"
       ]
      },
      "song-of-time",
@@ -1508,7 +1537,11 @@
     "ms-master-sword",
     "fairy-ocarina"
    ],
-   "recordNotes": 8
+   "recordNotes": 8,
+   "recordReach": [
+    "ms-deku-tree",
+    "fairy-ocarina"
+   ]
   },
   {
    "id": "minuet-of-forest",
@@ -1609,7 +1642,8 @@
        "bottle-talon-cuccos",
        "bottle-anju-cuccos",
        "bottle-ruto-letter",
-       "bottle-big-poes"
+       "bottle-big-poes",
+       "bottle-5-remake"
       ]
      }
     ],
@@ -1622,7 +1656,8 @@
        "bottle-talon-cuccos",
        "bottle-anju-cuccos",
        "bottle-ruto-letter",
-       "bottle-big-poes"
+       "bottle-big-poes",
+       "bottle-5-remake"
       ]
      }
     ]
@@ -2532,11 +2567,41 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Market Lost Dog"
+   "ootrLocation": "Market Lost Dog",
+   "howToIn": {
+    "switch2": "The woman who lost her dog Richard waits outside, by the Market entrance (not in her house). At night, Richard is one of the white dogs around the Back Alley: stand next to him and press A so he follows you, then bring him to her. If it's the wrong dog, go back for another one."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nl-s2-hp",
+     "thegamer-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Hyrule-Market-Dog"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-llr-silo",
@@ -2897,13 +2962,53 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "heart",
    "map": null,
    "ootrLocation": "Graveyard Heart Piece Grave Chest",
+   "nameIn": {
+    "switch2": "Chest under the top-right grave"
+   },
    "howToIn": {
-    "mq3ds": "Pull back the movable gravestone (second from the right, just below the Royal Family's Tomb; young Link can only do this at night) and drop in. Freeze or defeat the ReDead, then play the Sun's Song where it stood to make a chest appear."
+    "mq3ds": "Pull back the movable gravestone (second from the right, just below the Royal Family's Tomb; young Link can only do this at night) and drop in. Freeze or defeat the ReDead, then play the Sun's Song where it stood to make a chest appear.",
+    "switch2": "Looking at the Graveyard from its entrance, pull back the grave at the very top right and drop into the hole. The Piece of Heart is in a chest down there; in the remake you don't need the Sun's Song."
+   },
+   "needsIn": {
+    "switch2": [
+     {
+      "any": [
+       [
+        "ms-deku-tree"
+       ],
+       [
+        "ms-master-sword"
+       ]
+      ]
+     }
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nl-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Kakariko-Village-Graveyard-Suns-Song"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
    }
   },
   {
@@ -3170,7 +3275,8 @@
    "ootrLocation": "ZR Frogs Ocarina Game",
    "howToIn": {
     "3ds": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (3DS buttons): L, X, Y, R, X, Y, R, L, R, L, R, Y, X, L.",
-    "mq3ds": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (3DS buttons): L, X, Y, R, X, Y, R, L, R, L, R, Y, X, L."
+    "mq3ds": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (3DS buttons): L, X, Y, R, X, Y, R, L, R, L, R, Y, X, L.",
+    "switch2": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (Switch 2 buttons): L, Y, A, R, Y, A, R, L, R, L, R, A, Y, L."
    }
   },
   {
@@ -3377,7 +3483,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -3427,7 +3534,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     },
     "bombs"
@@ -3875,7 +3983,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -3958,7 +4067,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -4007,7 +4117,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -4807,7 +4918,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -4855,7 +4967,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     },
     {
@@ -5154,7 +5267,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     },
     "bolero-of-fire"
@@ -5548,7 +5662,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -5704,7 +5819,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -6002,7 +6118,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -6170,7 +6287,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -6212,7 +6329,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -6260,7 +6377,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -6305,7 +6422,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -6315,7 +6432,39 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the basement room where three Gohma Larvae drop, light a Deku Stick on the torch and burn the web on the left. The Gold Skulltula is behind it; shoot it with the Slingshot."
+   },
+   "needsIn": {
+    "switch2": [
+     "kokiri-sword",
+     "deku-shield",
+     "slingshot"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nl-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-35"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dc-side-room",
@@ -7276,7 +7425,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     },
     "hookshot"
@@ -7372,7 +7522,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     },
     "hookshot"
@@ -9464,7 +9615,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     },
     "song-of-time"
@@ -9515,7 +9667,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -9565,7 +9718,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     },
     {
@@ -10523,7 +10677,18 @@
    "readOnly": false,
    "icon": "mask-keaton",
    "map": null,
-   "ootrLocation": "Market Mask Shop Item 6"
+   "ootrLocation": "Market Mask Shop Item 6",
+   "borrow": {
+    "id": "mask-keaton-borrowed",
+    "needs": [
+     "ms-deku-tree",
+     "ms-meet-zelda"
+    ]
+   },
+   "reach": [
+    "ms-deku-tree",
+    "ms-meet-zelda"
+   ]
   },
   {
    "id": "mask-skull",
@@ -10563,7 +10728,18 @@
    "ootrLocation": "Market Mask Shop Item 5",
    "howToIn": {
     "mq3ds": "Borrow the Skull Mask (20 Rupees). Wear it to the Skull Kid by the stump at the first right in the Lost Woods (play Saria's Song for him first if you haven't). He only pays 10, so you'll need 10 more to pay the shop back."
-   }
+   },
+   "borrow": {
+    "id": "mask-skull-borrowed",
+    "needs": [
+     "ms-deku-tree",
+     "mask-keaton"
+    ]
+   },
+   "reach": [
+    "ms-deku-tree",
+    "mask-keaton"
+   ]
   },
   {
    "id": "mask-spooky",
@@ -10599,7 +10775,18 @@
    "readOnly": false,
    "icon": "mask-spooky",
    "map": null,
-   "ootrLocation": "Market Mask Shop Item 8"
+   "ootrLocation": "Market Mask Shop Item 8",
+   "borrow": {
+    "id": "mask-spooky-borrowed",
+    "needs": [
+     "ms-deku-tree",
+     "mask-skull"
+    ]
+   },
+   "reach": [
+    "ms-deku-tree",
+    "mask-skull"
+   ]
   },
   {
    "id": "mask-bunny",
@@ -10636,7 +10823,18 @@
    "readOnly": false,
    "icon": "mask-bunny",
    "map": null,
-   "ootrLocation": "Market Mask Shop Item 7"
+   "ootrLocation": "Market Mask Shop Item 7",
+   "borrow": {
+    "id": "mask-bunny-borrowed",
+    "needs": [
+     "ms-deku-tree",
+     "mask-spooky"
+    ]
+   },
+   "reach": [
+    "ms-deku-tree",
+    "mask-spooky"
+   ]
   },
   {
    "id": "mask-truth",
@@ -11601,7 +11799,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12114,7 +12313,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12164,7 +12364,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12214,7 +12415,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12267,7 +12469,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12317,7 +12520,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12370,7 +12574,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12420,7 +12625,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12470,7 +12676,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12523,7 +12730,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12576,7 +12784,8 @@
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
       "bottle-ruto-letter",
-      "bottle-big-poes"
+      "bottle-big-poes",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12644,7 +12853,10 @@
    "readOnly": false,
    "icon": "bottle",
    "map": null,
-   "ootrLocation": "LLR Talons Chickens"
+   "ootrLocation": "LLR Talons Chickens",
+   "numIn": {
+    "switch2": 2
+   }
   },
   {
    "id": "bottle-anju-cuccos",
@@ -12679,7 +12891,10 @@
    "readOnly": false,
    "icon": "bottle",
    "map": null,
-   "ootrLocation": "Kak Anju as Child"
+   "ootrLocation": "Kak Anju as Child",
+   "numIn": {
+    "switch2": 3
+   }
   },
   {
    "id": "bottle-ruto-letter",
@@ -12715,7 +12930,10 @@
    "readOnly": false,
    "icon": "bottle",
    "map": null,
-   "ootrLocation": "LH Underwater Item"
+   "ootrLocation": "LH Underwater Item",
+   "numIn": {
+    "switch2": 4
+   }
   },
   {
    "id": "bottle-big-poes",
@@ -12735,7 +12953,8 @@
      "any": [
       "bottle-talon-cuccos",
       "bottle-anju-cuccos",
-      "bottle-ruto-letter"
+      "bottle-ruto-letter",
+      "bottle-5-remake"
      ]
     }
    ],
@@ -12759,31 +12978,42 @@
    "readOnly": false,
    "icon": "bottle",
    "map": null,
-   "ootrLocation": "Market 10 Big Poes"
+   "ootrLocation": "Market 10 Big Poes",
+   "numIn": {
+    "switch2": 5
+   }
   },
   {
    "id": "bottle-5-remake",
    "category": "bottle",
-   "num": 5,
-   "name": "Fifth bottle (Switch 2 remake)",
-   "area": null,
-   "areaId": null,
-   "age": "either",
+   "num": 1,
+   "name": "Potion Shop's runaway bug",
+   "area": "Hyrule Castle Market",
+   "areaId": "market",
+   "age": "young",
    "time": "any",
-   "howTo": "🚧 New in the Switch 2 remake: a Nintendo rep confirmed to IGN that the fifth inventory slot is an extra bottle. How you get it is unknown until launch.",
-   "needs": [],
+   "howTo": "In the Market, go into the Potion Shop (next to the path up to the Temple of Time). The shopkeeper has let a bug get away: say you'll help and he gives you an Empty Bottle. Catch the bug as it scurries across the floor; he fills the bottle with a Red Potion, and the bottle is yours to keep.",
+   "needs": [
+    "ms-deku-tree"
+   ],
    "links": [
     {
-     "label": "Kotaku",
-     "url": "https://kotaku.com/5-things-we-just-learned-about-the-legend-of-zelda-ocarina-of-time-remake-2000745965"
+     "label": "Nintenduo",
+     "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/bottles/"
+    },
+    {
+     "label": "Respec",
+     "url": "https://www.respec.net/guide/276-the-legend-zelda-ocarina-time-remake-walkthrough-100-completion-guide-with-all-switch-2-changes"
     }
    ],
    "sources": [
-    "kotaku"
+    "user-play",
+    "nintenduo-s2-bottles",
+    "respec-s2"
    ],
    "fromSheet": false,
-   "switch2": "new-unconfirmed",
-   "readOnly": true,
+   "switch2": "confirmed",
+   "readOnly": false,
    "icon": "bottle",
    "map": null,
    "versions": [

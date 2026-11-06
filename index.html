@@ -353,6 +353,13 @@
     .link-btn:hover { border-color: var(--gold); }
     .d-check { margin-top: 1.1rem; min-height: 56px; font-size: 1rem; }
     .d-check input { width: 24px; height: 24px; }
+    /* Masks: Borrowed + Sold (2026-11-05) */
+    .card-steps, .d-steps { display: flex; gap: 0.5rem; margin-top: 0.7rem; }
+    .d-steps { margin-top: 1.1rem; }
+    .step-pill { flex: 1; min-height: 48px; justify-content: center; gap: 0.5rem; font-weight: 600; }
+    .d-steps .step-pill { min-height: 56px; font-size: 1rem; }
+    .step-pill input { width: 22px; height: 22px; }
+    .step-pill.locked-on { opacity: 0.6; }
     .sheet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
     .sheet-title { font-family: var(--display); font-size: 1.2rem; color: var(--gold); }
     .close-btn {
@@ -921,6 +928,8 @@ function startApp() {
   $('main').hidden = false;
   $('sheetWho').innerHTML = `Signed in as <strong>${esc(me)}</strong>`;
   for (const x of [...DATA.entries, ...DATA.items, ...DATA.songs]) BY_ID[x.id] = x;
+  // Masks (2026-11-05): each sold mask has a 2nd check, "Borrowed", saved as progress/{pid}/{mask}-borrowed.
+  for (const x of DATA.entries) if (x.borrow) BY_ID[x.borrow.id] = { id: x.borrow.id, name: `${x.name} (borrowed)`, borrowOf: x.id, needs: x.borrow.needs };
   SKEYS = [...DATA.entries, ...DATA.items, ...DATA.songs, ...DATA.bosses, ...DATA.statues].map((x) => x.id)
     .concat(DATA.skulltulaRewards.map((r) => 'reward-' + r.tokens));
   SKEYS.forEach((k, i) => SID.set(k, i));
@@ -972,6 +981,7 @@ const gsCount = () => entriesIn(['skulltula']).filter((e) => progress[e.id]).len
 // Items with derivedFrom (Master Sword, fairy spells, wallets…) mirror another check and can't be set by hand.
 function isDone(id) {
   const it = BY_ID[id];
+  if (it?.borrowOf) return !!progress[id] || !!progress[it.borrowOf];   // selling a mask means you borrowed it
   return it?.derivedFrom ? met(it.derivedFrom) : !!progress[id];
 }
 // A requirement is an id, "gs:N" (N Skulltulas), "bottle" (any checked bottle),
@@ -1048,6 +1058,10 @@ function applyVersionNames() {
   for (const x of DATA.entries) {
     if (x.nameIn) { x.name0 ??= x.name; x.name = x.nameIn[v] || x.name0; }
     if (x.howToIn) { x.howTo0 ??= x.howTo; x.howTo = x.howToIn[v] || x.howTo0; }
+    // Stage 5: what the Switch 2 remake changed (requirements, bottle order, Switch 2 guide links).
+    if (x.needsIn) { x.needs0 ??= x.needs; x.needs = x.needsIn[v] || x.needs0; }
+    if (x.numIn) { x.num0 ??= x.num; x.num = x.numIn[v] ?? x.num0; }
+    if (x.linksIn) { x.links0 ??= x.links; x.links = x.linksIn[v] || x.links0; }
     if (x.map?.imageIn) { x.map.image0 ??= x.map.image; x.map.image = x.map.imageIn[v] || x.map.image0; }
   }
   for (const r of DATA.skulltulaRewards) if (r.rewardIn) { r.reward0 ??= r.reward; r.reward = r.rewardIn[v] || r.reward0; }
@@ -1177,7 +1191,10 @@ const TIME_CHIP = { any: '🌗 Day & night', day: '☀️ Daytime now', night: '
 const groupedTab = (t) => t.id === 'hearts' || t.id === 'skulltulas';
 const viewMode = (t) => (lsGet('oot.view.' + t.id) === 'num' ? 'num' : 'area');
 
-const gettable = (e) => !e.readOnly && met(e.needs);
+// A mask's next step: borrow it (its `reach`), then sell it (`needs`).
+const toBorrow = (e) => !!e.borrow && !isDone(e.borrow.id);
+const nextNeeds = (e) => (toBorrow(e) ? e.borrow.needs : e.needs);
+const gettable = (e) => !e.readOnly && met(nextNeeds(e));
 const shownGettable = (e) => isShown(e) && gettable(e);
 // The unmet parts of a requirement, following the closest alternative of each {any}.
 function unmet(req) {
@@ -1288,7 +1305,7 @@ function renderTab(t) {
   let h = '';
   if (t.id === 'progress') {
     h = grp(catTitle('milestone'), entriesIn(['milestone'])) + quick('Items & Equipment', DATA.items) + quick('Songs', DATA.songs);
-    if (!(search.progress || '').trim()) h += isShown(BY_ID['scarecrows-song']) ? scarecrowHTML() : shieldedScarecrow();
+    if (!(search.progress || '').trim()) h += scarecrowShown() ? scarecrowHTML() : shieldedScarecrow();
   } else {
     if (t.id === 'skulltulas') h += rewardsHTML();
     if (groupedTab(t) && viewMode(t) === 'num') {
@@ -1324,7 +1341,7 @@ function group(title, all, list) {
 
 // The card shows the first few missing requirements; the detail panel lists them all.
 function lockText(e) {
-  const miss = unmet(e.needs);
+  const miss = unmet(nextNeeds(e));
   return esc(miss.slice(0, 3).join(', ')) + (miss.length > 3 ? ` +${miss.length - 3} more` : '');
 }
 
@@ -1345,10 +1362,10 @@ const entryTags = (e) => (isMQ(e) ? '<span class="tag mq-tag" title="Master Ques
 function card(e) {
   if (!isShown(e)) return shieldedCard(e, svg(e.category), e.category === 'milestone' ? '' : `#${e.num}`, !e.readOnly);
   const done = isDone(e.id);
-  const locked = !done && !e.readOnly && !met(e.needs);
+  const locked = !done && !e.readOnly && !met(nextNeeds(e));
   const tags = entryTags(e);
   const num = e.category === 'milestone' ? '' : `<span class="card-num">#${e.num}</span>`;
-  const check = e.readOnly ? ''
+  const check = e.readOnly || e.borrow ? ''
     : `<label class="check-pill card-check${done ? ' is-checked' : ''}" aria-label="${e.category === 'milestone' ? 'Done' : 'Got it'}"><input type="checkbox" data-check="${e.id}"${done ? ' checked' : ''}>${bugBadge(e)}</label>`;
   return `<div class="item-card${done ? ' is-done' : ''}${locked ? ' locked' : ''}${e.readOnly ? ' readonly' : ''}${isMQ(e) ? ' mq' : ''}" data-id="${e.id}" tabindex="0">
     <div class="card-top">
@@ -1357,11 +1374,21 @@ function card(e) {
         <div class="card-name">${num}${esc(e.name)}</div>
         ${e.area ? `<div class="card-meta">📍 ${esc(e.area)}</div>` : ''}
         ${tags ? `<div class="card-tags">${tags}</div>` : ''}
-        ${locked ? `<div class="card-lock">🔒 needs ${lockText(e)}</div>` : ''}
+        ${locked ? `<div class="card-lock">🔒 ${e.borrow ? (toBorrow(e) ? 'to borrow, ' : 'to sell, ') : ''}needs ${lockText(e)}</div>` : ''}
       </div>
       ${check}
     </div>
+    ${e.borrow ? maskSteps(e, 'card-steps') : ''}
     ${e.readOnly ? '<div class="wip-note">🚧 Under construction: how to get it is unknown until the remake launches.</div>' : ''}
+  </div>`;
+}
+
+// The 4 sold masks: two check boxes, Borrowed then Sold (selling one checks Borrowed too).
+function maskSteps(e, cls) {
+  const sold = isDone(e.id), lent = isDone(e.borrow.id);
+  return `<div class="${cls}">
+    <label class="check-pill step-pill${lent ? ' is-checked' : ''}${sold ? ' locked-on' : ''}"><input type="checkbox" data-check="${e.borrow.id}"${lent ? ' checked' : ''}${sold ? ' disabled' : ''}> Borrowed</label>
+    <label class="check-pill step-pill${sold ? ' is-checked' : ''}"><input type="checkbox" data-check="${e.id}"${sold ? ' checked' : ''}> Sold</label>
   </div>`;
 }
 
@@ -1392,7 +1419,13 @@ function quickList(title, all, list) {
   </div>`;
 }
 
-// Scarecrow's Song: 8 notes per profile, stored by ocarina note, shown as N64 buttons.
+// Scarecrow's Song: 8 notes per profile, stored by ocarina note, shown as the profile's game's buttons.
+// The recorder is the young step (teach Bonooru at Lake Hylia), so Guided shows it once young Link can get there
+// with an ocarina (`recordReach`); the song's own check is the adult step (play it back to lock it in).
+function scarecrowShown() {
+  const song = BY_ID['scarecrows-song'];
+  return isShown(song) || scarecrow.length > 0 || (shieldMode() === 'guided' && !!song.recordReach && met(song.recordReach));
+}
 const NOTES = {
   D4: { btn: 'A', cls: 'a', name: 'A' },
   F4: { btn: '▼', cls: 'c', name: 'C-Down' },
@@ -1408,12 +1441,21 @@ const NOTES_3DS = {
   B4: { btn: 'X', cls: 'ds', name: 'X' },
   D5: { btn: 'A', cls: 'ds', name: 'A' },
 };
+// Switch 2's default "Normal" (two-handed) ocarina: L, R, A, Y, X from the lowest note up (user first-hand; VULKK).
+const NOTES_S2 = {
+  D4: { btn: 'L', cls: 'ds sh', name: 'L' },
+  F4: { btn: 'R', cls: 'ds sh', name: 'R' },
+  A4: { btn: 'A', cls: 'ds', name: 'A' },
+  B4: { btn: 'Y', cls: 'ds', name: 'Y' },
+  D5: { btn: 'X', cls: 'ds', name: 'X' },
+};
 const is3DS = () => gameVer() === '3ds' || gameVer() === 'mq3ds';
 let confirmClear = false, clearTimer = null;
 function scarecrowHTML() {
-  const btns = is3DS() ? NOTES_3DS : NOTES;
+  const btns = isRemake() ? NOTES_S2 : is3DS() ? NOTES_3DS : NOTES;
   const max = DATA.songs.find((s) => s.recordNotes)?.recordNotes || 8;
   const notes = scarecrow.slice(0, max);
+  const songShown = isShown(BY_ID['scarecrows-song']);   // before then, the text names neither the song nor adult Link
   const slots = Array.from({ length: max }, (_, i) => notes[i]
     ? `<div class="sc-slot"><span class="n64 ${btns[notes[i]].cls}" title="${btns[notes[i]].name}">${btns[notes[i]].btn}</span></div>`
     : '<div class="sc-slot"></div>').join('');
@@ -1421,8 +1463,8 @@ function scarecrowHTML() {
   const pad = Object.entries(btns).map(([k, n]) =>
     `<button class="n64 ${n.cls}" data-note="${k}" aria-label="${n.name}"${full ? ' disabled style="opacity:.35"' : ''}>${n.btn}</button>`).join('');
   return `<div class="scarecrow">
-    <div class="scarecrow-title">${svg('scarecrow', 'ic ic-inline')} Scarecrow's Song: your ${max} notes</div>
-    <div class="scarecrow-sub">Record the song you taught Pierre as young Link, so you can play it back as an adult. ${isRemake() ? "N64 buttons until the remake's controls are known." : is3DS() ? 'Shown as 3DS buttons.' : 'Shown as N64 buttons.'}</div>
+    <div class="scarecrow-title">${svg('scarecrow', 'ic ic-inline')} ${songShown ? "Scarecrow's Song" : "Bonooru's tune"}: your ${max} notes</div>
+    <div class="scarecrow-sub">As young Link, play any ${max} notes to Bonooru, the scarecrow at Lake Hylia, and record them here${songShown ? ". As adult Link, play the same notes to him again to lock the song in, then check off the Scarecrow's Song" : "; he'll remember them"}. ${isRemake() ? 'Shown as Switch 2 buttons (the default Normal ocarina controls).' : is3DS() ? 'Shown as 3DS buttons.' : 'Shown as N64 buttons.'}</div>
     <div class="sc-slots" id="scSlots">${slots}</div>
     <div class="sc-pad">${pad}
       <button class="act-btn" data-sc="back"${notes.length ? '' : ' disabled'} aria-label="Delete last note">⌫</button>
@@ -1659,7 +1701,7 @@ function renderDetail() {
   const doneWord = e.category === 'milestone' ? 'Done' : 'Got it';
   const status = e.readOnly ? '<span class="d-status wip">🚧 Under construction</span>'
     : done ? `<span class="d-status done">✓ ${doneWord}${rec?.by ? ` · ${esc(rec.by)}, ${new Date(rec.at).toLocaleDateString()}` : ''}</span>`
-    : met(e.needs) ? '<span class="d-status ok">✨ Gettable now</span>'
+    : met(nextNeeds(e)) ? `<span class="d-status ok">✨ ${e.borrow ? (toBorrow(e) ? 'You can borrow it now' : 'You can sell it now') : 'Gettable now'}</span>`
     : '<span class="d-status lock">🔒 Not gettable yet</span>';
   const tags = entryTags(e);
   const num = e.category === 'milestone' ? '' : `<span class="card-num">#${e.num}</span>`;
@@ -1674,10 +1716,13 @@ function renderDetail() {
     </div>`;
   if (e.howTo) h += `<div class="d-label">How to get it</div><div class="d-text">${esc(e.howTo)}</div>`;
   if (!e.readOnly && e.category !== 'milestone') {
-    h += '<div class="d-label">Needs</div>' + (e.needs.length
-      ? `<ul class="d-needs">${e.needs.map((r) => reqRow(r, detailReveal)).join('')}</ul>`
+    const needList = (n) => (n.length
+      ? `<ul class="d-needs">${n.map((r) => reqRow(r, detailReveal)).join('')}</ul>`
       : '<div class="d-text">Nothing: Young Link can get this any time.</div>');
-    if (e.needs.some((r) => reqLabel(r).includes(HIDDEN_REQ))) {
+    h += e.borrow
+      ? `<div class="d-label">To borrow it, you need</div>${needList(e.borrow.needs)}<div class="d-label">To sell it, you need</div>${needList(e.needs.filter((r) => !e.borrow.needs.includes(r)))}`
+      : '<div class="d-label">Needs</div>' + needList(e.needs);
+    if ([...e.needs, ...(e.borrow?.needs || [])].some((r) => reqLabel(r).includes(HIDDEN_REQ))) {
       h += `<button class="act-btn reveal-btn" data-reveal>${detailReveal ? '🛡️ Hide them again' : '👁 Show the hidden spoilers'}</button>
         <div class="d-note">${detailReveal ? 'Shown in this panel only. They hide again when you close it.' : 'Only in this panel, until you close it. The page stays shielded.'}</div>`;
     }
@@ -1693,7 +1738,8 @@ function renderDetail() {
     if (gameVer() === 'mq3ds') h += '<div class="d-note">🪞 These guides describe the original layout. Master Quest 3D is mirrored, and the directions above are already flipped.</div>';
   }
   if (e.switch2 === 'unverified' && isRemake()) h += '<div class="d-note" style="margin-top:0.9rem">Checked against N64 guides; not yet confirmed in the Switch 2 remake.</div>';
-  if (!e.readOnly) {
+  if (e.borrow) h += maskSteps(e, 'd-steps');
+  else if (!e.readOnly) {
     h += `<label class="check-pill d-check${done ? ' is-checked' : ''}"><input type="checkbox" data-check="${e.id}"${done ? ' checked' : ''}> ${doneWord}</label>`;
   }
   $('detailBody').innerHTML = h;
