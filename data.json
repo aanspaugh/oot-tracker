@@ -16905,15 +16905,16 @@
    "id": "gs-s2-hf-marsh-grotto",
    "category": "skulltula",
    "num": 11,
-   "name": "Marsh grotto (young, then adult)",
+   "name": "Marsh grotto wall",
    "area": "Hyrule Field",
    "areaId": "hyrule-field",
-   "age": "adult",
+   "age": "young",
    "time": "any",
-   "howTo": "In the small marshy area of Hyrule Field (Nintendo Life: south of Lon Lon Ranch), bomb the cracked ground to open a grotto. Go in first as young Link and defeat the ordinary Skulltula. Come back as adult Link and a Gold Skulltula has taken its place (break the crate inside if you don't see it).",
+   "howTo": "In the small marshy area of Hyrule Field (Nintendo Life: south of Lon Lon Ranch), bomb the cracked ground to open a grotto. Defeat the ordinary Skulltula inside; the Gold Skulltula is on the wall behind it. Get it with the Boomerang. No adult trip needed (first-hand 11/6).",
    "needs": [
-    "ms-master-sword",
-    "bombs"
+    "ms-deku-tree",
+    "bombs",
+    "boomerang"
    ],
    "links": [
     {
