@@ -234,7 +234,7 @@
     .quick-row.derived .q-auto { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; }
 
     /* Scarecrow recorder */
-    .scarecrow { margin-top: 0.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem; }
+    .scarecrow, .fish { margin-top: 0.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem; }
     .scarecrow-title { font-weight: 700; margin-bottom: 0.2rem; }
     .scarecrow-title .ic-inline { width: 1.9em; height: 1.9em; vertical-align: -0.6em; }
     .scarecrow-sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.7rem; }
@@ -945,12 +945,13 @@ function startApp() {
   SKEYS.forEach((k, i) => SID.set(k, i));
   buildTabs();
   onValue(ref(_db, 'profiles'), (snap) => {
-    const mode = shieldMode();
+    const mode = shieldMode(), fish = pid && profiles[pid]?.biggestFish;
     profiles = snap.val() || {};
     ensureSelection();
     renderProfileSheet();
     renderProfileBtn();
     if (shieldMode() !== mode) { renderControls(); render(); }
+    else if ((pid && profiles[pid]?.biggestFish) !== fish && currentTab === 'progress') render();
   }, (err) => toast('Lost access to profiles: ' + err.message, true));
 }
 
@@ -1305,6 +1306,7 @@ function render() {
   if (t.id === 'notes') return renderNotes();
   // Don't wipe a boss time someone is typing when synced progress re-renders the tab.
   if (t.id === 'hall' && document.activeElement?.closest?.('#tab-hall input')) return;
+  if (t.id === 'progress' && document.activeElement?.id === 'fishInput') return;   // same for the biggest fish
   $('tab-' + t.id).innerHTML = t.id === 'hall' ? renderHall() : renderTab(t);
 }
 
@@ -1324,7 +1326,7 @@ function renderTab(t) {
   let h = '';
   if (t.id === 'progress') {
     h = grp(catTitle('milestone'), entriesIn(['milestone'])) + quick('Items & Equipment', DATA.items) + quick('Songs', DATA.songs);
-    if (!(search.progress || '').trim()) h += scarecrowShown() ? scarecrowHTML() : shieldedScarecrow();
+    if (!(search.progress || '').trim()) h += (scarecrowShown() ? scarecrowHTML() : shieldedScarecrow()) + (fishShown() ? fishHTML() : '');
   } else {
     if (t.id === 'skulltulas') h += rewardsHTML();
     if (groupedTab(t) && viewMode(t) === 'num') {
@@ -1440,7 +1442,8 @@ function quickList(title, all, list) {
   </div>`;
 }
 
-// Scarecrow's Song: 8 notes per profile, stored by ocarina note, shown as the profile's game's buttons.
+// Scarecrow's Song: 8 notes per profile (Switch 2: up to 8, fewer records fine — first-hand 11/6),
+// stored by ocarina note, shown as the profile's game's buttons.
 // The recorder is the young step (teach Bonooru at Lake Hylia), so Guided shows it once young Link can get there
 // with an ocarina (`recordReach`); the song's own check is the adult step (play it back to lock it in).
 function scarecrowShown() {
@@ -1484,8 +1487,8 @@ function scarecrowHTML() {
   const pad = Object.entries(btns).map(([k, n]) =>
     `<button class="n64 ${n.cls}" data-note="${k}" aria-label="${n.name}"${full ? ' disabled style="opacity:.35"' : ''}>${n.btn}</button>`).join('');
   return `<div class="scarecrow">
-    <div class="scarecrow-title">${svg('scarecrow', 'ic ic-inline')} ${songShown ? "Scarecrow's Song" : "Bonooru's tune"}: your ${max} notes</div>
-    <div class="scarecrow-sub">As young Link, play any ${max} notes to Bonooru, the scarecrow at Lake Hylia, and record them here${songShown ? ". As adult Link, play the same notes to him again to lock the song in, then check off the Scarecrow's Song" : "; he'll remember them"}. ${isRemake() ? 'Shown as Switch 2 buttons (the default Normal ocarina controls).' : is3DS() ? 'Shown as 3DS buttons.' : 'Shown as N64 buttons.'}</div>
+    <div class="scarecrow-title">${svg('scarecrow', 'ic ic-inline')} ${songShown ? "Scarecrow's Song" : "Bonooru's tune"}: your ${isRemake() ? `notes (up to ${max})` : `${max} notes`}</div>
+    <div class="scarecrow-sub">As young Link, play ${isRemake() ? `up to ${max}` : `any ${max}`} notes to Bonooru, the scarecrow at Lake Hylia, and record them here${songShown ? ". As adult Link, play the same notes to him again to lock the song in, then check off the Scarecrow's Song" : "; he'll remember them"}. ${isRemake() ? 'Shown as Switch 2 buttons (the default Normal ocarina controls).' : is3DS() ? 'Shown as 3DS buttons.' : 'Shown as N64 buttons.'}</div>
     <div class="sc-slots" id="scSlots">${slots}</div>
     <div class="sc-pad">${pad}
       <button class="act-btn" data-sc="back"${notes.length ? '' : ' disabled'} aria-label="Delete last note">⌫</button>
@@ -1502,6 +1505,26 @@ const shieldedScarecrow = () => `<div class="scarecrow shielded" data-sid="${SID
 function saveScarecrow(notes) {
   set(ref(_db, `scarecrow/${pid}`), notes.length ? notes : null).catch(fail('save the notes'));
 }
+
+// Biggest fish (11/6): free text on the profile (profiles/{pid}/biggestFish), not tied to the Fishing Pond
+// heart's check-off, since catching a fish and handing it in are separate. Shows with that heart, or once saved.
+const fishShown = () => isShown(BY_ID['hp-lh-fishing']) || !!profiles[pid]?.biggestFish;
+const fishHTML = () => `<div class="fish">
+    <div class="scarecrow-title">Biggest fish</div>
+    <div class="scarecrow-sub">Your biggest catch at the Fishing Pond at Lake Hylia.</div>
+    <form class="boss-form" data-fish-form>
+      <input class="field" id="fishInput" name="f" maxlength="40" autocomplete="off" value="${esc(profiles[pid]?.biggestFish || '')}" placeholder="e.g. ${isRemake() ? '56 cm' : '10 lb'}" aria-label="Biggest fish">
+      <button class="act-btn primary">Save</button>
+    </form>
+  </div>`;
+$('main').addEventListener('submit', (e) => {
+  if (!e.target.matches('[data-fish-form]') || !pid) return;
+  e.preventDefault();
+  const input = e.target.elements.f, v = input.value.trim();
+  input.blur();   // so the re-render after saving isn't held back for typing
+  update(ref(_db, `profiles/${pid}`), { biggestFish: v || null })
+    .then(() => toast(v ? `Saved: ${v}` : 'Cleared the biggest fish.')).catch(fail('save the fish'));
+});
 
 function rewardsHTML() {
   const n = gsCount();
