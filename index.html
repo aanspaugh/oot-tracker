@@ -264,6 +264,9 @@
     .reward b { color: var(--text); }
     .reward.earned { border-color: var(--gold); background: #3a3115; color: var(--text); }
     .reward.earned b { color: var(--gold); }
+    label.reward { cursor: pointer; }
+    .reward input { margin: 0; accent-color: var(--gold); }
+    .reward.ready { border-color: var(--gold); border-style: dashed; color: var(--text); }
 
     /* Spoiler Shield: filler text (never the real text) under a heavy frosted blur */
     .veil { position: relative; flex: 1; min-width: 0; border-radius: var(--radius-sm); overflow: hidden; user-select: none; }
@@ -930,6 +933,11 @@ function startApp() {
   for (const x of [...DATA.entries, ...DATA.items, ...DATA.songs]) BY_ID[x.id] = x;
   // Masks (2026-11-05): each sold mask has a 2nd check, "Borrowed", saved as progress/{pid}/{mask}-borrowed.
   for (const x of DATA.entries) if (x.borrow) BY_ID[x.borrow.id] = { id: x.borrow.id, name: `${x.name} (borrowed)`, borrowOf: x.id, needs: x.borrow.needs };
+  // Skulltula rewards (2026-11-05): you claim each one at the House of Skulltula, so each is its own check,
+  // progress/{pid}/reward-{tokens} (the 50 reward is its Piece of Heart's check). The wallets and the Stone of
+  // Agony follow the claim, not the token count.
+  for (const r of DATA.skulltulaRewards) if (!r.entry) BY_ID[rewardClaimId(r)] = { id: rewardClaimId(r), name: `the ${r.tokens}-token Skulltula reward`, needs: [`gs:${r.tokens}`] };
+  for (const x of DATA.items) if (x.derivedFrom?.startsWith('gs:') && BY_ID['reward-' + x.derivedFrom.slice(3)]) x.derivedFrom = 'reward-' + x.derivedFrom.slice(3);
   SKEYS = [...DATA.entries, ...DATA.items, ...DATA.songs, ...DATA.bosses, ...DATA.statues].map((x) => x.id)
     .concat(DATA.skulltulaRewards.map((r) => 'reward-' + r.tokens));
   SKEYS.forEach((k, i) => SID.set(k, i));
@@ -1061,6 +1069,8 @@ function applyVersionNames() {
     // Stage 5: what the Switch 2 remake changed (requirements, bottle order, Switch 2 guide links).
     if (x.needsIn) { x.needs0 ??= x.needs; x.needs = x.needsIn[v] || x.needs0; }
     if (x.numIn) { x.num0 ??= x.num; x.num = x.numIn[v] ?? x.num0; }
+    if (x.ageIn) { x.age0 ??= x.age; x.age = x.ageIn[v] || x.age0; }
+    if (x.timeIn) { x.time0 ??= x.time; x.time = x.timeIn[v] || x.time0; }
     if (x.linksIn) { x.links0 ??= x.links; x.links = x.linksIn[v] || x.links0; }
     if (x.map?.imageIn) { x.map.image0 ??= x.map.image; x.map.image = x.map.imageIn[v] || x.map.image0; }
   }
@@ -1098,15 +1108,20 @@ function isShown(x) {
   const mode = shieldMode();
   if (mode === 'off' || peeked.has(x.id)) return true;
   // Auto-checked items follow their source entry; token-count ones show once earned.
-  if (x.derivedFrom) return x.derivedFrom.startsWith('gs:') ? met(x.derivedFrom) : isShown(BY_ID[x.derivedFrom]);
+  const d = BY_ID[x.id]?.derivedFrom || x.derivedFrom;   // a token item follows its claimed reward (startApp)
+  if (d) return d.startsWith('gs:') ? met(d) : isShown(BY_ID[d]);
   if (x.readOnly) return false;   // 🚧 the 5th bottle and the Hall statues
   // A Hall boss's `reach` is its dungeon checked off, so it applies in Discovery too.
   // `reachIn` (V2): an item found inside a dungeon has a different reach in Master Quest.
-  const rule = mode === 'guided' || DATA.bosses.some((b) => b.id === x.id) ? (x.reachIn?.[gameVer()] || x.reach || x.needs) : null;
+  const rule = mode === 'guided' || DATA.bosses.some((b) => b.id === x.id) ? (x.reachIn?.[gameVer()] || x.reach || x.needsIn?.[gameVer()] || x.needs) : null;
   return isDone(x.id) || !!bossTimes[x.id] || (!!rule && met(rule));
 }
-// Skulltula reward badges show once earned.
-const rewardShown = (r) => shieldMode() === 'off' || peeked.has('reward-' + r.tokens) || gsCount() >= r.tokens;
+// Skulltula rewards: claimed by hand. A badge names its reward once claimed, or (Guided) once you have the tokens;
+// in Discovery an unclaimed one only says a reward is waiting.
+const rewardClaimId = (r) => r.entry || 'reward-' + r.tokens;
+const rewardClaimed = (r) => isDone(rewardClaimId(r));
+const rewardShown = (r) => shieldMode() === 'off' || peeked.has('reward-' + r.tokens) || rewardClaimed(r)
+  || (shieldMode() === 'guided' && gsCount() >= r.tokens);
 window.OOT_SHIELD = { isShown, rewardShown };   // for the test
 
 // Same-length made-up words, fixed per key, so the blur hides nothing worth un-blurring.
@@ -1487,10 +1502,15 @@ function rewardsHTML() {
   const note = (r) => isRemake() && r.switch2Note;   // remake-only notes
   const notes = DATA.skulltulaRewards.filter((r) => note(r) && rewardShown(r)).map((r) => `⚠️ ${r.tokens}: ${esc(r.switch2Note)}`);
   return `<div class="group-header"><span class="group-name">${svg('skulltula', 'ic ic-inline')} Skulltula rewards</span>${badge(n, 100)}</div>
-    <div class="rewards">${DATA.skulltulaRewards.map((r) => !rewardShown(r)
-      ? `<span class="reward shielded" data-sid="${SID.get('reward-' + r.tokens)}" tabindex="0" aria-label="Hidden reward: tap to show"><b>${r.tokens}</b> ${veilText('reward-' + r.tokens, r.reward.length)}</span>`
-      : `<span class="reward${n >= r.tokens ? ' earned' : ''}">
-      <b>${n >= r.tokens ? '✓ ' : ''}${r.tokens}</b> ${esc(r.reward)}${note(r) ? ' ⚠️' : ''}</span>`).join('')}</div>
+    <div class="rewards">${DATA.skulltulaRewards.map((r) => {
+      const claimed = rewardClaimed(r), ready = n >= r.tokens && !claimed;
+      if (claimed || ready) return `<label class="reward ${claimed ? 'earned' : 'ready'}"><input type="checkbox" data-check="${rewardClaimId(r)}"${claimed ? ' checked' : ''} aria-label="Claimed">
+        <b>${claimed ? '✓ ' : ''}${r.tokens}</b> ${rewardShown(r) ? esc(r.reward) + (note(r) ? ' ⚠️' : '') : 'Reward ready'}</label>`;
+      return !rewardShown(r)
+        ? `<span class="reward shielded" data-sid="${SID.get('reward-' + r.tokens)}" tabindex="0" aria-label="Hidden reward: tap to show"><b>${r.tokens}</b> ${veilText('reward-' + r.tokens, r.reward.length)}</span>`
+        : `<span class="reward"><b>${r.tokens}</b> ${esc(r.reward)}${note(r) ? ' ⚠️' : ''}</span>`;
+    }).join('')}</div>
+    ${DATA.skulltulaRewards.some((r) => n >= r.tokens && !rewardClaimed(r)) ? `<div class="group-note">🏠 A reward is waiting at the House of Skulltula in Kakariko. Tick it once you've collected it.</div>` : ''}
     ${notes.length ? `<div class="group-note">${notes.join('<br>')}</div>` : ''}`;
 }
 
@@ -1804,7 +1824,8 @@ function celInfo(k) {
   if (k.startsWith('gs-')) {
     const r = reward(n);
     const what = !r ? `Next reward at 100`
-      : `Reward: ${r.switch2 === 'changed-unknown' && isRemake() ? "changed in the remake, not known yet" : r.reward}`;
+      : shieldMode() === 'discovery' && !peeked.has('reward-' + n) ? 'A reward is waiting at the House of Skulltula'
+      : `Claim the ${r.reward} at the House of Skulltula`;
     return { icon: 'skulltula', title: `${n} Gold Skulltulas! ${what}` };
   }
   const c = k.slice(4);

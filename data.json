@@ -75,6 +75,26 @@
    "respec-s2": {
     "name": "Respec, \"Ocarina of Time Remake Walkthrough - 100% completion guide with all Switch 2 changes\"",
     "url": "https://www.respec.net/guide/276-the-legend-zelda-ocarina-time-remake-walkthrough-100-completion-guide-with-all-switch-2-changes"
+   },
+   "vgc-s2-gs": {
+    "name": "Video Games Chronicle, \"Zelda: Ocarina of Time Switch 2 - all Gold Skulltulas\" (per-area guides)",
+    "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+   },
+   "nintenduo-s2-gs": {
+    "name": "Nintenduo, \"All Gold Skulltulas in Ocarina of Time (Switch 2)\"",
+    "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+   },
+   "rpgsite-s2-gs": {
+    "name": "RPG Site, \"The Legend of Zelda Ocarina of Time Remake - Gold Skulltula Locations Guide\"",
+    "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+   },
+   "gamesgg-s2-gs": {
+    "name": "games.gg, \"Ocarina of Time Remake Gold Skulltula Locations: All 100 and Rewards\" (cites Game8, TheGamer)",
+    "url": "https://games.gg/the-legend-of-zelda-ocarina-of-time-2026/guides/ocarina-of-time-remake-gold-skulltula-locations-all-100-and-rewards/"
+   },
+   "zeldacentral-s2": {
+    "name": "Zelda Central, \"Ocarina of Time Remake: Changes From the Original\"",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/changes-from-the-original/"
    }
   }
  },
@@ -317,7 +337,7 @@
     "gamewith",
     "ootr"
    ],
-   "switch2": "changed-unknown",
+   "switch2": "unverified",
    "derivedFrom": "gs:10",
    "readOnly": true
   },
@@ -400,7 +420,8 @@
    "readOnly": true,
    "nameIn": {
     "3ds": "Shard of Agony",
-    "mq3ds": "Shard of Agony"
+    "mq3ds": "Shard of Agony",
+    "switch2": "Echo Gem"
    }
   },
   {
@@ -2400,8 +2421,48 @@
    "icon": "heart",
    "map": null,
    "ootrLocation": "HF Deku Scrub Grotto",
+   "nameIn": {
+    "switch2": "Business Scrub's password grotto"
+   },
    "howToIn": {
-    "mq3ds": "In the fenced-in square by the Lake Hylia entrance (southeast Hyrule Field), set a Bomb in the middle to open a grotto. Buy the Piece of Heart from the Business Scrub inside for 10 Rupees."
+    "mq3ds": "In the fenced-in square by the Lake Hylia entrance (southeast Hyrule Field), set a Bomb in the middle to open a grotto. Buy the Piece of Heart from the Business Scrub inside for 10 Rupees.",
+    "switch2": "To the right of the drawbridge outside the Market, along the stone wall, bomb the cracked ground and drop in. The Business Scrub won't sell without a password. As adult Link, read the Fairy's Thought carved on the tree opposite the hole: the password is \"Sell somethin', will ya?\" Back as young Link, give him the password and pay 100 Rupees for the Piece of Heart."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-deku-tree",
+     "bombs",
+     "ms-master-sword"
+    ]
+   },
+   "ageIn": {
+    "switch2": "young"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "thegamer-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Hyrule-Field-Lake-Hylia"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
    }
   },
   {
@@ -2461,6 +2522,12 @@
    "icon": "heart",
    "map": null,
    "ootrLocation": "HF Tektite Grotto Freestanding PoH",
+   "versions": [
+    "n64",
+    "mq",
+    "3ds",
+    "mq3ds"
+   ],
    "howToIn": {
     "mq3ds": "Bomb the ground beside the lone tree northeast of Lon Lon Ranch to open a grotto with a deep pool. Dive to the bottom with the Golden Scale, or sink with the Iron Boots."
    }
@@ -2972,7 +3039,7 @@
    },
    "howToIn": {
     "mq3ds": "Pull back the movable gravestone (second from the right, just below the Royal Family's Tomb; young Link can only do this at night) and drop in. Freeze or defeat the ReDead, then play the Sun's Song where it stood to make a chest appear.",
-    "switch2": "Looking at the Graveyard from its entrance, pull back the grave at the very top right and drop into the hole. The Piece of Heart is in a chest down there; in the remake you don't need the Sun's Song."
+    "switch2": "Come at night as young Link: in the day the boy in the Graveyard won't let you pull graves back, but Dampé doesn't mind at night. Looking at the Graveyard from its entrance, pull back the grave at the very top right and drop into the hole. The Piece of Heart is in a chest down there; in the remake you don't need the Sun's Song."
    },
    "needsIn": {
     "switch2": [
@@ -2991,7 +3058,8 @@
    "sourcesIn": {
     "switch2": [
      "user-play",
-     "nl-s2-hp"
+     "nl-s2-hp",
+     "thegamer-s2-hp"
     ]
    },
    "linksIn": {
@@ -2999,6 +3067,10 @@
      {
       "label": "Nintendo Life (Switch 2)",
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
      },
      {
       "label": "Jegged",
@@ -3050,11 +3122,45 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "DMT Freestanding PoH"
+   "ootrLocation": "DMT Freestanding PoH",
+   "howToIn": {
+    "switch2": "As young Link, plant a Magic Bean in the soft soil by the Dodongo's Cavern entrance (once its boulder is cleared). As adult Link, ride the plant up to the Piece of Heart on top of the cavern entrance. In the remake you can't drop onto it as young Link any more."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "soil-dmt"
+    ]
+   },
+   "ageIn": {
+    "switch2": "adult"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nl-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Death-Mountain-Trail-Magic-Bean-Plant"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-dmc-volcano",
@@ -3313,7 +3419,36 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "ZR Near Open Grotto Freestanding PoH"
+   "ootrLocation": "ZR Near Open Grotto Freestanding PoH",
+   "howToIn": {
+    "switch2": "Halfway up Zora's River the Piece of Heart sits on a raised rocky pillar; the original's Cucco jump doesn't work any more. Take the Cucco from behind the gate by the Magic Bean seller, carry it past the Blue Tektites and glide south across the gap. Climb the vines to the south of the highest island and go into the hole (bomb it open) for a second Cucco, then glide with it to the pillar."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "thegamer-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Zoras-River"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-zr-waterfall-ledge",
@@ -3511,8 +3646,7 @@
    "ootrLocation": "Ice Cavern Freestanding PoH",
    "versions": [
     "n64",
-    "3ds",
-    "switch2"
+    "3ds"
    ]
   },
   {
@@ -3733,7 +3867,36 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "GV Waterfall Freestanding PoH"
+   "ootrLocation": "GV Waterfall Freestanding PoH",
+   "howToIn": {
+    "switch2": "Holding the Cucco, jump off the cliff by the bridge and glide toward the big waterfall on the right, down to where a Gerudo tends a cow. Climb the path and take the stone stairs behind the waterfall to the Piece of Heart."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "thegamer-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-gv-crate",
@@ -3778,7 +3941,39 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "GV Crate Freestanding PoH"
+   "ootrLocation": "GV Crate Freestanding PoH",
+   "nameIn": {
+    "switch2": "Chest on the cliff left of the bridge"
+   },
+   "howToIn": {
+    "switch2": "Pick up the Cucco to the left of the main bridge and glide across the ravine to the platform with a chest. Open it for the Piece of Heart."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "thegamer-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-gf-roof-chest",
@@ -3965,7 +4160,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "KF GS Know It All House"
+   "ootrLocation": "KF GS Know It All House",
+   "howToIn": {
+    "switch2": "At night, it's on the back of the Know-It-All Brothers' house, the building at the far southwest of the village. Hit it with a jump attack or the Slingshot."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/03-The-Journey-to-Hyrule-Castle.html#Gold-Skulltula-4"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kf-bean-patch",
@@ -4009,7 +4238,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "KF GS Bean Patch"
+   "ootrLocation": "KF GS Bean Patch",
+   "howToIn": {
+    "switch2": "Release a bottled bug onto the soft soil behind the Kokiri Shop to coax it out."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/05-The-Lost-Woods-and-Sacred-Forest-Meadow.html#Gold-Skulltula-9"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kf-house-of-twins",
@@ -4048,7 +4311,39 @@
    "group": "overworld",
    "ootrLocation": "KF GS House of Twins",
    "howToIn": {
-    "mq3ds": "At night, it's on the roof of the twins' house (two stumps on top) in the southeast of the village. Hookshot it."
+    "mq3ds": "At night, it's on the roof of the twins' house (two stumps on top) in the southeast of the village. Hookshot it.",
+    "switch2": "At night as adult Link, it's up on a branch above the House of Twins. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/18-Traveling-to-Death-Mountain.html#Gold-Skulltula-60"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -4098,7 +4393,39 @@
     "mq3ds": "Soft soil (right, right)"
    },
    "howToIn": {
-    "mq3ds": "Turn right at the Lost Woods entrance, then right again. Release bugs onto the soft soil there."
+    "mq3ds": "Turn right at the Lost Woods entrance, then right again. Release bugs onto the soft soil there.",
+    "switch2": "From the Lost Woods entrance go left, then left again, and release a bottled bug onto the soft soil."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/05-The-Lost-Woods-and-Sacred-Forest-Meadow.html#Gold-Skulltula-10"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -4143,7 +4470,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LW GS Bean Patch Near Theater"
+   "ootrLocation": "LW GS Bean Patch Near Theater",
+   "howToIn": {
+    "switch2": "From the Lost Woods entrance go right, left, right, left, left to reach the clearing with two Business Scrubs, and release a bottled bug onto the soft soil."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/05-The-Lost-Woods-and-Sacred-Forest-Meadow.html#Gold-Skulltula-11"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-lw-above-theater",
@@ -4186,7 +4547,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LW GS Above Theater"
+   "ootrLocation": "LW GS Above Theater",
+   "howToIn": {
+    "switch2": "As young Link, plant a Magic Bean in the soft soil by the two Business Scrubs (right, left, right, left, left). As adult Link (past Mido with Saria's Song), ride the plant up to the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/16-Kokiri-Forest-Lost-Woods.html#Gold-Skulltula-53"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-sfm",
@@ -4231,7 +4626,39 @@
    "group": "overworld",
    "ootrLocation": "SFM GS",
    "howToIn": {
-    "mq3ds": "At night, it's on the west wall of the meadow's maze. Hookshot it."
+    "mq3ds": "At night, it's on the west wall of the meadow's maze. Hookshot it.",
+    "switch2": "As adult Link at night, before you go into the Forest Temple, it's on the east wall of the Sacred Forest Meadow maze, near the top on the right. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/16-Kokiri-Forest-Lost-Woods.html#Gold-Skulltula-54"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -4281,7 +4708,63 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "HF GS Near Kak Grotto"
+   "ootrLocation": "HF GS Near Kak Grotto",
+   "nameIn": {
+    "switch2": "Lone tree by the Kokiri Forest entrance"
+   },
+   "howToIn": {
+    "switch2": "Just outside the Kokiri Forest entrance (east Hyrule Field), roll into the lone tree and the Gold Skulltula drops out. RPG Site says it comes out at night, so check again after dark if it isn't there."
+   },
+   "needsIn": {
+    "switch2": [
+     {
+      "any": [
+       [
+        "ms-deku-tree"
+       ],
+       [
+        "ms-master-sword"
+       ]
+      ]
+     }
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-36"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-hf-cow-grotto",
@@ -4343,8 +4826,71 @@
    "map": null,
    "group": "overworld",
    "ootrLocation": "HF GS Cow Grotto",
+   "nameIn": {
+    "switch2": "Grotto in the woods south of Lon Lon Ranch"
+   },
    "howToIn": {
-    "mq3ds": "Just northwest of the Gerudo Valley entrance, open the grotto in the middle of the circle of rocks (young: Bomb; adult: Megaton Hammer). Burn the webs with Din's Fire (or Fire Arrows); it's on the back wall behind the cow. Grab it with the Boomerang or Hookshot."
+    "mq3ds": "Just northwest of the Gerudo Valley entrance, open the grotto in the middle of the circle of rocks (young: Bomb; adult: Megaton Hammer). Burn the webs with Din's Fire (or Fire Arrows); it's on the back wall behind the cow. Grab it with the Boomerang or Hookshot.",
+    "switch2": "In southern Hyrule Field, among the trees between Lon Lon Ranch and the Lake Hylia entrance, bomb the cracked ground (adult Link can use the Megaton Hammer) to open a grotto. Defeat the big Skulltula inside, then get the Gold Skulltula with the Boomerang (young) or the Hookshot (adult)."
+   },
+   "needsIn": {
+    "switch2": [
+     {
+      "any": [
+       [
+        "ms-deku-tree",
+        "bombs",
+        "boomerang"
+       ],
+       [
+        "ms-master-sword",
+        {
+         "any": [
+          "bombs",
+          "megaton-hammer"
+         ]
+        },
+        "hookshot"
+       ]
+      ]
+     }
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-41"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -4381,7 +4927,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LLR GS Tree"
+   "ootrLocation": "LLR GS Tree",
+   "howToIn": {
+    "switch2": "Take the left path as you enter the ranch, around the back of the building on the left, and roll into the small tree."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/05-The-Lost-Woods-and-Sacred-Forest-Meadow.html#Gold-Skulltula-7"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-llr-rain-shed",
@@ -4417,7 +4997,13 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LLR GS Rain Shed"
+   "ootrLocation": "LLR GS Rain Shed",
+   "versions": [
+    "n64",
+    "mq",
+    "3ds",
+    "mq3ds"
+   ]
   },
   {
    "id": "gs-llr-house-window",
@@ -4454,7 +5040,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LLR GS House Window"
+   "ootrLocation": "LLR GS House Window",
+   "howToIn": {
+    "switch2": "At night, it's by a window on the side of Talon's house as you come into the ranch. Get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-39"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-llr-back-wall",
@@ -4492,8 +5112,48 @@
    "map": null,
    "group": "overworld",
    "ootrLocation": "LLR GS Back Wall",
+   "nameIn": {
+    "switch2": "Inside the ruined stone tower"
+   },
    "howToIn": {
-    "mq3ds": "At night, it's high on the wall to the left of the silo. Get it with the Boomerang."
+    "mq3ds": "At night, it's high on the wall to the left of the silo. Get it with the Boomerang.",
+    "switch2": "At night, go into the ruined stone tower in the corner by the racetrack (the one with the crates and the Piece of Heart). The Gold Skulltula is up inside; get it with the Boomerang from the floor."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-40"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -4530,7 +5190,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Market GS Guard House"
+   "ootrLocation": "Market GS Guard House",
+   "howToIn": {
+    "switch2": "In the Guard House by the Market entrance, two boxes sit at the end of the room among the pots. Roll into the one that wiggles."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/03-The-Journey-to-Hyrule-Castle.html#Gold-Skulltula-5"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-hc-tree",
@@ -4566,7 +5260,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "HC GS Tree"
+   "ootrLocation": "HC GS Tree",
+   "howToIn": {
+    "switch2": "On the way up to the castle (where you wake Talon), roll into the tree to the right of the vines that lead to the moat."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/04-Hyrule-Castle.html#Gold-Skulltula-6"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-hc-storms-grotto",
@@ -4605,7 +5333,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "HC GS Storms Grotto"
+   "ootrLocation": "HC GS Storms Grotto",
+   "howToIn": {
+    "switch2": "By the lone tree near where you found Talon asleep, play the Song of Storms to open a grotto. Inside, bomb the walls; one hides the Gold Skulltula. Get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/18-Traveling-to-Death-Mountain.html#Gold-Skulltula-61"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-ogc",
@@ -4641,7 +5403,47 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "OGC GS"
+   "ootrLocation": "OGC GS",
+   "howToIn": {
+    "switch2": "Where Hyrule Castle used to be, take the right-hand path outside Ganon's Castle to the ruins. The Gold Skulltula is up above you; Hookshot it."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "hookshot"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/15-Hyrule-Seven-Years-Later.html#Gold-Skulltula-47"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kak-tree",
@@ -4677,7 +5479,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Kak GS Tree"
+   "ootrLocation": "Kak GS Tree",
+   "howToIn": {
+    "switch2": "At night, roll into the lone tree near the village entrance."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/06-Kakariko-Village.html#Gold-Skulltula-12"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kak-skulltula-house",
@@ -4713,7 +5549,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Kak GS Skulltula House"
+   "ootrLocation": "Kak GS Skulltula House",
+   "howToIn": {
+    "switch2": "At night, it's on the front of the House of Skulltula, right by the door."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/06-Kakariko-Village.html#Gold-Skulltula-14"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kak-under-construction",
@@ -4749,7 +5619,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Kak GS House Under Construction"
+   "ootrLocation": "Kak GS House Under Construction",
+   "howToIn": {
+    "switch2": "At night as young Link, walk around the building site in the middle of the village to find it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/06-Kakariko-Village.html#Gold-Skulltula-13"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kak-near-gate-guard",
@@ -4785,7 +5689,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Kak GS Near Gate Guard"
+   "ootrLocation": "Kak GS Near Gate Guard",
+   "howToIn": {
+    "switch2": "At night, it's on the side of the house next to the Death Mountain Trail entrance."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/06-Kakariko-Village.html#Gold-Skulltula-15"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kak-watchtower",
@@ -4822,7 +5760,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Kak GS Watchtower"
+   "ootrLocation": "Kak GS Watchtower",
+   "howToIn": {
+    "switch2": "At night, it's on the ladder of the watchtower near the Death Mountain entrance. Shoot it down with the Slingshot, then climb up for the token."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/06-Kakariko-Village.html#Gold-Skulltula-16"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kak-above-impas-house",
@@ -4859,7 +5831,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Kak GS Above Impas House"
+   "ootrLocation": "Kak GS Above Impas House",
+   "howToIn": {
+    "switch2": "At night as adult Link, Hookshot up the vines to the left of Impa's House, then jump onto the roof."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/15-Hyrule-Seven-Years-Later.html#Gold-Skulltula-45"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-graveyard-wall",
@@ -4897,8 +5903,43 @@
    "map": null,
    "group": "overworld",
    "ootrLocation": "Graveyard GS Wall",
+   "nameIn": {
+    "switch2": "Behind Dampé's hut"
+   },
    "howToIn": {
-    "mq3ds": "At night, it's on top of the stone wall on the left as you enter the Graveyard. Get it with the Boomerang."
+    "mq3ds": "At night, it's on top of the stone wall on the left as you enter the Graveyard. Get it with the Boomerang.",
+    "switch2": "At night, it's on the wall behind Dampé's hut. Get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-37"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -4946,7 +5987,39 @@
    "group": "overworld",
    "ootrLocation": "Graveyard GS Bean Patch",
    "howToIn": {
-    "mq3ds": "Release bugs onto the soft soil on the right side of the Graveyard."
+    "mq3ds": "Release bugs onto the soft soil on the right side of the Graveyard.",
+    "switch2": "Head left (west) as you enter the Graveyard and release a bottled bug onto the soft soil."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/06-Kakariko-Village.html#Gold-Skulltula-17"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -4999,7 +6072,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "DMT GS Bean Patch"
+   "ootrLocation": "DMT GS Bean Patch",
+   "howToIn": {
+    "switch2": "Once the boulder in front of Dodongo's Cavern is gone, release a bottled bug onto the soft soil next to the entrance."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/07-Death-Mountain-and-Goron-City.html#Gold-Skulltula-18"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dmt-near-kak",
@@ -5059,7 +6166,39 @@
    "group": "overworld",
    "ootrLocation": "DMT GS Near Kak",
    "howToIn": {
-    "mq3ds": "Low on the trail, blow open the cracked wall on the left. The Gold Skulltula is on the wall behind it; the wall is climbable to reach the token."
+    "mq3ds": "Low on the trail, blow open the cracked wall on the left. The Gold Skulltula is on the wall behind it; the wall is climbable to reach the token.",
+    "switch2": "Low on the trail near Kakariko Village, bomb the cracked wall. The Gold Skulltula is behind it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/09-Zoras-River.html#Gold-Skulltula-23"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -5097,7 +6236,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "DMT GS Above Dodongos Cavern"
+   "ootrLocation": "DMT GS Above Dodongos Cavern",
+   "howToIn": {
+    "switch2": "At night as adult Link, smash the dark boulder just outside the entrance to Goron City with the Megaton Hammer."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/22-Zoras-Domain-Frozen-Over.html#Gold-Skulltula-71"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dmt-falling-rocks",
@@ -5134,7 +6307,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "DMT GS Falling Rocks Path"
+   "ootrLocation": "DMT GS Falling Rocks Path",
+   "howToIn": {
+    "switch2": "At night as adult Link, near the top of the trail where you meet Biggoron, smash the dark boulder on the left with the Megaton Hammer."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/22-Zoras-Domain-Frozen-Over.html#Gold-Skulltula-72"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-gc-boulder-maze",
@@ -5172,7 +6379,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "GC GS Boulder Maze"
+   "ootrLocation": "GC GS Boulder Maze",
+   "howToIn": {
+    "switch2": "In the boulder-filled room on the west side of Goron City, bomb your way to the back and roll into the crate."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/09-Zoras-River.html#Gold-Skulltula-24"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-gc-center-platform",
@@ -5209,7 +6450,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "GC GS Center Platform"
+   "ootrLocation": "GC GS Center Platform",
+   "howToIn": {
+    "switch2": "As adult Link, head north from the entrance and turn around: it's on the ceiling above. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/15-Hyrule-Seven-Years-Later.html#Gold-Skulltula-46"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dmc-crate",
@@ -5247,7 +6522,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "DMC GS Crate"
+   "ootrLocation": "DMC GS Crate",
+   "howToIn": {
+    "switch2": "Near where you come into the crater from the summit, two wooden crates sit together; roll into them and one has the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/09-Zoras-River.html#Gold-Skulltula-22"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dmc-bean-patch",
@@ -5294,7 +6603,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "DMC GS Bean Patch"
+   "ootrLocation": "DMC GS Bean Patch",
+   "howToIn": {
+    "switch2": "Warp in with the Bolero of Fire and release a bottled bug onto the soft soil near the warp point, by the Fire Temple entrance."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/20-Death-Mountain-Crater.html#Gold-Skulltula-65"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-zr-tree",
@@ -5331,8 +6674,64 @@
    "map": null,
    "group": "overworld",
    "ootrLocation": "ZR GS Tree",
+   "nameIn": {
+    "switch2": "Soft soil by the Magic Bean seller"
+   },
    "howToIn": {
-    "mq3ds": "Roll into the tree at the entrance to Zora's River, right of the blocked path."
+    "mq3ds": "Roll into the tree at the entrance to Zora's River, right of the blocked path.",
+    "switch2": "Release a bottled bug onto the soft soil next to the Magic Bean seller on Zora's River. (New in the remake: there's no Gold Skulltula in the tree by the river entrance now.)"
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-deku-tree",
+     "bombs",
+     {
+      "any": [
+       "bottle-talon-cuccos",
+       "bottle-anju-cuccos",
+       "bottle-ruto-letter",
+       "bottle-big-poes",
+       "bottle-5-remake"
+      ]
+     }
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs",
+     "gamesgg-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/09-Zoras-River.html#Gold-Skulltula-25"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -5370,7 +6769,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "ZR GS Ladder"
+   "ootrLocation": "ZR GS Ladder",
+   "howToIn": {
+    "switch2": "At night, at the end of the river near the Zora's Domain waterfall, it's on the side of a platform at the very bottom of the area. Get it with the Boomerang or the Slingshot."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/09-Zoras-River.html#Gold-Skulltula-26"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-zr-near-raised-grottos",
@@ -5407,7 +6840,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "ZR GS Near Raised Grottos"
+   "ootrLocation": "ZR GS Near Raised Grottos",
+   "howToIn": {
+    "switch2": "At night as adult Link, it's high on the cliff by the raised grottos. Hookshot it (VGC and RPG Site get up there by riding the Magic Bean plant from the soil by the bean seller)."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/15-Hyrule-Seven-Years-Later.html#Gold-Skulltula-49"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-zr-above-bridge",
@@ -5444,7 +6911,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "ZR GS Above Bridge"
+   "ootrLocation": "ZR GS Above Bridge",
+   "howToIn": {
+    "switch2": "At night as adult Link, near the end of the river across the last bridge before Zora's Domain, it's high on the wall. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/15-Hyrule-Seven-Years-Later.html#Gold-Skulltula-48"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-zd-frozen-waterfall",
@@ -5484,7 +6985,39 @@
    "group": "overworld",
    "ootrLocation": "ZD GS Frozen Waterfall",
    "howToIn": {
-    "mq3ds": "At night, go to the top of the pool where the diving game used to be and look around the right corner. Hookshot it."
+    "mq3ds": "At night, go to the top of the pool where the diving game used to be and look around the right corner. Hookshot it.",
+    "switch2": "As adult Link in the frozen Domain, it's high on the wall at the top of the frozen waterfall, near the king's throne room. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/24-Empty-Lake-Hylia.html#Gold-Skulltula-76"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -5524,7 +7057,39 @@
    "group": "overworld",
    "ootrLocation": "ZF GS Tree",
    "howToIn": {
-    "mq3ds": "Roll into the tree on the small island in the southwest corner of the fountain."
+    "mq3ds": "Roll into the tree on the small island in the southwest corner of the fountain.",
+    "switch2": "As young Link, roll into the thin tree at the south end of Zora's Fountain."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/12-Zoras-Domain-Fountain.html#Gold-Skulltula-29"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -5563,7 +7128,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "ZF GS Above the Log"
+   "ootrLocation": "ZF GS Above the Log",
+   "howToIn": {
+    "switch2": "At night as young Link, it's on the cliff wall south of Jabu-Jabu, above the sunken arch. Climb the nearby ruins and get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-34"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-zf-hidden-cave",
@@ -5606,7 +7205,39 @@
    "group": "overworld",
    "ootrLocation": "ZF GS Hidden Cave",
    "howToIn": {
-    "mq3ds": "At night, on the southwest island lift the grey boulder with the Silver Gauntlets, bomb open the hole beneath, and drop in. Follow the passage up the ladder and Hookshot the Gold Skulltula."
+    "mq3ds": "At night, on the southwest island lift the grey boulder with the Silver Gauntlets, bomb open the hole beneath, and drop in. Follow the passage up the ladder and Hookshot the Gold Skulltula.",
+    "switch2": "At night as adult Link, lift the silver boulder in the southeast corner with the Silver Gauntlets and drop into the cave below. The Lens of Truth shows the invisible enemies; the Gold Skulltula is at the top. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/32-Meeting-at-the-Temple-of-Time.html#Gold-Skulltula-100"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
    }
   },
   {
@@ -5643,7 +7274,52 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LH GS Small Island"
+   "ootrLocation": "LH GS Small Island",
+   "nameIn": {
+    "switch2": "Crawlspace on the southwest shore"
+   },
+   "howToIn": {
+    "switch2": "As young Link, swim to the small outcrop at the far southwest corner of the lake and crawl through the gap to the Gold Skulltula."
+   },
+   "timeIn": {
+    "switch2": "any"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/11-Lake-Hylia.html#Gold-Skulltula-28"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-lh-bean-patch",
@@ -5688,7 +7364,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LH GS Bean Patch"
+   "ootrLocation": "LH GS Bean Patch",
+   "howToIn": {
+    "switch2": "Release a bottled bug onto the soft soil next to the Lakeside Laboratory."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/11-Lake-Hylia.html#Gold-Skulltula-27"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-lh-lab-wall",
@@ -5725,7 +7435,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LH GS Lab Wall"
+   "ootrLocation": "LH GS Lab Wall",
+   "howToIn": {
+    "switch2": "At night, it's on the side of the Lakeside Laboratory that faces the bridge. Get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-44"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-lh-tree",
@@ -5762,7 +7506,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LH GS Tree"
+   "ootrLocation": "LH GS Tree",
+   "howToIn": {
+    "switch2": "With the Longshot (from the Water Temple), at night, shoot up to the top of the tree on the island in the middle of the lake."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/26-Heading-Back-to-Kakariko-Village.html#Gold-Skulltula-83"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-lh-lab-crate",
@@ -5800,7 +7578,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "LH GS Lab Crate"
+   "ootrLocation": "LH GS Lab Crate",
+   "howToIn": {
+    "switch2": "Inside the Lakeside Laboratory, sink to the bottom of the tank with the Iron Boots (wear the Zora Tunic), roll into the wooden crate and Hookshot the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/24-Empty-Lake-Hylia.html#Gold-Skulltula-77"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-gv-bean-patch",
@@ -5845,7 +7657,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "GV GS Bean Patch"
+   "ootrLocation": "GV GS Bean Patch",
+   "howToIn": {
+    "switch2": "Grab the Cucco and glide down to the river below (the ledge with the cow), then release a bottled bug onto the soft soil."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-43"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-gv-small-bridge",
@@ -5882,7 +7728,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "GV GS Small Bridge"
+   "ootrLocation": "GV GS Small Bridge",
+   "howToIn": {
+    "switch2": "At night, drop below the first wooden bridge into Gerudo Valley; it's on the wall. Get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-42"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-gv-behind-tent",
@@ -5925,7 +7805,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "GV GS Behind Tent"
+   "ootrLocation": "GV GS Behind Tent",
+   "howToIn": {
+    "switch2": "Cross the broken bridge (Epona's jump or the Longshot). At night, it's on the wall behind the carpenters' tent. Hookshot it; Nintendo Life uses the Longshot."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/15-Hyrule-Seven-Years-Later.html#Gold-Skulltula-51"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-gv-pillar",
@@ -5968,7 +7882,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "GV GS Pillar"
+   "ootrLocation": "GV GS Pillar",
+   "howToIn": {
+    "switch2": "Cross the broken bridge (Epona's jump or the Longshot). At night, it's under the rock arch south of the carpenters' tent, up on the rocks. Hookshot it; Nintendo Life uses the Longshot."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/15-Hyrule-Seven-Years-Later.html#Gold-Skulltula-50"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-gf-archery-range",
@@ -6012,7 +7960,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "GF GS Archery Range"
+   "ootrLocation": "GF GS Archery Range",
+   "howToIn": {
+    "switch2": "With the Membership Card, go to the Horseback Archery range at night and run to the far end: it's on the big target. The Hookshot reaches; the Longshot makes it easier."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/28-Gerudo-Fortress.html#Gold-Skulltula-90"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-gf-top-floor",
@@ -6055,7 +8037,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "GF GS Top Floor"
+   "ootrLocation": "GF GS Top Floor",
+   "howToIn": {
+    "switch2": "At night, climb to the top of the fortress; it's on an outside wall at the east end. Hookshot it (the Longshot makes it easier)."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/28-Gerudo-Fortress.html#Gold-Skulltula-89"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-wasteland",
@@ -6099,7 +8115,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Wasteland GS"
+   "ootrLocation": "Wasteland GS",
+   "howToIn": {
+    "switch2": "Follow the flags across the Mirage Desert (the old Haunted Wasteland) to the small stone building. Go inside and down the ladder; it's on the wall. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/29-Haunted-Wasteland.html#Gold-Skulltula-91"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-colossus-bean-patch",
@@ -6144,7 +8194,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Colossus GS Bean Patch"
+   "ootrLocation": "Colossus GS Bean Patch",
+   "howToIn": {
+    "switch2": "As young Link (Requiem of Spirit), release a bottled bug onto the soft soil next to the Spirit Temple entrance."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/30-Desert-Colossus.html#Gold-Skulltula-93"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-colossus-tree",
@@ -6197,7 +8281,49 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Colossus GS Tree"
+   "ootrLocation": "Colossus GS Tree",
+   "nameIn": {
+    "switch2": "Rock wall beside the Spirit Temple"
+   },
+   "howToIn": {
+    "switch2": "At night as adult Link, it's on the rock wall beside the Spirit Temple entrance, where the birds circle overhead (Nintendo Life: on the cliff at the north end). Hookshot it; the Longshot makes it easier."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/30-Desert-Colossus.html#Gold-Skulltula-92"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-colossus-hill",
@@ -6255,7 +8381,41 @@
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
-   "ootrLocation": "Colossus GS Hill"
+   "ootrLocation": "Colossus GS Hill",
+   "howToIn": {
+    "switch2": "Plant a Magic Bean in the soft soil by the Spirit Temple as young Link. At night as adult Link, ride the plant until it reaches the platform with the Gold Skulltula (or Longshot up)."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/30-Desert-Colossus.html#Gold-Skulltula-94"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-deku-compass-room",
@@ -6297,7 +8457,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the Compass room, raise the platforms and cross to the area on the left. The Gold Skulltula is on the wall there."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/02-Inside-the-Great-Deku-Tree.html#Gold-Skulltula-1"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-deku-basement-gate",
@@ -6339,7 +8533,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the basement, look for the grating near the torch and the webbing. Hit it with a jump attack or the Slingshot, then take a running jump for the token."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/02-Inside-the-Great-Deku-Tree.html#Gold-Skulltula-3"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-deku-basement-vines",
@@ -6387,7 +8615,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "After you fall through the web in the central room, turn around: it's on the vines leading back up. Shoot it with the Slingshot and climb up for the token."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/02-Inside-the-Great-Deku-Tree.html#Gold-Skulltula-2"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-deku-basement-back-room",
@@ -6512,7 +8774,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "Lure a Baby Dodongo to the cracked wall on the right (or bomb it). When it blows open, go through and defeat the Gold Skulltula on the wall."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/08-Dodongos-Cavern.html#Gold-Skulltula-19"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dc-vines-above-stairs",
@@ -6560,7 +8856,44 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "nameIn": {
+    "switch2": "Chain-link fence in the staircase room"
+   },
+   "howToIn": {
+    "switch2": "Once the big staircase is down (put a Bomb Flower in the gap), go up the stairs, climb the ladder and follow the ledge toward the door at the back. Before it is a climbable chain-link fence with a regular Skulltula and the Gold one: shoot both with the Slingshot, then climb up for the token."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/08-Dodongos-Cavern.html#Gold-Skulltula-20"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dc-back-room",
@@ -6609,7 +8942,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "Past the giant Dodongo skull's mouth, bomb into the room with the Baby Dodongos and Armos. Defeat them; the Gold Skulltula is on the wall."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/08-Dodongos-Cavern.html#Gold-Skulltula-21"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dc-alcove-above-stairs",
@@ -6668,7 +9035,67 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "nameIn": {
+    "switch2": "Pillar in the room with two Dodongos"
+   },
+   "howToIn": {
+    "switch2": "Near the giant Dodongo skull, cross the ladder above it to the room to the northeast with two Dodongos (Nintenduo: through a cracked wall past the Bomb Bag room). The Gold Skulltula is on the back of the rock pillar in the middle; knock it down with your sword."
+   },
+   "needsIn": {
+    "switch2": [
+     {
+      "any": [
+       [
+        "ms-deku-tree",
+        "ms-meet-zelda",
+        {
+         "any": [
+          "bombs",
+          "goron-bracelet"
+         ]
+        },
+        "bombs"
+       ],
+       [
+        "ms-master-sword",
+        "bombs"
+       ]
+      ]
+     }
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/14-Temple-of-Time.html#Gold-Skulltula-38"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-dc-scarecrow",
@@ -6718,7 +9145,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "As adult Link, in the Baby Dodongo corridor, play the Scarecrow's Song next to the raised ledge to summon Pierre, then Hookshot up to the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/15-Hyrule-Seven-Years-Later.html#Gold-Skulltula-52"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-jabu-water-switch-room",
@@ -6760,7 +9221,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the room with the water switch, raise the water and go to the platform on the left. Climb the vines and grab it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/13-Inside-Lord-Jabu-Jabus-Belly.html#Gold-Skulltula-30"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-jabu-lobby-basement-lower",
@@ -6803,7 +9298,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the room where Princess Ruto drops down the hole, it's on the north wall. Get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/13-Inside-Lord-Jabu-Jabus-Belly.html#Gold-Skulltula-31"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-jabu-lobby-basement-upper",
@@ -6846,7 +9375,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the same place, another one is on the roof of the northwest tunnel. Get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/13-Inside-Lord-Jabu-Jabus-Belly.html#Gold-Skulltula-32"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-jabu-near-boss",
@@ -6889,7 +9452,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the last room before the boss, it's near the top of the vine wall. Shoot it with the Slingshot and climb, or just use the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/13-Inside-Lord-Jabu-Jabus-Belly.html#Gold-Skulltula-33"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-forest-first-room",
@@ -6937,7 +9534,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "At the entrance to the temple, it's at the top of the vines on the right. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/17-Forest-Temple.html#Gold-Skulltula-55"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-forest-lobby",
@@ -6985,7 +9616,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the main hall, it's on the back wall. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/17-Forest-Temple.html#Gold-Skulltula-56"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-forest-raised-island",
@@ -7039,7 +9704,57 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "nameIn": {
+    "switch2": "Moat courtyard ledge (Scarecrow)"
+   },
+   "howToIn": {
+    "switch2": "In the northeast courtyard with the moat, play the Scarecrow's Song to summon Pierre and Hookshot up to the eastern ledge (Nintenduo: the balcony above the stained-glass door). The Gold Skulltula is there."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "hookshot",
+     {
+      "any": [
+       "sarias-song",
+       "minuet-of-forest"
+      ]
+     },
+     "scarecrows-song"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/17-Forest-Temple.html#Gold-Skulltula-57"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-forest-level-island",
@@ -7097,7 +9812,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the northwest courtyard with the pools of water, it's on the southern wall. Hookshot it once you're in range."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/17-Forest-Temple.html#Gold-Skulltula-58"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-forest-basement",
@@ -7147,7 +9896,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the last room before the boss, turn the walls to rotate the basement. The Gold Skulltula is in the southernmost alcove."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/17-Forest-Temple.html#Gold-Skulltula-59"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-fire-song-of-time-room",
@@ -7197,7 +9980,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the big lava room on the first floor, go north and play the Song of Time to open the northeast passage. Dodge the flying tiles inside and grab the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/21-Fire-Temple.html#Gold-Skulltula-66"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-fire-boulder-maze",
@@ -7248,7 +10065,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the rolling-boulder room, bomb the wall in the northeast area and go into the small alcove for the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/21-Fire-Temple.html#Gold-Skulltula-67"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-fire-scarecrow-climb",
@@ -7301,7 +10152,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the boulder room, play the Scarecrow's Song where the swirl marks Pierre's spot, Hookshot up and ride the elevator. Climb the vines and grab the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/21-Fire-Temple.html#Gold-Skulltula-68"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-fire-boss-key-loop",
@@ -7351,7 +10236,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "Back on the first floor, smash your way into the northwest room with the Megaton Hammer. Dodge the flying tiles, defeat the Like Like and take the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/21-Fire-Temple.html#Gold-Skulltula-70"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-fire-scarecrow-top",
@@ -7404,7 +10323,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "On the fifth floor, in the room where you get the Megaton Hammer, it's on the wall. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/21-Fire-Temple.html#Gold-Skulltula-69"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-ice-heart-piece-room",
@@ -7457,7 +10410,44 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "nameIn": {
+    "switch2": "Compass room"
+   },
+   "howToIn": {
+    "switch2": "In the room with the Compass (behind red ice: melt it with Blue Fire), it's up on a wall. Hookshot it. The Piece of Heart that used to be in this room is gone in the remake."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/23-Ice-Cavern.html#Gold-Skulltula-74"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-ice-spinning-scythe",
@@ -7501,7 +10491,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the room with the spinning blade, it's on the wall. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/23-Ice-Cavern.html#Gold-Skulltula-73"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-ice-push-block",
@@ -7554,7 +10578,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the room with the sliding ice block, it's on the ceiling. Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/23-Ice-Cavern.html#Gold-Skulltula-75"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-water-behind-gate",
@@ -7600,7 +10658,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "Sink to the basement level with the Iron Boots and go to the small chamber in the east, by the basement grate. It's on the wall; Hookshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/25-Water-Temple.html#Gold-Skulltula-78"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-water-river",
@@ -7646,7 +10738,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "After you beat Dark Link, drop into the river with the whirlpools and walk it with the Iron Boots. About halfway, it's on the wall; Longshot it underwater."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/25-Water-Temple.html#Gold-Skulltula-79"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-water-central-pillar",
@@ -7692,7 +10818,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "With the water lowered, go inside the central pillar and Longshot up to the very top, where the Gold Skulltula rests."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/25-Water-Temple.html#Gold-Skulltula-81"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-water-falling-platform",
@@ -7737,7 +10897,59 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "nameIn": {
+    "switch2": "Behind the cracked wall (2nd floor)"
+   },
+   "howToIn": {
+    "switch2": "Set the water to the second floor, then bomb the cracked wall into the eastern room (a Bombchu is easiest). The Gold Skulltula is inside."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "iron-boots",
+     "hookshot",
+     "zora-tunic",
+     "zeldas-lullaby",
+     "bombs"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/25-Water-Temple.html#Gold-Skulltula-80"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-water-near-boss-key",
@@ -7783,7 +10995,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "Just before the Boss Key, a small corridor has a waterfall; the Gold Skulltula hides behind it. Watch out for the rolling boulders and Longshot it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/25-Water-Temple.html#Gold-Skulltula-82"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-botw-like-like-cage",
@@ -7828,7 +11074,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "From the main room, take the northeast passage down to the lower room in the east. Defeat the Like Like and get the Gold Skulltula with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/19-Bottom-of-the-Well.html#Gold-Skulltula-64"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-botw-west-inner",
@@ -8014,7 +11294,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the room with the falling spikes, go around to the north edge and Hookshot the Gold Skulltula (Nintendo Life uses the Longshot)."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/27-Shadow-Temple.html#Gold-Skulltula-85"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-shadow-single-giant-pot",
@@ -8111,7 +11425,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "Before you get on the ship, play the Scarecrow's Song next to the elevator to summon Pierre. Longshot up and defeat the Gold Skulltula."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/27-Shadow-Temple.html#Gold-Skulltula-87"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-shadow-triple-giant-pot",
@@ -8202,7 +11550,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "As young Link, go through the crawlspace and take the door on the right. It's up on the grating on the right; get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/31-Spirit-Temple.html#Gold-Skulltula-95"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-spirit-sun-on-floor",
@@ -8287,7 +11669,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the corridor just before the Iron Knuckle fight, turn around: the Gold Skulltula is above you. Get it with the Boomerang."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/31-Spirit-Temple.html#Gold-Skulltula-97"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-spirit-boulder-room",
@@ -8337,7 +11753,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "In the room with the rolling boulders, play the Song of Time to remove the Time Block in one of the alcoves. The Gold Skulltula is inside."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/31-Spirit-Temple.html#Gold-Skulltula-98"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-spirit-lobby",
@@ -8382,7 +11832,41 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "As adult Link, in the big statue room, get to the platform in the northwest: play the Scarecrow's Song to summon Pierre and Longshot up to him."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/31-Spirit-Temple.html#Gold-Skulltula-99"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-mq-deku-lobby",
@@ -12979,8 +16463,41 @@
    "icon": "bottle",
    "map": null,
    "ootrLocation": "Market 10 Big Poes",
+   "nameIn": {
+    "switch2": "Ghost Shop: 5 Big Poes"
+   },
+   "howToIn": {
+    "switch2": "Sell Big Poes at the Ghost Shop (the guard house by the Market entrance): 100 points each. At 500 points (the 5th one), the shopkeeper gives you an empty bottle."
+   },
    "numIn": {
     "switch2": 5
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nintenduo-s2-bottles",
+     "respec-s2",
+     "zeldacentral-s2"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/bottles/"
+     },
+     {
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/276-the-legend-zelda-ocarina-time-remake-walkthrough-100-completion-guide-with-all-switch-2-changes"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76621"
+     }
+    ]
    }
   },
   {
@@ -13019,14 +16536,137 @@
    "versions": [
     "switch2"
    ]
+  },
+  {
+   "id": "hp-s2-hf-arch-chest",
+   "category": "heart",
+   "num": 4,
+   "name": "Chest under the stone arch",
+   "area": "Hyrule Field",
+   "areaId": "hyrule-field",
+   "age": "young",
+   "time": "any",
+   "howTo": "In west Hyrule Field near the Gerudo Valley entrance, go under the big stone arch to a small chest in a shaded spot. As adult Link it's already open, and a Fairy's Thought on the wall says it was left unlocked. Return as young Link: the chest is now unlocked but still closed. Open it for the Piece of Heart.",
+   "needs": [
+    "ms-deku-tree",
+    "ms-master-sword"
+   ],
+   "links": [
+    {
+     "label": "Nintendo Life (Switch 2)",
+     "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+    },
+    {
+     "label": "TheGamer (Switch 2)",
+     "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+    }
+   ],
+   "sources": [
+    "nl-s2-hp",
+    "thegamer-s2-hp"
+   ],
+   "fromSheet": false,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "heart",
+   "map": null,
+   "versions": [
+    "switch2"
+   ]
+  },
+  {
+   "id": "hp-s2-dmc-scrub",
+   "category": "heart",
+   "num": 28,
+   "name": "Business Scrub in the crater",
+   "area": "Death Mountain Crater",
+   "areaId": "death-mountain-crater",
+   "age": "young",
+   "time": "any",
+   "howTo": "As young Link, enter Death Mountain Crater and head left and down to the lower level, to the right of the bombable hole. A Business Scrub there attacks when you get close: stun him (a Deku Nut, or send his nut back with your shield), then talk to him. He sells the Piece of Heart for 100 Rupees.",
+   "needs": [
+    "ms-deku-tree",
+    "ms-meet-zelda"
+   ],
+   "links": [
+    {
+     "label": "Nintendo Life (Switch 2)",
+     "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+    },
+    {
+     "label": "TheGamer (Switch 2)",
+     "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+    }
+   ],
+   "sources": [
+    "nl-s2-hp",
+    "thegamer-s2-hp"
+   ],
+   "fromSheet": false,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "heart",
+   "map": null,
+   "versions": [
+    "switch2"
+   ]
+  },
+  {
+   "id": "gs-s2-hf-marsh-grotto",
+   "category": "skulltula",
+   "num": 11,
+   "name": "Marsh grotto (young, then adult)",
+   "area": "Hyrule Field",
+   "areaId": "hyrule-field",
+   "age": "adult",
+   "time": "any",
+   "howTo": "In the small marshy area of Hyrule Field (Nintendo Life: south of Lon Lon Ranch), bomb the cracked ground to open a grotto. Go in first as young Link and defeat the ordinary Skulltula. Come back as adult Link and a Gold Skulltula has taken its place (break the crate inside if you don't see it).",
+   "needs": [
+    "ms-master-sword",
+    "bombs"
+   ],
+   "links": [
+    {
+     "label": "Nintendo Life (Switch 2)",
+     "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+    },
+    {
+     "label": "VGC (Switch 2)",
+     "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+    }
+   ],
+   "sources": [
+    "nl-s2-gs",
+    "vgc-s2-gs",
+    "rpgsite-s2-gs",
+    "nintenduo-s2-gs"
+   ],
+   "fromSheet": false,
+   "switch2": "unverified",
+   "readOnly": false,
+   "icon": "skulltula",
+   "map": null,
+   "group": "overworld",
+   "versions": [
+    "switch2"
+   ]
   }
  ],
  "skulltulaRewards": [
   {
    "tokens": 10,
    "reward": "Adult's Wallet (200 Rupees)",
-   "switch2": "changed-unknown",
-   "switch2Note": "Kotaku/IGN: the remake's starting wallet already holds 200 Rupees, so this reward is something new (not yet known).",
+   "rewardIn": {
+    "switch2": "Adult's Wallet (500 Rupees)"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "respec-s2",
+     "zeldacentral-s2",
+     "nl-s2-gs"
+    ]
+   },
+   "switch2": "unverified",
    "sources": [
     "jegged",
     "gamewith",
@@ -13038,7 +16678,16 @@
    "reward": "Stone of Agony",
    "rewardIn": {
     "3ds": "Shard of Agony",
-    "mq3ds": "Shard of Agony"
+    "mq3ds": "Shard of Agony",
+    "switch2": "Echo Gem"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "respec-s2",
+     "zeldacentral-s2",
+     "gamesgg-s2-gs"
+    ]
    },
    "switch2": "unverified",
    "sources": [
@@ -13050,6 +16699,16 @@
   {
    "tokens": 30,
    "reward": "Giant's Wallet (500 Rupees)",
+   "rewardIn": {
+    "switch2": "Giant's Wallet (1,000 Rupees)"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "respec-s2",
+     "zeldacentral-s2",
+     "nl-s2-gs"
+    ]
+   },
    "switch2": "unverified",
    "sources": [
     "jegged",
@@ -13060,6 +16719,15 @@
   {
    "tokens": 40,
    "reward": "Bombchus (10)",
+   "rewardIn": {
+    "switch2": "Bombchus (20)"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "zeldacentral-s2",
+     "gamesgg-s2-gs"
+    ]
+   },
    "switch2": "unverified",
    "sources": [
     "jegged",
