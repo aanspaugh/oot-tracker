@@ -294,6 +294,7 @@
     .boss-best b { color: var(--gold); font-size: 1.05rem; }
     .boss-form { display: flex; gap: 0.5rem; }
     .boss-form .field { flex: 1; min-width: 0; width: 0; }   /* no built-in input width, so 4 boss cards fit a 1280px row */
+    .fish-unit { align-self: center; color: var(--text-muted); font-weight: 700; }
     .item-card.static { cursor: default; }
     .group-toggle {
       background: none; border: none; padding: 0; min-height: 44px; text-align: left; color: var(--text);
@@ -1508,22 +1509,26 @@ function saveScarecrow(notes) {
 
 // Biggest fish (11/6): free text on the profile (profiles/{pid}/biggestFish), not tied to the Fishing Pond
 // heart's check-off, since catching a fish and handing it in are separate. Shows with that heart, or once saved.
+// A number in the game's unit: cm on Switch 2, lb in the older versions.
+const fishUnit = () => (isRemake() ? 'cm' : 'lb');
 const fishShown = () => isShown(BY_ID['hp-lh-fishing']) || !!profiles[pid]?.biggestFish;
 const fishHTML = () => `<div class="fish">
     <div class="scarecrow-title">Biggest fish</div>
     <div class="scarecrow-sub">Your biggest catch at the Fishing Pond at Lake Hylia.</div>
     <form class="boss-form" data-fish-form>
-      <input class="field" id="fishInput" name="f" maxlength="40" autocomplete="off" value="${esc(profiles[pid]?.biggestFish || '')}" placeholder="e.g. ${isRemake() ? '56 cm' : '10 lb'}" aria-label="Biggest fish">
+      <input class="field" id="fishInput" name="f" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" value="${parseFloat(profiles[pid]?.biggestFish) || ''}" placeholder="e.g. ${isRemake() ? '56' : '10'}" aria-label="Biggest fish, in ${fishUnit()}">
+      <span class="fish-unit">${fishUnit()}</span>
       <button class="act-btn primary">Save</button>
     </form>
   </div>`;
 $('main').addEventListener('submit', (e) => {
   if (!e.target.matches('[data-fish-form]') || !pid) return;
   e.preventDefault();
-  const input = e.target.elements.f, v = input.value.trim();
+  const input = e.target.elements.f, v = input.value.trim(), n = Number(v);
+  if (v && !(n > 0)) { toast('Type the size as a number, e.g. 56', true); input.focus(); return; }
   input.blur();   // so the re-render after saving isn't held back for typing
-  update(ref(_db, `profiles/${pid}`), { biggestFish: v || null })
-    .then(() => toast(v ? `Saved: ${v}` : 'Cleared the biggest fish.')).catch(fail('save the fish'));
+  update(ref(_db, `profiles/${pid}`), { biggestFish: v ? n : null })
+    .then(() => toast(v ? `Saved: ${n} ${fishUnit()}` : 'Cleared the biggest fish.')).catch(fail('save the fish'));
 });
 
 function rewardsHTML() {
