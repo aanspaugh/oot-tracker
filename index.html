@@ -1364,13 +1364,15 @@ function lockText(e) {
   return esc(miss.slice(0, 3).join(', ')) + (miss.length > 3 ? ` +${miss.length - 3} more` : '');
 }
 
-// Soft soil → the Gold Skulltula you get by releasing bugs on it (Zora's River has none).
+// Soft soil → the Gold Skulltula you get by releasing bugs on it (Zora's River has none,
+// except in the Switch 2 remake, which moved the entrance-tree Skulltula there — 11/6).
 const SOIL_BUG_GS = {
   'soil-kf': 'gs-kf-bean-patch', 'soil-lw-bridge': 'gs-lw-bean-bridge', 'soil-lw-theater': 'gs-lw-bean-theater',
   'soil-graveyard': 'gs-graveyard-bean-patch', 'soil-dmt': 'gs-dmt-bean-patch', 'soil-dmc': 'gs-dmc-bean-patch',
   'soil-lh': 'gs-lh-bean-patch', 'soil-gv': 'gs-gv-bean-patch', 'soil-colossus': 'gs-colossus-bean-patch',
 };
-const bugBadge = (e) => progress[SOIL_BUG_GS[e.id]]
+const soilBugGs = (id) => (id === 'soil-zr' && isRemake() ? 'gs-zr-tree' : SOIL_BUG_GS[id]);
+const bugBadge = (e) => progress[soilBugGs(e.id)]
   ? `<svg class="ic bug-badge" viewBox="0 0 32 32" role="img" aria-label="Bug Skulltula here: got it"><title>Bug Skulltula here: got it</title>${ICONS.bug}</svg>` : '';
 
 const AGE  = { young: 'Young Link', adult: 'Adult Link' };
