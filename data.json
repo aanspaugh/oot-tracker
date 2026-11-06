@@ -92,6 +92,14 @@
     "name": "games.gg, \"Ocarina of Time Remake Gold Skulltula Locations: All 100 and Rewards\" (cites Game8, TheGamer)",
     "url": "https://games.gg/the-legend-of-zelda-ocarina-of-time-2026/guides/ocarina-of-time-remake-gold-skulltula-locations-all-100-and-rewards/"
    },
+   "nintenduo-s2-fairies": {
+    "name": "Nintenduo, \"All Great Fairies in Ocarina of Time (Switch 2)\"",
+    "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/great-fairies/"
+   },
+   "game8-s2-fairies": {
+    "name": "Game8, \"All Fairy Fountains and Great Fairy Locations\" (Switch 2 remake)",
+    "url": "https://game8.co/games/Zelda-Ocarina-of-Time/archives/618335"
+   },
    "zeldacentral-s2": {
     "name": "Zelda Central, \"Ocarina of Time Remake: Changes From the Original\"",
     "url": "https://zeldacentral.com/games/ocarina-of-time-remake/changes-from-the-original/"
@@ -460,7 +468,10 @@
    ],
    "switch2": "unverified",
    "derivedFrom": "gf-dins-fire",
-   "readOnly": true
+   "readOnly": true,
+   "derivedFromIn": {
+    "switch2": "gf-magic"
+   }
   },
   {
    "id": "bombchus",
@@ -1082,6 +1093,12 @@
      "bombs",
      "song-of-time",
      "bow"
+    ],
+    "switch2": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-magic",
+     "lens-of-truth"
     ]
    }
   },
@@ -2158,7 +2175,14 @@
     "nocturne-of-shadow",
     "gf-dins-fire",
     "gf-magic"
-   ]
+   ],
+   "reachIn": {
+    "switch2": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-magic"
+    ]
+   }
   },
   {
    "id": "ms-spirit-temple",
@@ -2744,11 +2768,44 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Kak Impas House Freestanding PoH"
+   "ootrLocation": "Kak Impas House Freestanding PoH",
+   "nameIn": {
+    "switch2": "Red roof over the cow"
+   },
+   "howToIn": {
+    "switch2": "Ride Kaepora Gaebora down from the top of Death Mountain Trail; he drops young Link on the roof of Impa's house. Look down at the stable: the Piece of Heart sits on the red roof with a cow under it. Jump down onto it. (Adult Link: the Hookshot onto the roofs worked in the original.)"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "thegamer-s2-hp",
+     "nl-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Kakariko-Village-Rooftop"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-kak-man-on-roof",
@@ -3299,7 +3356,22 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "GC Pot Freestanding PoH"
+   "ootrLocation": "GC Pot Freestanding PoH",
+   "needsIn": {
+    "switch2": [
+     "ms-deku-tree",
+     "ms-meet-zelda",
+     "bombs",
+     {
+      "any": [
+       "zeldas-lullaby",
+       [
+        "gf-magic"
+       ]
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "hp-zr-frogs-storms",
@@ -11246,7 +11318,18 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-magic",
+     "lens-of-truth",
+     "hover-boots",
+     "bombs",
+     "hookshot"
+    ]
+   }
   },
   {
    "id": "gs-shadow-falling-spikes",
@@ -11297,6 +11380,17 @@
    ],
    "howToIn": {
     "switch2": "In the room with the falling spikes, go around to the north edge and Hookshot the Gold Skulltula (Nintendo Life uses the Longshot)."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-magic",
+     "lens-of-truth",
+     "hover-boots",
+     "bombs",
+     "hookshot"
+    ]
    },
    "sourcesIn": {
     "switch2": [
@@ -11376,7 +11470,18 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-magic",
+     "lens-of-truth",
+     "hover-boots",
+     "bombs",
+     "hookshot"
+    ]
+   }
   },
   {
    "id": "gs-shadow-near-ship",
@@ -11428,6 +11533,18 @@
    ],
    "howToIn": {
     "switch2": "Before you get on the ship, play the Scarecrow's Song next to the elevator to summon Pierre. Longshot up and defeat the Gold Skulltula."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-magic",
+     "lens-of-truth",
+     "hover-boots",
+     "bombs",
+     "longshot",
+     "scarecrows-song"
+    ]
    },
    "sourcesIn": {
     "switch2": [
@@ -11508,7 +11625,19 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-magic",
+     "lens-of-truth",
+     "hover-boots",
+     "bombs",
+     "longshot",
+     "zeldas-lullaby"
+    ]
+   }
   },
   {
    "id": "gs-spirit-metal-fence",
@@ -14754,13 +14883,39 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "gf-magic",
    "map": null,
    "ootrLocation": "DMT Great Fairy Reward",
+   "nameIn": {
+    "switch2": "Din's Fire"
+   },
    "howToIn": {
-    "mq3ds": "At the top of Death Mountain Trail, bomb the wall right of the crater entrance (by the owl). Stand on the Triforce and play Zelda's Lullaby."
+    "mq3ds": "At the top of Death Mountain Trail, bomb the wall right of the crater entrance (by the owl). Stand on the Triforce and play Zelda's Lullaby.",
+    "switch2": "At the top of Death Mountain Trail, bomb the wall by the owl, left of the crater entrance. Stand on the Triforce and play Zelda's Lullaby, then make the 25-Rupee offering: the Great Fairy gives you the Magic Meter and Din's Fire."
+   },
+   "iconIn": {
+    "switch2": "gf-dins-fire"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nintenduo-s2-fairies",
+     "game8-s2-fairies"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Great-Fairy-Fountains.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76394"
+     }
+    ]
    }
   },
   {
@@ -14799,8 +14954,34 @@
    "icon": "gf-dins-fire",
    "map": null,
    "ootrLocation": "HC Great Fairy Reward",
+   "nameIn": {
+    "switch2": "Spin Attack"
+   },
    "howToIn": {
-    "mq3ds": "On the way up to Hyrule Castle, climb the vines past the gate and head to the boulder on the far west side. Bomb it, crawl in, and play Zelda's Lullaby on the Triforce."
+    "mq3ds": "On the way up to Hyrule Castle, climb the vines past the gate and head to the boulder on the far west side. Bomb it, crawl in, and play Zelda's Lullaby on the Triforce.",
+    "switch2": "On the way up to Hyrule Castle, climb the vines past the gate and head to the boulder at the end of the dead-end path on the far east side. Bomb it, crawl in, play Zelda's Lullaby on the Triforce and make the 50-Rupee offering: the Great Fairy powers up your Spin Attack."
+   },
+   "iconIn": {
+    "switch2": "gf-spin"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nintenduo-s2-fairies",
+     "game8-s2-fairies"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Great-Fairy-Fountains.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76394"
+     }
+    ]
    }
   },
   {
@@ -14853,7 +15034,26 @@
    "map": null,
    "ootrLocation": "ZF Great Fairy Reward",
    "howToIn": {
-    "mq3ds": "In Zora's Fountain, swim to the small island in the southwest corner and bomb the boulder there. Play Zelda's Lullaby on the Triforce."
+    "mq3ds": "In Zora's Fountain, swim to the small island in the southwest corner and bomb the boulder there. Play Zelda's Lullaby on the Triforce.",
+    "switch2": "In Zora's Fountain, swim to the small island in the southeast corner and bomb the boulder there. Play Zelda's Lullaby on the Triforce and make the 100-Rupee offering for Farore's Wind."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nintenduo-s2-fairies",
+     "game8-s2-fairies"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Great-Fairy-Fountains.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76394"
+     }
+    ]
    }
   },
   {
@@ -14898,7 +15098,28 @@
    "readOnly": false,
    "icon": "gf-double-magic",
    "map": null,
-   "ootrLocation": "DMC Great Fairy Reward"
+   "ootrLocation": "DMC Great Fairy Reward",
+   "howToIn": {
+    "switch2": "In Death Mountain Crater (Hookshot back across the broken bridge from the Bolero warp), smash the boulders blocking the cave with the Megaton Hammer. Play Zelda's Lullaby on the Triforce and make the 200-Rupee offering to double your Magic Meter."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nintenduo-s2-fairies",
+     "game8-s2-fairies"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Great-Fairy-Fountains.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76394"
+     }
+    ]
+   }
   },
   {
    "id": "gf-nayrus-love",
@@ -14964,7 +15185,26 @@
    "map": null,
    "ootrLocation": "Colossus Great Fairy Reward",
    "howToIn": {
-    "mq3ds": "In the Desert Colossus, bomb the cracked rock wall north of where you enter (northwest on the mini-map). Play Zelda's Lullaby on the Triforce."
+    "mq3ds": "In the Desert Colossus, bomb the cracked rock wall north of where you enter (northwest on the mini-map). Play Zelda's Lullaby on the Triforce.",
+    "switch2": "In the Desert Colossus, bomb the cracked rock wall north of where you enter (northeast on the mini-map). Play Zelda's Lullaby on the Triforce and make the 300-Rupee offering for Nayru's Love."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nintenduo-s2-fairies",
+     "game8-s2-fairies"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Great-Fairy-Fountains.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76394"
+     }
+    ]
    }
   },
   {
@@ -15004,7 +15244,26 @@
    "map": null,
    "ootrLocation": "OGC Great Fairy Reward",
    "howToIn": {
-    "mq3ds": "With the Golden Gauntlets (from Ganon's Castle), lift the giant pillar/boulder at the dead end west of Ganon's Castle. Play Zelda's Lullaby on the Triforce."
+    "mq3ds": "With the Golden Gauntlets (from Ganon's Castle), lift the giant pillar/boulder at the dead end west of Ganon's Castle. Play Zelda's Lullaby on the Triforce.",
+    "switch2": "With the Golden Gauntlets (from Ganon's Castle), lift the giant pillar at the dead end east of Ganon's Castle. Play Zelda's Lullaby on the Triforce and make the 500-Rupee offering to double your defense."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nintenduo-s2-fairies",
+     "game8-s2-fairies"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Great-Fairy-Fountains.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76394"
+     }
+    ]
    }
   },
   {
