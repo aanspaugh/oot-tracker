@@ -6842,14 +6842,18 @@
    "map": null,
    "group": "overworld",
    "ootrLocation": "ZR GS Ladder",
+   "nameIn": {
+    "switch2": "Behind the rock by the waterfall"
+   },
    "howToIn": {
-    "switch2": "At night, at the end of the river near the Zora's Domain waterfall, it's on the side of a platform at the very bottom of the area. Get it with the Boomerang or the Slingshot."
+    "switch2": "At the end of the river by the Zora's Domain waterfall (no ladder now). From the grassy ledge next to the waterfall, climb down to the shore; it's on the back of the low rock there. Attack it with your sword, or use the Boomerang or Slingshot."
    },
    "sourcesIn": {
     "switch2": [
      "nl-s2-gs",
      "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
     ]
    },
    "linksIn": {
@@ -6865,6 +6869,10 @@
      {
       "label": "Nintenduo (Switch 2)",
       "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
      },
      {
       "label": "Jegged",
