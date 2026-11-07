@@ -3003,7 +3003,40 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Kak Windmill Freestanding PoH"
+   "ootrLocation": "Kak Windmill Freestanding PoH",
+   "ageIn": {
+    "switch2": "adult"
+   },
+   "howToIn": {
+    "switch2": "Adult Link only now (young Link can't climb anything inside to get a Boomerang angle; first-hand 11/6, and no Switch 2 guide lists a young route). After winning the Hookshot in Dampé's race, follow the ruined stairs and Hookshot across the gap; you come out on the Windmill's upper floor. Ride the rotating platform around and jump to the Piece of Heart."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     "song-of-time",
+     "hookshot"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Insider (Switch 2)",
+      "url": "https://www.nintendo-insider.com/zelda-ocarina-of-time-remake-heart-piece-locations-guide/"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-graveyard-crate",
