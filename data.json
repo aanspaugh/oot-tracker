@@ -7232,8 +7232,11 @@
    "map": null,
    "group": "overworld",
    "ootrLocation": "ZF GS Above the Log",
+   "nameIn": {
+    "switch2": "Rock wall by the sunken arch"
+   },
    "howToIn": {
-    "switch2": "At night as young Link, it's on the cliff wall south of Jabu-Jabu, above the sunken arch. Climb the nearby ruins and get it with the Boomerang."
+    "switch2": "At night as young Link, follow the shore south of Jabu-Jabu to the half-sunken stone arch set against the vine-covered rock wall; it's on that wall (no log now). Climb the nearby ruins and get it with the Boomerang."
    },
    "sourcesIn": {
     "switch2": [
@@ -7832,8 +7835,11 @@
    "map": null,
    "group": "overworld",
    "ootrLocation": "GV GS Small Bridge",
+   "nameIn": {
+    "switch2": "Under the small bridge"
+   },
    "howToIn": {
-    "switch2": "At night, drop below the first wooden bridge into Gerudo Valley; it's on the wall. Get it with the Boomerang."
+    "switch2": "At night, drop below the small wooden footbridge over the pool as you come into Gerudo Valley. It's under the planks, on the brick wall beside the waterfall spout. Get it with the Boomerang from the stone bank below."
    },
    "sourcesIn": {
     "switch2": [
@@ -16905,25 +16911,24 @@
    "id": "gs-s2-hf-marsh-grotto",
    "category": "skulltula",
    "num": 11,
-   "name": "Marsh grotto wall",
+   "name": "Gossip Stone grotto crate (young, then adult)",
    "area": "Hyrule Field",
    "areaId": "hyrule-field",
-   "age": "young",
+   "age": "adult",
    "time": "any",
-   "howTo": "In the small marshy area of Hyrule Field (Nintendo Life: south of Lon Lon Ranch), bomb the cracked ground to open a grotto. Defeat the ordinary Skulltula inside; the Gold Skulltula is on the wall behind it. Get it with the Boomerang. No adult trip needed (first-hand 11/6).",
+   "howTo": "Southeast of Lon Lon Ranch, next to a small pond before the path down to Lake Hylia, bomb the cracked ground inside the ring of bushes to open a grotto with a Gossip Stone. As young Link, defeat the ordinary Skulltula on the wall (a Fairy's Thought there hints at the rest). Come back as adult Link and roll into the wooden crate: the Gold Skulltula comes out.",
    "needs": [
-    "ms-deku-tree",
-    "bombs",
-    "boomerang"
+    "ms-master-sword",
+    "bombs"
    ],
    "links": [
     {
-     "label": "Nintendo Life (Switch 2)",
-     "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     "label": "Nintenduo (Switch 2)",
+     "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
     },
     {
-     "label": "VGC (Switch 2)",
-     "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     "label": "Nintendo Life (Switch 2)",
+     "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
     }
    ],
    "sources": [
