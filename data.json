@@ -3416,6 +3416,9 @@
    "age": "young",
    "time": "any",
    "howTo": "Stand at the end of the log sticking out into the river; frogs pop up when you take out the Ocarina. Play the Song of Storms.",
+   "howToIn": {
+    "switch2": "Halfway up Zora's River, go into the small alcove off the north side (no log now); the five frogs sit on tree stumps. Play them the Song of Storms. The other early songs (Zelda's Lullaby, Epona's, Saria's, the Sun's Song, the Song of Time) only make a frog grow and give Rupees, but playing all of them opens the bug-catching game for the next Piece of Heart."
+   },
    "needs": [
     "ms-deku-tree",
     "bombs",
