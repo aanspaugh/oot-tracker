@@ -296,10 +296,20 @@
     .boss-form .field { flex: 1; min-width: 0; width: 0; }   /* no built-in input width, so 4 boss cards fit a 1280px row */
     .fish-unit { align-self: center; color: var(--text-muted); font-weight: 700; }
     .item-card.static { cursor: default; }
-    .group-toggle {
-      background: none; border: none; padding: 0; min-height: 44px; text-align: left; color: var(--text);
-      font-family: var(--display); font-size: 1.05rem; font-weight: 700;
+    /* Collapsible sections: the header (or its ▾/▸) folds the section; the count stays visible */
+    [data-collapse] { cursor: pointer; }
+    .group-header[data-collapse] { justify-content: flex-start; }
+    .group-header[data-collapse] .group-name { flex: 1; }
+    .collapse-btn {
+      background: none; border: none; padding: 0; min-width: 28px; min-height: 44px; margin-right: -0.4rem;
+      color: var(--text-muted); font-size: 1rem; cursor: pointer;
     }
+    .group.collapsed { margin-bottom: 0.4rem; }
+    .group.collapsed .group-header { margin-bottom: 0; padding: 0 0.1rem; }
+    .scarecrow-title[data-collapse] { display: flex; align-items: center; gap: 0.5rem; margin: -0.5rem 0 0; }
+    .scarecrow-title[data-collapse] .collapse-btn { flex: none; }
+    .scarecrow-title[data-collapse] .ic-inline { flex: none; vertical-align: 0; }
+    .collapse-all { display: flex; justify-content: flex-end; margin-bottom: 0.4rem; }
 
     /* Notes */
     .field.notes-text { display: block; width: 100%; min-height: 55vh; resize: vertical; font: inherit; line-height: 1.5; }
@@ -946,13 +956,14 @@ function startApp() {
   SKEYS.forEach((k, i) => SID.set(k, i));
   buildTabs();
   onValue(ref(_db, 'profiles'), (snap) => {
-    const mode = shieldMode(), fish = pid && profiles[pid]?.biggestFish;
+    const mine = () => (pid ? JSON.stringify([profiles[pid]?.biggestFish, profiles[pid]?.collapsed]) : '');   // fish + folded sections
+    const mode = shieldMode(), before = mine();
     profiles = snap.val() || {};
     ensureSelection();
     renderProfileSheet();
     renderProfileBtn();
     if (shieldMode() !== mode) { renderControls(); render(); }
-    else if ((pid && profiles[pid]?.biggestFish) !== fish && currentTab === 'progress') render();
+    else if (mine() !== before) render();
   }, (err) => toast('Lost access to profiles: ' + err.message, true));
 }
 
@@ -1308,44 +1319,67 @@ function render() {
   // Don't wipe a boss time someone is typing when synced progress re-renders the tab.
   if (t.id === 'hall' && document.activeElement?.closest?.('#tab-hall input')) return;
   if (t.id === 'progress' && document.activeElement?.id === 'fishInput') return;   // same for the biggest fish
-  $('tab-' + t.id).innerHTML = t.id === 'hall' ? renderHall() : renderTab(t);
+  secKeys = [];
+  const body = t.id === 'hall' ? renderHall() : renderTab(t);
+  $('tab-' + t.id).innerHTML = collapseAllBar() + body;
 }
 
 // One renderer for every catalog tab: sections of cards, grouped by area or by category.
 function renderTab(t) {
   let shown = 0;
-  const grp = (title, all) => {
+  const grp = (key, title, all) => {
     const list = all.filter((e) => visible(e, t)).sort(SORTS[sortBy[t.id] || 'num'].fn);
     shown += list.length;
-    return list.length ? group(title, all, list) : '';
+    return list.length ? group(`${t.id}:${key}`, title, all, list) : '';
   };
-  const quick = (title, all) => {
+  const quick = (key, title, all) => {
     const list = all.filter((i) => !(view.hideDone && isDone(i.id)) && !(view.hideAuto && i.derivedFrom) && matches(i, t));
     shown += list.length;
-    return list.length ? quickList(title, all, list) : '';
+    return list.length ? quickList(`${t.id}:${key}`, title, all, list) : '';
   };
   let h = '';
   if (t.id === 'progress') {
-    h = grp(catTitle('milestone'), entriesIn(['milestone'])) + quick('Items & Equipment', DATA.items) + quick('Songs', DATA.songs);
+    h = grp('story', catTitle('milestone'), entriesIn(['milestone'])) + quick('items', 'Items & Equipment', DATA.items) + quick('songs', 'Songs', DATA.songs);
     if (!(search.progress || '').trim()) h += (scarecrowShown() ? scarecrowHTML() : shieldedScarecrow()) + (fishShown() ? fishHTML() : '');
   } else {
     if (t.id === 'skulltulas') h += rewardsHTML();
     if (groupedTab(t) && viewMode(t) === 'num') {
       const c = t.cats[0];
-      h += grp(catTitle(c, 'All '), entriesIn(t.cats));
+      h += grp('all', catTitle(c, 'All '), entriesIn(t.cats));
     } else if (groupedTab(t)) {
       DATA.areas.forEach((a, i) => {
         const list = entriesIn(t.cats).filter((e) => e.areaId === a.id);
         // An area's name stays hidden until one of its cards is shown; tapping it offers an area peek.
-        if (list.length) h += grp(list.some(isShown) ? esc(a.name) : `<span class="veil-area" data-sarea="${i}" tabindex="0" role="button" aria-label="Hidden area: tap to show">${
+        if (list.length) h += grp(a.id, list.some(isShown) ? esc(a.name) : `<span class="veil-area" data-sarea="${i}" tabindex="0" role="button" aria-label="Hidden area: tap to show">${
           veilText(a.id, a.name.length)}<span class="veil-hint">🛡️ Tap to peek</span></span>`, list);
       });
     } else {
-      for (const c of t.cats) h += grp(catTitle(c), entriesIn([c]));
+      for (const c of t.cats) h += grp(c, catTitle(c), entriesIn([c]));
     }
   }
   if (!shown) h += '<div class="placeholder">Nothing matches the current filters or search.</div>';
   return h;
+}
+
+// Collapsible sections (11/6): saved on the profile (profiles/{pid}/collapsed/{tab:section}), so both phones
+// match. Everything starts open except the Hall's enemy statues. A search opens every section on its tab.
+const COLLAPSED_DEFAULT = { 'hall:statues': true };
+let secKeys = [];   // the sections drawn on the current tab, for Collapse all / Expand all
+const isCollapsed = (k) => !(search[currentTab] || '').trim() && (profiles[pid]?.collapsed?.[k] ?? COLLAPSED_DEFAULT[k] ?? false);
+function setCollapsed(keys, v) {
+  const out = Object.fromEntries(keys.map((k) => [k, v === (COLLAPSED_DEFAULT[k] ?? false) ? null : v]));
+  update(ref(_db, `profiles/${pid}/collapsed`), out).catch(fail('fold that section'));
+}
+const collapseBtn = (k) => `<button class="collapse-btn" data-collapse="${k}" aria-expanded="${!isCollapsed(k)}" aria-label="${isCollapsed(k) ? 'Expand' : 'Collapse'} section">${isCollapsed(k) ? '▸' : '▾'}</button>`;
+// A section header that folds its section; `inner` is the title (keep .group-name) and badges.
+function secHead(k, inner, cls = 'group-header') {
+  secKeys.push(k);
+  return `<div class="${cls}" data-collapse="${k}">${collapseBtn(k)}${inner}</div>`;
+}
+function collapseAllBar() {
+  if (secKeys.length < 2 || (search[currentTab] || '').trim()) return '';
+  const all = secKeys.every(isCollapsed);
+  return `<div class="collapse-all"><button class="chip" data-collapse-all="${all ? 'open' : 'fold'}">${all ? '▸ Expand all' : '▾ Collapse all'}</button></div>`;
 }
 
 function badge(done, total) {
@@ -1353,11 +1387,11 @@ function badge(done, total) {
 }
 
 // The badge counts the whole section (all); the grid shows what passes the filters (list).
-function group(title, all, list) {
+function group(key, title, all, list) {
   const counted = all.filter((e) => !e.readOnly);
-  return `<div class="group">
-    <div class="group-header"><span class="group-name">${title}</span>${badge(counted.filter((e) => isDone(e.id)).length, counted.length)}</div>
-    <div class="card-grid">${list.map(card).join('')}</div>
+  return `<div class="group${isCollapsed(key) ? ' collapsed' : ''}">
+    ${secHead(key, `<span class="group-name">${title}</span>${badge(counted.filter((e) => isDone(e.id)).length, counted.length)}`)}
+    ${isCollapsed(key) ? '' : `<div class="card-grid">${list.map(card).join('')}</div>`}
   </div>`;
 }
 
@@ -1423,7 +1457,8 @@ function autoToggle(all) {
 }
 
 // Items & Songs: filter inputs only (they feed "Gettable now"), never counted toward progress.
-function quickList(title, all, list) {
+function quickList(key, title, all, list) {
+  if (isCollapsed(key)) return `<div class="group collapsed">${secHead(key, `<span class="group-name">${title}</span>${autoToggle(all)}${badge(all.filter((i) => isDone(i.id)).length, all.length)}`)}</div>`;
   const rows = [...list].sort((a, b) => a.order - b.order).map((i) => {
     if (!isShown(i)) {
       const k = SID.get(i.id);
@@ -1437,7 +1472,7 @@ function quickList(title, all, list) {
       : `<label class="check-pill quick-row${d ? ' is-checked' : ''}">${name}</span><input type="checkbox" data-check="${i.id}"${d ? ' checked' : ''}></label>`;
   });
   return `<div class="group">
-    <div class="group-header"><span class="group-name">${title}</span>${autoToggle(all)}${badge(all.filter((i) => isDone(i.id)).length, all.length)}</div>
+    ${secHead(key, `<span class="group-name">${title}</span>${autoToggle(all)}${badge(all.filter((i) => isDone(i.id)).length, all.length)}`)}
     <div class="group-note">Check these off as you get them. The filters use them; they don't count toward completion.</div>
     <div class="quick-grid">${rows.join('')}</div>
   </div>`;
@@ -1487,8 +1522,10 @@ function scarecrowHTML() {
   const full = notes.length >= max;
   const pad = Object.entries(btns).map(([k, n]) =>
     `<button class="n64 ${n.cls}" data-note="${k}" aria-label="${n.name}"${full ? ' disabled style="opacity:.35"' : ''}>${n.btn}</button>`).join('');
+  const title = secHead('progress:scarecrow', `${svg('scarecrow', 'ic ic-inline')} ${songShown ? "Scarecrow's Song" : "Bonooru's tune"}: your ${isRemake() ? `notes (up to ${max})` : `${max} notes`}`, 'scarecrow-title');
+  if (isCollapsed('progress:scarecrow')) return `<div class="scarecrow">${title}</div>`;
   return `<div class="scarecrow">
-    <div class="scarecrow-title">${svg('scarecrow', 'ic ic-inline')} ${songShown ? "Scarecrow's Song" : "Bonooru's tune"}: your ${isRemake() ? `notes (up to ${max})` : `${max} notes`}</div>
+    ${title}
     <div class="scarecrow-sub">As young Link, play ${isRemake() ? `up to ${max}` : `any ${max}`} notes to Bonooru, the scarecrow at Lake Hylia, and record them here${songShown ? ". As adult Link, play the same notes to him again to lock the song in, then check off the Scarecrow's Song" : "; he'll remember them"}. ${isRemake() ? 'Shown as Switch 2 buttons (the default Normal ocarina controls).' : is3DS() ? 'Shown as 3DS buttons.' : 'Shown as N64 buttons.'}</div>
     <div class="sc-slots" id="scSlots">${slots}</div>
     <div class="sc-pad">${pad}
@@ -1512,8 +1549,8 @@ function saveScarecrow(notes) {
 // A number in the game's unit: cm on Switch 2, lb in the older versions.
 const fishUnit = () => (isRemake() ? 'cm' : 'lb');
 const fishShown = () => isShown(BY_ID['hp-lh-fishing']) || !!profiles[pid]?.biggestFish;
-const fishHTML = () => `<div class="fish">
-    <div class="scarecrow-title">Biggest fish</div>
+const fishHTML = () => isCollapsed('progress:fish') ? `<div class="fish">${secHead('progress:fish', 'Biggest fish', 'scarecrow-title')}</div>` : `<div class="fish">
+    ${secHead('progress:fish', 'Biggest fish', 'scarecrow-title')}
     <div class="scarecrow-sub">Your biggest catch at the Fishing Pond at Lake Hylia.</div>
     <form class="boss-form" data-fish-form>
       <input class="field" id="fishInput" name="f" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" value="${parseFloat(profiles[pid]?.biggestFish) || ''}" placeholder="e.g. ${isRemake() ? '56' : '10'}" aria-label="Biggest fish, in ${fishUnit()}">
@@ -1535,7 +1572,9 @@ function rewardsHTML() {
   const n = gsCount();
   const note = (r) => isRemake() && r.switch2Note;   // remake-only notes
   const notes = DATA.skulltulaRewards.filter((r) => note(r) && rewardShown(r)).map((r) => `⚠️ ${r.tokens}: ${esc(r.switch2Note)}`);
-  return `<div class="group-header"><span class="group-name">${svg('skulltula', 'ic ic-inline')} Skulltula rewards</span>${badge(n, 100)}</div>
+  const head = secHead('skulltulas:rewards', `<span class="group-name">${svg('skulltula', 'ic ic-inline')} Skulltula rewards</span>${badge(n, 100)}`);
+  if (isCollapsed('skulltulas:rewards')) return `<div class="group collapsed">${head}</div>`;
+  return `${head}
     <div class="rewards">${DATA.skulltulaRewards.map((r) => {
       const claimed = rewardClaimed(r), ready = n >= r.tokens && !claimed;
       if (claimed || ready) return `<label class="reward ${claimed ? 'earned' : 'ready'}"><input type="checkbox" data-check="${rewardClaimId(r)}"${claimed ? ' checked' : ''} aria-label="Claimed">
@@ -1577,12 +1616,11 @@ $('main').addEventListener('click', (e) => {
     render();
     return;
   }
-  if (e.target.closest('[data-statues]')) {
-    statuesOpen = !statuesOpen;
-    lsSet('oot.hall.statues', statuesOpen ? '1' : null);
-    render();
-    return;
-  }
+  // Fold a section (a hidden area's name still peeks), or fold/open every section on the tab.
+  const all = e.target.closest('[data-collapse-all]');
+  if (all && pid) { setCollapsed([...secKeys], all.dataset.collapseAll === 'fold'); return; }
+  const fold = !e.target.closest('[data-sarea]') && e.target.closest('[data-collapse]');
+  if (fold && pid) { setCollapsed([fold.dataset.collapse], !isCollapsed(fold.dataset.collapse)); return; }
   // Clearing a boss time (e.g. a typo, since only faster times replace it) takes two taps.
   const clr = e.target.closest('[data-clear-time]');
   if (clr) {
@@ -1624,7 +1662,6 @@ function parseTime(s) {
 }
 const fmtTime = (ms) => `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, '0')}.${String(Math.floor(ms / 10) % 100).padStart(2, '0')}`;
 const areaName = (id) => DATA.areas.find((a) => a.id === id)?.name || '';
-let statuesOpen = lsGet('oot.hall.statues') === '1';   // collapsed by default, remembered per device
 let confirmClearTime = null, clearTimeTimer = null;    // boss id armed to clear its time
 
 function renderHall() {
@@ -1655,18 +1692,20 @@ function renderHall() {
         <div class="card-info"><div class="card-name">${esc(f.name)}</div>
           ${f.variants.length ? `<div class="card-tags">${f.variants.map((v) => `<span class="tag">${esc(v)}</span>`).join('')}</div>` : ''}</div></div>
     </div>`).join('');
-  const head = `<div class="group">
-      <div class="group-header"><span class="group-name">${svg('hall', 'ic ic-inline')} ${hall ? 'Boss best times' : 'Boss Challenge best times'}</span>${badge(timed, list.length)}</div>
-      <div class="group-note">${hall ? 'Your fastest Hall of Fallen Foes rematch for each boss.'
+  const bossesOpen = !isCollapsed('hall:bosses');
+  const head = `<div class="group${bossesOpen ? '' : ' collapsed'}">
+      ${secHead('hall:bosses', `<span class="group-name">${svg('hall', 'ic ic-inline')} ${hall ? 'Boss best times' : 'Boss Challenge best times'}</span>${badge(timed, list.length)}`)}
+      ${bossesOpen ? `<div class="group-note">${hall ? 'Your fastest Hall of Fallen Foes rematch for each boss.'
         : "Your record time for each boss in the 3DS Boss Challenge (examine Link's bed), and for the Boss Gauntlet."} Type m:ss or m:ss.cs; a time only replaces your best when it's faster.</div>
-      <div class="card-grid">${bosses}</div>
+      <div class="card-grid">${bosses}</div>` : ''}
     </div>`;
   if (!hall) return head;   // the 3DS has no statues
+  const statuesOpen = !isCollapsed('hall:statues');   // collapsed by default
   return head + `
-    <div class="group">
-      <div class="group-header"><button class="group-toggle" data-statues aria-expanded="${statuesOpen}">${statuesOpen ? '▾' : '▸'} ${svg('wip', 'ic ic-inline')} Enemy statues</button><span class="group-badge">${DATA.statues.length}</span></div>
-      <div class="group-note">🚧 Under construction: built from the N64 enemy list and unconfirmed until the remake launches, so they can't be checked off yet.</div>
-      ${statuesOpen ? `<div class="card-grid">${statues}</div>` : ''}
+    <div class="group${statuesOpen ? '' : ' collapsed'}">
+      ${secHead('hall:statues', `<span class="group-name">${svg('wip', 'ic ic-inline')} Enemy statues</span><span class="group-badge">${DATA.statues.length}</span>`)}
+      ${statuesOpen ? `<div class="group-note">🚧 Under construction: built from the N64 enemy list and unconfirmed until the remake launches, so they can't be checked off yet.</div>
+      <div class="card-grid">${statues}</div>` : ''}
     </div>`;
 }
 
