@@ -915,7 +915,8 @@ function connect(user) {
   Promise.race([get(ref(_db, 'profiles')), timeout]).then(() => {
     _accessDenied = false;
     me = ALLOWED[user.email] || user.email;
-    return fetch('data.json').then((r) => r.json())
+    // no-cache: always check for a newer catalog (GitHub Pages otherwise lets it sit cached for 10 minutes)
+    return fetch('data.json', { cache: 'no-cache' }).then((r) => r.json())
       .then((data) => { DATA = data; startApp(); })
       .catch((e) => { console.error('data.json failed', e); say("Connected, but the catalog (data.json) didn't load.", true); show('retryBtn', true); });
   }).catch((err) => {
