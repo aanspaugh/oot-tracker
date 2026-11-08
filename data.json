@@ -6036,35 +6036,39 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
    "group": "overworld",
    "ootrLocation": "Kak GS Above Impas House",
+   "nameIn": {
+    "switch2": "Rock wall behind Impa's house"
+   },
    "howToIn": {
-    "switch2": "At night as adult Link, Hookshot up the vines to the left of Impa's House, then jump onto the roof."
+    "switch2": "At night as adult Link, go around the side of Impa's house (the big blue-roofed house on the south edge of the village) to the rock wall behind it, and climb its vines up to the roof. The Gold Skulltula is on the rock wall right beside the roof, not on the roof itself: Hookshot it, which also brings you the token."
    },
    "sourcesIn": {
     "switch2": [
+     "user-play",
+     "nintenduo-s2-gs",
      "nl-s2-gs",
-     "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "rpgsite-s2-gs"
     ]
    },
    "linksIn": {
     "switch2": [
      {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
       "label": "Nintendo Life (Switch 2)",
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
      },
      {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
-     },
-     {
-      "label": "Nintenduo (Switch 2)",
-      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
      },
      {
       "label": "Jegged",
