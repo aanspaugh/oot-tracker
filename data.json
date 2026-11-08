@@ -88,6 +88,14 @@
     "name": "RPG Site, \"The Legend of Zelda Ocarina of Time Remake - Gold Skulltula Locations Guide\"",
     "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
    },
+   "insider-s2-hp": {
+    "name": "Nintendo Insider, \"Zelda: Ocarina of Time remake Heart Piece locations guide\"",
+    "url": "https://www.nintendo-insider.com/zelda-ocarina-of-time-remake-heart-piece-locations-guide/"
+   },
+   "respec-s2-hp": {
+    "name": "Respec, \"Ocarina of Time Remake Pieces of Heart list: every location, including those moved for Switch 2\"",
+    "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
+   },
    "gamesgg-s2-gs": {
     "name": "games.gg, \"Ocarina of Time Remake Gold Skulltula Locations: All 100 and Rewards\" (cites Game8, TheGamer)",
     "url": "https://games.gg/the-legend-of-zelda-ocarina-of-time-2026/guides/ocarina-of-time-remake-gold-skulltula-locations-all-100-and-rewards/"
@@ -2841,7 +2849,37 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Kak Man on Roof"
+   "ootrLocation": "Kak Man on Roof",
+   "howToIn": {
+    "switch2": "As adult Link, go into the Potion Shop near the gate to Death Mountain Trail and take the back door behind the counter. From the back, look right to the roof where the man is sitting: the roof itself won't take the Hookshot, so aim it at the vines to pull yourself up. Talk to him for the Piece of Heart."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nl-s2-hp",
+     "thegamer-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-kak-skulltula-50",
@@ -3004,9 +3042,6 @@
    "icon": "heart",
    "map": null,
    "ootrLocation": "Kak Windmill Freestanding PoH",
-   "ageIn": {
-    "switch2": "adult"
-   },
    "howToIn": {
     "switch2": "Adult Link only now (young Link can't climb anything inside to get a Boomerang angle; first-hand 11/6, and no Switch 2 guide lists a young route). After winning the Hookshot in Dampé's race, follow the ruined stairs and Hookshot across the gap; you come out on the Windmill's upper floor. Ride the rotating platform around and jump to the Piece of Heart."
    },
@@ -3015,6 +3050,16 @@
      "ms-master-sword",
      "song-of-time",
      "hookshot"
+    ]
+   },
+   "ageIn": {
+    "switch2": "adult"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "insider-s2-hp",
+     "thegamer-s2-hp"
     ]
    },
    "linksIn": {
@@ -3416,9 +3461,6 @@
    "age": "young",
    "time": "any",
    "howTo": "Stand at the end of the log sticking out into the river; frogs pop up when you take out the Ocarina. Play the Song of Storms.",
-   "howToIn": {
-    "switch2": "Halfway up Zora's River, go into the small alcove off the north side (no log now); the five frogs sit on tree stumps. Play them the Song of Storms. The other early songs (Zelda's Lullaby, Epona's, Saria's, the Sun's Song, the Song of Time) only make a frog grow and give Rupees, but playing all of them opens the bug-catching game for the next Piece of Heart."
-   },
    "needs": [
     "ms-deku-tree",
     "bombs",
@@ -3444,7 +3486,37 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "ZR Frogs in the Rain"
+   "ootrLocation": "ZR Frogs in the Rain",
+   "howToIn": {
+    "switch2": "Halfway up Zora's River, go into the small alcove off the north side (no log now); the five frogs sit on tree stumps. Play them the Song of Storms. The other early songs (Zelda's Lullaby, Epona's, Saria's, the Sun's Song, the Song of Time) only make a frog grow and give Rupees, but playing all of them opens the bug-catching game for the next Piece of Heart."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "insider-s2-hp",
+     "thegamer-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Insider (Switch 2)",
+      "url": "https://www.nintendo-insider.com/zelda-ocarina-of-time-remake-heart-piece-locations-guide/"
+     },
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Zoras-River-Frogs"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-zr-frogs-game",
@@ -3934,6 +4006,13 @@
    "ootrLocation": "LH Child Fishing",
    "howToIn": {
     "switch2": "As young Link, catch a fish of at least 55 cm at the Fishing Pond and show it to the owner (a 56 cm fish earned it, first-hand 11/6)."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "insider-s2-hp",
+     "respec-s2-hp"
+    ]
    },
    "linksIn": {
     "switch2": [
