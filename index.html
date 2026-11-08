@@ -295,6 +295,8 @@
     .boss-form { display: flex; gap: 0.5rem; }
     .boss-form .field { flex: 1; min-width: 0; width: 0; }   /* no built-in input width, so 4 boss cards fit a 1280px row */
     .fish-unit { align-self: center; color: var(--text-muted); font-weight: 700; }
+    .fish-age { align-self: center; min-width: 6.2em; font-weight: 600; }
+    .fish .boss-form + .boss-form { margin-top: 0.5rem; }
     .item-card.static { cursor: default; }
     /* Collapsible sections: the header (or its ▾/▸) folds the section; the count stays visible */
     [data-collapse] { cursor: pointer; }
@@ -957,7 +959,7 @@ function startApp() {
   SKEYS.forEach((k, i) => SID.set(k, i));
   buildTabs();
   onValue(ref(_db, 'profiles'), (snap) => {
-    const mine = () => (pid ? JSON.stringify([profiles[pid]?.biggestFish, profiles[pid]?.collapsed]) : '');   // fish + folded sections
+    const mine = () => (pid ? JSON.stringify([profiles[pid]?.biggestFish, profiles[pid]?.biggestFishAdult, profiles[pid]?.collapsed]) : '');   // fish + folded sections
     const mode = shieldMode(), before = mine();
     profiles = snap.val() || {};
     ensureSelection();
@@ -1319,7 +1321,7 @@ function render() {
   if (t.id === 'notes') return renderNotes();
   // Don't wipe a boss time someone is typing when synced progress re-renders the tab.
   if (t.id === 'hall' && document.activeElement?.closest?.('#tab-hall input')) return;
-  if (t.id === 'progress' && document.activeElement?.id === 'fishInput') return;   // same for the biggest fish
+  if (t.id === 'progress' && document.activeElement?.id?.startsWith('fishInput')) return;   // same for the biggest fish
   secKeys = [];
   const body = t.id === 'hall' ? renderHall() : renderTab(t);
   $('tab-' + t.id).innerHTML = collapseAllBar() + body;
@@ -1548,25 +1550,33 @@ function saveScarecrow(notes) {
 // Biggest fish (11/6): free text on the profile (profiles/{pid}/biggestFish), not tied to the Fishing Pond
 // heart's check-off, since catching a fish and handing it in are separate. Shows with that heart, or once saved.
 // A number in the game's unit: cm on Switch 2, lb in the older versions.
+// 11/7 (user): one box per age, since the pond's fish differ (young: biggestFish, kept; adult: biggestFishAdult).
+// The adult box shows once the Master Sword milestone does (or an adult size is saved), like the Scarecrow text.
 const fishUnit = () => (isRemake() ? 'cm' : 'lb');
-const fishShown = () => isShown(BY_ID['hp-lh-fishing']) || !!profiles[pid]?.biggestFish;
-const fishHTML = () => isCollapsed('progress:fish') ? `<div class="fish">${secHead('progress:fish', 'Biggest fish', 'scarecrow-title')}</div>` : `<div class="fish">
-    ${secHead('progress:fish', 'Biggest fish', 'scarecrow-title')}
-    <div class="scarecrow-sub">Your biggest catch at the Fishing Pond at Lake Hylia.</div>
-    <form class="boss-form" data-fish-form>
-      <input class="field" id="fishInput" name="f" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" value="${parseFloat(profiles[pid]?.biggestFish) || ''}" placeholder="e.g. ${isRemake() ? '56' : '10'}" aria-label="Biggest fish, in ${fishUnit()}">
+const fishShown = () => isShown(BY_ID['hp-lh-fishing']) || !!profiles[pid]?.biggestFish || !!profiles[pid]?.biggestFishAdult;
+const fishAdultShown = () => isShown(BY_ID['ms-master-sword']) || !!profiles[pid]?.biggestFishAdult;
+const FISH_AGE = { biggestFish: ['Young Link', 'fishInput', '56'], biggestFishAdult: ['Adult Link', 'fishInputAdult', '60'] };
+const fishForm = (key) => { const [age, id, eg] = FISH_AGE[key]; return `
+    <form class="boss-form" data-fish-form="${key}">
+      <span class="fish-age">${age}</span>
+      <input class="field" id="${id}" name="f" type="number" inputmode="decimal" min="0" step="any" autocomplete="off" value="${parseFloat(profiles[pid]?.[key]) || ''}" placeholder="e.g. ${isRemake() ? eg : '10'}" aria-label="${age}'s biggest fish, in ${fishUnit()}">
       <span class="fish-unit">${fishUnit()}</span>
       <button class="act-btn primary">Save</button>
-    </form>
+    </form>`; };
+const fishHTML = () => isCollapsed('progress:fish') ? `<div class="fish">${secHead('progress:fish', 'Biggest fish', 'scarecrow-title')}</div>` : `<div class="fish">
+    ${secHead('progress:fish', 'Biggest fish', 'scarecrow-title')}
+    <div class="scarecrow-sub">Your biggest catch at the Fishing Pond at Lake Hylia${fishAdultShown() ? ', as young Link and as adult Link (the fish are different)' : ''}.</div>
+    ${fishForm('biggestFish')}${fishAdultShown() ? fishForm('biggestFishAdult') : ''}
   </div>`;
 $('main').addEventListener('submit', (e) => {
   if (!e.target.matches('[data-fish-form]') || !pid) return;
   e.preventDefault();
+  const key = e.target.dataset.fishForm, age = FISH_AGE[key][0];
   const input = e.target.elements.f, v = input.value.trim(), n = Number(v);
   if (v && !(n > 0)) { toast('Type the size as a number, e.g. 56', true); input.focus(); return; }
   input.blur();   // so the re-render after saving isn't held back for typing
-  update(ref(_db, `profiles/${pid}`), { biggestFish: v ? n : null })
-    .then(() => toast(v ? `Saved: ${n} ${fishUnit()}` : 'Cleared the biggest fish.')).catch(fail('save the fish'));
+  update(ref(_db, `profiles/${pid}`), { [key]: v ? n : null })
+    .then(() => toast(v ? `Saved ${age}: ${n} ${fishUnit()}` : `Cleared ${age}'s biggest fish.`)).catch(fail('save the fish'));
 });
 
 function rewardsHTML() {
