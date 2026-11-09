@@ -1418,7 +1418,7 @@ const soilBugGs = (id) => (id === 'soil-zr' && isRemake() ? 'gs-zr-tree' : SOIL_
 const bugBadge = (e) => progress[soilBugGs(e.id)]
   ? `<svg class="ic bug-badge" viewBox="0 0 32 32" role="img" aria-label="Bug Skulltula here: got it"><title>Bug Skulltula here: got it</title>${ICONS.bug}</svg>` : '';
 
-const AGE  = { young: 'Young Link', adult: 'Adult Link' };
+const AGE  = { young: 'Young Link', adult: 'Adult Link', 'adult-young': 'Adult, then Young Link' };
 const TIME = { night: '🌙 Night', day: '☀️ Day' };
 const isMQ = (e) => !!e.versions?.includes('mq') && !e.versions.includes('n64');   // Master Quest-only entries
 const entryTags = (e) => (isMQ(e) ? '<span class="tag mq-tag" title="Master Quest">MQ</span>' : '')

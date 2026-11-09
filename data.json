@@ -2440,7 +2440,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "heart",
    "map": null,
@@ -2450,7 +2450,7 @@
    },
    "howToIn": {
     "mq3ds": "In the fenced-in square by the Lake Hylia entrance (southeast Hyrule Field), set a Bomb in the middle to open a grotto. Buy the Piece of Heart from the Business Scrub inside for 10 Rupees.",
-    "switch2": "To the right of the drawbridge outside the Market, along the stone wall, bomb the cracked ground and drop in. The Business Scrub won't sell without a password. As adult Link, read the Fairy's Thought carved on the tree opposite the hole: the password is \"Sell somethin', will ya?\" Back as young Link, give him the password and pay 100 Rupees for the Piece of Heart."
+    "switch2": "Takes two trips: adult Link first, then young Link. The Business Scrub won't sell without a password, and you can't give it until you've read it in-game. 1) As adult Link, go to the right of the drawbridge outside the Market, along the stone wall, and read the Fairy's Thought carved on the tree opposite the cracked ground: it gives the password (\"Sell somethin', will ya?\"). 2) Back as young Link, bomb the cracked ground and drop in. Give the Scrub the password and pay 100 Rupees for the Piece of Heart."
    },
    "needsIn": {
     "switch2": [
@@ -2460,10 +2460,11 @@
     ]
    },
    "ageIn": {
-    "switch2": "young"
+    "switch2": "adult-young"
    },
    "sourcesIn": {
     "switch2": [
+     "user-play",
      "nl-s2-hp",
      "thegamer-s2-hp"
     ]
@@ -17417,7 +17418,7 @@
    "areaId": "hyrule-field",
    "age": "young",
    "time": "any",
-   "howTo": "In west Hyrule Field near the Gerudo Valley entrance, go under the big stone arch to a small chest in a shaded spot. As adult Link it's already open, and a Fairy's Thought on the wall says it was left unlocked. Return as young Link: the chest is now unlocked but still closed. Open it for the Piece of Heart.",
+   "howTo": "Takes two trips: adult Link first, then young Link. 1) As adult Link, go under the big stone arch in west Hyrule Field near the Gerudo Valley entrance to the small chest in a shaded spot. It's already open, and a Fairy's Thought on the wall says it was left unlocked; read it. 2) Back as young Link, the chest is now unlocked but still closed. Open it for the Piece of Heart. (Young Link can't open it until adult Link has been there.)",
    "needs": [
     "ms-deku-tree",
     "ms-master-sword"
@@ -17437,13 +17438,16 @@
     "thegamer-s2-hp"
    ],
    "fromSheet": false,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "heart",
    "map": null,
    "versions": [
     "switch2"
-   ]
+   ],
+   "ageIn": {
+    "switch2": "adult-young"
+   }
   },
   {
    "id": "hp-s2-dmc-scrub",
