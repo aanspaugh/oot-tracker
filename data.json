@@ -2459,6 +2459,16 @@
      "ms-master-sword"
     ]
    },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "bombs"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "bombs"
+    ]
+   },
    "ageIn": {
     "switch2": "adult-young"
    },
@@ -2555,6 +2565,28 @@
    ],
    "howToIn": {
     "mq3ds": "Bomb the ground beside the lone tree northeast of Lon Lon Ranch to open a grotto with a deep pool. Dive to the bottom with the Golden Scale, or sink with the Iron Boots."
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "bombs",
+     {
+      "any": [
+       "gold-scale",
+       "iron-boots"
+      ]
+     }
+    ],
+    "adult": [
+     "ms-master-sword",
+     "bombs",
+     {
+      "any": [
+       "gold-scale",
+       "iron-boots"
+      ]
+     }
+    ]
    }
   },
   {
@@ -2780,6 +2812,15 @@
    "howToIn": {
     "switch2": "Ride Kaepora Gaebora down from the top of Death Mountain Trail; he drops young Link on the roof of Impa's house. Look down at the stable: the Piece of Heart sits on the red roof with a cow under it. Jump down onto it. (Adult Link: the Hookshot onto the roofs worked in the original.)"
    },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "hookshot"
+    ]
+   },
    "sourcesIn": {
     "switch2": [
      "user-play",
@@ -2918,7 +2959,17 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Kak 50 Gold Skulltula Reward"
+   "ootrLocation": "Kak 50 Gold Skulltula Reward",
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "gs:50"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "gs:50"
+    ]
+   }
   },
   {
    "id": "hp-graveyard-dampe-dig",
@@ -3043,6 +3094,16 @@
      "ms-master-sword",
      "song-of-time",
      "hookshot"
+    ]
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "boomerang"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "song-of-time"
     ]
    },
    "ageIn": {
@@ -3183,6 +3244,26 @@
      }
     ]
    },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "suns-song"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "suns-song"
+    ]
+   },
+   "needsAgeIn": {
+    "switch2": {
+     "young": [
+      "ms-deku-tree"
+     ],
+     "adult": [
+      "ms-master-sword"
+     ]
+    }
+   },
    "sourcesIn": {
     "switch2": [
      "user-play",
@@ -3262,6 +3343,15 @@
     "switch2": [
      "ms-master-sword",
      "soil-dmt"
+    ]
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "ms-meet-zelda"
+    ],
+    "adult": [
+     "ms-master-sword"
     ]
    },
    "ageIn": {
@@ -3381,6 +3471,22 @@
    "ootrLocation": "DMC Wall Freestanding PoH",
    "howToIn": {
     "mq3ds": "Enter the crater from the top of Death Mountain (right of the owl). Walk off the north ledge so Link grabs the wall, and climb down to a small alcove with the Piece of Heart. Young Link can't stay in the heat long."
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "ms-meet-zelda",
+     "bombs"
+    ],
+    "adult": [
+     "ms-master-sword",
+     {
+      "any": [
+       "bombs",
+       "megaton-hammer"
+      ]
+     }
+    ]
    }
   },
   {
@@ -4004,7 +4110,17 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "LH Lab Dive"
+   "ootrLocation": "LH Lab Dive",
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "gold-scale"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "gold-scale"
+    ]
+   }
   },
   {
    "id": "hp-lh-fishing",
@@ -4117,6 +4233,14 @@
    "howToIn": {
     "switch2": "Holding the Cucco, jump off the cliff by the bridge and glide toward the big waterfall on the right, down to where a Gerudo tends a cow. Climb the path and take the stone stairs behind the waterfall to the Piece of Heart."
    },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree"
+    ],
+    "adult": [
+     "ms-master-sword"
+    ]
+   },
    "sourcesIn": {
     "switch2": [
      "nl-s2-hp",
@@ -4193,6 +4317,15 @@
    },
    "howToIn": {
     "switch2": "Pick up the Cucco to the left of the main bridge and glide across the ravine to the platform with a chest. Open it for the Piece of Heart."
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "longshot"
+    ]
    },
    "sourcesIn": {
     "switch2": [
@@ -4975,6 +5108,28 @@
      }
     ]
    },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "bombs",
+     "boomerang"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "bombs",
+     "hookshot"
+    ]
+   },
+   "needsAgeIn": {
+    "switch2": {
+     "young": [
+      "ms-deku-tree"
+     ],
+     "adult": [
+      "ms-master-sword"
+     ]
+    }
+   },
    "sourcesIn": {
     "switch2": [
      "nl-s2-gs",
@@ -5101,6 +5256,49 @@
       ]
      }
     ]
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "bombs",
+     "gf-dins-fire",
+     "gf-magic",
+     "boomerang"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "megaton-hammer",
+     "hookshot",
+     "gf-magic",
+     {
+      "any": [
+       "gf-dins-fire",
+       [
+        "fire-arrows",
+        "bow"
+       ]
+      ]
+     }
+    ]
+   },
+   "needsAgeIn": {
+    "switch2": {
+     "young": [
+      "ms-deku-tree",
+      "bombs",
+      "boomerang"
+     ],
+     "adult": [
+      "ms-master-sword",
+      {
+       "any": [
+        "bombs",
+        "megaton-hammer"
+       ]
+      },
+      "hookshot"
+     ]
+    }
    },
    "sourcesIn": {
     "switch2": [
@@ -6418,6 +6616,27 @@
    "howToIn": {
     "mq3ds": "Low on the trail, blow open the cracked wall on the left. The Gold Skulltula is on the wall behind it; the wall is climbable to reach the token.",
     "switch2": "Low on the trail near Kakariko Village, bomb the cracked wall. The Gold Skulltula is behind it."
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "ms-meet-zelda",
+     {
+      "any": [
+       "bombs",
+       "megaton-hammer"
+      ]
+     }
+    ],
+    "adult": [
+     "ms-master-sword",
+     {
+      "any": [
+       "bombs",
+       "megaton-hammer"
+      ]
+     }
+    ]
    },
    "sourcesIn": {
     "switch2": [
@@ -9328,6 +9547,42 @@
       ]
      }
     ]
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "ms-meet-zelda",
+     {
+      "any": [
+       "bombs",
+       "goron-bracelet"
+      ]
+     },
+     "boomerang"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "hookshot"
+    ]
+   },
+   "needsAgeIn": {
+    "switch2": {
+     "young": [
+      "ms-deku-tree",
+      "ms-meet-zelda",
+      {
+       "any": [
+        "bombs",
+        "goron-bracelet"
+       ]
+      },
+      "bombs"
+     ],
+     "adult": [
+      "ms-master-sword",
+      "bombs"
+     ]
+    }
    },
    "sourcesIn": {
     "switch2": [
@@ -12573,6 +12828,24 @@
    ],
    "howToIn": {
     "mq3ds": "In the room with the Poes and Bomb Flowers, open the door to the left of the entrance by bombing the bomb chain on the pillar in front of it. Defeat the enemies inside; the Gold Skulltula is high in a corner. Get it with the Boomerang (adult: Hookshot)."
+   },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "ms-meet-zelda",
+     {
+      "any": [
+       "bombs",
+       "goron-bracelet"
+      ]
+     },
+     "slingshot",
+     "boomerang"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "hookshot"
+    ]
    }
   },
   {
@@ -15229,6 +15502,20 @@
     "mq3ds": "In Zora's Fountain, swim to the small island in the southwest corner and bomb the boulder there. Play Zelda's Lullaby on the Triforce.",
     "switch2": "In Zora's Fountain, swim to the small island in the southeast corner and bomb the boulder there. Play Zelda's Lullaby on the Triforce and make the 100-Rupee offering for Farore's Wind."
    },
+   "needsAge": {
+    "young": [
+     "ms-deku-tree",
+     "bottle-ruto-letter",
+     "bombs",
+     "zeldas-lullaby"
+    ],
+    "adult": [
+     "ms-master-sword",
+     "ms-jabu-jabu",
+     "zeldas-lullaby",
+     "bombs"
+    ]
+   },
    "sourcesIn": {
     "switch2": [
      "nintenduo-s2-fairies",
@@ -15379,6 +15666,34 @@
    "howToIn": {
     "mq3ds": "In the Desert Colossus, bomb the cracked rock wall north of where you enter (northwest on the mini-map). Play Zelda's Lullaby on the Triforce.",
     "switch2": "In the Desert Colossus, bomb the cracked rock wall north of where you enter (northeast on the mini-map). Play Zelda's Lullaby on the Triforce and make the 300-Rupee offering for Nayru's Love."
+   },
+   "needsAge": {
+    "young": [
+     "requiem-of-spirit",
+     "bombs",
+     "zeldas-lullaby"
+    ],
+    "adult": [
+     "ms-master-sword",
+     {
+      "any": [
+       "requiem-of-spirit",
+       [
+        "gerudo-card",
+        "lens-of-truth",
+        "gf-magic",
+        {
+         "any": [
+          "hover-boots",
+          "longshot"
+         ]
+        }
+       ]
+      ]
+     },
+     "bombs",
+     "zeldas-lullaby"
+    ]
    },
    "sourcesIn": {
     "switch2": [

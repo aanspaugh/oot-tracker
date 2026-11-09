@@ -1088,6 +1088,7 @@ function applyVersionNames() {
     if (x.howToIn) { x.howTo0 ??= x.howTo; x.howTo = x.howToIn[v] || x.howTo0; }
     // Stage 5: what the Switch 2 remake changed (requirements, bottle order, Switch 2 guide links).
     if (x.needsIn) { x.needs0 ??= x.needs; x.needs = x.needsIn[v] || x.needs0; }
+    if (x.needsAgeIn) { if (!('needsAge0' in x)) x.needsAge0 = x.needsAge; x.needsAge = x.needsAgeIn[v] || x.needsAge0; }
     if (x.numIn) { x.num0 ??= x.num; x.num = x.numIn[v] ?? x.num0; }
     if (x.ageIn) { x.age0 ??= x.age; x.age = x.ageIn[v] || x.age0; }
     if (x.timeIn) { x.time0 ??= x.time; x.time = x.timeIn[v] || x.time0; }
@@ -1214,6 +1215,7 @@ const view = {
   gettable: lsGet('oot.f.gettable') === '1',
   hideDone: lsGet('oot.f.hideDone') === '1',
   time: ['day', 'night'].includes(lsGet('oot.f.time')) ? lsGet('oot.f.time') : 'any',
+  age: ['young', 'adult'].includes(lsGet('oot.f.age')) ? lsGet('oot.f.age') : 'any',   // round 4: Young/Adult Link filter
   hideAuto: lsGet('oot.f.hideAuto') === '1',   // Items & Equipment: hide the auto-checked rows
 };
 const search = {};   // tab id → text
@@ -1226,12 +1228,22 @@ const SORTS = {
 };
 const TIME_NEXT = { any: 'day', day: 'night', night: 'any' };
 const TIME_CHIP = { any: '🌗 Day & night', day: '☀️ Daytime now', night: '🌙 Nighttime now' };
+// Age filter (round 4, 2026-11-08): "what can I get as the Link I am right now". Cards that age can't get are
+// hidden, and an either-age card's gettable/lock check uses only that age's needs (`needsAge` from the build).
+// A two-trip card ("Adult, then Young Link") counts as young: that's the trip that collects it.
+const AGE_NEXT = { any: 'young', young: 'adult', adult: 'any' };
+const AGE_CHIP = { any: '👥 Any age', young: '🧒 Young Link now', adult: '🗡️ Adult Link now' };
+const AGE_TABS = new Set(['hearts', 'skulltulas', 'gear', 'world']);
+const ageMode = () => (AGE_TABS.has(currentTab) ? view.age : 'any');
+const ageFits = (e, m) => e.age === m || (e.age === 'adult-young' && m === 'young')
+  || (e.age === 'either' && (!e.needsAge || e.needsAge[m] != null));
+const ageNeeds = (e) => (ageMode() !== 'any' && e.age === 'either' && e.needsAge?.[ageMode()]) || e.needs;
 const groupedTab = (t) => t.id === 'hearts' || t.id === 'skulltulas';
 const viewMode = (t) => (lsGet('oot.view.' + t.id) === 'num' ? 'num' : 'area');
 
 // A mask's next step: borrow it (its `reach`), then sell it (`needs`).
 const toBorrow = (e) => !!e.borrow && !isDone(e.borrow.id);
-const nextNeeds = (e) => (toBorrow(e) ? e.borrow.needs : e.needs);
+const nextNeeds = (e) => (toBorrow(e) ? e.borrow.needs : ageNeeds(e));
 const gettable = (e) => !e.readOnly && met(nextNeeds(e));
 const shownGettable = (e) => isShown(e) && gettable(e);
 // The unmet parts of a requirement, following the closest alternative of each {any}.
@@ -1259,6 +1271,8 @@ function visible(e, t) {
   if (view.gettable && shieldMode() !== 'discovery' && t.id !== 'progress' && !isDone(e.id) && !gettable(e)) return false;
   // A shielded card ignores the time chip, so it can't give away its time of day.
   if (t.id === 'skulltulas' && view.time !== 'any' && e.time !== 'any' && e.time !== view.time && isShown(e)) return false;
+  // Same for the age chip: a shielded card's age is hidden, so the chip mustn't give it away.
+  if (ageMode() !== 'any' && isShown(e) && !ageFits(e, ageMode())) return false;
   return matches(e, t);
 }
 
@@ -1274,6 +1288,7 @@ function renderControls() {
   $('headerFilters').innerHTML =
     (t.id !== 'progress' && shieldMode() !== 'discovery' ? chip('gettable', '✨ Gettable now', view.gettable) : '')
     + chip('hideDone', '✓ Hide done', view.hideDone)
+    + (AGE_TABS.has(t.id) ? chip('age', AGE_CHIP[view.age], view.age !== 'any') : '')
     + (t.id === 'skulltulas' ? chip('time', TIME_CHIP[view.time], view.time !== 'any') : '')
     + shieldChip;
   const sort = sortBy[t.id] || 'num';
@@ -1289,10 +1304,11 @@ $('headerFilters').addEventListener('click', (e) => {
   const k = e.target.closest('[data-chip]')?.dataset.chip;
   if (!k) return;
   if (k === 'shield') { openProfileSheet(); $('shieldOpts')?.scrollIntoView({ block: 'nearest' }); return; }
-  if (k === 'time') view.time = TIME_NEXT[view.time]; else view[k] = !view[k];
+  if (k === 'time') view.time = TIME_NEXT[view.time]; else if (k === 'age') view.age = AGE_NEXT[view.age]; else view[k] = !view[k];
   lsSet('oot.f.gettable', view.gettable ? '1' : null);
   lsSet('oot.f.hideDone', view.hideDone ? '1' : null);
   lsSet('oot.f.time', view.time === 'any' ? null : view.time);
+  lsSet('oot.f.age', view.age === 'any' ? null : view.age);
   renderControls();
   render();
 });
