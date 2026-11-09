@@ -753,29 +753,9 @@
    ]
   },
   {
-   "id": "giants-knife",
-   "name": "Giant's Knife",
-   "order": 24,
-   "links": [
-    {
-     "label": "Jegged",
-     "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/18-Traveling-to-Death-Mountain.html"
-    }
-   ],
-   "sources": [
-    "jegged",
-    "gamewith",
-    "ootr"
-   ],
-   "switch2": "unverified",
-   "reach": [
-    "ms-master-sword"
-   ]
-  },
-  {
    "id": "lens-of-truth",
    "name": "Lens of Truth",
-   "order": 25,
+   "order": 24,
    "links": [
     {
      "label": "Jegged",
@@ -812,7 +792,7 @@
   {
    "id": "megaton-hammer",
    "name": "Megaton Hammer",
-   "order": 26,
+   "order": 25,
    "links": [
     {
      "label": "Jegged",
@@ -878,7 +858,7 @@
   {
    "id": "enhanced-magic",
    "name": "Enhanced Magic Meter",
-   "order": 27,
+   "order": 26,
    "links": [
     {
      "label": "Jegged",
@@ -897,7 +877,7 @@
   {
    "id": "iron-boots",
    "name": "Iron Boots",
-   "order": 28,
+   "order": 27,
    "links": [
     {
      "label": "Jegged",
@@ -949,7 +929,7 @@
   {
    "id": "zora-tunic",
    "name": "Zora Tunic",
-   "order": 29,
+   "order": 28,
    "links": [
     {
      "label": "Jegged",
@@ -979,7 +959,7 @@
   {
    "id": "biggorons-sword",
    "name": "Biggoron's Sword",
-   "order": 30,
+   "order": 29,
    "links": [
     {
      "label": "Jegged",
@@ -998,7 +978,7 @@
   {
    "id": "longshot",
    "name": "Longshot",
-   "order": 31,
+   "order": 30,
    "links": [
     {
      "label": "Jegged",
@@ -1037,7 +1017,7 @@
   {
    "id": "fire-arrows",
    "name": "Fire Arrows",
-   "order": 32,
+   "order": 31,
    "links": [
     {
      "label": "Jegged",
@@ -1059,7 +1039,7 @@
   {
    "id": "hover-boots",
    "name": "Hover Boots",
-   "order": 33,
+   "order": 32,
    "links": [
     {
      "label": "Jegged",
@@ -1113,7 +1093,7 @@
   {
    "id": "gerudo-card",
    "name": "Gerudo's Membership Card",
-   "order": 34,
+   "order": 33,
    "links": [
     {
      "label": "Jegged",
@@ -1139,7 +1119,7 @@
   {
    "id": "ice-arrows",
    "name": "Ice Arrows",
-   "order": 35,
+   "order": 34,
    "links": [
     {
      "label": "Jegged",
@@ -1246,7 +1226,7 @@
   {
    "id": "nayrus-love",
    "name": "Nayru's Love",
-   "order": 36,
+   "order": 35,
    "links": [
     {
      "label": "Jegged",
@@ -1265,7 +1245,7 @@
   {
    "id": "silver-gauntlets",
    "name": "Silver Gauntlets",
-   "order": 37,
+   "order": 36,
    "links": [
     {
      "label": "Jegged",
@@ -1299,7 +1279,7 @@
   {
    "id": "mirror-shield",
    "name": "Mirror Shield",
-   "order": 38,
+   "order": 37,
    "links": [
     {
      "label": "Jegged",
@@ -1346,7 +1326,7 @@
   {
    "id": "light-arrows",
    "name": "Light Arrows",
-   "order": 39,
+   "order": 38,
    "links": [
     {
      "label": "Jegged",
@@ -1368,7 +1348,7 @@
   {
    "id": "golden-gauntlets",
    "name": "Golden Gauntlets",
-   "order": 40,
+   "order": 39,
    "links": [
     {
      "label": "Jegged",
@@ -1419,7 +1399,7 @@
   {
    "id": "enhanced-defense",
    "name": "Enhanced Defense",
-   "order": 41,
+   "order": 40,
    "links": [
     {
      "label": "Jegged",
