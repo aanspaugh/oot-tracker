@@ -111,6 +111,18 @@
    "zeldacentral-s2": {
     "name": "Zelda Central, \"Ocarina of Time Remake: Changes From the Original\"",
     "url": "https://zeldacentral.com/games/ocarina-of-time-remake/changes-from-the-original/"
+   },
+   "thegamer-s2-bp": {
+    "name": "TheGamer, \"Let's Find All The Big Poes In The Legend Of Zelda: Ocarina Of Time Remake\" (2026-11-05)",
+    "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+   },
+   "gamerant-s2-bp": {
+    "name": "Game Rant, \"All Big Poe Locations in Ocarina of Time Remake\"",
+    "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+   },
+   "zeldacentral-s2-bp": {
+    "name": "Zelda Central, \"Big Poes - Zelda: Ocarina of Time Remake Guide\"",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
    }
   }
  },
@@ -16265,6 +16277,49 @@
     },
     "n": 1,
     "mapMatch": "clear"
+   },
+   "nameIn": {
+    "switch2": "Wall behind the Hyrule sign"
+   },
+   "howToIn": {
+    "switch2": "Just outside the Market drawbridge, on the road toward Lon Lon Ranch: jump the wall behind the stone Hyrule sign. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16316,6 +16371,49 @@
     },
     "n": 2,
     "mapMatch": "clear"
+   },
+   "nameIn": {
+    "switch2": "Along the castle moat"
+   },
+   "howToIn": {
+    "switch2": "Right of the drawbridge as you leave the Market, along the moat. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16368,8 +16466,49 @@
     "n": 3,
     "mapMatch": "clear"
    },
+   "nameIn": {
+    "switch2": "Lantern fence at the ranch entrance"
+   },
    "howToIn": {
-    "mq3ds": "Under the fenced cliff in northwest Hyrule Field, by the river near the Kakariko Village entrance. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
+    "mq3ds": "Under the fenced cliff in northwest Hyrule Field, by the river near the Kakariko Village entrance. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance).",
+    "switch2": "The fence with the glowing purple lantern by Lon Lon Ranch's entrance. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16411,7 +16550,7 @@
     "gamewith"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "bigpoe",
    "map": {
@@ -16421,6 +16560,50 @@
     },
     "n": 4,
     "mapMatch": "best match"
+   },
+   "nameIn": {
+    "switch2": "Fallen tree trunk east of the ranch"
+   },
+   "howToIn": {
+    "switch2": "The big overturned tree trunk on Lon Lon Ranch's east side. It's hard to clear in the tight space, so come at it from the south. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16473,8 +16656,49 @@
     "n": 5,
     "mapMatch": "clear"
    },
+   "nameIn": {
+    "switch2": "Low stone wall below Gerudo Valley"
+   },
    "howToIn": {
-    "mq3ds": "Ride close alongside the stone wall west of Lon Lon Ranch. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
+    "mq3ds": "Ride close alongside the stone wall west of Lon Lon Ranch. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance).",
+    "switch2": "East of the slope up to Gerudo Valley's entrance, a short glowing stone wall. A big flock of birds attacks here. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16526,6 +16750,49 @@
     },
     "n": 6,
     "mapMatch": "best match"
+   },
+   "nameIn": {
+    "switch2": "Fallen tree by the giant rock"
+   },
+   "howToIn": {
+    "switch2": "On a hill between Lon Lon Ranch and Gerudo Valley, an overturned tree next to a massive rock. It's under the same birds, so finish the Poe off away from them. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16577,6 +16844,49 @@
     },
     "n": 7,
     "mapMatch": "best match"
+   },
+   "nameIn": {
+    "switch2": "Lantern branch in the woods south of the ranch"
+   },
+   "howToIn": {
+    "switch2": "In the Deku Scrub woods just south of Lon Lon Ranch, by the ranch fence: jump the fallen branch with a lantern hanging off it. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16629,8 +16939,49 @@
     "n": 8,
     "mapMatch": "best match"
    },
+   "nameIn": {
+    "switch2": "Fallen tree in the Lake Hylia wetlands"
+   },
    "howToIn": {
-    "mq3ds": "At the fork in the road in southeast Hyrule Field (the north–south trail by the Gerudo Valley entrance). Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
+    "mq3ds": "At the fork in the road in southeast Hyrule Field (the north–south trail by the Gerudo Valley entrance). Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance).",
+    "switch2": "East of the road down to Lake Hylia, an overturned tree in the wetlands. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16683,8 +17034,49 @@
     "n": 9,
     "mapMatch": "best match"
    },
+   "nameIn": {
+    "switch2": "Stream west of Kokiri Forest"
+   },
    "howToIn": {
-    "mq3ds": "Ride past the lone tree on the eastern edge of the field, near the Gerudo Valley entrance. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
+    "mq3ds": "Ride past the lone tree on the eastern edge of the field, near the Gerudo Valley entrance. Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance).",
+    "switch2": "West of the Kokiri Forest entrance. Come from the north with room to chase: Epona won't jump parts of the small stream, so it can get away to the north. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16737,8 +17129,49 @@
     "n": 10,
     "mapMatch": "clear"
    },
+   "nameIn": {
+    "switch2": "Broken lantern wall on the hill"
+   },
    "howToIn": {
-    "mq3ds": "In the tall grass by the water's edge in northeast Hyrule Field (the river east of the castle). Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance)."
+    "mq3ds": "In the tall grass by the water's edge in northeast Hyrule Field (the river east of the castle). Big Poes only appear while you're riding Epona: hit it with two arrows, then catch it in an empty bottle and sell it at the Ghost Shop (the guard house by the Market entrance).",
+    "switch2": "Just west of #9, on the hill toward Lon Lon Ranch: a long stone wall ends in a broken section with a lantern. Jump that section. Jump Epona over the spot wrapped in purple mist to make the Big Poe appear; it runs. Hit it twice with arrows from the saddle, then hop off and catch its soul in an empty bottle. If it gets away, jump the same spot again. Sell it at the Ghost Shop (the guard house by the Market entrance)."
+   },
+   "mapIn": {
+    "switch2": null
+   },
+   "areaIn": {
+    "switch2": ""
+   },
+   "sourcesIn": {
+    "switch2": [
+     "thegamer-s2-bp",
+     "gamerant-s2-bp",
+     "zeldacentral-s2-bp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "TheGamer (Switch 2)",
+      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-big-poe-locations-collector-empty-bottle-remake-guide/"
+     },
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/zelda-ocarina-of-time-remake-big-poe-locations-oot-switch-2/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Bottles.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76392"
+     }
+    ]
    }
   },
   {
@@ -16905,7 +17338,7 @@
     "switch2": "Ghost Shop: 5 Big Poes"
    },
    "howToIn": {
-    "switch2": "Sell Big Poes at the Ghost Shop (the guard house by the Market entrance): 100 points each. At 500 points (the 5th one), the shopkeeper gives you an empty bottle."
+    "switch2": "Sell Big Poes at the Ghost Shop (the guard house by the Market entrance): 100 points each. At 500 points (the 5th one), the shopkeeper gives you an empty bottle. All 10 (1,000 points) also earn a Gold Rupee (200 Rupees)."
    },
    "numIn": {
     "switch2": 5

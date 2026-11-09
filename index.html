@@ -1092,6 +1092,9 @@ function applyVersionNames() {
     if (x.ageIn) { x.age0 ??= x.age; x.age = x.ageIn[v] || x.age0; }
     if (x.timeIn) { x.time0 ??= x.time; x.time = x.timeIn[v] || x.time0; }
     if (x.linksIn) { x.links0 ??= x.links; x.links = x.linksIn[v] || x.links0; }
+    // Round 4: Switch 2 Big Poes have no map and no area line (null map / '' area there).
+    if (x.mapIn) { if (!('map0' in x)) x.map0 = x.map; x.map = v in x.mapIn ? x.mapIn[v] : x.map0; }
+    if (x.areaIn) { if (!('area0' in x)) x.area0 = x.area; x.area = v in x.areaIn ? x.areaIn[v] : x.area0; }
     if (x.map?.imageIn) { x.map.image0 ??= x.map.image; x.map.image = x.map.imageIn[v] || x.map.image0; }
   }
   for (const r of DATA.skulltulaRewards) if (r.rewardIn) { r.reward0 ??= r.reward; r.reward = r.rewardIn[v] || r.reward0; }
