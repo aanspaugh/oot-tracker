@@ -1230,12 +1230,13 @@ const TIME_NEXT = { any: 'day', day: 'night', night: 'any' };
 const TIME_CHIP = { any: '🌗 Day & night', day: '☀️ Daytime now', night: '🌙 Nighttime now' };
 // Age filter (round 4, 2026-11-08): "what can I get as the Link I am right now". Cards that age can't get are
 // hidden, and an either-age card's gettable/lock check uses only that age's needs (`needsAge` from the build).
-// A two-trip card ("Adult, then Young Link") counts as young: that's the trip that collects it.
+// A two-trip card counts as the age of its second trip, the one that collects it: "Adult, then Young Link" is young,
+// "Young, then Adult Link" (round 5) is adult.
 const AGE_NEXT = { any: 'young', young: 'adult', adult: 'any' };
 const AGE_CHIP = { any: '👥 Any age', young: '🧒 Young Link now', adult: '🗡️ Adult Link now' };
 const AGE_TABS = new Set(['hearts', 'skulltulas', 'gear', 'world']);
 const ageMode = () => (AGE_TABS.has(currentTab) ? view.age : 'any');
-const ageFits = (e, m) => e.age === m || (e.age === 'adult-young' && m === 'young')
+const ageFits = (e, m) => e.age === m || (e.age === 'adult-young' && m === 'young') || (e.age === 'young-adult' && m === 'adult')
   || (e.age === 'either' && (!e.needsAge || e.needsAge[m] != null));
 const ageNeeds = (e) => (ageMode() !== 'any' && e.age === 'either' && e.needsAge?.[ageMode()]) || e.needs;
 const groupedTab = (t) => t.id === 'hearts' || t.id === 'skulltulas';
@@ -1434,7 +1435,7 @@ const soilBugGs = (id) => (id === 'soil-zr' && isRemake() ? 'gs-zr-tree' : SOIL_
 const bugBadge = (e) => progress[soilBugGs(e.id)]
   ? `<svg class="ic bug-badge" viewBox="0 0 32 32" role="img" aria-label="Bug Skulltula here: got it"><title>Bug Skulltula here: got it</title>${ICONS.bug}</svg>` : '';
 
-const AGE  = { young: 'Young Link', adult: 'Adult Link', 'adult-young': 'Adult, then Young Link' };
+const AGE  = { young: 'Young Link', adult: 'Adult Link', 'adult-young': 'Adult, then Young Link', 'young-adult': 'Young, then Adult Link' };
 const TIME = { night: '🌙 Night', day: '☀️ Day' };
 const isMQ = (e) => !!e.versions?.includes('mq') && !e.versions.includes('n64');   // Master Quest-only entries
 const entryTags = (e) => (isMQ(e) ? '<span class="tag mq-tag" title="Master Quest">MQ</span>' : '')

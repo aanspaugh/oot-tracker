@@ -2450,7 +2450,7 @@
    },
    "howToIn": {
     "mq3ds": "In the fenced-in square by the Lake Hylia entrance (southeast Hyrule Field), set a Bomb in the middle to open a grotto. Buy the Piece of Heart from the Business Scrub inside for 10 Rupees.",
-    "switch2": "Takes two trips: adult Link first, then young Link. The Business Scrub won't sell without a password, and you can't give it until you've read it in-game. 1) As adult Link, go to the right of the drawbridge outside the Market, along the stone wall, and read the Fairy's Thought carved on the tree opposite the cracked ground: it gives the password (\"Sell somethin', will ya?\"). 2) Back as young Link, bomb the cracked ground and drop in. Give the Scrub the password and pay 100 Rupees for the Piece of Heart."
+    "switch2": "Takes two trips: adult Link first, then young Link. The Business Scrub won't sell without a password, and you can't give it until you've read it in-game. 1) As adult Link, go to the right of the drawbridge outside the Market, along the stone wall, and read the Fairy Thought carved on the tree opposite the cracked ground: it gives the password (\"Sell somethin', will ya?\"). 2) Back as young Link, bomb the cracked ground and drop in. Give the Scrub the password and pay 100 Rupees for the Piece of Heart."
    },
    "needsIn": {
     "switch2": [
@@ -3176,7 +3176,39 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Graveyard Freestanding PoH"
+   "ootrLocation": "Graveyard Freestanding PoH",
+   "howToIn": {
+    "switch2": "Takes two trips: young Link first, then adult Link. 1) As young Link, plant a Magic Bean in the Graveyard's soft soil (on the left as you come in). 2) As adult Link, ride the plant up to the high ledge on the north side and roll into the crate for the Piece of Heart."
+   },
+   "ageIn": {
+    "switch2": "young-adult"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "respec-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-graveyard-suns-song",
@@ -3337,7 +3369,7 @@
    "map": null,
    "ootrLocation": "DMT Freestanding PoH",
    "howToIn": {
-    "switch2": "As young Link, plant a Magic Bean in the soft soil by the Dodongo's Cavern entrance (once its boulder is cleared). As adult Link, ride the plant up to the Piece of Heart on top of the cavern entrance. In the remake you can't drop onto it as young Link any more."
+    "switch2": "Takes two trips: young Link first, then adult Link. 1) As young Link, plant a Magic Bean in the soft soil by the Dodongo's Cavern entrance (once its boulder is cleared). 2) As adult Link, ride the plant up to the Piece of Heart on top of the cavern entrance. In the remake you can't drop onto it as young Link any more."
    },
    "needsIn": {
     "switch2": [
@@ -3355,12 +3387,13 @@
     ]
    },
    "ageIn": {
-    "switch2": "adult"
+    "switch2": "young-adult"
    },
    "sourcesIn": {
     "switch2": [
      "user-play",
-     "nl-s2-hp"
+     "nl-s2-hp",
+     "respec-s2-hp"
     ]
    },
    "linksIn": {
@@ -3368,6 +3401,10 @@
      {
       "label": "Nintendo Life (Switch 2)",
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
      },
      {
       "label": "Jegged",
@@ -3416,7 +3453,39 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "DMC Volcano Freestanding PoH"
+   "ootrLocation": "DMC Volcano Freestanding PoH",
+   "howToIn": {
+    "switch2": "Takes two trips: young Link first, then adult Link. 1) As young Link, warp to the crater with the Bolero of Fire and plant a Magic Bean in the soft soil beside the warp point (the heat drains your health, so be quick). 2) As adult Link, wearing the Goron Tunic, warp back and ride the plant up to the Piece of Heart on the peak."
+   },
+   "ageIn": {
+    "switch2": "young-adult"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "respec-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Death-Mountain-Crater-Magic-Bean-Plant"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-dmc-wall",
@@ -4064,7 +4133,39 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "LH Freestanding PoH"
+   "ootrLocation": "LH Freestanding PoH",
+   "howToIn": {
+    "switch2": "Takes two trips: young Link first, then adult Link. 1) As young Link, plant a Magic Bean in the soft soil beside the Lakeside Laboratory. 2) As adult Link, ride the plant around the lake up to the lab roof and climb to the Piece of Heart. Adult-only shortcut (skip trip 1): summon Pierre with the Scarecrow's Song and Hookshot up to him."
+   },
+   "ageIn": {
+    "switch2": "young-adult"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "respec-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Lake-Hylia-Magic-Bean-Plant"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-lh-lab-dive",
@@ -4498,7 +4599,39 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Colossus Freestanding PoH"
+   "ootrLocation": "Colossus Freestanding PoH",
+   "howToIn": {
+    "switch2": "Takes two trips: young Link first, then adult Link. 1) As young Link (Requiem of Spirit), plant a Magic Bean in the soft soil in front of the Spirit Temple. 2) As adult Link, ride the plant and jump onto the stone arch when it passes over for the Piece of Heart."
+   },
+   "ageIn": {
+    "switch2": "young-adult"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "respec-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Desert-Colossus"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "gs-kf-know-it-all",
@@ -4928,13 +5061,17 @@
    "group": "overworld",
    "ootrLocation": "LW GS Above Theater",
    "howToIn": {
-    "switch2": "As young Link, plant a Magic Bean in the soft soil by the two Business Scrubs (right, left, right, left, left). As adult Link (past Mido with Saria's Song), ride the plant up to the Gold Skulltula."
+    "switch2": "Takes two trips: young Link first, then adult Link. 1) As young Link, plant a Magic Bean in the soft soil by the two Business Scrubs (right, left, right, left, left). 2) As adult Link (past Mido with Saria's Song), ride the plant up to the Gold Skulltula."
+   },
+   "ageIn": {
+    "switch2": "young-adult"
    },
    "sourcesIn": {
     "switch2": [
      "nl-s2-gs",
      "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
     ]
    },
    "linksIn": {
@@ -4950,6 +5087,10 @@
      {
       "label": "Nintenduo (Switch 2)",
       "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
      },
      {
       "label": "Jegged",
@@ -8866,13 +9007,17 @@
    "group": "overworld",
    "ootrLocation": "Colossus GS Hill",
    "howToIn": {
-    "switch2": "Plant a Magic Bean in the soft soil by the Spirit Temple as young Link. At night as adult Link, ride the plant until it reaches the platform with the Gold Skulltula (or Longshot up)."
+    "switch2": "Takes two trips: young Link first, then adult Link. 1) As young Link, plant a Magic Bean in the soft soil by the Spirit Temple. 2) At night as adult Link, ride the plant until it reaches the platform with the Gold Skulltula. Adult-only shortcut (skip trip 1): Longshot up to the platform (this worked in the original; the Switch 2 guides only show the bean plant)."
+   },
+   "ageIn": {
+    "switch2": "young-adult"
    },
    "sourcesIn": {
     "switch2": [
      "nl-s2-gs",
      "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "nintenduo-s2-gs",
+     "rpgsite-s2-gs"
     ]
    },
    "linksIn": {
@@ -8888,6 +9033,10 @@
      {
       "label": "Nintenduo (Switch 2)",
       "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
      },
      {
       "label": "Jegged",
@@ -17733,7 +17882,7 @@
    "areaId": "hyrule-field",
    "age": "young",
    "time": "any",
-   "howTo": "Takes two trips: adult Link first, then young Link. 1) As adult Link, go under the big stone arch in west Hyrule Field near the Gerudo Valley entrance to the small chest in a shaded spot. It's already open, and a Fairy's Thought on the wall says it was left unlocked; read it. 2) Back as young Link, the chest is now unlocked but still closed. Open it for the Piece of Heart. (Young Link can't open it until adult Link has been there.)",
+   "howTo": "Takes two trips: adult Link first, then young Link. 1) As adult Link, go under the big stone arch in west Hyrule Field near the Gerudo Valley entrance to the small chest in a shaded spot. It's already open, and a Fairy Thought on the wall says it was left unlocked; read it. 2) Back as young Link, the chest is now unlocked but still closed. Open it for the Piece of Heart. (Young Link can't open it until adult Link has been there.)",
    "needs": [
     "ms-deku-tree",
     "ms-master-sword"
@@ -17805,12 +17954,12 @@
    "id": "gs-s2-hf-marsh-grotto",
    "category": "skulltula",
    "num": 11,
-   "name": "Gossip Stone grotto crate (young, then adult)",
+   "name": "Gossip Stone grotto crate",
    "area": "Hyrule Field",
    "areaId": "hyrule-field",
    "age": "adult",
    "time": "any",
-   "howTo": "Southeast of Lon Lon Ranch, next to a small pond before the path down to Lake Hylia, bomb the cracked ground inside the ring of bushes to open a grotto with a Gossip Stone. As young Link, defeat the ordinary Skulltula on the wall (a Fairy's Thought there hints at the rest). Come back as adult Link and roll into the wooden crate: the Gold Skulltula comes out.",
+   "howTo": "Takes two trips: young Link first, then adult Link. Southeast of Lon Lon Ranch, next to a small pond before the path down to Lake Hylia, bomb the cracked ground inside the ring of bushes to open a grotto with a Gossip Stone. 1) As young Link, defeat the ordinary Skulltula on the wall (a Fairy Thought there hints at the rest). 2) Come back as adult Link and roll into the wooden crate: the Gold Skulltula comes out.",
    "needs": [
     "ms-master-sword",
     "bombs"
@@ -17839,7 +17988,10 @@
    "group": "overworld",
    "versions": [
     "switch2"
-   ]
+   ],
+   "ageIn": {
+    "switch2": "young-adult"
+   }
   }
  ],
  "skulltulaRewards": [
