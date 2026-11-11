@@ -11732,7 +11732,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -11744,12 +11744,19 @@
     "switch2"
    ],
    "howToIn": {
-    "switch2": "From the main room, take the northeast passage down to the lower room in the east. Defeat the Like Like and get the Gold Skulltula with the Boomerang."
+    "switch2": "From the main room, take the northeast passage through the door with the \"Watch your step!\" sign. That room has hidden holes in the floor: the Lens of Truth shows them, but you can cross without it if you know where to walk. Go on down to the lower room in the east, defeat the Like Like, and get the Gold Skulltula on the back wall with the Boomerang."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-deku-tree",
+     "song-of-storms",
+     "boomerang"
+    ]
    },
    "sourcesIn": {
     "switch2": [
+     "user-play",
      "nl-s2-gs",
-     "vgc-s2-gs",
      "nintenduo-s2-gs"
     ]
    },
@@ -11758,10 +11765,6 @@
      {
       "label": "Nintendo Life (Switch 2)",
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
-     },
-     {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
      },
      {
       "label": "Nintenduo (Switch 2)",
@@ -11898,7 +11901,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -11908,7 +11911,47 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "nameIn": {
+    "switch2": "Pit room"
+   },
+   "howToIn": {
+    "switch2": "Go through the false wall opposite the entrance into the central area and use a Small Key on the right-hand locked door. In the room with the Keese and the big pit, defeat the Keese; the Gold Skulltula is in a high corner next to a torch. Get it with the Boomerang. The Lens of Truth makes it easier to spot and to walk the rim, but you don't need it."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-deku-tree",
+     "song-of-storms",
+     "boomerang"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nl-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/19-Bottom-of-the-Well.html#Gold-Skulltula-62"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-shadow-invisible-blades",
