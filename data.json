@@ -11811,7 +11811,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -11821,7 +11821,49 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "howToIn": {
+    "switch2": "Go through the false wall opposite the entrance into the central area. A Small Key is in the western chamber: swim through the water, go through the door, and burn the coffin at the end of the room with a Deku Stick. Use the key on the left (west) locked door of the central area, defeat the Deku Baba, and get the Gold Skulltula (high on the wall above a candle niche) with the Boomerang. You don't need the Lens of Truth."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-deku-tree",
+     "song-of-storms",
+     "boomerang"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nl-s2-gs",
+     "rpgsite-s2-gs",
+     "nintenduo-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/19-Bottom-of-the-Well.html#Gold-Skulltula-63"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-botw-east-inner",
