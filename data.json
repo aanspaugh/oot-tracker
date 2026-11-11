@@ -799,6 +799,9 @@
      "zeldas-lullaby",
      "bombs"
     ]
+   },
+   "nameIn": {
+    "switch2": "Lenses of Truth"
    }
   },
   {
@@ -2104,45 +2107,9 @@
    ]
   },
   {
-   "id": "ms-bottom-of-the-well",
-   "category": "milestone",
-   "num": 10,
-   "name": "Bottom of the Well",
-   "area": null,
-   "areaId": null,
-   "age": "either",
-   "time": "any",
-   "howTo": "",
-   "needs": [],
-   "links": [
-    {
-     "label": "Jegged",
-     "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/"
-    },
-    {
-     "label": "GameWith",
-     "url": "https://gamewith.net/zelda-ocarina-of-time/76382"
-    }
-   ],
-   "sources": [
-    "jegged",
-    "gamewith",
-    "ootr"
-   ],
-   "fromSheet": true,
-   "switch2": "unverified",
-   "readOnly": false,
-   "icon": "milestone",
-   "map": null,
-   "reach": [
-    "ms-deku-tree",
-    "song-of-storms"
-   ]
-  },
-  {
    "id": "ms-shadow-temple",
    "category": "milestone",
-   "num": 11,
+   "num": 10,
    "name": "Shadow Temple",
    "area": null,
    "areaId": null,
@@ -2187,7 +2154,7 @@
   {
    "id": "ms-spirit-temple",
    "category": "milestone",
-   "num": 12,
+   "num": 11,
    "name": "Spirit Temple",
    "area": null,
    "areaId": null,
@@ -2247,7 +2214,7 @@
   {
    "id": "ms-gerudo-training-ground",
    "category": "milestone",
-   "num": 13,
+   "num": 12,
    "name": "Gerudo Training Ground",
    "area": null,
    "areaId": null,
@@ -2289,7 +2256,7 @@
   {
    "id": "ms-ganon",
    "category": "milestone",
-   "num": 14,
+   "num": 13,
    "name": "Beat Ganon",
    "area": null,
    "areaId": null,
@@ -2624,7 +2591,10 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Market Treasure Chest Game Reward"
+   "ootrLocation": "Market Treasure Chest Game Reward",
+   "howToIn": {
+    "switch2": "At night, play the Treasure Chest Game in the Market. Use the Lenses of Truth to see which chest holds each room's key; the chest in the last room holds the Piece of Heart."
+   }
   },
   {
    "id": "hp-market-bombchu-bowling",
@@ -7827,7 +7797,7 @@
    "ootrLocation": "ZF GS Hidden Cave",
    "howToIn": {
     "mq3ds": "At night, on the southwest island lift the grey boulder with the Silver Gauntlets, bomb open the hole beneath, and drop in. Follow the passage up the ladder and Hookshot the Gold Skulltula.",
-    "switch2": "At night as adult Link, lift the silver boulder in the southeast corner with the Silver Gauntlets and drop into the cave below. The Lens of Truth shows the invisible enemies; the Gold Skulltula is at the top. Hookshot it."
+    "switch2": "At night as adult Link, lift the silver boulder in the southeast corner with the Silver Gauntlets and drop into the cave below. The Lenses of Truth show the invisible enemies; the Gold Skulltula is at the top. Hookshot it."
    },
    "sourcesIn": {
     "switch2": [
@@ -11744,7 +11714,7 @@
     "switch2"
    ],
    "howToIn": {
-    "switch2": "From the main room, take the northeast passage through the door with the \"Watch your step!\" sign. That room has hidden holes in the floor: the Lens of Truth shows them, but you can cross without it if you know where to walk. Go on down to the lower room in the east, defeat the Like Like, and get the Gold Skulltula on the back wall with the Boomerang."
+    "switch2": "From the main room, take the northeast passage through the door with the \"Watch your step!\" sign. That room has hidden holes in the floor: the Lenses of Truth show them, but you can cross without them if you know where to walk. Go on down to the lower room in the east, defeat the Like Like, and get the Gold Skulltula on the back wall with the Boomerang."
    },
    "needsIn": {
     "switch2": [
@@ -11826,7 +11796,7 @@
     "switch2"
    ],
    "howToIn": {
-    "switch2": "Go through the false wall opposite the entrance into the central area. A Small Key is in the western chamber: swim through the water, go through the door, and burn the coffin at the end of the room with a Deku Stick. Use the key on the left (west) locked door of the central area, defeat the Deku Baba, and get the Gold Skulltula (high on the wall above a candle niche) with the Boomerang. You don't need the Lens of Truth."
+    "switch2": "Go through the false wall opposite the entrance into the central area. A Small Key is in the western chamber: swim through the water, go through the door, and burn the coffin at the end of the room with a Deku Stick. Use the key on the left (west) locked door of the central area, defeat the Deku Baba, and get the Gold Skulltula (high on the wall above a candle niche) with the Boomerang. You don't need the Lenses of Truth."
    },
    "needsIn": {
     "switch2": [
@@ -11916,7 +11886,7 @@
     "switch2": "Pit room"
    },
    "howToIn": {
-    "switch2": "Go through the false wall opposite the entrance into the central area and use a Small Key on the right-hand locked door. In the room with the Keese and the big pit, defeat the Keese; the Gold Skulltula is in a high corner next to a torch. Get it with the Boomerang. The Lens of Truth makes it easier to spot and to walk the rim, but you don't need it."
+    "switch2": "Go through the false wall opposite the entrance into the central area and use a Small Key on the right-hand locked door. In the room with the Keese and the big pit, defeat the Keese; the Gold Skulltula is in a high corner next to a torch. Get it with the Boomerang. The Lenses of Truth make it easier to spot and to walk the rim, but you don't need them."
    },
    "needsIn": {
     "switch2": [
@@ -12000,6 +11970,9 @@
     "3ds",
     "switch2"
    ],
+   "howToIn": {
+    "switch2": "In the round room with invisible spinning scythes (use the Lenses), defeat the enemies; the Gold Skulltula is on the wall. Hookshot/Longshot the token."
+   },
    "needsIn": {
     "switch2": [
      "ms-master-sword",
