@@ -10791,6 +10791,9 @@
     "3ds",
     "switch2"
    ],
+   "nameIn": {
+    "switch2": "Boulder room upper ledge (scarecrow route)"
+   },
    "howToIn": {
     "switch2": "In the boulder room, play the Scarecrow's Song where the swirl marks Pierre's spot, Hookshot up and ride the elevator. Climb the vines and grab the Gold Skulltula."
    },
@@ -10951,7 +10954,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -10963,25 +10966,16 @@
     "switch2"
    ],
    "howToIn": {
-    "switch2": "On the fifth floor, in the room where you get the Megaton Hammer, it's on the wall. Hookshot it."
+    "switch2": "Keep climbing the grate past the boulder room upper ledge Gold Skulltula and go through the door at the top. It opens into a high, round lava room with three chests ringed by fire. The Gold Skulltula is on the wall a few steps from the door, beside the lava. Hookshot it."
    },
    "sourcesIn": {
     "switch2": [
-     "nl-s2-gs",
-     "vgc-s2-gs",
+     "user-play",
      "nintenduo-s2-gs"
     ]
    },
    "linksIn": {
     "switch2": [
-     {
-      "label": "Nintendo Life (Switch 2)",
-      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
-     },
-     {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
-     },
      {
       "label": "Nintenduo (Switch 2)",
       "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
