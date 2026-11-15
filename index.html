@@ -1192,6 +1192,8 @@ function askPeek(keys, title = '🛡️ Show this spoiler?', note = 'It stays sh
 }
 const askAreaPeek = (i) => askPeek(areaCards(DATA.areas[i]).map((e) => e.id), '🛡️ Show this area?',
   'Every card in this area stays shown until you reload the app.');
+// Guided (11/14): an area's name also shows once you can get in (`entry`), even while every card there needs more.
+const areaOpen = (a) => shieldMode() === 'guided' && !!a.entry && met(a.entryIn?.[gameVer()] || a.entry);
 const areaCards = (a) => entriesIn(TABS.find((x) => x.id === currentTab).cats).filter((e) => e.areaId === a.id);
 $('peekYes').addEventListener('click', () => {
   for (const k of peekKeys) peeked.add(k);
@@ -1372,8 +1374,8 @@ function renderTab(t) {
     } else if (groupedTab(t)) {
       DATA.areas.forEach((a, i) => {
         const list = entriesIn(t.cats).filter((e) => e.areaId === a.id);
-        // An area's name stays hidden until one of its cards is shown; tapping it offers an area peek.
-        if (list.length) h += grp(a.id, list.some(isShown) ? esc(a.name) : `<span class="veil-area" data-sarea="${i}" tabindex="0" role="button" aria-label="Hidden area: tap to show">${
+        // An area's name stays hidden until one of its cards is shown, or (Guided) you can get in; tapping it offers an area peek.
+        if (list.length) h += grp(a.id, list.some(isShown) || areaOpen(a) ? esc(a.name) : `<span class="veil-area" data-sarea="${i}" tabindex="0" role="button" aria-label="Hidden area: tap to show">${
           veilText(a.id, a.name.length)}<span class="veil-hint">🛡️ Tap to peek</span></span>`, list);
       });
     } else {

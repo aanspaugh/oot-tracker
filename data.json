@@ -129,127 +129,405 @@
  "areas": [
   {
    "id": "kokiri-forest",
-   "name": "Kokiri Forest"
+   "name": "Kokiri Forest",
+   "entry": []
   },
   {
    "id": "lost-woods",
-   "name": "Lost Woods"
+   "name": "Lost Woods",
+   "entry": []
   },
   {
    "id": "sacred-forest-meadow",
-   "name": "Sacred Forest Meadow"
+   "name": "Sacred Forest Meadow",
+   "entry": []
   },
   {
    "id": "hyrule-field",
-   "name": "Hyrule Field"
+   "name": "Hyrule Field",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "market",
-   "name": "Hyrule Castle Market"
+   "name": "Hyrule Castle Market",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "hyrule-castle",
-   "name": "Hyrule Castle"
+   "name": "Hyrule Castle",
+   "entry": [
+    "ms-deku-tree"
+   ]
   },
   {
    "id": "outside-ganons-castle",
-   "name": "Outside Ganon's Castle"
+   "name": "Outside Ganon's Castle",
+   "entry": [
+    "ms-master-sword"
+   ]
   },
   {
    "id": "lon-lon-ranch",
-   "name": "Lon Lon Ranch"
+   "name": "Lon Lon Ranch",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "kakariko",
-   "name": "Kakariko Village"
+   "name": "Kakariko Village",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "graveyard",
-   "name": "Graveyard"
+   "name": "Graveyard",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "death-mountain-trail",
-   "name": "Death Mountain Trail"
+   "name": "Death Mountain Trail",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree",
+      "ms-meet-zelda"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "goron-city",
-   "name": "Goron City"
+   "name": "Goron City",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree",
+      "ms-meet-zelda"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "death-mountain-crater",
-   "name": "Death Mountain Crater"
+   "name": "Death Mountain Crater",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree",
+      "ms-meet-zelda"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "zoras-river",
-   "name": "Zora's River"
+   "name": "Zora's River",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree",
+      "bombs"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "zoras-domain",
-   "name": "Zora's Domain"
+   "name": "Zora's Domain",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree",
+      "bombs",
+      "zeldas-lullaby"
+     ],
+     [
+      "ms-master-sword",
+      "zeldas-lullaby"
+     ]
+    ]
+   }
   },
   {
    "id": "zoras-fountain",
-   "name": "Zora's Fountain"
+   "name": "Zora's Fountain",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree",
+      "bottle-ruto-letter"
+     ],
+     [
+      "ms-master-sword",
+      "ms-jabu-jabu",
+      "zeldas-lullaby"
+     ]
+    ]
+   }
   },
   {
    "id": "lake-hylia",
-   "name": "Lake Hylia"
+   "name": "Lake Hylia",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "gerudo-valley",
-   "name": "Gerudo Valley"
+   "name": "Gerudo Valley",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree"
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "gerudo-fortress",
-   "name": "Gerudo's Fortress"
+   "name": "Gerudo's Fortress",
+   "entry": [
+    "ms-master-sword",
+    {
+     "any": [
+      "epona",
+      "longshot"
+     ]
+    }
+   ]
   },
   {
    "id": "haunted-wasteland",
-   "name": "Haunted Wasteland"
+   "name": "Haunted Wasteland",
+   "entry": [
+    "ms-master-sword",
+    "gerudo-card",
+    {
+     "any": [
+      "hover-boots",
+      "longshot"
+     ]
+    }
+   ]
   },
   {
    "id": "desert-colossus",
-   "name": "Desert Colossus"
+   "name": "Desert Colossus",
+   "entry": {
+    "any": [
+     [
+      "requiem-of-spirit"
+     ],
+     [
+      "ms-master-sword",
+      {
+       "any": [
+        "requiem-of-spirit",
+        [
+         "gerudo-card",
+         "lens-of-truth",
+         "gf-magic",
+         {
+          "any": [
+           "hover-boots",
+           "longshot"
+          ]
+         }
+        ]
+       ]
+      }
+     ]
+    ]
+   }
   },
   {
    "id": "deku-tree",
-   "name": "Inside the Deku Tree"
+   "name": "Inside the Deku Tree",
+   "entry": [
+    "kokiri-sword",
+    "deku-shield"
+   ]
   },
   {
    "id": "dodongos-cavern",
-   "name": "Dodongo's Cavern"
+   "name": "Dodongo's Cavern",
+   "entry": {
+    "any": [
+     [
+      "ms-deku-tree",
+      "ms-meet-zelda",
+      {
+       "any": [
+        "bombs",
+        "goron-bracelet"
+       ]
+      }
+     ],
+     [
+      "ms-master-sword"
+     ]
+    ]
+   }
   },
   {
    "id": "jabu-jabus-belly",
-   "name": "Inside Jabu-Jabu's Belly"
+   "name": "Inside Jabu-Jabu's Belly",
+   "entry": [
+    "ms-deku-tree",
+    "bottle-ruto-letter"
+   ]
   },
   {
    "id": "forest-temple",
-   "name": "Forest Temple"
+   "name": "Forest Temple",
+   "entry": [
+    "ms-master-sword",
+    "hookshot",
+    {
+     "any": [
+      "sarias-song",
+      "minuet-of-forest"
+     ]
+    }
+   ]
   },
   {
    "id": "fire-temple",
-   "name": "Fire Temple"
+   "name": "Fire Temple",
+   "entry": [
+    "ms-master-sword",
+    "goron-tunic",
+    {
+     "any": [
+      "bolero-of-fire",
+      "hookshot",
+      "hover-boots"
+     ]
+    }
+   ]
   },
   {
    "id": "ice-cavern",
-   "name": "Ice Cavern"
+   "name": "Ice Cavern",
+   "entry": [
+    "ms-master-sword",
+    "ms-jabu-jabu",
+    "zeldas-lullaby"
+   ]
   },
   {
    "id": "water-temple",
-   "name": "Water Temple"
+   "name": "Water Temple",
+   "entry": [
+    "ms-master-sword",
+    "iron-boots",
+    "hookshot"
+   ]
   },
   {
    "id": "bottom-of-the-well",
-   "name": "Bottom of the Well"
+   "name": "Bottom of the Well",
+   "entry": [
+    "ms-deku-tree",
+    "song-of-storms"
+   ]
   },
   {
    "id": "shadow-temple",
-   "name": "Shadow Temple"
+   "name": "Shadow Temple",
+   "entry": [
+    "ms-master-sword",
+    "nocturne-of-shadow",
+    "gf-dins-fire",
+    "gf-magic"
+   ],
+   "entryIn": {
+    "switch2": [
+     "ms-master-sword",
+     "nocturne-of-shadow",
+     "gf-magic"
+    ]
+   }
   },
   {
    "id": "spirit-temple",
-   "name": "Spirit Temple"
+   "name": "Spirit Temple",
+   "entry": {
+    "any": [
+     [
+      "requiem-of-spirit"
+     ],
+     [
+      "ms-master-sword",
+      "requiem-of-spirit"
+     ]
+    ]
+   }
   }
  ],
  "items": [
