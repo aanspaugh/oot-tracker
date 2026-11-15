@@ -11280,7 +11280,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -11291,29 +11291,33 @@
     "3ds",
     "switch2"
    ],
+   "nameIn": {
+    "switch2": "B1 · Behind the gate (crystal switch)"
+   },
    "howToIn": {
-    "switch2": "Sink to the basement level with the Iron Boots and go to the small chamber in the east, by the basement grate. It's on the wall; Hookshot it."
+    "switch2": "With the water at its lowest, unlock the door at the bottom of the central pillar. Play Zelda's Lullaby at the Triforce, put on the Iron Boots and sink through the hole in the floor. Hookshot the crystal switch high on the wall to open the gate, then take off the Iron Boots and float up into the area behind it. The Gold Skulltula is on the wall there, still underwater; Hookshot it."
    },
    "sourcesIn": {
     "switch2": [
+     "user-play",
+     "nintenduo-s2-gs",
      "nl-s2-gs",
-     "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "rpgsite-s2-gs"
     ]
    },
    "linksIn": {
     "switch2": [
      {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
       "label": "Nintendo Life (Switch 2)",
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
      },
      {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
-     },
-     {
-      "label": "Nintenduo (Switch 2)",
-      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
      },
      {
       "label": "Jegged",
@@ -11371,6 +11375,9 @@
     "3ds",
     "switch2"
    ],
+   "nameIn": {
+    "switch2": "2F · Whirlpool river"
+   },
    "howToIn": {
     "switch2": "After you beat Dark Link, drop into the river with the whirlpools and walk it with the Iron Boots. About halfway, it's on the wall; Longshot it underwater."
    },
@@ -11451,6 +11458,9 @@
     "3ds",
     "switch2"
    ],
+   "nameIn": {
+    "switch2": "3F · Inside the central pillar"
+   },
    "howToIn": {
     "switch2": "With the water lowered, go inside the central pillar and Longshot up to the very top, where the Gold Skulltula rests."
    },
@@ -11531,7 +11541,7 @@
     "switch2"
    ],
    "nameIn": {
-    "switch2": "Behind the cracked wall (2nd floor)"
+    "switch2": "2F · Behind the cracked wall"
    },
    "howToIn": {
     "switch2": "Set the water to the second floor, then bomb the cracked wall into the eastern room (a Bombchu is easiest). The Gold Skulltula is inside."
@@ -11628,6 +11638,9 @@
     "3ds",
     "switch2"
    ],
+   "nameIn": {
+    "switch2": "1F · Rolling-boulder channel"
+   },
    "howToIn": {
     "switch2": "Just before the Boss Key, a small corridor has a waterfall; the Gold Skulltula hides behind it. Watch out for the rolling boulders and Longshot it."
    },
