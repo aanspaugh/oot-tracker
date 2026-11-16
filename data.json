@@ -123,6 +123,14 @@
    "zeldacentral-s2-bp": {
     "name": "Zelda Central, \"Big Poes - Zelda: Ocarina of Time Remake Guide\"",
     "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/"
+   },
+   "gamerant-s2-quiver": {
+    "name": "Game Rant, \"How to Get More Arrows in Ocarina of Time (Remake)\"",
+    "url": "https://gamerant.com/ooc-ocarina-of-time-remake-all-quiver-upgrades-more-arrows/"
+   },
+   "zeldacentral-s2-upgrades": {
+    "name": "Zelda Central, \"Capacity Upgrades - Zelda: Ocarina of Time Remake Guide\"",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/equipment-upgrades/"
    }
   }
  },
@@ -15835,11 +15843,44 @@
     "jegged"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "upgrade",
    "map": null,
-   "ootrLocation": "GF HBA 1500 Points"
+   "ootrLocation": "GF HBA 1500 Points",
+   "nameIn": {
+    "switch2": "Quiver upgrade: Horseback Archery 1,400"
+   },
+   "howToIn": {
+    "switch2": "Score 1,400+ points at Horseback Archery (Gerudo's Membership Card, riding Epona)."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "gamerant-s2-quiver",
+     "zeldacentral-s2-upgrades"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Game Rant (Switch 2)",
+      "url": "https://gamerant.com/ooc-ocarina-of-time-remake-all-quiver-upgrades-more-arrows/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/equipment-upgrades/"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76404"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Equipment-and-Accessories.html"
+     }
+    ]
+   }
   },
   {
    "id": "gf-magic",
