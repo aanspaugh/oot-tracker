@@ -12747,7 +12747,7 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "skulltula",
    "map": null,
@@ -12757,7 +12757,56 @@
     "n64",
     "3ds",
     "switch2"
-   ]
+   ],
+   "nameIn": {
+    "switch2": "Behind the big statue (young)"
+   },
+   "howToIn": {
+    "switch2": "As young Link, in the big statue room, go down the side stairs to the ground floor and walk around behind the statue on its right (east) side. The Gold Skulltula is low on the wall between the statue and the wall; one sword strike kills it, then pick up the token."
+   },
+   "needsIn": {
+    "switch2": [
+     "requiem-of-spirit",
+     "bombs"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "nl-s2-gs",
+     "nintenduo-s2-gs",
+     "vgc-s2-gs",
+     "rpgsite-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "Nintenduo (Switch 2)",
+      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+     },
+     {
+      "label": "RPG Site (Switch 2)",
+      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/31-Spirit-Temple.html#Gold-Skulltula-96"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
+    ]
+   }
   },
   {
    "id": "gs-spirit-hall-after-sun-block",
