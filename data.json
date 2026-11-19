@@ -131,6 +131,62 @@
    "zeldacentral-s2-upgrades": {
     "name": "Zelda Central, \"Capacity Upgrades - Zelda: Ocarina of Time Remake Guide\"",
     "url": "https://zeldacentral.com/games/ocarina-of-time-remake/equipment-upgrades/"
+   },
+   "vgc-s2-hp": {
+    "name": "Video Games Chronicle, \"Zelda OOT Remake: All Piece of Heart locations\"",
+    "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-all-piece-of-heart-locations/"
+   },
+   "gamingroute-s2-hp": {
+    "name": "Gaming Route, \"Ocarina of Time Heart Pieces: All 36 Locations (Switch 2)\" (cites TheGamer)",
+    "url": "https://gamingroute.com/ocarina-of-time-heart-pieces/"
+   },
+   "zeldaxtreme-s2-hp": {
+    "name": "Zelda Xtreme, \"Ocarina of Time (Remake) Heart Pieces\"",
+    "url": "https://www.zeldaxtreme.com/ocarina-of-time-remake/heart-pieces/"
+   },
+   "vgc-s2-masks": {
+    "name": "Video Games Chronicle, \"Zelda OOT Remake: All Masks and where to sell them\"",
+    "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-all-masks-buyers-locations-profit/"
+   },
+   "zeldacentral-s2-masks": {
+    "name": "Zelda Central, \"Mask Trading Sequence - Zelda: Ocarina of Time Remake Guide\"",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/mask-guide/"
+   },
+   "zeldacentral-s2-biggoron": {
+    "name": "Zelda Central, \"Biggoron Sword Trading Sequence - Ocarina of Time Remake\"",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/biggoron-sword-guide/"
+   },
+   "ne-s2-biggoron": {
+    "name": "Nintendo Everything, \"How to Get Biggoron's Sword in Zelda: Ocarina of Time\"",
+    "url": "https://nintendoeverything.com/zelda-ocarina-of-time-biggorons-sword-guide/"
+   },
+   "vgc-s2-fairies": {
+    "name": "Video Games Chronicle, \"Zelda Ocarina of Time: All Great Fairy Fountain locations\"",
+    "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-great-fairy-fountain-locations/"
+   },
+   "finalboss-s2-fairies": {
+    "name": "FinalBoss, \"Zelda Ocarina of Time: Great Fairy Locations and Magic Upgrades (Switch 2)\"",
+    "url": "https://finalboss.io/zelda-oot-switch-2-great-fairy-locations-magic"
+   },
+   "keengamer-s2-gs": {
+    "name": "KeenGamer, \"Zelda: Ocarina of Time Remake - All 100 Gold Skulltula Locations\"",
+    "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-remake-all-100-gold-skulltula-locations/"
+   },
+   "mythras-s2-gs": {
+    "name": "Gamertag Mythras, \"Ocarina of Time Remake Gold Skulltulas: All 100 Locations\" (built from Game8, Nintendo Life, VGC)",
+    "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-remake-gold-skulltulas"
+   },
+   "finalboss-s2-gs": {
+    "name": "FinalBoss, \"Zelda OoT Switch 2: Gold Skulltula Locations\"",
+    "url": "https://finalboss.io/zelda-oot-switch-2-gold-skulltula-locations"
+   },
+   "keengamer-s2-hall": {
+    "name": "KeenGamer, \"Zelda Ocarina of Time: How to Unlock the Hall of Fallen Foes\"",
+    "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-how-to-unlock-the-hall-of-fallen-foes/"
+   },
+   "mythras-s2-hall": {
+    "name": "Gamertag Mythras, \"Ocarina of Time Hall of Fallen Foes Guide\" (relays Zelda Wiki)",
+    "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-hall-of-fallen-foes-guide"
    }
   }
  },
@@ -2912,11 +2968,41 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "Market Bombchu Bowling Second Prize"
+   "ootrLocation": "Market Bombchu Bowling Second Prize",
+   "howToIn": {
+    "switch2": "Bombchu Bowling in the Market now has three difficulty levels. Clear all three: the Piece of Heart is the prize for the last one."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "gamingroute-s2-hp",
+     "zeldaxtreme-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Gaming Route (Switch 2)",
+      "url": "https://gamingroute.com/ocarina-of-time-heart-pieces/"
+     },
+     {
+      "label": "Zelda Xtreme (Switch 2)",
+      "url": "https://www.zeldaxtreme.com/ocarina-of-time-remake/heart-pieces/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Bombchu-Bowling-Alley"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-market-lost-dog",
@@ -3141,13 +3227,44 @@
    "map": null,
    "ootrLocation": "Kak Man on Roof",
    "howToIn": {
-    "switch2": "As adult Link, go into the Potion Shop near the gate to Death Mountain Trail and take the back door behind the counter. From the back, look right to the roof where the man is sitting: the roof itself won't take the Hookshot, so aim it at the vines to pull yourself up. Talk to him for the Piece of Heart."
+    "switch2": "Young Link: carry a Cucco up the ladder by the high stone wall and glide across to the roof where the man is sitting. Adult Link: go into the Potion Shop near the gate to Death Mountain Trail and take the back door behind the counter. From the back, look right to his roof: the roof itself won't take the Hookshot, so aim it at the vines to pull yourself up. Either way, talk to him for the Piece of Heart."
+   },
+   "needsIn": {
+    "switch2": [
+     {
+      "any": [
+       [
+        "ms-deku-tree"
+       ],
+       [
+        "ms-master-sword",
+        "hookshot"
+       ]
+      ]
+     }
+    ]
+   },
+   "needsAgeIn": {
+    "switch2": {
+     "young": [
+      "ms-deku-tree"
+     ],
+     "adult": [
+      "ms-master-sword",
+      "hookshot"
+     ]
+    }
+   },
+   "ageIn": {
+    "switch2": "either"
    },
    "sourcesIn": {
     "switch2": [
      "user-play",
      "nl-s2-hp",
-     "thegamer-s2-hp"
+     "respec-s2-hp",
+     "zeldaxtreme-s2-hp",
+     "vgc-s2-hp"
     ]
    },
    "linksIn": {
@@ -3157,8 +3274,16 @@
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
      },
      {
-      "label": "TheGamer (Switch 2)",
-      "url": "https://www.thegamer.com/the-legend-of-zelda-ocarina-of-time-all-heart-piece-locations/"
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
+     },
+     {
+      "label": "Zelda Xtreme (Switch 2)",
+      "url": "https://www.zeldaxtreme.com/ocarina-of-time-remake/heart-pieces/"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-all-piece-of-heart-locations/"
      },
      {
       "label": "Jegged",
@@ -3795,7 +3920,8 @@
    "map": null,
    "ootrLocation": "DMC Wall Freestanding PoH",
    "howToIn": {
-    "mq3ds": "Enter the crater from the top of Death Mountain (right of the owl). Walk off the north ledge so Link grabs the wall, and climb down to a small alcove with the Piece of Heart. Young Link can't stay in the heat long."
+    "mq3ds": "Enter the crater from the top of Death Mountain (right of the owl). Walk off the north ledge so Link grabs the wall, and climb down to a small alcove with the Piece of Heart. Young Link can't stay in the heat long.",
+    "switch2": "Enter the crater from the top of Death Mountain (left of the owl). Climb down the net hanging over the north ledge to a small alcove with the Piece of Heart. Young Link can't stay in the heat long."
    },
    "needsAge": {
     "young": [
@@ -3810,6 +3936,37 @@
        "bombs",
        "megaton-hammer"
       ]
+     }
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "zeldaxtreme-s2-hp",
+     "gamingroute-s2-hp",
+     "respec-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Zelda Xtreme (Switch 2)",
+      "url": "https://www.zeldaxtreme.com/ocarina-of-time-remake/heart-pieces/"
+     },
+     {
+      "label": "Gaming Route (Switch 2)",
+      "url": "https://gamingroute.com/ocarina-of-time-heart-pieces/"
+     },
+     {
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html#Death-Mountain-Crater"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
      }
     ]
    }
@@ -3986,7 +4143,49 @@
    "howToIn": {
     "3ds": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (3DS buttons): L, X, Y, R, X, Y, R, L, R, L, R, Y, X, L.",
     "mq3ds": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (3DS buttons): L, X, Y, R, X, Y, R, L, R, L, R, Y, X, L.",
-    "switch2": "Once you've played the frogs the Song of Storms plus Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time, they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (Switch 2 buttons): L, Y, A, R, Y, A, R, L, R, L, R, A, Y, L."
+    "switch2": "Play the frogs Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time (you don't need the Song of Storms for this one). Then they offer a game: play the note of each frog that has a bug above it. The first time, the order is fixed (Switch 2 buttons): L, Y, A, R, Y, A, R, L, R, L, R, A, Y, L."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-deku-tree",
+     "bombs",
+     "zeldas-lullaby",
+     "eponas-song",
+     "sarias-song",
+     "suns-song",
+     "song-of-time"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "vgc-s2-hp",
+     "gamingroute-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-all-piece-of-heart-locations/"
+     },
+     {
+      "label": "Gaming Route (Switch 2)",
+      "url": "https://gamingroute.com/ocarina-of-time-heart-pieces/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
    }
   },
   {
@@ -4019,17 +4218,52 @@
     "ootr"
    ],
    "fromSheet": true,
-   "switch2": "unverified",
+   "switch2": "confirmed",
    "readOnly": false,
    "icon": "heart",
    "map": null,
    "ootrLocation": "ZR Near Open Grotto Freestanding PoH",
    "howToIn": {
-    "switch2": "Halfway up Zora's River the Piece of Heart sits on a raised rocky pillar; the original's Cucco jump doesn't work any more. Take the Cucco from behind the gate by the Magic Bean seller, carry it past the Blue Tektites and glide south across the gap. Climb the vines to the south of the highest island and go into the hole (bomb it open) for a second Cucco, then glide with it to the pillar."
+    "switch2": "Halfway up Zora's River the Piece of Heart sits on a raised rocky pillar; the original's Cucco jump doesn't work any more. Young Link (first-hand): take the Cucco from behind the gate by the Magic Bean seller, carry it past the Blue Tektites and glide south across the gap. Climb the vines to the south of the highest island and go into the hole (bomb it open) for a second Cucco, then glide with it to the pillar. Adult Link can also get there from the Magic Bean plant by the bean seller (planted as young Link): bomb the cracked hole for a Cucco, ride the plant back up and glide to the pillar."
+   },
+   "needsIn": {
+    "switch2": [
+     {
+      "any": [
+       [
+        "ms-deku-tree",
+        "bombs"
+       ],
+       [
+        "ms-master-sword",
+        "soil-zr",
+        "bombs"
+       ]
+      ]
+     }
+    ]
+   },
+   "needsAgeIn": {
+    "switch2": {
+     "young": [
+      "ms-deku-tree",
+      "bombs"
+     ],
+     "adult": [
+      "ms-master-sword",
+      "soil-zr",
+      "bombs"
+     ]
+    }
+   },
+   "ageIn": {
+    "switch2": "either"
    },
    "sourcesIn": {
     "switch2": [
+     "user-play",
      "nl-s2-hp",
+     "vgc-s2-hp",
      "thegamer-s2-hp"
     ]
    },
@@ -4038,6 +4272,10 @@
      {
       "label": "Nintendo Life (Switch 2)",
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-all-piece-of-heart-locations/"
      },
      {
       "label": "TheGamer (Switch 2)",
@@ -4759,7 +4997,59 @@
    "readOnly": false,
    "icon": "heart",
    "map": null,
-   "ootrLocation": "GF Chest"
+   "ootrLocation": "GF Chest",
+   "howToIn": {
+    "switch2": "From the rooftop above the jail cell, play the Scarecrow's Song to summon Pierre across the gap and Hookshot to him, then open the treasure chest on the roof. You don't need the Membership Card."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     {
+      "any": [
+       "epona",
+       "longshot"
+      ]
+     },
+     "hookshot",
+     "scarecrows-song"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-hp",
+     "vgc-s2-hp",
+     "respec-s2-hp",
+     "gamingroute-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2"
+     },
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-all-piece-of-heart-locations/"
+     },
+     {
+      "label": "Respec (Switch 2)",
+      "url": "https://www.respec.net/guide/280-the-legend-zelda-ocarina-time-remake-pieces-heart-list-every-heart-piece-location-including-those-moved-for-switch-2"
+     },
+     {
+      "label": "Gaming Route (Switch 2)",
+      "url": "https://gamingroute.com/ocarina-of-time-heart-pieces/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Heart-Pieces.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76402"
+     }
+    ]
+   }
   },
   {
    "id": "hp-gf-hba-1000",
@@ -8785,29 +9075,32 @@
    "map": null,
    "group": "overworld",
    "ootrLocation": "GV GS Pillar",
+   "nameIn": {
+    "switch2": "Top of the big stone arch"
+   },
    "howToIn": {
-    "switch2": "Cross the broken bridge (Epona's jump or the Longshot). At night, it's under the rock arch south of the carpenters' tent, up on the rocks. Hookshot it; Nintendo Life uses the Longshot."
+    "switch2": "Cross the broken bridge (Epona's jump or the Longshot). At night, it's on top of the big stone arch near the carpenters' tent. Hookshot it."
    },
    "sourcesIn": {
     "switch2": [
-     "nl-s2-gs",
-     "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "keengamer-s2-gs",
+     "mythras-s2-gs",
+     "nl-s2-gs"
     ]
    },
    "linksIn": {
     "switch2": [
      {
+      "label": "KeenGamer (Switch 2)",
+      "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-remake-all-100-gold-skulltula-locations/"
+     },
+     {
+      "label": "Gamertag Mythras (Switch 2)",
+      "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-remake-gold-skulltulas"
+     },
+     {
       "label": "Nintendo Life (Switch 2)",
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
-     },
-     {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
-     },
-     {
-      "label": "Nintenduo (Switch 2)",
-      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
      },
      {
       "label": "Jegged",
@@ -8864,28 +9157,36 @@
    "group": "overworld",
    "ootrLocation": "GF GS Archery Range",
    "howToIn": {
-    "switch2": "With the Membership Card, go to the Horseback Archery range at night and run to the far end: it's on the big target. The Hookshot reaches; the Longshot makes it easier."
+    "switch2": "With the Membership Card, go to the Horseback Archery range at night and run to the far end: it's on the big target. Longshot it."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     {
+      "any": [
+       "epona",
+       "longshot"
+      ]
+     },
+     "gerudo-card",
+     "longshot"
+    ]
    },
    "sourcesIn": {
     "switch2": [
-     "nl-s2-gs",
-     "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "keengamer-s2-gs",
+     "mythras-s2-gs"
     ]
    },
    "linksIn": {
     "switch2": [
      {
-      "label": "Nintendo Life (Switch 2)",
-      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+      "label": "KeenGamer (Switch 2)",
+      "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-remake-all-100-gold-skulltula-locations/"
      },
      {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
-     },
-     {
-      "label": "Nintenduo (Switch 2)",
-      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+      "label": "Gamertag Mythras (Switch 2)",
+      "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-remake-gold-skulltulas"
      },
      {
       "label": "Jegged",
@@ -8941,28 +9242,35 @@
    "group": "overworld",
    "ootrLocation": "GF GS Top Floor",
    "howToIn": {
-    "switch2": "At night, climb to the top of the fortress; it's on an outside wall at the east end. Hookshot it (the Longshot makes it easier)."
+    "switch2": "At night, climb to the top of the fortress; it's on an outside wall at the east end. Longshot it."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     {
+      "any": [
+       "epona",
+       "longshot"
+      ]
+     },
+     "longshot"
+    ]
    },
    "sourcesIn": {
     "switch2": [
-     "nl-s2-gs",
-     "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "keengamer-s2-gs",
+     "mythras-s2-gs"
     ]
    },
    "linksIn": {
     "switch2": [
      {
-      "label": "Nintendo Life (Switch 2)",
-      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+      "label": "KeenGamer (Switch 2)",
+      "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-remake-all-100-gold-skulltula-locations/"
      },
      {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
-     },
-     {
-      "label": "Nintenduo (Switch 2)",
-      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+      "label": "Gamertag Mythras (Switch 2)",
+      "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-remake-gold-skulltulas"
      },
      {
       "label": "Jegged",
@@ -9188,33 +9496,50 @@
     "switch2": "Rock wall beside the Spirit Temple"
    },
    "howToIn": {
-    "switch2": "At night as adult Link, it's on the rock wall beside the Spirit Temple entrance, where the birds circle overhead (Nintendo Life: on the cliff at the north end). Hookshot it; the Longshot makes it easier."
+    "switch2": "At night as adult Link, it's on the rock wall beside the Spirit Temple entrance, where the birds circle overhead (Nintendo Life: on the cliff at the north end). Longshot it."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-master-sword",
+     {
+      "any": [
+       "requiem-of-spirit",
+       [
+        "gerudo-card",
+        "lens-of-truth",
+        "gf-magic",
+        {
+         "any": [
+          "hover-boots",
+          "longshot"
+         ]
+        }
+       ]
+      ]
+     },
+     "longshot"
+    ]
    },
    "sourcesIn": {
     "switch2": [
-     "nl-s2-gs",
-     "vgc-s2-gs",
-     "nintenduo-s2-gs",
-     "rpgsite-s2-gs"
+     "keengamer-s2-gs",
+     "mythras-s2-gs",
+     "nl-s2-gs"
     ]
    },
    "linksIn": {
     "switch2": [
      {
+      "label": "KeenGamer (Switch 2)",
+      "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-remake-all-100-gold-skulltula-locations/"
+     },
+     {
+      "label": "Gamertag Mythras (Switch 2)",
+      "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-remake-gold-skulltulas"
+     },
+     {
       "label": "Nintendo Life (Switch 2)",
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
-     },
-     {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
-     },
-     {
-      "label": "Nintenduo (Switch 2)",
-      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
-     },
-     {
-      "label": "RPG Site (Switch 2)",
-      "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide"
      },
      {
       "label": "Jegged",
@@ -10169,28 +10494,40 @@
     "switch2"
    ],
    "howToIn": {
-    "switch2": "In the room with the water switch, raise the water and go to the platform on the left. Climb the vines and grab it."
+    "switch2": "In the room with the water switch, raise the water and go to the platform on the left. It's on the vines: knock it down with the Slingshot (or the Boomerang), then climb up for the token."
+   },
+   "needsIn": {
+    "switch2": [
+     "ms-deku-tree",
+     "bottle-ruto-letter",
+     {
+      "any": [
+       "slingshot",
+       "boomerang"
+      ]
+     }
+    ]
    },
    "sourcesIn": {
     "switch2": [
-     "nl-s2-gs",
-     "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "finalboss-s2-gs",
+     "keengamer-s2-gs",
+     "mythras-s2-gs"
     ]
    },
    "linksIn": {
     "switch2": [
      {
-      "label": "Nintendo Life (Switch 2)",
-      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+      "label": "FinalBoss (Switch 2)",
+      "url": "https://finalboss.io/zelda-oot-switch-2-gold-skulltula-locations"
      },
      {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+      "label": "KeenGamer (Switch 2)",
+      "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-remake-all-100-gold-skulltula-locations/"
      },
      {
-      "label": "Nintenduo (Switch 2)",
-      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+      "label": "Gamertag Mythras (Switch 2)",
+      "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-remake-gold-skulltulas"
      },
      {
       "label": "Jegged",
@@ -12348,7 +12685,7 @@
     "switch2"
    ],
    "howToIn": {
-    "switch2": "In the room with the falling spikes, go around to the north edge and Hookshot the Gold Skulltula (Nintendo Life uses the Longshot)."
+    "switch2": "In the room with the falling spikes, go around to the north edge and Longshot the Gold Skulltula."
    },
    "needsIn": {
     "switch2": [
@@ -12358,14 +12695,14 @@
      "lens-of-truth",
      "hover-boots",
      "bombs",
-     "hookshot"
+     "longshot"
     ]
    },
    "sourcesIn": {
     "switch2": [
      "nl-s2-gs",
-     "vgc-s2-gs",
-     "nintenduo-s2-gs"
+     "keengamer-s2-gs",
+     "mythras-s2-gs"
     ]
    },
    "linksIn": {
@@ -12375,12 +12712,12 @@
       "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
      },
      {
-      "label": "VGC (Switch 2)",
-      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-switch-2-all-gold-skulltulas/"
+      "label": "KeenGamer (Switch 2)",
+      "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-remake-all-100-gold-skulltula-locations/"
      },
      {
-      "label": "Nintenduo (Switch 2)",
-      "url": "https://nintenduo.com/juegos/the-legend-of-zelda-ocarina-of-time/mapa/en/gold-skulltulas/"
+      "label": "Gamertag Mythras (Switch 2)",
+      "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-remake-gold-skulltulas"
      },
      {
       "label": "Jegged",
@@ -12628,6 +12965,9 @@
     "3ds",
     "switch2"
    ],
+   "howToIn": {
+    "switch2": "After the boat ride, in the room with three spinning blue-flamed skulls, it's behind one of them: destroy them with Bombs."
+   },
    "needsIn": {
     "switch2": [
      "ms-master-sword",
@@ -12638,6 +12978,37 @@
      "bombs",
      "longshot",
      "zeldas-lullaby"
+    ]
+   },
+   "sourcesIn": {
+    "switch2": [
+     "keengamer-s2-gs",
+     "mythras-s2-gs",
+     "nl-s2-gs"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "KeenGamer (Switch 2)",
+      "url": "https://www.keengamer.com/articles/guides/zelda-ocarina-of-time-remake-all-100-gold-skulltula-locations/"
+     },
+     {
+      "label": "Gamertag Mythras (Switch 2)",
+      "url": "https://gamertagmythras.com/blog/zelda-ocarina-of-time/ocarina-of-time-remake-gold-skulltulas"
+     },
+     {
+      "label": "Nintendo Life (Switch 2)",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Walkthrough/27-Shadow-Temple.html#Gold-Skulltula-88"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76387"
+     }
     ]
    }
   },
@@ -15506,6 +15877,35 @@
    "icon": "mask-bunny",
    "map": null,
    "ootrLocation": "Market Mask Shop Item 7",
+   "howToIn": {
+    "switch2": "Borrow the Bunny Hood (50 Rupees). Once you have all three Spiritual Stones, find the running man in Hyrule Field (around Lon Lon Ranch) and talk to him wearing it; he pays 200 Rupees (a Gold Rupee). Pay the shop back 50."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "vgc-s2-masks",
+     "zeldacentral-s2-masks"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-all-masks-buyers-locations-profit/"
+     },
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/mask-guide/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Happy-Mask-Shop.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76393"
+     }
+    ]
+   },
    "borrow": {
     "id": "mask-bunny-borrowed",
     "needs": [
@@ -15623,7 +16023,37 @@
    "readOnly": false,
    "icon": "upgrade",
    "map": null,
-   "ootrLocation": "Market Bombchu Bowling First Prize"
+   "ootrLocation": "Market Bombchu Bowling First Prize",
+   "howToIn": {
+    "switch2": "Bombchu Bowling in the Market now has three difficulty levels, each with its own prize. Clear them in turn; the Bomb Bag is the prize for the second one (the Piece of Heart is the third)."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "user-play",
+     "gamingroute-s2-hp",
+     "zeldaxtreme-s2-hp"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Gaming Route (Switch 2)",
+      "url": "https://gamingroute.com/ocarina-of-time-heart-pieces/"
+     },
+     {
+      "label": "Zelda Xtreme (Switch 2)",
+      "url": "https://www.zeldaxtreme.com/ocarina-of-time-remake/heart-pieces/"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76404"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Equipment-and-Accessories.html"
+     }
+    ]
+   }
   },
   {
    "id": "upg-nuts-scrub",
@@ -16216,16 +16646,24 @@
    "map": null,
    "ootrLocation": "DMC Great Fairy Reward",
    "howToIn": {
-    "switch2": "In Death Mountain Crater (Hookshot back across the broken bridge from the Bolero warp), smash the boulders blocking the cave with the Megaton Hammer. Play Zelda's Lullaby on the Triforce and make the 200-Rupee offering to double your Magic Meter."
+    "switch2": "Enter Death Mountain Crater through the Goron City shortcut (Darunia's room) and go right to the cave blocked by rocks. Smash them with the Megaton Hammer, play Zelda's Lullaby on the Triforce and make the 200-Rupee offering to double your Magic Meter."
    },
    "sourcesIn": {
     "switch2": [
-     "nintenduo-s2-fairies",
-     "game8-s2-fairies"
+     "vgc-s2-fairies",
+     "finalboss-s2-fairies"
     ]
    },
    "linksIn": {
     "switch2": [
+     {
+      "label": "VGC (Switch 2)",
+      "url": "https://www.videogameschronicle.com/guide/zelda-ocarina-of-time-great-fairy-fountain-locations/"
+     },
+     {
+      "label": "FinalBoss (Switch 2)",
+      "url": "https://finalboss.io/zelda-oot-switch-2-great-fairy-locations-magic"
+     },
      {
       "label": "Jegged",
       "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Great-Fairy-Fountains.html"
@@ -16514,7 +16952,34 @@
    "icon": "big-odd-mushroom",
    "map": null,
    "howToIn": {
-    "mq3ds": "Take the first right in the Lost Woods; use Cojiro near the man slumped by the stump to wake him. He hands you the Odd Mushroom, and a timer starts."
+    "mq3ds": "Take the first right in the Lost Woods; use Cojiro near the man slumped by the stump to wake him. He hands you the Odd Mushroom, and a timer starts.",
+    "switch2": "Take the first left in the Lost Woods; use Cojiro near the man slumped by the stump to wake him. He hands you the Odd Mushroom, and a 4-minute timer starts. Don't warp: an Ocarina warp song spoils it."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "zeldacentral-s2-biggoron",
+     "ne-s2-biggoron"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/biggoron-sword-guide/"
+     },
+     {
+      "label": "Nintendo Everything (Switch 2)",
+      "url": "https://nintendoeverything.com/zelda-ocarina-of-time-biggorons-sword-guide/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Biggorons-Sword.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76393"
+     }
+    ]
    }
   },
   {
@@ -16551,7 +17016,39 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "big-odd-potion",
-   "map": null
+   "map": null,
+   "nameIn": {
+    "switch2": "Odd Poultice"
+   },
+   "howToIn": {
+    "switch2": "Within 4 minutes, take the Odd Mushroom to the old woman in the back room of the Kakariko Potion Shop (go in from the back). Riding Epona across Hyrule Field helps you make it; don't warp. She gives you the Odd Poultice."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "zeldacentral-s2-biggoron",
+     "ne-s2-biggoron"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/biggoron-sword-guide/"
+     },
+     {
+      "label": "Nintendo Everything (Switch 2)",
+      "url": "https://nintendoeverything.com/zelda-ocarina-of-time-biggorons-sword-guide/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Biggorons-Sword.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76393"
+     }
+    ]
+   }
   },
   {
    "id": "big-poachers-saw",
@@ -16586,7 +17083,36 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "big-poachers-saw",
-   "map": null
+   "map": null,
+   "howToIn": {
+    "switch2": "Go back to the same spot in the Lost Woods. The man is gone and a Kokiri girl is there; give her the Odd Poultice for the Poacher's Saw."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "zeldacentral-s2-biggoron",
+     "ne-s2-biggoron"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/biggoron-sword-guide/"
+     },
+     {
+      "label": "Nintendo Everything (Switch 2)",
+      "url": "https://nintendoeverything.com/zelda-ocarina-of-time-biggorons-sword-guide/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Biggorons-Sword.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76393"
+     }
+    ]
+   }
   },
   {
    "id": "big-broken-sword",
@@ -16746,7 +17272,39 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "big-eye-drops",
-   "map": null
+   "map": null,
+   "nameIn": {
+    "switch2": "Specialty Eye Drops"
+   },
+   "howToIn": {
+    "switch2": "Within 2:30, take the Eyeball Frog to the professor at the Lakeside Laboratory. Ride down Zora's River and take Epona across the field; warping isn't allowed."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "zeldacentral-s2-biggoron",
+     "ne-s2-biggoron"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/biggoron-sword-guide/"
+     },
+     {
+      "label": "Nintendo Everything (Switch 2)",
+      "url": "https://nintendoeverything.com/zelda-ocarina-of-time-biggorons-sword-guide/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Biggorons-Sword.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76393"
+     }
+    ]
+   }
   },
   {
    "id": "big-claim-check",
@@ -16782,7 +17340,39 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "big-claim-check",
-   "map": null
+   "map": null,
+   "nameIn": {
+    "switch2": "Biggoron Receipt"
+   },
+   "howToIn": {
+    "switch2": "Within 3:30, take the Specialty Eye Drops back to Biggoron; warping isn't allowed. A Magic Bean plant at Dodongo's Cavern makes the climb much faster."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "zeldacentral-s2-biggoron",
+     "ne-s2-biggoron"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/biggoron-sword-guide/"
+     },
+     {
+      "label": "Nintendo Everything (Switch 2)",
+      "url": "https://nintendoeverything.com/zelda-ocarina-of-time-biggorons-sword-guide/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Biggorons-Sword.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76393"
+     }
+    ]
+   }
   },
   {
    "id": "big-biggoron-sword",
@@ -16817,7 +17407,36 @@
    "switch2": "unverified",
    "readOnly": false,
    "icon": "big-biggoron-sword",
-   "map": null
+   "map": null,
+   "howToIn": {
+    "switch2": "Wait 3 days (play the Sun's Song 6 times), then show Biggoron the Biggoron Receipt for the sword."
+   },
+   "sourcesIn": {
+    "switch2": [
+     "zeldacentral-s2-biggoron",
+     "ne-s2-biggoron"
+    ]
+   },
+   "linksIn": {
+    "switch2": [
+     {
+      "label": "Zelda Central (Switch 2)",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/biggoron-sword-guide/"
+     },
+     {
+      "label": "Nintendo Everything (Switch 2)",
+      "url": "https://nintendoeverything.com/zelda-ocarina-of-time-biggorons-sword-guide/"
+     },
+     {
+      "label": "Jegged",
+      "url": "https://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Side-Quests/Biggorons-Sword.html"
+     },
+     {
+      "label": "GameWith",
+      "url": "https://gamewith.net/zelda-ocarina-of-time/76393"
+     }
+    ]
+   }
   },
   {
    "id": "soil-zr",
@@ -18579,6 +19198,15 @@
   {
    "tokens": 100,
    "reward": "Huge Rupee (200 Rupees), repeatable",
+   "rewardIn": {
+    "switch2": "Gold Rupee (200 Rupees), every visit"
+   },
+   "sourcesIn": {
+    "switch2": [
+     "nl-s2-gs",
+     "vgc-s2-gs"
+    ]
+   },
    "switch2": "unverified",
    "sources": [
     "jegged",
@@ -18598,7 +19226,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "reach": [
     "ms-deku-tree"
    ]
@@ -18628,7 +19256,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "reach": [
     "ms-jabu-jabu"
    ]
@@ -18643,7 +19271,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "reach": [
     "ms-forest-temple"
    ]
@@ -18658,7 +19286,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "reach": [
     "ms-fire-temple"
    ]
@@ -18691,7 +19319,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "reach": [
     "ms-water-temple"
    ]
@@ -18706,7 +19334,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "reach": [
     "ms-shadow-temple"
    ]
@@ -18721,7 +19349,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "reach": [
     "ms-spirit-temple"
    ]
@@ -18736,7 +19364,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "versions": [
     "switch2"
    ],
@@ -18754,7 +19382,7 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": false,
+   "rematchConfirmed": true,
    "versions": [
     "switch2"
    ],
@@ -18784,6 +19412,71 @@
     "ms-water-temple",
     "ms-shadow-temple",
     "ms-spirit-temple"
+   ]
+  },
+  {
+   "id": "boss-trial-stone",
+   "name": "Trial of the Spiritual Stones",
+   "area": null,
+   "tag": "Stone statue · Queen Gohma, King Dodongo, Barinade",
+   "reach": [
+    "ms-deku-tree",
+    "ms-dodongos-cavern",
+    "ms-jabu-jabu"
+   ],
+   "sources": [
+    "keengamer-s2-hall",
+    "mythras-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ]
+  },
+  {
+   "id": "boss-trial-silver",
+   "name": "Trial of the Five Sages",
+   "area": null,
+   "tag": "Silver statue · Phantom Ganon, Volvagia, Morpha, Bongo Bongo, Twinrova",
+   "reach": [
+    "ms-forest-temple",
+    "ms-fire-temple",
+    "ms-water-temple",
+    "ms-shadow-temple",
+    "ms-spirit-temple"
+   ],
+   "sources": [
+    "keengamer-s2-hall",
+    "mythras-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ]
+  },
+  {
+   "id": "boss-trial-gold",
+   "name": "Trial of the Hero of Time",
+   "area": null,
+   "tag": "Gold statue · all 8, then Ganondorf and Ganon",
+   "reach": [
+    "ms-deku-tree",
+    "ms-dodongos-cavern",
+    "ms-jabu-jabu",
+    "ms-forest-temple",
+    "ms-fire-temple",
+    "ms-water-temple",
+    "ms-shadow-temple",
+    "ms-spirit-temple",
+    "ms-ganon"
+   ],
+   "sources": [
+    "keengamer-s2-hall",
+    "mythras-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
    ]
   }
  ],
