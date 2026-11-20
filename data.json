@@ -19234,7 +19234,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "reach": [
     "ms-deku-tree"
    ]
@@ -19249,7 +19248,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "reach": [
     "ms-dodongos-cavern"
    ]
@@ -19264,7 +19262,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "reach": [
     "ms-jabu-jabu"
    ]
@@ -19279,7 +19276,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "reach": [
     "ms-forest-temple"
    ]
@@ -19294,7 +19290,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "reach": [
     "ms-fire-temple"
    ]
@@ -19309,7 +19304,6 @@
     "kotaku"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "versions": [
     "switch2"
    ],
@@ -19323,7 +19317,6 @@
    "name": "Stalfos (young Link)",
    "area": null,
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19341,7 +19334,6 @@
    "name": "Stalfos (adult Link)",
    "area": "forest-temple",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19359,7 +19351,6 @@
    "name": "Wolfos",
    "area": "sacred-forest-meadow",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19377,7 +19368,6 @@
    "name": "White Wolfos",
    "area": "ice-cavern",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall",
@@ -19396,7 +19386,6 @@
    "name": "Lizalfos",
    "area": "dodongos-cavern",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19414,7 +19403,6 @@
    "name": "Dinolfos",
    "area": null,
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19432,7 +19420,6 @@
    "name": "Big Octo",
    "area": "jabu-jabus-belly",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19450,7 +19437,6 @@
    "name": "Meg, Firstborn",
    "area": "forest-temple",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19468,7 +19454,6 @@
    "name": "Flare Dancer",
    "area": "fire-temple",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19486,7 +19471,6 @@
    "name": "Dead Hand",
    "area": "bottom-of-the-well",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19505,7 +19489,6 @@
    "name": "Gerudo Thief",
    "area": "gerudo-fortress",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19529,7 +19512,6 @@
    "name": "Iron Knuckle (young Link)",
    "area": "spirit-temple",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19547,7 +19529,6 @@
    "name": "Iron Knuckle (adult Link)",
    "area": "spirit-temple",
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19565,7 +19546,6 @@
    "name": "Iron Knuckle (duo)",
    "area": null,
    "mini": true,
-   "rematchConfirmed": true,
    "sources": [
     "mtwildwood-s2-hall",
     "zd-s2-hall"
@@ -19588,7 +19568,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "reach": [
     "ms-water-temple"
    ]
@@ -19603,7 +19582,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "reach": [
     "ms-shadow-temple"
    ]
@@ -19618,7 +19596,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "reach": [
     "ms-spirit-temple"
    ]
@@ -19633,7 +19610,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "versions": [
     "switch2"
    ],
@@ -19651,7 +19627,6 @@
     "ootr"
    ],
    "switch2": "unverified",
-   "rematchConfirmed": true,
    "versions": [
     "switch2"
    ],

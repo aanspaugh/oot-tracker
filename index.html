@@ -1713,7 +1713,7 @@ function renderHall() {
         <div class="card-info">
           <div class="card-name">${esc(b.name)}</div>
           ${b.area ? `<div class="card-meta">📍 ${esc(areaName(b.area))}</div>` : ''}
-          ${hall ? `<div class="card-tags"><span class="tag">${b.tag ? esc(b.tag) : b.rematchConfirmed ? '✓ Rematch confirmed' : 'Rematch not confirmed yet'}</span></div>` : ''}
+          ${hall && b.tag ? `<div class="card-tags"><span class="tag">${esc(b.tag)}</span></div>` : ''}
         </div>
       </div>
       <div class="boss-best">${best ? `<span>Best <b>${fmtTime(best.ms)}</b> · ${new Date(best.at).toLocaleDateString()}</span>
