@@ -19313,9 +19313,9 @@
    ]
   },
   {
-   "id": "boss-mini-stalfos-young",
-   "name": "Stalfos (young Link)",
-   "area": null,
+   "id": "boss-mini-stalfos-forest",
+   "name": "Stalfos (Forest Temple)",
+   "area": "forest-temple",
    "mini": true,
    "sources": [
     "mtwildwood-s2-hall",
@@ -19330,9 +19330,9 @@
    ]
   },
   {
-   "id": "boss-mini-stalfos-adult",
-   "name": "Stalfos (adult Link)",
-   "area": "forest-temple",
+   "id": "boss-mini-stalfos-shadow",
+   "name": "Stalfos (Shadow Temple)",
+   "area": "shadow-temple",
    "mini": true,
    "sources": [
     "mtwildwood-s2-hall",
@@ -19343,7 +19343,7 @@
     "switch2"
    ],
    "reach": [
-    "ms-forest-temple"
+    "ms-shadow-temple"
    ]
   },
   {
