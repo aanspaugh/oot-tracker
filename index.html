@@ -288,7 +288,9 @@
     .veil-hint { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); }
     .shield-chip { color: var(--text); }
 
-    /* Hall: boss times + statues */
+    /* Hall: boss times + the statue count */
+    .statue-form { display: flex; align-items: center; gap: 0.5rem; max-width: 22rem; }
+    .statue-form .field { width: 5.5em; text-align: center; }
     .boss-card { cursor: default; }
     .boss-best { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; min-height: 44px; font-size: 0.88rem; color: var(--text-muted); }
     .boss-best b { color: var(--gold); font-size: 1.05rem; }
@@ -954,7 +956,7 @@ function startApp() {
   // Agony follow the claim, not the token count.
   for (const r of DATA.skulltulaRewards) if (!r.entry) BY_ID[rewardClaimId(r)] = { id: rewardClaimId(r), name: `the ${r.tokens}-token Skulltula reward`, needs: [`gs:${r.tokens}`] };
   for (const x of DATA.items) if (x.derivedFrom?.startsWith('gs:') && BY_ID['reward-' + x.derivedFrom.slice(3)]) x.derivedFrom = 'reward-' + x.derivedFrom.slice(3);
-  SKEYS = [...DATA.entries, ...DATA.items, ...DATA.songs, ...DATA.bosses, ...DATA.statues].map((x) => x.id)
+  SKEYS = [...DATA.entries, ...DATA.items, ...DATA.songs, ...DATA.bosses].map((x) => x.id)
     .concat(DATA.skulltulaRewards.map((r) => 'reward-' + r.tokens));
   SKEYS.forEach((k, i) => SID.set(k, i));
   buildTabs();
@@ -1134,7 +1136,7 @@ function isShown(x) {
   // Auto-checked items follow their source entry; token-count ones show once earned.
   const d = BY_ID[x.id]?.derivedFrom || x.derivedFrom;   // a token item follows its claimed reward (startApp)
   if (d) return d.startsWith('gs:') ? met(d) : isShown(BY_ID[d]);
-  if (x.readOnly) return false;   // 🚧 the 5th bottle and the Hall statues
+  if (x.readOnly) return false;   // 🚧 the 5th bottle
   // A Hall boss's `reach` is its dungeon checked off, so it applies in Discovery too.
   // `reachIn` (V2): an item found inside a dungeon has a different reach in Master Quest.
   const rule = mode === 'guided' || DATA.bosses.some((b) => b.id === x.id) ? (x.reachIn?.[gameVer()] || x.reach || x.needsIn?.[gameVer()] || x.needs) : null;
@@ -1387,8 +1389,8 @@ function renderTab(t) {
 }
 
 // Collapsible sections (11/6): saved on the profile (profiles/{pid}/collapsed/{tab:section}), so both phones
-// match. Everything starts open except the Hall's enemy statues. A search opens every section on its tab.
-const COLLAPSED_DEFAULT = { 'hall:statues': true };
+// match. Everything starts open. A search opens every section on its tab.
+const COLLAPSED_DEFAULT = {};
 let secKeys = [];   // the sections drawn on the current tab, for Collapse all / Expand all
 const isCollapsed = (k) => !(search[currentTab] || '').trim() && (profiles[pid]?.collapsed?.[k] ?? COLLAPSED_DEFAULT[k] ?? false);
 function setCollapsed(keys, v) {
@@ -1686,7 +1688,7 @@ $('main').addEventListener('keydown', (e) => {
 });
 
 // ============================================================================
-// Hall of Fallen Foes — boss best times per profile, plus the 🚧 enemy statues (read-only until launch)
+// Hall of Fallen Foes — best times per profile (bosses, mini-bosses, owl trials) and the owl's statue count
 // ============================================================================
 // "m:ss" or "m:ss.cs" → ms; null if it doesn't parse.
 function parseTime(s) {
@@ -1697,10 +1699,12 @@ const fmtTime = (ms) => `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000
 const areaName = (id) => DATA.areas.find((a) => a.id === id)?.name || '';
 let confirmClearTime = null, clearTimeTimer = null;    // boss id armed to clear its time
 
+// The statue count is one number per profile, kept beside the times at bossTimes/{pid}/hall-statues = {n, at}
+// (no new database path, so the rules don't change; no boss has that id).
+const STATUE_KEY = 'hall-statues';
 function renderHall() {
   const list = DATA.bosses.filter(inVersion), hall = VERSIONS[gameVer()].bosses === 'hall';
-  const timed = list.filter((b) => bossTimes[b.id]).length;
-  const bosses = list.map((b) => {
+  const card = (b) => {
     if (!isShown(b)) return shieldedCard(b, svg('hall'));
     const best = bossTimes[b.id], armed = confirmClearTime === b.id;
     return `<div class="item-card boss-card" data-boss="${b.id}">
@@ -1719,28 +1723,46 @@ function renderHall() {
         <button class="act-btn primary">Save</button>
       </form>
     </div>`;
-  }).join('');
-  const statues = DATA.statues.map((f) => !isShown(f) ? shieldedCard(f, svg('wip')) : `<div class="item-card readonly static">
-      <div class="card-top"><div class="card-icon">${svg('wip')}</div>
-        <div class="card-info"><div class="card-name">${esc(f.name)}</div>
-          ${f.variants.length ? `<div class="card-tags">${f.variants.map((v) => `<span class="tag">${esc(v)}</span>`).join('')}</div>` : ''}</div></div>
-    </div>`).join('');
-  const bossesOpen = !isCollapsed('hall:bosses');
-  const head = `<div class="group${bossesOpen ? '' : ' collapsed'}">
-      ${secHead('hall:bosses', `<span class="group-name">${svg('hall', 'ic ic-inline')} ${hall ? 'Boss best times' : 'Boss Challenge best times'}</span>${badge(timed, list.length)}`)}
-      ${bossesOpen ? `<div class="group-note">${hall ? 'Your fastest Hall of Fallen Foes rematch for each boss (pick Rematch at its statue). The owl statues run the three trials: several bosses in a row, with your health carried over; log a time if the game shows one. To get in, sleep in a bed with a green glow once Kaepora Gaebora has told you about it.'
-        : "Your record time for each boss in the 3DS Boss Challenge (examine Link's bed), and for the Boss Gauntlet."} Type m:ss or m:ss.cs; a time only replaces your best when it's faster.</div>
-      <div class="card-grid">${bosses}</div>` : ''}
+  };
+  const typeIt = " Type m:ss or m:ss.cs; a time only replaces your best when it's faster.";
+  const section = (key, title, items, note) => {
+    if (!items.length) return '';
+    const open = !isCollapsed(key), timed = items.filter((b) => bossTimes[b.id]).length;
+    return `<div class="group${open ? '' : ' collapsed'}">
+      ${secHead(key, `<span class="group-name">${svg('hall', 'ic ic-inline')} ${title}</span>${badge(timed, items.length)}`)}
+      ${open ? `<div class="group-note">${note}${typeIt}</div>
+      <div class="card-grid">${items.map(card).join('')}</div>` : ''}
     </div>`;
-  if (!hall) return head;   // the 3DS has no statues
-  const statuesOpen = !isCollapsed('hall:statues');   // collapsed by default
-  return head + `
-    <div class="group${statuesOpen ? '' : ' collapsed'}">
-      ${secHead('hall:statues', `<span class="group-name">${svg('wip', 'ic ic-inline')} Enemy statues</span><span class="group-badge">${DATA.statues.length}</span>`)}
-      ${statuesOpen ? `<div class="group-note">🚧 Every enemy type you defeat adds a statue, but no Switch 2 guide lists them yet, so this list (from the N64 enemies) is unconfirmed and can't be checked off.</div>
-      <div class="card-grid">${statues}</div>` : ''}
+  };
+  if (!hall) return section('hall:bosses', 'Boss Challenge best times', list,
+    "Your record time for each boss in the 3DS Boss Challenge (examine Link's bed), and for the Boss Gauntlet.");
+  const st = bossTimes[STATUE_KEY], total = DATA.hallStatueTotal, statuesOpen = !isCollapsed('hall:statues');
+  return section('hall:bosses', 'Boss best times', list.filter((b) => !b.mini && !b.tag),
+      'Your fastest Hall of Fallen Foes rematch for each boss (pick Rematch at its statue). To get in, sleep in a bed with a green glow once Kaepora Gaebora has told you about it.')
+    + section('hall:minis', 'Mini-boss best times', list.filter((b) => b.mini),
+      "Mini-boss statues have a timed Rematch too.")
+    + section('hall:trials', 'Owl statue trials', list.filter((b) => b.tag),
+      "The owl statues run three trials: several bosses in a row, with your health carried over. Each trial keeps its own total time; its fights don't count as rematch times.")
+    + `<div class="group${statuesOpen ? '' : ' collapsed'}">
+      ${secHead('hall:statues', `<span class="group-name">${svg('hall', 'ic ic-inline')} Enemy statues</span>${badge(st ? st.n : 0, total)}`)}
+      ${statuesOpen ? `<div class="group-note">Every enemy type you defeat adds a statue. In the Hall, ask the owl "How many statues?" and enter what you have.</div>
+      <form class="statue-form" data-statue-form novalidate>
+        <input class="field" name="n" type="number" inputmode="numeric" min="0" max="${total}" value="${st ? st.n : ''}" placeholder="0" aria-label="Enemy statues you have">
+        <span class="fish-unit">of ${total}</span>
+        <button class="act-btn primary">Save</button>
+      </form>` : ''}
     </div>`;
 }
+
+$('main').addEventListener('submit', (e) => {
+  if (!('statueForm' in e.target.dataset)) return;
+  e.preventDefault();
+  const input = e.target.elements.n, v = input.value.trim(), n = Number(v), total = DATA.hallStatueTotal;
+  if (v && !(Number.isInteger(n) && n >= 0 && n <= total)) { toast(`Type a whole number from 0 to ${total}.`, true); input.focus(); return; }
+  input.blur();
+  set(ref(_db, `bossTimes/${pid}/${STATUE_KEY}`), v ? { n, at: Date.now() } : null)
+    .then(() => toast(v ? `Saved: ${n} of ${total} statues.` : 'Statue count cleared.')).catch(fail('save the statue count'));
+});
 
 $('main').addEventListener('submit', (e) => {
   const id = e.target.dataset.bossForm;

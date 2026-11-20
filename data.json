@@ -52,6 +52,14 @@
     "name": "Nintendo Forever - Zelda: Ocarina of Time Master Quest guide (N64/GameCube layout; Skulltulas in dungeons + walkthrough)",
     "url": "https://nintendoforever.com/N64/ZeldaOcarinaOfTime/MasterQuest_ZeldaOcarinaOfTime_Index.php?lang=en"
    },
+   "mtwildwood-s2-hall": {
+    "name": "Mt. Wildwood, \"Hall of Fallen Foes\" (Switch 2: 25 rematch cards, Place tables)",
+    "url": "https://zelda.mtwildwood.net/bosses/hall-of-fallen-foes/"
+   },
+   "zd-s2-hall": {
+    "name": "Zelda Dungeon Wiki - Hall of Fallen Foes (bosses and mini-bosses have rematches)",
+    "url": "https://www.zeldadungeon.net/wiki/Hall_of_Fallen_Foes"
+   },
    "user-play": {
     "name": "The user's own Switch 2 playthrough (first-hand, 2026-11-05)",
     "url": ""
@@ -19293,11 +19301,11 @@
   },
   {
    "id": "boss-dark-link",
-   "name": "Dark Link (mini-boss)",
+   "name": "Dark Link",
    "area": "water-temple",
    "sources": [
-    "soh",
-    "gamewith",
+    "user-play",
+    "mtwildwood-s2-hall",
     "kotaku"
    ],
    "switch2": "unverified",
@@ -19305,8 +19313,269 @@
    "versions": [
     "switch2"
    ],
+   "mini": true,
    "reach": [
     "ms-water-temple"
+   ]
+  },
+  {
+   "id": "boss-mini-stalfos-young",
+   "name": "Stalfos (young Link)",
+   "area": null,
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-forest-temple"
+   ]
+  },
+  {
+   "id": "boss-mini-stalfos-adult",
+   "name": "Stalfos (adult Link)",
+   "area": "forest-temple",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-forest-temple"
+   ]
+  },
+  {
+   "id": "boss-mini-wolfos",
+   "name": "Wolfos",
+   "area": "sacred-forest-meadow",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-deku-tree"
+   ]
+  },
+  {
+   "id": "boss-mini-white-wolfos",
+   "name": "White Wolfos",
+   "area": "ice-cavern",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall",
+    "user-play"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-ice-cavern"
+   ]
+  },
+  {
+   "id": "boss-mini-lizalfos",
+   "name": "Lizalfos",
+   "area": "dodongos-cavern",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-dodongos-cavern"
+   ]
+  },
+  {
+   "id": "boss-mini-dinolfos",
+   "name": "Dinolfos",
+   "area": null,
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-fire-temple"
+   ]
+  },
+  {
+   "id": "boss-mini-big-octo",
+   "name": "Big Octo",
+   "area": "jabu-jabus-belly",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-jabu-jabu"
+   ]
+  },
+  {
+   "id": "boss-mini-meg",
+   "name": "Meg, Firstborn",
+   "area": "forest-temple",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-forest-temple"
+   ]
+  },
+  {
+   "id": "boss-mini-flare-dancer",
+   "name": "Flare Dancer",
+   "area": "fire-temple",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-fire-temple"
+   ]
+  },
+  {
+   "id": "boss-mini-dead-hand",
+   "name": "Dead Hand",
+   "area": "bottom-of-the-well",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-deku-tree",
+    "song-of-storms"
+   ]
+  },
+  {
+   "id": "boss-mini-gerudo-thief",
+   "name": "Gerudo Thief",
+   "area": "gerudo-fortress",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-master-sword",
+    {
+     "any": [
+      "epona",
+      "longshot"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "boss-mini-iron-knuckle-young",
+   "name": "Iron Knuckle (young Link)",
+   "area": "spirit-temple",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-spirit-temple"
+   ]
+  },
+  {
+   "id": "boss-mini-iron-knuckle-adult",
+   "name": "Iron Knuckle (adult Link)",
+   "area": "spirit-temple",
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-spirit-temple"
+   ]
+  },
+  {
+   "id": "boss-mini-iron-knuckle-duo",
+   "name": "Iron Knuckle (duo)",
+   "area": null,
+   "mini": true,
+   "rematchConfirmed": true,
+   "sources": [
+    "mtwildwood-s2-hall",
+    "zd-s2-hall"
+   ],
+   "switch2": "unverified",
+   "versions": [
+    "switch2"
+   ],
+   "reach": [
+    "ms-ganon"
    ]
   },
   {
@@ -19480,665 +19749,5 @@
    ]
   }
  ],
- "statues": [
-  {
-   "id": "foe-anubis",
-   "name": "Anubis",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-armos",
-   "name": "Armos",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-bari",
-   "name": "Bari",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-beamos",
-   "name": "Beamos",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-big-octo",
-   "name": "Big Octo",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-biri",
-   "name": "Biri",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-bubble",
-   "name": "Bubble",
-   "variants": [
-    "Green",
-    "Blue",
-    "White",
-    "Red"
-   ],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-business-scrub",
-   "name": "Business Scrub",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-dead-hand",
-   "name": "Dead Hand",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-deku-baba",
-   "name": "Deku Baba",
-   "variants": [
-    "Big"
-   ],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-withered-deku-baba",
-   "name": "Withered Deku Baba",
-   "variants": [],
-   "sources": [
-    "soh",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-deku-scrub",
-   "name": "Deku Scrub",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-dinolfos",
-   "name": "Dinolfos",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-dodongo",
-   "name": "Dodongo",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-baby-dodongo",
-   "name": "Baby Dodongo",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-flare-dancer",
-   "name": "Flare Dancer",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-floormaster",
-   "name": "Floormaster",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-flying-pot",
-   "name": "Flying Pot",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-flying-floor-tile",
-   "name": "Flying Floor Tile",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-freezard",
-   "name": "Freezard",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-gerudo-thief",
-   "name": "Gerudo Thief",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-gibdo",
-   "name": "Gibdo",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-gohma-larva",
-   "name": "Gohma Larva",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-guay",
-   "name": "Guay",
-   "variants": [],
-   "sources": [
-    "soh",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-iron-knuckle",
-   "name": "Iron Knuckle",
-   "variants": [
-    "Nabooru"
-   ],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-keese",
-   "name": "Keese",
-   "variants": [
-    "Fire",
-    "Ice"
-   ],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-leever",
-   "name": "Leever",
-   "variants": [
-    "Big"
-   ],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-like-like",
-   "name": "Like Like",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-lizalfos",
-   "name": "Lizalfos",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-mad-scrub",
-   "name": "Mad Scrub",
-   "variants": [],
-   "sources": [
-    "soh",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-moblin",
-   "name": "Moblin",
-   "variants": [
-    "Club"
-   ],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-octorok",
-   "name": "Octorok",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-parasitic-tentacle",
-   "name": "Parasitic Tentacle",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-peahat",
-   "name": "Peahat",
-   "variants": [],
-   "sources": [
-    "soh",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-peahat-larva",
-   "name": "Peahat Larva",
-   "variants": [],
-   "sources": [
-    "soh",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-poe",
-   "name": "Poe",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-big-poe",
-   "name": "Big Poe",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "gamewith"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-composer-brothers",
-   "name": "Composer Brothers (Sharp & Flat)",
-   "variants": [],
-   "sources": [
-    "soh",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-poe-sisters",
-   "name": "Poe Sisters",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-redead",
-   "name": "ReDead",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-shabom",
-   "name": "Shabom",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-shell-blade",
-   "name": "Shell Blade",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-skulltula",
-   "name": "Skulltula",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-big-skulltula",
-   "name": "Big Skulltula",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-skullwalltula",
-   "name": "Skullwalltula",
-   "variants": [],
-   "sources": [
-    "soh",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-skull-kid",
-   "name": "Skull Kid",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-spike",
-   "name": "Spike",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-stalchild",
-   "name": "Stalchild",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-stalfos",
-   "name": "Stalfos",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-stinger",
-   "name": "Stinger",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-tailpasaran",
-   "name": "Tailpasaran",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-tektite",
-   "name": "Tektite",
-   "variants": [
-    "Red",
-    "Blue"
-   ],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-torch-slug",
-   "name": "Torch Slug",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-wallmaster",
-   "name": "Wallmaster",
-   "variants": [],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  },
-  {
-   "id": "foe-wolfos",
-   "name": "Wolfos",
-   "variants": [
-    "White"
-   ],
-   "sources": [
-    "soh",
-    "jegged",
-    "wikibooks"
-   ],
-   "readOnly": true,
-   "switch2": "unverified"
-  }
- ]
+ "hallStatueTotal": 84
 }
